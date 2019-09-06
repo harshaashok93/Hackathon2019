@@ -69,7 +69,7 @@
       "gtmID": "GTM-M993LG6",
       "cmsFilePath": "cms-data-equity",
       "local": {
-        "devPublicPath": "https:\\//bmo-capital-markets-dev-ui-equity.galepartners.com"
+        "devPublicPath": ""
       },
       "dev": {
         "devPublicPath": ""

@@ -54,11 +54,10 @@
       }());
     </script>
 
-    <div id="vue"></div>
     <main id="root"></main>
     <script type="text/javascript">
       document.write(
-        "<script type='text/javascript' src='<%= htmlWebpackPlugin.options.devPublicPath %>/<%= htmlWebpackPlugin.options.cmsFilePath %>.js?v=" + Date.now() + "'><\/script>"
+        "<script type='text/javascript' src='./cms-data-equity.js'><\/script>"
       );
     </script>
     <!-- JS file will be automatically added here by html-webpack-plugin -->

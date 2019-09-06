@@ -86,7 +86,8 @@ class LollypopCarousel extends Component {
     };
     return (
       <div className={`lollypop-carousel ${this.getCarouselStyle()}`} >
-        <div className={'carousel-component'}>
+        <div id="vue" />
+        <div className={'carousel-component'} style={{display: 'none'}}>
           <Segment className={'carousel-segment-homepage'}>
             <Container className={`${this.props.carouselType}`}>
               <Slick {...settings}>
