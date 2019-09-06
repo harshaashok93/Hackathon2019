@@ -34,7 +34,7 @@
   }
   width: 100%;
   max-width: $screen-windows-lg;
-  height: 368px;
+  min-height: 368px;
   margin: auto;
   overflow: hidden;
   position: relative;
