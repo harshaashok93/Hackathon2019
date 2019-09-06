@@ -1,8 +1,12 @@
 <template>
   <div class="tab-layout">
     <div class="tab-div">
-        <div class="top-rate"><button @click="show1 = true, show2 = false">Top Rated</button></div>
-        <div class="trending"><button @click="show2 = true, show1 = false">Trending</button></div>
+        <div class="top-rate" :class="show1 ? 'enabled' : false ">
+          <button type="button" class="btn btn-link" @click="show1 = true, show2 = false">Top Rated</button>
+        </div>
+        <div class="trending" :class="show2 ? 'enabled' : false ">
+          <button type="button" class="btn btn-link" @click="show2 = true, show1 = false">Trending</button>
+        </div>
     </div>
     <div class="tab1" v-if="show1">
         <ul>
@@ -65,6 +69,22 @@ export default {
   }
   .fade-enter, .fade-leave-to {
     opacity: 0
+  }
+  button {
+    background: transparent;
+    border: none;
+  }
+  button:focus {
+    outline: none;
+  }
+  .enabled button {
+    color: #0079c1;
+    border-bottom: solid 1px #0079c1;
+  }
+
+  li {
+    min-height: 50px;
+    border-bottom: solid 1px #b3b3b3
   }
 </style>
 
