@@ -1,0 +1,421 @@
+/*
+ * Component: Top15
+ */
+
+@import '../../../styles/variables';
+
+// (IMPORTANT: please create the styles such that the larger breakpoints
+// override the smaller ones. "Mobile First")
+
+.top-15 {
+  width: 100%;
+  margin: 5px 14px 0px 30px;
+  .desktop-container {
+    display: inline-block;
+    padding-right: 40px;
+    width: 100%;
+    .top-header-15 {
+      position: relative;
+      line-height: 1;
+      width: 100%;
+      font-size: $deskSz1;
+      color: $primaryGray;
+      @include appDefaultFontStyleRegular();
+      margin-bottom: 20px;
+    }
+    .richText.updatedTexts {
+      &::after {
+        position: absolute;
+        border-bottom: 0.3px solid $oddGray;
+        content: '';
+        display: block;
+        height: 1px;
+        width: 100%;
+        position: relative;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        margin-left: -8px;
+      }
+    }
+    .top-15-detail-container {
+      margin-bottom: 10px;
+    }
+    .top-15-header {
+      margin-top: 10px;
+      font-size: 20px;
+      color: $primaryGray;
+    }
+    .top-15-subheader {
+      font-size: 16px;
+      color: $primaryGray;
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+    .list-container {
+      width: 100%;
+      margin-top: 19px;
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: row;
+      justify-content: flex-start;
+      margin-bottom: 20px;
+      .list-content {
+        width: 30%;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        margin-bottom: 5px;
+        &:nth-child(3n+1), &:first-child {
+          margin-right: 2% !important;
+        }
+        &:nth-child(2), &:nth-child(3n+2) {
+          margin-right: 2% !important;
+          margin-left: 2% !important;
+        }
+       &:nth-child(3n) {
+          margin-left: 2% !important;
+        }
+        &.not-a-link {
+          color: $primaryGray;
+        }
+      }
+    }
+    .richText.updatedTexts {
+      &::after {
+        border-bottom: 0.3px solid $oddGray;
+        content: '';
+        display: block;
+        height: 1px;
+        width: 100%;
+        position: relative;
+        margin-top: 30px;
+        margin-left: -8px;
+      }
+    }
+  }
+  .updated-company {
+    padding: 0px;
+  }
+  .restricted-text {
+    padding: 10px 0;
+  }
+  .accordion-container {
+    display: none;
+  }
+}
+
+// Medium Breakpoint
+@media (max-width: $screen-md-min) {
+  .top-15 {
+    width: 100%;
+    .desktop-container {
+      padding-right: 0px;
+      display: inline-block;
+      .top-header-15 {
+        &::after {
+          margin-left: 0px;
+        }
+      }
+      .top-15-header {
+        font-size: 20px;
+        color: $primaryGray;
+      }
+      .top-15-subheader {
+        font-size: 16px;
+        color: $primaryGray;
+        margin-top: 10px;
+      }
+      .list-container {
+        width: 100%;
+        margin-top: 19px;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        flex-direction: row;
+        justify-content: flex-start;
+        .list-content {
+          width: 48%;
+          color: $primaryBlue;
+          &:nth-child(odd) {
+            margin-right: 2% !important;
+            margin-left: 0px !important;
+          }
+          &:nth-child(even) {
+            margin-left: 2% !important;
+            margin-right: 0px !important;
+          }
+          &.not-a-link {
+            color: $primaryGray;
+          }
+        }
+      }
+    }
+    .accordion-container {
+      display: none;
+    }
+  }
+}
+
+@media (max-width: $screen-sm-min) {
+  .top-15 {
+    width: 100%;
+    margin: 5px 14px 0px 10px;
+    .desktop-container {
+      display: inline-block;
+      .top-header-15 {
+        &::after {
+          width: 100%;
+        }
+      }
+      .top-15-header {
+        font-size: 20px;
+        color: $primaryGray;
+      }
+      .top-15-subheader {
+        font-size: 16px;
+        color: $primaryGray;
+        margin-top: 10px;
+      }
+      .list-container {
+        width: 100%;
+        margin-top: 19px;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        flex-direction: row;
+        justify-content: flex-start;
+        .list-content {
+          width: 50%;
+          color: $primaryBlue;
+          font-size: $deskSzSmaller;
+          padding-right: 5px;
+          &.not-a-link {
+            color: $primaryGray;
+          }
+        }
+        &::after {
+          width: 100%;
+        }
+      }
+    }
+    .accordion-container {
+      display: none;
+    }
+    .richText.updatedTexts {
+      p {
+        margin: 0px;
+      }
+    }
+  }
+}
+
+// Small Breakpoint
+@media (max-width: $screen-xs-sm) {
+  .top-15 {
+    border-bottom: none;
+    .desktop-container {
+      display: none;
+    }
+    .accordion-container {
+      display: block;
+      &::before {
+        border-top: 0.3px solid $oddGray;
+        content: '';
+        display: block;
+        height: 1px;
+        width: 95%;
+        position: relative;
+        margin-bottom: 20px;
+      }
+      .ui.accordion {
+        position: relative;
+        margin-bottom: 40px;
+        // border-bottom: 1px solid $onBoardBorderColorGrey;
+        .title {
+          .top-15-header {
+            width: 100%;
+            font-size: 14px;
+
+            color: $primaryGray;
+          }
+          .bmo_chevron.bottom:before {
+            border-style: solid;
+            border-width: 1px 1px 0 0;
+            content: '';
+            display: inline-block;
+            height: 0.60em;
+            left: 50%;
+            position: absolute;
+            top: 75%;
+            vertical-align: top;
+            width: 0.60em;
+            float: right;
+            color: $primaryBlue;
+            margin-top: 10px;
+          }
+          &:after {
+            content: '';
+            display: inline-block;
+            height: 1px;
+            left: 0;
+            position: absolute;
+            bottom: -30px;
+            vertical-align: bottom;
+            width: 95%;
+            background-color: $onBoardBorderColorGrey;
+          }
+        }
+        .title.active {
+          .bmo_chevron.bottom:before {
+            transform: rotate(315deg);
+            top: 100%;
+          }
+        }
+        .content {
+          .top-15-subheader {
+            width: 100%;
+            font-size: 14px;
+            color: $primaryGray;
+          }
+        }
+      }
+      .list-container {
+        padding: 0px 25px 25px 25px;
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        flex-direction: row;
+        justify-content: flex-start;
+        .list-content {
+          width: 100%;
+          color: $primaryBlue;
+          margin-top: 10px;
+          &.not-a-link {
+            color: $primaryGray;
+          }
+        }
+      }
+      .richText.updatedTexts {
+        font-size: $deskSzSmaller;
+        padding-top: 20px;
+        p {
+          margin: 0px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: $screen-xs) {
+  .top-15 {
+    border-bottom: none;
+    margin: 0;
+    padding: 0 16px;
+    .desktop-container {
+      display: none;
+    }
+    .updated-company {
+      .rich-text {
+        font-size: $deskSzSmaller;
+      }
+    }
+    .accordion-container {
+      display: block;
+      &::before {
+        border-top: 0.3px solid $oddGray;
+        content: '';
+        display: block;
+        height: 1px;
+        width: 100%;
+        position: relative;
+        margin-bottom: 20px;
+      }
+      .ui.accordion {
+        position: relative;
+        margin-bottom: 40px;
+        // border-bottom: 1px solid $onBoardBorderColorGrey;
+        .title {
+          .top-15-header {
+            width: 100%;
+            font-size: 14px;
+            font-weight: $Medium;
+            color: $primaryGray;
+          }
+          .bmo_chevron.bottom:before {
+            border-style: solid;
+            border-width: 1px 1px 0 0;
+            content: '';
+            display: inline-block;
+            height: 0.60em;
+            left: 50%;
+            position: absolute;
+            top: 75%;
+            vertical-align: top;
+            width: 0.60em;
+            float: right;
+            color: $primaryBlue;
+            margin-top: 10px;
+          }
+          &:after {
+            content: '';
+            display: inline-block;
+            height: 1px;
+            left: 0;
+            position: absolute;
+            bottom: -30px;
+            vertical-align: bottom;
+            width: 100%;
+            background-color: $onBoardBorderColorGrey;
+          }
+        }
+        .title.active {
+          .bmo_chevron.bottom:before {
+            transform: rotate(315deg);
+            top: 100%;
+          }
+        }
+        .content {
+          .top-15-subheader {
+            width: 100%;
+            font-size: 14px;
+            color: $primaryGray;
+          }
+        }
+        &:last-child {
+          .title {
+            &:after {
+              background-color: transparent;
+            }
+          }
+        }
+      }
+      .list-container {
+        padding: 0;
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        flex-direction: row;
+        justify-content: flex-start;
+        .list-content {
+          width: 100%;
+          color: $primaryBlue;
+          margin-top: 10px;
+          font-size: $deskSzSmaller;
+          margin-left: 0 !important;
+          margin-right: 0 !important;
+          &.not-a-link {
+            color: $primaryGray;
+          }
+        }
+      }
+    }
+  }
+}
+
+// Large Breakpoint
+@media (min-width: $screen-lg-min) {
+  .top-15 {
+    // override md breakpoint styles
+  }
+}

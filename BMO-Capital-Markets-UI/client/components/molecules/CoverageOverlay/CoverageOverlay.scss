@@ -1,0 +1,882 @@
+/*
+ * Component: CoverageOverlay
+ */
+
+@import '../../../styles/variables';
+
+// (IMPORTANT: please create the styles such that the larger breakpoints
+// override the smaller ones. "Mobile First")
+.no-coverage-graph {
+  width: 100%;
+  height: calc(100% - 10px);
+  padding: 75px;
+  font-size: $deskSz3;
+  position: relative;
+  text-align: center;
+  margin-top: 10px;
+}
+.coverage-overlay-modal {
+  width: 100%;
+  height: 100%;
+  max-width: 1400px;
+  overflow: auto;
+  position: relative;
+  z-index: 9991;
+  background: $overlay-background;
+  margin: 0;
+  top: 0;
+  left: 50%;
+  @include transform(translateX(-50%));
+  &.library-mobile-coverage-overlay {
+    overflow: scroll;
+    position: fixed;
+    .coverage-overlay-modal-content {
+      padding: 0px;
+    }
+  }
+  .coverage-result-loader {
+    padding: 20% 0;
+    position: relative;
+  }
+  .coverage-overlay-modal-content {
+    max-width: 1400px;
+    margin: 0;
+    height: auto;
+    width: 100%;
+    margin: auto;
+    padding: 25px 30px;
+    background-color: $primaryWhite;
+    text-align: left;
+    min-height: 100%;
+    text-align: left;
+    position: relative;
+  }
+  .sector-result-loader {
+    .ui.active.text.loader {
+      color: $primaryBlue;
+      &:after{
+        border-color: $primaryBlue transparent transparent;
+      }
+    }
+  }
+  .content {
+    padding: 0;
+  }
+  .bmo-close-btn-holder {
+    width: 100%;
+    position: relative;
+    display: inline-block;
+    padding: 10px 0;
+  }
+  .ui.button.close-icon.bmo-close-btn {
+    width: 20px;
+    height: 20px;
+    float: right;
+    padding: 0;
+  }
+}
+.coverage-overlay {
+  &.coverage-errorMsg {
+    display: block;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: red;
+  }
+  &.for-library {
+    padding: 10px 0;
+    .rating {
+      &.Mkt {
+        color: $hardBlack !important;
+      }
+      &.OP {
+        color: $colorOP !important;
+        @include appDefaultFontStyleMedium();
+      }
+      &.Und {
+        color: $primaryRed !important;
+      }
+      @include appDefaultFontStyleRegular();
+      font-size: $deskSz9;
+    }
+    .graph-table .data-table {
+        .head span,
+        .result-data span {
+        font-size: $deskSzSmaller;
+        padding: 0 15px;
+        @include appDefaultFontStyleRegular();
+        line-height: 16px;
+      }
+      .graph-data-duration {
+        padding: 7px 0;
+        .graph-data-duration-btn {
+          padding: 0;
+          @include appDefaultFontStyleRegular();
+          line-height: 16px;
+          font-size: $deskSzSmaller;
+        }
+      }
+    }
+    .graph-table {
+      padding-bottom: 15px;
+      .currency-information {
+        padding-top: 5px;
+        font-size: $deskSzSmaller;
+        font-weight: bold;
+      }
+    }
+  }
+  .button-holder {
+    display: inline-block;
+    text-align: center;
+    width: 100%;
+    margin-top: 40px;
+    margin-bottom: 10px;
+    .show-in-lib-button {
+      display: inline-block;
+      padding: 10px;
+      margin: 0;
+      font-size: $deskSz8;
+      color: $primaryBlue;
+      &.ui.button {
+        padding: 10px 15px !important;
+      }
+    }
+  }
+  .desktop-only {
+    display: inline-block !important;
+  }
+  .mobile-only {
+    display: none !important;
+  }
+  .tab-only {
+    display: none !important;
+  }
+  .analyst-details-data {
+    display: inline-block;
+    margin-bottom: 45px;
+    width: 100%;
+  }
+  .analyst-details {
+    display: inline-block;
+    text-align: left;
+    width: 75%;
+  }
+  .a-link {
+    padding-right: 5px;
+    display: inline-block;
+    @include appDefaultFontStyleRegular();
+    a {
+      padding-right: 5px;
+    }
+  }
+  .highcharts-title {
+    font-size: 1em !important;
+  }
+  .title-text {
+    @include appDefaultFontStyleRegular();
+    margin-right: 15px;
+    font-size: $deskSz9;
+  }
+  .title-summary {
+    font-size: $deskSz9;
+  }
+  .graph-table {
+    border-radius: 5px;
+    overflow: hidden;
+    .currency-information {
+      padding-top: 5px;
+      font-size: $deskSzSmaller;
+      font-weight: bold;
+    }
+    .no-data-found {
+      text-align: center;
+      padding: 20px 0px 0px;
+      color: $primaryRed;
+    }
+    .data-table {
+      .head,
+      .result-data {
+        background-color: $primaryBlue;
+        padding: 10px 0;
+        width: 100%;
+        .f-year {
+          width: 16%;
+          display: inline-block;
+          position: relative;
+          color: $primaryWhite;
+          text-align: left;
+          padding-right: 0 !important;
+          font-size: $deskSz9;
+        }
+        span {
+          width: 8.2%;
+          display: inline-block;
+          position: relative;
+          padding: 0 30px;
+          vertical-align: middle;
+          color: $primaryWhite;
+          text-align: center;
+          font-size: $deskSz9;
+          &.numberVal {
+            padding: 0;
+            word-wrap: break-word;
+            cursor: default;
+          }
+        }
+      }
+      .graph-data-duration {
+        background-color: $primaryBlue;
+        padding: 10px 0;
+        text-align: center;
+        .graph-data-duration-btn{
+          background-color: transparent;
+          color: $primaryWhite;
+          border-radius: 0;
+          padding: 5px;
+          margin: 0 10px;
+          &.active {
+            border-bottom: solid 3px $primaryWhite;
+          }
+        }
+        span {
+          width: 8.2%;
+          display: inline-block;
+          position: relative;
+          vertical-align: middle;
+          color: $primaryWhite;
+          text-align: center;
+          font-size: $deskSz9;
+        }
+      }
+      .result-data {
+        background-color: $graphBackground;
+        width: 100%;
+        .f-year,
+        span {
+          color: $primaryBlack;
+          font-size: $deskSz9;
+          &.Mkt {
+            color: $hardBlack !important;
+          }
+          &.OP {
+            color: $colorOP !important;
+            @include appDefaultFontStyleMedium();
+          }
+          &.Und {
+            color: $primaryRed !important;
+          }
+        }
+      }
+    }
+    .sector-result-loader {
+      position: relative;
+      min-height: 200px;
+      .ui.active.text.loader {
+        color: $primaryBlue;
+        &:after {
+          border-color: $primaryBlue transparent transparent;
+        }
+      }
+    }
+  }
+  .section {
+    &.top-section {
+      width: 70%;
+      display: inline-block;
+      vertical-align: top;
+    }
+    display: inline-block;
+    .left-section {
+      display: inline-block;
+      width: 40%;
+      padding: 15px;
+      text-align: left;
+      vertical-align: top;
+      .ticker-and-comp-type {
+        vertical-align: top;
+        display: inline-block;
+        width: 100%;
+        position: relative;
+        text-align: left;
+      }
+      .company-name {
+        color: $primaryBlue;
+        font-size: $deskSz6;
+      }
+      .company-category,
+      .company-ticker {
+        font-size: $deskSz9;
+        content: '';
+        color: $primaryGray;
+        text-align: left;
+        span {
+          display: block;
+          width: 100%;
+        }
+      }
+      .company-ticker {
+        margin-bottom: 20px;
+        &:after {
+          position: absolute;
+          width: 48px;
+          border-bottom: solid 1px #aaa;
+          height: 1px;
+          content: '';
+          left: 0;
+          top: 32px;
+        }
+      }
+    }
+    .link-sets,
+    .section-title {
+      display: inline-block;
+      width: 100%;
+      font-size: $deskSz9;
+      @include appDefaultFontStyleRegular();
+      color: $primaryGray;
+      .links {
+        margin-top: 7px;
+        color: $primaryBlue;
+        @include appDefaultFontStyleLight();
+
+      }
+    }
+    .company-logo-holder {
+      margin-top: 33px;
+      display: none;
+      .comp-logo {
+        height: 57px;
+        margin: auto;
+      }
+    }
+    .analyst-image-holder {
+      .image {
+        display: inline-block;
+        width: 80px;
+        vertical-align: top;
+      }
+    }
+    .analyst-name {
+      padding: 0 5px;
+      color: $primaryBlue;
+      font-size: $deskSz9;
+      .ui.container {
+        width: 100%;
+        text-align: left;
+      }
+    }
+    .analyst-type,
+    .analyst-company,
+    .analyst-contact-images {
+      font-size: $deskSz9;
+      padding: 0 5px;
+      color: $primaryGray;
+    }
+    .analyst-contact-icons {
+      margin-top: 25px;
+      margin-left: 5px;
+      .follow-text {
+        color: $primaryBlue;
+        display: inline-block;
+        cursor: pointer;
+      }
+    }
+    .icons {
+      display: inline-block;
+      margin-right: 20px;
+      vertical-align: middle;
+      &.forgot-mail-icon {
+        height: 16px;
+        width: 21px;
+      }
+      &.forgot-phone-icon {
+        height: 21px;
+        width: 21px;
+      }
+      &.follow-contact {
+        height: 24px;
+        width: 17px;
+        margin-right: 7px;
+        cursor: pointer;
+      }
+    }
+    .right-section {
+      display: inline-block;
+      width: 60%;
+      padding: 0px 40px 0 0;
+      position: relative;
+      .section-title {
+        width: 100%;
+        margin-top: 5px;
+        display: block;
+        @include appDefaultFontStyleMedium();
+      }
+      .section-details {
+        width: 100%;
+        text-align: left;
+        display: inline-block;
+        margin: 10px 0;
+        @include appDefaultFontStyleRegular();
+
+        color: $primaryGray;
+      }
+    }
+  }
+  .mid-section {
+    display: inline-block;
+    width: 30%;
+    display: inline-block;
+    .coverage-overlay-analyst {
+      .analyst-details {
+        .analyst-type {
+          .legal-entity {
+            font-size: $deskSzSmaller;
+          }
+        }
+      }
+    }
+  }
+
+  .coverage-overlay-analyst {
+    &:nth-child(2) {
+      margin-top: 5%;
+    }
+    width: 100%;
+    float: left;
+
+    .container {
+      width: 25%;
+      float: left;
+      text-align: center;
+    }
+  }
+}
+
+// tab Breakpoint
+@media (max-width: $screen-tab) {
+  .coverage-overlay {
+    padding: 60px 33px;
+    &.for-library {
+      padding: 10px 0;
+      margin-bottom: 10px;
+    }
+    .desktop-only {
+      display: none !important;
+    }
+    .graph-table {
+      .data-table .graph-data-duration {
+        span {
+          width: 20%;
+        }
+      }
+      .data-table {
+        .head,
+        .result-data {
+          .f-year {
+            padding: 10px;
+          }
+          span {
+            padding: 0;
+          }
+        }
+      }
+    }
+    .table-summary-drop-down {
+      padding-bottom: 10px;
+    }
+
+    .tab-only.link-sets {
+      margin-top: 8%;
+    }
+    .tab-only {
+      display: block !important;
+      .link-sets {
+        padding: 0 15px 15px 0;
+        width: 45%;
+        display: inline-block;
+        vertical-align: top;
+        float: left;
+        margin-top: 8%;
+      }
+      .mid-section.section {
+        width: 55%;
+        padding: 0;
+        display: inline-block;
+      }
+      .analyst-details {
+        padding-left: 10px;
+        text-align: left;
+      }
+      .links {
+        color: $primaryBlue;
+        line-height: 30px;
+        max-width: 200px;
+        text-align: left;
+      }
+      .section-title {
+        @include appDefaultFontStyleRegular();
+        color: $primaryGray;
+        margin-bottom: 10px;
+        font-weight: 500 !important;
+      }
+
+      .coverage-overlay-analysts {
+        width: 100%;
+        margin-top: 5%;
+        .coverage-overlay-analyst {
+          width: 50%;
+          margin-top: 0;
+
+          .mid-section {
+            border-bottom: 0;
+          }
+        }
+      }
+    }
+    .section {
+      border-bottom: solid 1px $brightGray;
+
+      .analyst-contact-icons {
+        margin-top: 18px;
+      }
+      &.top-section {
+        width: 100%;
+        display: inline-block;
+        vertical-align: top;
+        .left-section {
+          padding: 0 15px 15px 0;
+          width: 45%;
+          text-align: left;
+        }
+        .right-section {
+          width: 55%;
+          padding: 0;
+          position: relative;
+          .section-details {
+            line-height: 24px;
+            margin-top: 15px;
+            margin-bottom: 55px;
+            &:after {
+              content: '';
+              position: absolute;
+              bottom: 25px;
+              width: 100%;
+              height: 1px;
+              left: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .coverage-overlay-analysts {
+    float: left;
+    width: 55%;
+
+    .coverage-overlay-analyst {
+      width: 100%;
+
+      .mid-section {
+        width: 100% !important;
+
+        .analyst-name {
+          width: 25%;
+          text-align: left;
+        }
+
+        .analyst-details {
+          width: 75%;
+          float: left;
+          .analyst-name {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}
+@media (max-width: $screen-sm) {
+  .no-coverage-graph {
+    width: 100%;
+    min-height: 150px;
+    padding: 15px;
+    padding-top: 70px;
+    margin-bottom: 30px;
+    font-size: 1.75em;
+    position: relative;
+    border: none;
+    text-align: center;
+    margin: auto;
+    display: inline-block;
+  }
+  .coverage-overlay {
+    padding: 2px;
+    .analyst-details-data {
+      padding: 0 20px;
+    }
+
+    .coverage-overlay-analysts {
+      width: 100%;
+      .coverage-overlay-analyst {
+        width: 100% !important;
+
+        .analyst-image, .analyst-type, .analyst-contact-icons {
+          display: none;
+        }
+
+        .analyst-image-holder {
+          margin-top: 0;
+        }
+
+        .analyst-details {
+          width: 100%;
+          padding-left: 0;
+        }
+      }
+    }
+  }
+}
+// smallest Breakpoint
+@media (max-width: $screen-xs-min) {
+  .no-coverage-graph {
+    width: 100%;
+    padding: 15px;
+    padding-top: 65px;
+    margin-bottom: 30px;
+    font-size: 1.75em;
+    position: relative;
+    border: none;
+    text-align: center;
+    margin: auto;
+    display: inline-block;
+  }
+  .modals.dimmer .ui.scrolling.modal.overlay-modal {
+    margin: 0 !important;
+    border-radius: 0;
+    .ui.button.close-icon.bmo-close-btn {
+      margin: 15px 15px;
+    }
+    .content {
+      padding: 0 !important;
+    }
+  }
+  .coverage-overlay-modal {
+    .coverage-overlay-modal-content {
+      padding: 5px;
+    }
+  }
+  .coverage-overlay {
+    padding: 30px 0 0;
+    &.for-library {
+      padding-top: 0;
+    }
+    .head-section.graph-summary-head-mobile {
+      font-size: 14px;
+      .fiscalYear, .graph-summary-rows .left {
+        @include appDefaultFontStyleMedium();
+      }
+    }
+    .title-text, {
+      font-size: 14px;
+    }
+    .ui.button.bmo_chevron {
+      display: block;
+    }
+    .button-holder {
+      margin: 40px 0;
+    }
+    .mobile-only {
+      display: block !important;
+    }
+    .not-in-mobile {
+      display: none !important;
+    }
+    .analyst-details-data {
+      margin-bottom: 18px;
+      padding: 0 15px;
+      text-align: center;
+    }
+    .section.top-section .right-section .section-details {
+      text-overflow: ellipsis;
+      word-wrap: break-word;
+      overflow: hidden;
+      max-height: 40px;
+      line-height: 20px;
+      margin-bottom: 0;
+      &:after {
+        display: none;
+      }
+      &.true {
+        max-height: unset;
+      }
+    }
+    .section-details-expand.bmo_chevron.bottom,
+    .section-details-expand.bmo_chevron.top
+     {
+      text-align: center;
+      background-color: transparent;
+      padding: 0;
+      padding-top: 2px;
+      margin: auto;
+      &:before{
+        float: unset;
+        text-align: center;
+        color: $primaryBlue;
+      }
+    }
+    .section-details-expand.bmo_chevron.top {
+      padding-top: 20px;
+    }
+    .head {
+      .left {
+        width: 50%;
+        display: inline-block;
+        text-align: right;
+        padding-right: 7px;
+        color: $primaryWhite;
+      }
+      .right {
+        width: 50%;
+        display: inline-block;
+        text-align: left;
+        padding-left: 7px;
+        color: $primaryWhite;
+      }
+    }
+    .graph-table {
+      border-radius: 5px;
+      overflow: hidden;
+      .data-table .graph-data-duration {
+        background-color: $primaryBlue;
+        padding: 10px 0;
+        text-align: center;
+        .graph-data-duration-btn {
+          margin: 0 4px;
+          font-size: 12px;
+        }
+        span {
+          width: 20%;
+          font-size: $deskSzSmallest;
+        }
+      }
+    }
+    .summary-rows {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: none;
+      &.true {
+        display: block;
+      }
+    }
+    .graph-summary-rows {
+      padding: 7px 0;
+      &:nth-child(odd) {
+        background-color: $graphBackground;
+      }
+    }
+    .left {
+      width: 50%;
+      display: inline-block;
+      text-align: right;
+      padding-right: 7px;
+    }
+    .right {
+      width: 50%;
+      display: inline-block;
+      text-align: left;
+      padding-left: 7px;
+    }
+    .section {
+      .analyst-image-holder .image {
+        vertical-align: middle;
+      }
+      .analyst-details {
+        width: calc(100% - 80px);
+        vertical-align: middle;
+      }
+      &.top-section {
+        .left-section {
+          padding: 0;
+          width: 100%;
+          text-align: left;
+          .ticker-and-comp-type {
+            display: inline-block;
+            width: 100%;
+            position: relative;
+            text-align: left;
+          }
+        }
+        .company-logo-holder {
+          width: 60%;
+          text-align: center;
+          display: none;
+        }
+        .right-section {
+          width: 100%;
+          position: relative;
+          text-align: center;
+          .section-title {
+            display: none;
+            text-align: left;
+          }
+        }
+      }
+    }
+    .tab-only {
+      &.collapased {
+        &.false {
+          display: none !important;
+        }
+        &.true {
+          display: block !important;
+        }
+      }
+      .link-sets {
+        width: 100%;
+        padding: 0;
+        .section-title {
+          display: none;
+        }
+        .links {
+          padding: 0;
+          color: $primaryBlue;
+          max-width: 200px;
+          text-align: left;
+        }
+      }
+      .analyst-image-holder {
+        margin-top: 23px;
+      }
+      .mid-section {
+        &.section {
+          width: 100%;
+          .analyst-details {
+            .ui.container.analyst-name {
+              margin-left: 0px !important;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .coverage-overlay-analysts {
+    width: 100%;
+    .analyst-details {
+      width: 100%;
+      margin-top: 5%;
+    }
+  }
+}
+
+// Large Breakpoint
+@media (min-width: $screen-lg-min) {
+  .coverage-overlay {
+    // override md breakpoint styles
+  }
+}

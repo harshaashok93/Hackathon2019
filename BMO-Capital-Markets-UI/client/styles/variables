@@ -1,0 +1,131 @@
+$imagePath : '../../node_modules/unchained-ui-react/src/styles/themes/default/assets/images' !default;
+$fontPath  : '../../node_modules/unchained-ui-react/src/styles/themes/default/assets/fonts' !default;
+
+// =============== Column Count ===============
+
+$columnCount: 12;
+
+// =============== Colors ==============
+
+//=====Primary colors
+$primaryRed: #ed1c24;
+$primaryBlue: #0079c1;
+$primaryWhite: #ffffff;
+$primaryBlack: #212121;
+
+//=====Secondary colors
+$secondaryBlack: #4c4c4c;
+$secondaryBlue: #1685c6;
+
+//=======hard colors
+$hardBlue: #023e69;
+$hardBlack: #000000;
+
+//======light Color
+$lightBlue: #008cc6;
+
+//=================Font Size
+
+//=====Desktop
+$deskSzBigest: 3.125em; //50px
+$deskSzBigger: 2.938em; //47px
+$deskSzBig: 2.500em; //40px
+
+$deskSz1: 2.250em; //36px
+$deskSz2: 2.000em; //32px
+$deskSz3: 1.750em; //28px
+$deskSz4: 1.625em; //26px
+$deskSz5: 1.500em; //24px
+$deskSz6: 1.375em; //22px
+$deskSz7: 1.250em; //20px
+$deskSz8: 1.125em; //18px
+$deskSz9: 1em; 	   //16px
+
+$deskSzSmall: 0.938em;   //15px;
+$deskSzSmaller: 0.875em; //14px;
+$deskSzSmaller: 0.750em; //12px;
+
+$deskSzOdd1: 1.063em; //17px
+$deskSzOdd2: 1.563em; //25px
+
+
+
+// =============== Fonts Family =============
+
+$primaryFont: 'Dax';
+
+
+// ============== Font Weight ===============
+$Small: 300;
+$Regular: 400;
+$Medium: 500;
+$SemiBold: 600;
+$Bold: 700;
+$Bolder: 800;
+$SuperBolder: 900;
+
+// =============== Container Variables ================
+
+$containerMobileWidth: 100%;
+$containerTabletWidth: 100%;
+$containerComputerWidth: 100%;
+$containerLargeMonitorWidth: 100%;
+
+// ----------------------------------------------------------------------------
+// Breakpoint Values
+// ----------------------------------------------------------------------------
+
+// Extra small screen / phone
+$screen-xs             : 480px;
+$screen-xs-min         : $screen-xs;
+$screen-phone          : $screen-xs-min;
+
+// Small screen / tablet
+$screen-sm             : 768px;
+$screen-sm-min         : $screen-sm;
+$screen-tablet         : $screen-sm-min;
+
+// Medium screen / desktop
+$screen-md             : 992px;
+$screen-md-min         : $screen-md;
+$screen-desktop        : $screen-md-min;
+
+// Large/wide desktop
+$screen-lg             : 1200px;
+$screen-lg-min         : $screen-lg;
+$screen-lg-desktop     : $screen-lg-min;
+
+// Windows 
+$screen-windows        : 1280px;
+$screen-windows-min    : $screen-windows;
+$screen-windows-max:$screen-windows+1;
+
+// Windows Large
+$screen-windows-lg     : 1440px;
+$screen-windows-min-lg : $screen-windows-lg;
+$screen-windows-max-lg : $screen-windows-lg+1;
+
+$screen-xs-max     : ($screen-sm-min - 1);
+$screen-sm-max     : ($screen-md-min - 1);
+$screen-md-max     : ($screen-lg-min - 1);
+$screen-lg-max     : ($screen-windows-lg - 1);
+
+
+// =============== Card Box-Shadow =============
+
+$cardBoxShadow: 0 1px 17px 0 rgba(0, 0, 0, 0.1);
+$cardBoxShadowTop: 0 8px 17px 4px rgba(0, 0, 0, 0.1);
+$footerButton: 0 2px 17px 0 rgba(0, 0, 0, 0.1);
+$footerInput: 0 2px 17px 0 rgba(0, 0, 0, 0.1), inset 0 1px 3px 0 rgba(0, 0, 0, 0.5);
+
+// =============== Other const =====
+
+$mega-menu-icon-width: 28px;
+$filterSectionWidth: 250px;
+$ReportsPageRightLayoutWidth: 300px;
+$leftLayoutWidth:250px;
+$leftLayoutMaxWidth: 30%;
+$rightLayoutWidth: calc(100% - #{$leftLayoutWidth});
+$rightLayoutMinWidth: calc(100% - #{$leftLayoutMaxWidth});
+$ReportsPageLeftLayoutWidth: calc(100% - #{$ReportsPageRightLayoutWidth});
+$commonPadding: 40px;

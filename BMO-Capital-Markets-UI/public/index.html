@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','<%= htmlWebpackPlugin.options.gtmid %>');</script>
+    <!-- End Google Tag Manager -->
+    <meta charset="UTF-8">
+    <title><%= htmlWebpackPlugin.options.title %></title>
+    <meta name="description" content="BMO Capital Markets">
+    <meta name="author" content="GALE Partners">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=0"/>
+    <link href="https://fonts.googleapis.com/css?family=Heebo:300,400,500,700" rel="stylesheet">
+  </head>
+  <body class="dimmed dimmable" buildVersion="v1.8.0-Build-137">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=<%= htmlWebpackPlugin.options.gtmid %>"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div id="docs-loading-dimmer" class="ui active page dimmer">
+      <div class="content">
+        <div class="center">
+          <div class="ui large text loader">
+            <div class="ui inverted blue heading">
+              Loading...
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      (function() {
+        var delay = 500;
+        var dimmer = document.querySelector('#docs-loading-dimmer');
+        dimmer.style.transition = 'opacity ' + delay + 'ms linear';
+
+        function removeDimmer() {
+          dimmer.style.opacity = '0';
+
+          setTimeout(function() {
+            var dimmer = document.querySelector('#docs-loading-dimmer');
+
+            document.body.removeChild(dimmer);
+            document.body.setAttribute("class", "");
+            window.removeEventListener('load', removeDimmer);
+          }, 0);
+        }
+
+        window.addEventListener('load', removeDimmer);
+      }());
+    </script>
+
+    <main id="root"></main>
+    <div id="vue"></div>
+    <script type="text/javascript">
+      document.write(
+        "<script type='text/javascript' src='<%= htmlWebpackPlugin.options.devPublicPath %>/<%= htmlWebpackPlugin.options.cmsFilePath %>.js?v=" + Date.now() + "'><\/script>"
+      );
+    </script>
+    <!-- JS file will be automatically added here by html-webpack-plugin -->
+  </body>
+</html>

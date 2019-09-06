@@ -1,0 +1,347 @@
+/*
+ * Component: ReportsResultSection
+ */
+
+@import '../../../styles/variables';
+
+// (IMPORTANT: please create the styles such that the larger breakpoints
+// override the smaller ones. "Mobile First")
+
+.reports-result-section {
+  position: relative;
+  top: -46px;
+  padding-left: 5px;
+  padding-right: 15px;
+  .ui.container {
+    margin-left: 0px !important; // need
+  }
+  .ui.vertical.slide.out.sidebar {
+    width: 100%;
+  }
+  .loader-container {
+    padding-top: 50px;
+    .ui.loader {
+      position: relative;
+      height: 750px;
+    }
+  }
+  .ui.left.visible.sidebar {
+    box-shadow: none;
+    width: unset;
+  }
+  .ui.vertical.menu {
+    width: unset;
+  }
+  .ui.sidebar {
+    width: 100%;
+    transform: none;
+    position: relative;
+    border: none;
+    overflow-y: visible !important; // need
+    .close-image {
+      display: none;
+    }
+  }
+  .ui.menu > .grid {
+    flex-direction: initial;
+  }
+  .ui.menu .item > .input {
+    width: unset;
+  }
+  .top-section {
+    display: table;
+    width: 100%;
+    .strategy-dropdown {
+      display: table-cell;
+      vertical-align: bottom;
+      .dropdown-chevron.ui.dropdown {
+        width: unset;
+      }
+      .ui.dropdown {
+        min-width: 265px;
+        color: $primaryGray;
+        padding: 5px;
+        border: none;
+        border-bottom: solid 1px $secondaryBlue;
+        border-radius: 0;
+        .text {
+          display: inline-block;
+          transition: none;
+          vertical-align: text-bottom;
+          white-space: normal;
+          line-height: 20px;
+          padding-right: 10px;
+        }
+        .menu {
+          width: 100%;
+          border-radius: 0;
+          min-width: 100%;
+          max-height: 300px;
+          overflow-y: scroll;
+          -ms-overflow-style: none;
+        }
+      }
+    }
+    .strategy-date {
+      float: right;
+      display: table-cell;
+      vertical-align: bottom;
+      .from-date, .to-date {
+        text-align: right;
+        display: inline-block;
+        max-width: 210px;
+        min-width: 195px;
+        .date-picker {
+          padding-top: 0px;
+          .react-date-picker {
+            padding-left: 10px;
+            .react-date-picker__button__input__month,
+            .react-date-picker__button__input__day{
+              width: 0 !important;
+              -webkit-text-fill-color: $primaryGray;
+              color: $primaryGray;
+              opacity: 1;
+            }
+          }
+        }
+      }
+    }
+    .table-result-count {
+      display: table-cell;
+      vertical-align: bottom;
+      line-height: 1;
+      width: 22%;
+    }
+  }
+  .reports-filter-top {
+    margin-bottom: 10px;
+  }
+  .ui.container.mobile-view {
+    display: none;
+  }
+  .reports-filter-top.desktop-view {
+    display: block;
+  }
+}
+
+@media (max-width: $screen-lg) {
+  .reports-result-section {
+    .top-section {
+      .strategy-dropdown {
+        padding-bottom: 11px;
+      }
+      .strategy-date {
+        float: right;
+        display: inline-grid;
+        .from-date, .to-date {
+          //text-align: left;
+          margin-bottom: 10px;
+          .date-picker{
+            span {
+              padding-left: 0px !important;
+              text-align: right;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: $screen-tab) {
+  .reports-result-section {
+    position: unset;
+    top: 0px;
+    .top-section {
+      display: block;
+      .table-result-count {
+        display: none;
+      }
+      .strategy-dropdown {
+        display: block;
+        padding-bottom: 24px;
+      }
+      .strategy-date {
+        float: unset;
+        display: block;
+        .from-date, .to-date {
+          //text-align: left;
+          margin-bottom: 10px;
+          .date-picker{
+            span {
+              padding-left: 0px !important;
+              text-align: right;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: $screen-md) {
+  .reports-result-section {
+    padding-left: 0px;
+    padding-right: 0px;
+    .top-section {
+      .strategy-date {
+        .from-date {
+          padding-right: 10px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: $screen-sm) {
+  .reports-result-section {
+    .ui.container {
+      margin-left: 0px !important;
+    }
+    .top-section {
+      display: block;
+      .strategy-date {
+        .from-date, .to-date {
+          margin-bottom: 0px;
+          .date-picker {
+            padding-top: 0px;
+            margin-bottom: 17px; //
+          }
+          .date-picker-title.ui.heading{
+            width: 0px;
+          }
+        }
+        .from-date, .to-date {
+          .date-picker {
+            .react-date-picker {
+              padding-left: 40px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// Small Breakpoint
+@media (max-width: $screen-xs-sm) {
+  .reports-result-section {
+    .ui.container.mobile-view {
+      display: block;
+    }
+    .reports-filter-top.desktop-view {
+      display: none;
+    }
+    .ui.container {
+      margin-left: 0px !important; // need
+      &.hide-layout {
+        display: none;
+      }
+    }
+    .show-layout {
+      height: 100%;
+      position: fixed;
+      top: 0px;
+      left: 0px;
+      z-index: 10001;
+      display: block;
+      float: left;
+      .ui.grid.top-columns-grid {
+        width: 100%;
+        padding: 10px;
+      }
+      .ui.sidebar {
+        overflow-y: scroll !important; // need
+      }
+      .ui.left.slide.out.sidebar {
+        float: left ;
+        margin-right: 0px ;
+        transform: translate3d(0%, 0, 0);;
+        box-shadow: 0 0 20px rgba(34, 36, 38, 0.15);
+        width: 100%;
+        border: 1px solid rgba(34, 36, 38, 0.15);
+        .close-image {
+          display: block;
+          text-align: right;
+          padding: 10px;
+          padding-right: 16px;
+          .ui.button.bmo-close-btn {
+            padding: 10px;
+          }
+        }
+      }
+      .mobileBackDrop{
+        position: relative;
+        float: left;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.64);
+        width: 23%;
+      }
+    }
+    .top-section {
+      display: block;
+      padding-top: 25px;
+      .strategy-dropdown {
+        display: block;
+        padding-bottom: 24px;
+        text-align: left;
+        padding-left: 25px;
+        .ui.dropdown {
+          width: 95%;
+        }
+      }
+      .strategy-date {
+        float: unset;
+        display: block;
+        .from-date {
+          max-width: unset;
+          min-width: unset;
+          padding-right: 0px;
+          .date-picker {
+            width: 100%;
+          }
+        }
+        .to-date {
+          max-width: unset;
+          min-width: unset;
+          padding-right: 0px;
+          .date-picker {
+            width: 100%;
+          }
+        }
+        .from-date, .to-date {
+          text-align: left;
+          display: block;
+          width: 100%;
+          .date-picker .date-picker-title.ui.heading {
+            width: 15%;
+          }
+          .date-picker .date-picker-title.ui.heading {
+            padding-left: 15px !important;
+            width: 95px;
+          }
+          .date-picker .react-date-picker {
+            padding-left: 0px;
+            left: 95px;
+            width: 70%;
+            max-width: 225px;
+          }
+        }
+      }
+    }
+  }
+}
+
+// Medium Breakpoint
+@media (min-width: $screen-md-min) {
+  .reports-result-section {
+    // override sm breakpoint styles
+  }
+}
+
+// Large Breakpoint
+@media (min-width: $screen-lg-min) {
+  .reports-result-section {
+    // override md breakpoint styles
+  }
+}

@@ -1,0 +1,87 @@
+/*
+ * Component: TopAnalysts
+ */
+
+@import '../../../styles/variables';
+
+// (IMPORTANT: please create the styles such that the larger breakpoints
+// override the smaller ones. "Mobile First")
+
+.top-analysts {
+  display: inline-block;
+  position: relative;
+  text-align: left;
+  padding: 20px 27px 0 25px;
+  width: 100%;
+  &.two-column {
+    .analyst-selection {
+      display: inline-block;
+      width: 48%;
+      margin-right: 2%;
+    }
+  }
+  &.three-column {
+    .analyst-selection {
+      display: inline-block;
+      width: 32%;
+      margin-right: 1.33%;
+    }
+  }
+}
+
+.analysts-result-wrapper.corp-site {
+  .top-analysts {
+    width: 100%;
+    padding-left: 31px;
+  }
+}
+
+// Small Breakpoint
+@media (max-width: $screen-md-min) {
+  .top-analysts {
+    padding: 0px 27px 0 38px;
+    margin-top: 20px;
+    &.two-column, &.three-column {
+      .analyst-selection {
+        width: 100%;
+      }
+    }
+  }
+  .analysts-result-wrapper.corp-site {
+    .top-analysts {
+      padding-left: 31px;
+    }
+  }
+}
+
+// Medium Breakpoint
+@media (max-width: $screen-sm) {
+  .top-analysts {
+    margin-top: 14px;
+    padding: 0px 15px;
+    // override sm breakpoint styles
+  }
+}
+
+// Small Breakpoint
+@media (max-width: $screen-xs-min) {
+  .top-analysts {
+    margin-top: 0;
+    padding: 0px 15px;
+    &.two-column, &.three-column {
+      .analyst-selection {
+        width: 100%;
+        .analyst-name {
+          width: calc(100% - 90px)
+        }
+      }
+    }
+  }
+}
+
+// Large Breakpoint
+@media (max-width: $screen-lg-min) {
+  .top-analysts {
+    // override md breakpoint styles
+  }
+}

@@ -1,0 +1,474 @@
+/*
+ * Component: PublicationSearchResult
+ */
+
+@import '../../../styles/variables';
+
+// (IMPORTANT: please create the styles such that the larger breakpoints
+// override the smaller ones. "Mobile First")
+
+.right-layout.loader-container {
+  position: relative;
+  height: 750px;
+}
+
+.publication-search-result {
+  top: -31px;
+  position: relative;
+  padding: 15px;
+  text-align: left;
+  padding-right: 0;
+  .no-results-found {
+    margin-top: 15%;
+    text-align: center;
+  }
+  .ui.button.filter-btn {
+    display: none;
+  }
+  .loader-container {
+    .ui.active.loader {
+      position: absolute;
+      top: 15%;
+      left: 30%;
+    }
+  }
+  .title-bar {
+    background-color: $primaryBlue;
+    color: $primaryWhite;
+    border-radius: 5px 5px 0px 0px;
+    margin-top: 15px;
+    height: 40px;
+    .ui.button {
+      @include appDefaultFontStyleRegular();
+      font-size: 1em;
+      padding: 0;
+      line-height: 14px;
+      height: 40px;
+    }
+    .user-pref {
+      text-align: right;
+      padding-right: 45px;
+    }
+  }
+  .list>.item {
+    border-left: solid 1px $borderGray;
+    border-right: solid 1px $borderGray;
+  }
+  .result-cards {
+    // border-left: solid 1px $borderGray;
+    // border-right: solid 1px $borderGray;
+    &.ui.list {
+      .item {
+        padding: 0px;
+        .event-card {
+          .left {
+            .event-details {
+              .blue-bookmark.ui.button {
+                margin: 0px;
+                margin-left: 18%;
+                background-size: 15px !important;
+                background-position-x: 0px;
+                background-position-y: 1px;
+                padding: 0px;
+                height: 23px;
+                width: 16px;
+                vertical-align: middle;
+              }
+            }
+          }
+        }
+      }
+    }
+    &.expand-false {
+      .author-profile-pic,
+      .subject-details,
+      .ui.image.subject-blurred-image {
+        display: none;
+      }
+      .publication-card-small {
+        .left {
+          .result-column.author {
+            .ui.container.analysts-name {
+              .retail-consumer-team-card {
+                line-height: 1;
+              }
+            }
+          }
+        }
+      }
+    }
+    &.expand-true {
+      .author-profile-pic,
+      .subject-details,
+      .ui.image.subject-blurred-image {
+        display: block;
+      }
+      .publication-card-small {
+        .left {
+          .result-column.subject {
+            &.videocasts {
+              .subject-details {
+                display: none;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .search-summary {
+    color: $lightGray;
+    @include appDefaultFontStyleRegular();
+    padding-left: 5px;
+  }
+  .search-result-count {
+    @include appDefaultFontStyleLight();
+    position: absolute;
+    top: 0;
+  }
+
+  .ui.list {
+    margin: 0;
+    //padding: 15px 0;
+  }
+  .mobile-view{
+    display: none;
+  }
+  .title-bar {
+    .result-column {
+      display: inline-block;
+      padding: 0 10px;
+      .ui.button.btn-text-color {
+        color: $primaryWhite;
+        outline: none; //Added
+        .underline {
+          border-bottom: solid 1px $primaryWhite;
+        }
+      }
+      i {
+        padding-left: 2px;
+        margin: 0 !important;
+      }
+      &.date,
+      &.ticker {
+        width: 14%;
+        text-align: left;
+      }
+      &.author {
+        width: 18%;
+        text-align: center;
+        position: relative;
+        span {
+          margin-left: 5px;
+        }
+        img {
+          height: 80px;
+          width: 80px;
+          margin: auto;
+        }
+      }
+      &.subject {
+        width: 29%;
+        text-align: left;
+        .ui.heading {
+          color: $headingBlue;
+          &.subject-details {
+            color: $hardBlack;
+            @include appDefaultFontStyleLight();
+          }
+        }
+      }
+      &.user-pref {
+        width: 25%;
+        text-align: right !important;
+        padding-left: 10px;
+        .ui.button {
+          padding: 10px 0px;
+          margin-right: 0px;
+          i {
+            margin-right: 0px;
+          }
+        }
+      }
+      .subject-details {
+        font-size: $deskSzSmaller;
+      }
+    }
+  }
+  .search-result-count {
+    text-align: left;
+  }
+  #srp-view-more {
+    text-align:center;
+    margin-top: 20px;
+    border: none;
+  }
+  .ui.button {
+    i.showMoreLessIcon.angle {
+      font-size: 24px;
+      height: 18px;
+      vertical-align: middle;
+    }
+  }
+}
+
+@media (max-width: $screen-tab) {
+  .publication-search-result {
+    #srp-view-more {
+      margin-bottom: 60px;
+    }
+    .title-bar {
+      .result-column {
+        padding: 0 10px;
+        &.user-pref {
+          // text-align: left;
+          padding: 0px;
+          padding-right: 7px;
+          width: 24%;
+          i {
+            padding: 0px;
+            margin: 0px !important;
+          }
+        }
+
+      }
+    }
+    .loader-container {
+      .ui.active.loader {
+        left: -10%;
+      }
+    }
+    .publication-card-small {
+      .result-column {
+        &.user-pref {
+          width: 24%;
+        }
+        &.subject {
+          width: 30%;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: $screen-md) {
+  .publication-search-result {
+    top: 10px;
+    padding: 0 15px 0 0;
+    .desktop-view{
+      display: none;
+    }
+    .search-result-count {
+      top: 25px;
+    }
+    .mobile-view{
+      margin: 0px;
+      padding: 0px;
+      display: block;
+      position: relative;
+      .title-bar {
+        margin-top: 0px;
+        padding: 0 15px;
+        span, .ui.button.sorting-icon-btn {
+          display: inline-block;
+          vertical-align: middle;
+        }
+        .linkBtn {
+          float: right;
+          &.bmo_chevron.bottom {
+            &:before {
+              top: -2px;
+            }
+          }
+        }
+      }
+      .ui.button.sorting-icon-btn {
+        background-color: transparent;
+        padding: 15px;
+      }
+      .options-div {
+        box-shadow: $dropDownOptionBoxShadow;
+        border: solid 1px #c7c7c766;
+        position: absolute;
+        z-index: 1;
+        background-color: $primaryWhite;
+        width: 100%;
+        .ui.list{
+          .item {
+            border-top: 1px solid #c7c7c766;
+            padding: .78571rem 15px !important;
+            .single-option{
+              span {
+                display: inline-block;
+                color: $primaryGray;
+                @include appDefaultFontStyleLight();
+                &.selected-value {
+                  @include appDefaultFontStyleRegular();
+
+                }
+              }
+              .bmo_chevron.tick {
+                display: inline-block;
+                vertical-align: top;
+                &:before {
+                  left: 0.55em;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    .ui.selection.dropdown {
+      color: $primaryWhite;
+      border-color: $primaryBlue;
+      background: $primaryBlue;
+      border-radius: 0px;
+      .menu.transition.visible {
+        border-color: $primaryBlue;
+        border-radius: 0px;
+      }
+    }
+    .search-result-count {
+      top: -27px;
+    }
+    .result-cards {
+      &.expand-false {
+        .publication-card-small {
+          .left {
+            min-height: 86px;
+          }
+        }
+      }
+    }
+  }
+}
+
+// Medium Breakpoint
+@media (max-width: $screen-sm) {
+  .publication-search-result {
+    .ui.button.filter-btn {
+      display: none;
+    }
+    .search-result-count {
+      top: -23px;
+    }
+    .mobile-view {
+      position: relative;
+      margin-top: -10px;
+      .title-bar {
+        padding-left: 15px;
+        margin-top: 0px;
+        .result-column {
+          &.date,
+          &.ticker,
+          &.author {
+            width: 33%;
+            text-align: left;
+          }
+          &.subject {
+            display: none;
+          }
+        }
+      }
+    }
+
+  }
+}
+
+@media (max-width: $screen-xs-sm){
+  .right-layout {
+    min-height: 400px;
+  }
+  .publication-search-result {
+    height: unset;
+    min-height: 86px;
+    top: -32px;
+    padding: 0px;
+    padding-top: 25px;
+    #srp-view-more {
+      margin-bottom: 20px;
+    }
+    .loader-container {
+      .ui.active.loader {
+        left: 50%;
+      }
+    }
+    .search-result-count {
+      top: 20px;
+    }
+    .search-summary {
+      padding-left: 15px;
+      @include appDefaultFontStyleMedium();
+      .result-count {
+        @include appDefaultFontStyleRegular();
+      }
+    }
+    .title-bar {
+      border-radius: 0px 0px 0px 0px;
+      &.desktop-view{
+        display: none;
+      }
+      &.mobile-view{
+        margin: 0px;
+        padding: 0px;
+        display: block;
+      }
+      .ui.selection.dropdown {
+        border-color: $primaryBlue;
+        background: $primaryBlue;
+        border-radius: 0px;
+        .menu.transition.visible {
+          border-color: $primaryBlue;
+          border-radius: 0px;
+        }
+      }
+    }
+    padding-top: 14px;
+    .filter-btn {
+      position: relative;
+      top: -22px;
+      &.bmo_chevron::before {
+        color: $primaryBlue;
+        height: 0.50em;
+        left: 0.25em !important;
+        top: 0.25em;
+        width: 0.5em;
+      }
+      &.ui.button {
+        display: block;
+        padding-left: 76px;
+        padding-top: 7px;
+        top: -25px;
+        font-size: $deskSz7;
+      }
+    }
+    .ui.button.filter-btn.overlay {
+      top: -250px;
+    }
+    .result-cards {
+      &.expand-false {
+        .publication-card-small {
+          .left {
+            min-height: 86px;
+          }
+        }
+      }
+    }
+  }
+}
+
+// Large Breakpoint
+@media (max-width: $screen-lg-min) {
+  .publication-search-result {
+    .title-bar {
+      .result-column {
+        &.user-pref {
+          text-align: left;
+          padding: 0px;
+          padding-right: 5px;
+        }
+      }
+    }
+  }
+}

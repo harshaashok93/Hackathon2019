@@ -1,0 +1,50 @@
+.ui.form {
+  .ui.input {
+    input {
+      border-radius: 5px;
+      background-color: $borderGray;
+      border: none;
+      color: $primaryGray;
+      &:focus {
+        @include boxShadow(0, 0, 0, 1px, rgba(34, 36, 38, 0.15));
+        background-color: transparent;
+        outline: none;
+      }
+    }
+  }
+}
+
+.ui.input {
+  input {
+    border-radius: 5px;
+    background-color: $borderGray;
+    border: none;
+    &:focus {
+      @include boxShadow(0, 0, 0, 1px, rgba(34, 36, 38, 0.15));
+      background-color: transparent;
+      outline: none;
+    }
+  }
+}
+.ui.label.input-label {
+  background: none;
+  font-size: $deskSz9;
+
+  line-height: 1em;
+  text-align: left;
+  color: $primaryGray;
+  padding-left: 0px;
+  margin-left: 0px;
+  &.error {
+    color: $secondaryRed;
+  }
+}
+
+.ui.search.selection.dropdown > input.search {
+  padding-left: 0;
+}
+
+
+*.right-table-align {
+  text-align: right !important;
+}

@@ -1,0 +1,18 @@
+.ui.heading {
+  color: $primaryBlue; 
+}
+
+h2 {
+  &.ui.heading {
+    font-size: $deskSz6;
+    
+    @include appDefaultFontStyleMedium();
+  }
+}
+
+h3 {
+  &.ui.heading {
+    font-size: $deskSz9;
+    
+  }
+}

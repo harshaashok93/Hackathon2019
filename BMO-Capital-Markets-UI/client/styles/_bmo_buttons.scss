@@ -1,0 +1,64 @@
+.ui.button {
+  font-size: $deskSz8;
+  @include appDefaultFontStyleRegular();
+  &.ariaHiddenBtn {
+    display: none;
+  }
+  &.primary {
+    background-color: $primaryBlue;
+    color: $primaryWhite;
+    border-radius: $deskSz9;
+    min-width: 170px !important;
+    height: 45px !important;
+  }
+  &.secondary {
+    padding: 10px;
+    background-color: $primaryWhite;
+    color: $primaryBlue;
+    border-radius: 50rem;
+    min-width: 170px !important;
+    height: 45px !important;
+    line-height: 1.25 !important;
+    @include boxShadow(0, 0, 0, 1px, $primaryBlue);
+    border: solid 1px $primaryBlue;
+    &:hover, &:focus {
+      background-color: $primaryWhite;
+      color: $primaryBlue;
+      @include boxShadow(0, 0, 0, 1px, $primaryBlue);
+      @include appDefaultFontStyleMedium();
+      @include transition(0.5s ease-in-out);
+    }
+    &:active, &.activeState {
+      background-color: $primaryBlue;
+      color: $primaryWhite;
+    }
+  }
+  &.linkBtn {
+    color: $primaryBlue;
+    background-color: transparent;
+    border: none;
+    font-size: $deskSz9;
+  }
+  &.disabled {
+    border-radius: $deskSz9;
+    background-color: $borderGray;
+    color: $fieldGray;
+  }
+  &.icon {
+    color: $primaryWhite;
+    background-color: transparent;
+    border: none;
+    margin-right: 0px;
+  }
+
+  &:focus {
+    outline: none;
+  }
+  &:hover {
+    outline: none;
+    text-decoration: none;
+  }
+&:active {
+    outline: none;
+  }
+}

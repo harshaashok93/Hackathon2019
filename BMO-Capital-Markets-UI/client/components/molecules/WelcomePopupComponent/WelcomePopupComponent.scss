@@ -1,0 +1,228 @@
+/*
+ * Component: WelcomeScreen
+ */
+
+@import '../../../styles/variables';
+
+// (IMPORTANT: please create the styles such that the larger breakpoints
+// override the smaller ones. "Mobile First")
+
+.welcome-screen-modal {
+  &.ui.modal {
+    width: 785px;
+    height: 610px;
+    position: relative;
+    margin: 0 auto;
+    left: 0;
+  }
+  .content {
+    padding: 0 !important;
+    position: relative;
+    height: 100%;
+  }
+  .slick-initialized.slick-slider {
+    overflow: hidden;
+    .slick-track {
+      position: relative;
+      top: 0;
+      left: 0;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+
+      .slick-slide {
+        float: left;
+        height: 100%;
+        min-height: 1px;
+      }
+    }
+    button {
+      &.slick-prev,
+      &.slick-next {
+        position: absolute;
+        z-index: 99;
+        border: none;
+        background: transparent;
+        color: red;
+        font-size: 0;
+        outline: none;
+        bottom: 0;
+        height: 40px;
+      }
+      &.slick-prev {
+        left: 40%;
+        &.slick-disabled{
+          &::before {
+            content: "";
+            background: url(/assets/images/group.png);
+            @include transform(rotate(0deg));
+            background-repeat: no-repeat;
+            background-size: 12px;
+            cursor: no-drop;
+            top: 5px;
+            left: 0
+          }
+        }
+        &::before {
+          content: "";
+          background: url(/assets/images/blue-angle.png);
+          background-repeat: no-repeat;
+          background-size: contain;
+          width: 20px;
+          height: 36px;
+          position: absolute;
+          left: -25px;
+          right: 0;
+          display: block;
+          margin: 0 auto;
+          top: -2px;
+          bottom: 0;
+          @include transform(rotate(90deg));
+        }
+      }
+      &.slick-next {
+        right: 40%;
+        &.slick-disabled{
+          &::before {
+            content: "";
+            background: url(/assets/images/group.png);
+            @include transform(rotate(180deg));
+            background-repeat: no-repeat;
+            background-size: 12px;
+            cursor: no-drop;
+            top: -10px;
+            left: -10px;
+          }
+        }
+        &::before {
+          content: "";
+          background: url(/assets/images/blue-angle.png);
+          background-repeat: no-repeat;
+          background-size: contain;
+          width: 20px;
+          height: 36px;
+          position: absolute;
+          left: 10px;
+          right: 0;
+          display: block;
+          margin: 0 auto;
+          top: -3px;
+          bottom: 0;
+          @include transform(rotate(-90deg));
+        }
+      }
+    }
+  }
+
+  .welcome-screen-close {
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    right: 0;
+    position: absolute;
+    z-index: 1000;
+    background: #fff;
+    .ui.button.bmo-close-btn {
+      padding: 0;
+      margin: 0;
+      width: 20px;
+      height: 50px;
+      background-position-y: center;
+    }
+  }
+  .imageContainer {
+    height: 390px;
+    img.mobile {
+      display: none;
+    }
+    img {
+      margin: 0 auto;
+      max-height: 100%;
+    }
+  }
+  .textContainer {
+    margin: 0 70px;
+    margin-top: 20px;
+    color: $primaryGray;
+    .titleContainer {
+      font-size: $deskSz3;
+      @include appDefaultFontStyleMedium();
+      margin-bottom: 12px;
+    }
+    .descriptionContainer {
+      font-size: $deskSz9;
+      @include appDefaultFontStyleRegular();
+      line-height: 1.5;
+      letter-spacing: normal;
+      text-align: justify;
+      min-height: 80px;
+    }
+  }
+}
+.welcome-screen {
+  // ...
+}
+
+// Small Breakpoint
+@media (max-width: $screen-sm) {
+  .ui.page.modals.dimmer {
+    .ui.modal.welcome-screen-modal {
+      border-radius: 0px;
+      width: 100%;
+      height: 582px;
+      border-radius: 0px;
+      margin-top: 10% !important;
+      top: 0;
+      left: 0;
+      margin: 0;
+    }
+  }
+}
+
+// Small Breakpoint
+@media (max-width: $screen-xs-sm) {
+  .ui.page.modals.dimmer {
+    .ui.modal.welcome-screen-modal {
+      height: auto;
+      margin-bottom: 0 !important;
+      margin-top: 0 !important;
+      min-height: 100%;
+      .content {
+        padding: 0 !important;
+      }
+    }
+    .imageContainer {
+      img.desktop {
+        display: none;
+      }
+      img.mobile {
+        display: block !important;
+      }
+      height: 258px;
+    }
+    .textContainer {
+      margin: 0 16px;
+      margin-top: 20px;
+      .titleContainer {
+        line-height: 1.44;
+      }
+      .descriptionContainer {
+        height: 180px;
+      }
+    }
+  }
+}
+
+// Medium Breakpoint
+@media (min-width: $screen-md-min) {
+  .welcome-screen {
+    // override sm breakpoint styles
+  }
+}
+
+// Large Breakpoint
+@media (min-width: $screen-lg-min) {
+  .welcome-screen {
+    // override md breakpoint styles
+  }
+}

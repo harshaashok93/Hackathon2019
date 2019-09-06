@@ -1,0 +1,92 @@
+/*
+ * Component: FooterLink
+ */
+
+@import '../../../styles/variables';
+
+// (IMPORTANT: please create the styles such that the larger breakpoints
+// override the smaller ones. "Mobile First")
+.auth-modal-not-logged-footer{
+  &.ui.right.center.popup::before,
+  &.ui.left.center.popup::before {
+    width: 0;
+    height: 0;
+    border-left: 12px solid transparent;
+    border-right: 12px solid transparent;
+    border-bottom: 24px solid $primaryWhite;
+    content: '';
+    top: 41%;
+    position: absolute;
+    left: -12px;
+    overflow-y: unset;
+    z-index: -1;
+  }
+}
+.auth-modal-not-logged {
+  .close-button-bar {
+    text-align: right;
+    .ui.button.bmo-close-btn {
+      margin: 0;
+      padding: 0px;
+      height: 22px;
+      width: 20px;
+      vertical-align: middle;
+      background-position: center;
+    }
+  }
+}
+@media (max-width: $screen-xs-min) {
+  .auth-modal-not-logged-footer{
+    left: 0 !important;
+    margin-top: 72px !important;
+  }
+}
+.footer-link {
+  cursor: pointer;
+  @include appDefaultFontStyleLight();
+  padding-top: 7px;
+  .auth-modal-not-logged {
+    min-width: 280px;
+    min-height: 100px;
+    background-color: $primaryWhite;
+    padding: 10px;
+    box-shadow: $leftLayoutBoxshadow;
+    .ui.button.not-logged-modal-close-footer.bmo-close-btn {
+      float: right;
+      padding-right: 0;
+    }
+  }
+  &:hover {
+    @include boxShadow(0, 1px, 0, 0, $primaryWhite);
+  }
+}
+
+// Small Breakpoint
+@media (max-width: $screen-xs) {
+  .footer-link {
+    .bmo-pop-up {
+      display: block;
+      left: 5px !important;
+    }
+  }
+}
+
+@media (max-width: $screen-sm) {
+  .footer-link .bmo-pop-up {
+    display: block;
+  }
+}
+
+// Medium Breakpoint
+@media (min-width: $screen-md-min) {
+  .footer-link {
+    // override sm breakpoint styles
+  }
+}
+
+// Large Breakpoint
+@media (min-width: $screen-lg-min) {
+  .footer-link {
+    // override md breakpoint styles
+  }
+}

@@ -1,0 +1,571 @@
+/*
+ * Component: PublicationCardSmall
+ */
+
+@import '../../../styles/variables';
+
+// (IMPORTANT: please create the styles such that the larger breakpoints
+// override the smaller ones. "Mobile First")
+
+
+.ui.bottom.center.popup
+{
+  &.retail-consumer-card {
+    &::before {
+      box-shadow: 1px 1px 0px $popupGreyBorder !important;
+      top: 47% !important;
+      left: 0px;
+      right: auto;
+      bottom: auto;
+      width: 0px;
+      height: 0px;
+      background: white;
+      border-bottom: 10px solid transparent;
+      border-right: 10px solid #fff;
+      transform: rotate(135deg);
+      z-index: 2;
+    }
+  }
+}
+.ui.popup {
+  &.retail-consumer-card {
+    z-index: 99;
+    &::before {
+      box-shadow: 1px 1px 0px $popupGreyBorder !important;
+      top: 50% !important;
+      left: -5px;
+      background: white;
+      right: auto;
+      bottom: auto;
+      width: 0;
+      height: 0;
+      border-bottom: 10px solid transparent;
+      border-right: 10px solid #fff;
+      transform: rotate(135deg);
+      z-index: 2;
+    }
+  }
+  &.consumer-popup {
+    &::before {
+      top: 42%;
+    }
+  }
+}
+
+.publication-card-small {
+  width: 100%;
+  border-bottom: solid 1px $borderGray;
+  padding: 10px 0px;
+  position: relative;
+
+  &.ui.list > .item {
+    padding-bottom: 20px;
+  }
+  .right {
+    display: none;
+  }
+  .left {
+    width: 100%;
+    vertical-align: middle;
+    min-height: 46px;
+    .triangle-mobile {
+      display: none;
+    }
+  }
+  .ui.list > .item > .image.analyst-profile-image{
+    vertical-align: middle;
+  }
+  a.result-column {
+    &.ticker {
+      color: $primaryBlue;
+    }
+  }
+  .result-column {
+    font-size: $deskSz9;
+    @include appDefaultFontStyleRegular();
+    text-align: left;
+    padding: 0 10px;
+    display: inline-block;
+    &.date {
+      width: 14%;
+      color: $primaryGray;
+    }
+    .triangle {
+      z-index: 999;
+    }
+    &.ticker {
+      width: 14%;
+      text-align: left;
+      display: inline-block;
+      color: $primaryGray;
+      vertical-align: middle;
+    }
+    &.author {
+      margin: 0;
+      padding: 0;
+      .analysts-name.bmopopup-analyst-hover {
+        display: inline-block;
+      }
+    }
+    .mobile-view-author-name {
+      display: none;
+    }
+    &.author {
+      width: 18%;
+      vertical-align: middle;
+      text-align: center;
+      .analyst-or-team {
+        display: inline-block;
+        padding: 5px;
+        position: relative;
+        cursor: pointer;
+        &.nohover {
+          cursor: auto;
+        }
+      }
+    }
+    &.author, .author-name {
+      position: relative;
+      color: $primaryBlue;
+      padding: 0px;
+      .ui.image.author-profile-pic {
+        width: 80px;
+        height: 80px;
+        margin: auto;
+        margin-bottom: 12px;
+        position: inherit;
+      }
+      .team-name {
+        text-align: center;
+        color: $primaryBlue;
+        width: 67.7px;
+        margin: auto;
+      }
+    }
+    .author-name {
+      text-align: center;
+    }
+    &.subject {
+      width: 34%;
+      vertical-align: middle;
+      word-break: break-word;
+      -ms-word-break: break-word;
+      .subject-heading {
+        .richText {
+          color: $primaryBlue;
+          font-size: 1em;
+          line-height: 1.35em;
+          span {
+            padding-left: 3px;
+            @include appDefaultFontStyleLight();
+          }
+        }
+      }
+      .videocast-play-icon {
+        padding-top: 20px;
+        padding-bottom: 20px;
+        .ui.button.play-icon {
+          padding: 10px;
+          .right {
+            display: inline-block;
+          }
+        }
+        &.grey-icon {
+          .ui.button.play-icon {
+            position: relative;
+            color: $oddGray;
+            box-shadow: 0 0 0 1px $oddGray;
+            border: solid 1px $oddGray !important;
+            &:hover, &:focus {
+              background-color: $primaryWhite;
+              color: $oddGray;
+              font-weight: 400 !important;
+            }
+          }
+        }
+      }
+
+    }
+    &.user-pref {
+      width: 19%;
+      padding: 0 5px;
+      height: 25px;
+      padding-top: 15px;
+      text-align: right;
+      a {
+        display: inline-block;
+        text-align: left;
+        vertical-align: top;
+        margin-bottom: 20px;
+        .pdf-size {
+          font-size: $deskSzSmaller;
+          color: $inputTextGray;
+          padding-top: 3px;
+        }
+      }
+      .user-pref-icon {
+        position: relative;
+        &.pdf-image {
+          background-size: 23px !important;
+          background-position-x: -1px;
+          height: 25px;
+          width: 21px;
+          cursor: pointer;
+          margin-left: auto;
+          vertical-align: middle;
+          border-radius: 0px;
+        }
+        &.Podcast{
+          height: 30px;
+          width: 25px;
+          background-position: center;
+          margin-left: auto;
+          vertical-align: middle;
+          border-radius: 0px;
+        }
+        &.Videocast{
+          background-size: initial;
+          height: 17px;
+          width: 25px;
+          vertical-align: middle;
+          border-radius: 0px;
+        }
+        &.play-icon {
+          left: 7px;
+          top: -4px;
+          i {
+            transform: rotate(-90deg);
+            width: 20px;
+            margin-top: 0px;
+            font-size: $deskSz2;
+          }
+        }
+        &.eye-icon {
+          margin: 0 10%;
+          background-size: 29px !important;
+          padding: 0px;
+          height: 21px;
+          width: 29px;
+          vertical-align: middle;
+          background-position: center;
+          &.shift-right {
+            margin: 0 0 0 10%;
+          }
+        }
+        &.lock-icon {
+          margin: 0;
+          padding: 0px;
+          height: 29px;
+          width: 20px;
+          vertical-align: middle;
+          background-position: center;
+        }
+        &.bookmark-icon {
+          // previous value - background-size: 23px !important; background-position-x: -3px !important;background-position-y: -4px;
+          padding: 0px;
+          margin: 0px;
+          border-radius: 0px;
+          background-size: 16px !important;
+          background-position-x: 0px;
+          background-position-y: 1px;
+          padding: 0px;
+          height: 23px;
+          width: 16px;
+          vertical-align: middle;
+          &.selected {
+            background-size: 16px !important;
+          }
+        }
+        &.lock-icon-shift-left {
+          margin-left: 14% !important;
+        }
+        &.brand-icon-shift-left {
+          margin-left: calc(20% + 20px) !important;
+          &.shift-left-lockicon.lock-icon {
+            margin-left: calc(20% + 25px) !important;
+          }
+        }
+        margin: 0 2px;
+        height: auto;
+        display: inline-block;
+        float: unset;
+      }
+      .triangle-image {
+        display: inline-block;
+        vertical-align: top;
+        text-align: center;
+        margin-right: -15px;
+        min-width: 54px;
+        .ui.image.brand-triangle-licon {
+          width: 24px;
+          height: 24px;
+          display: inline-block;
+        }
+        .brand-text {
+          font-size: $deskSzSmaller;
+        }
+      }
+    }
+    .subject-details {
+      &.ui.heading {
+        font-size: $deskSz9;
+        @include appDefaultFontStyleRegular();
+        margin-top: 10px;
+      }
+      .richText {
+        font-size: $deskSzSmaller;
+        color: $primaryGray;
+        word-wrap: break-word;
+      }
+    }
+  }
+}
+
+@media (max-width: $screen-tab) {
+  .publication-card-small {
+    .result-column {
+      padding: 0 10px;
+      &.user-pref {
+        padding: 0px;
+        padding-right: 5px;
+        text-align: right;
+      }
+    }
+  }
+}
+// @media (min-width: $screen-tab) {
+//   .publication-card-small {
+//     .result-column {
+//       &.user-pref {
+//         width: 24%;
+//       }
+//     }
+//   }
+// }
+
+
+// Medium Breakpoint
+@media (max-width: $screen-md-min) {
+  .ui.popup.retail-consumer-card{
+    display: none !important;
+  }
+
+  .publication-card-small {
+    min-height: 86px !important;
+    .left {
+      width: 88%;
+      position: relative;
+      display: inline-block;
+    }
+    .right {
+      width: 12%;
+      position: relative;
+      text-align: right;
+      padding-right: 20px;
+      display: inline-block;
+      vertical-align: middle;
+      .linkBtn {
+        padding: 0px;
+        &.eye-inactive {
+          height: 18px;
+          width: 30px;
+          top: 50%;
+          position: relative;
+          margin-right: 0;
+        }
+      }
+      .plus-icon {
+        width: 30px;
+        height: auto;
+      }
+      .ui.button.lock-icon {
+        margin: 5px;
+        padding: 0px;
+        height: 29px;
+        width: 20px;
+        vertical-align: middle;
+        background-position: center;
+      }
+    }
+    .result-column {
+      padding: 0 15px;
+
+      &.date {
+        width: 30%;
+        display: inline-block;
+      }
+      &.ticker {
+        width: 30%;
+        display: inline-block;
+      }
+      &.author {
+        width: 30%;
+        display: inline-block;
+        text-align: center;
+        .mobile-view-author-name {
+          display: block;
+          width: 100%;
+          word-break: break-all;
+          line-height: inherit;
+        }
+        .author-name {
+          display: none;
+          width: 107.7px;
+        }
+      }
+      &.triangle-mobile {
+        width: 10%;
+        display: inline-block;
+        vertical-align: middle;
+        text-align: center;
+        padding: 0px;
+        .ui.image.brand-triangle-licon {
+          width: 22px;
+          height: auto;
+          display: inline-block;
+        }
+        .brand-text {
+          font-size: $deskSzSmaller;
+          display: inline-block;
+        }
+      }
+      &.subject {
+        width: 100% !important;
+        // padding-top: 15px;
+        display: inline-block;
+
+        .videocast-play-icon {
+          display: none;
+        }
+      }
+    }
+    .result-column.author {
+      .ui.image.author-profile-pic {
+        display: none;
+      }
+    }
+    .result-column.subject {
+      .ui.heading.subject-details, .subject-blurred-image {
+        display: none !important;
+      }
+    }
+    .result-column.user-pref {
+      display: none;
+    }
+  }
+}
+
+// @media (min-width: $screen-md-min) and (orientation: landscape) {
+//   .publication-card-small {
+//     .result-column {
+//       &.subject {
+//         padding-top: 12px;
+//         display: block;
+//       }
+//     }
+//   }
+// }
+
+@media (max-width: $screen-xs-min) and (orientation: landscape) {
+  .publication-card-small {
+    .result-column {
+      &.subject {
+        padding-top: 0px;
+        display: block;
+      }
+    }
+  }
+}
+
+@media (max-width: $screen-xs) {
+  .ui.popup.retail-consumer-card{
+    display: none !important;
+  }
+
+  .publication-card-small {
+    .left {
+      width: 85%;
+      padding-left: 15px;
+      height: auto;
+      min-height: 86px;
+    }
+    .right {
+      width: 15%;
+      padding-right: 13px;
+      vertical-align: middle;
+      .lock-icon.ui.button {
+        background-position: center;
+      }
+      .eye-inactive.ui.button {
+        vertical-align: middle;
+      }
+    }
+    .result-column {
+      font-size: $deskSzSmaller;
+      padding-top: 12px;
+      padding: 0px 0px;
+      &.date {
+        padding-top: 0;
+        width: 30% !important;
+      }
+      &.ticker {
+        width: 35% !important;
+        margin-left: 0 !important;
+        text-align: center;
+        padding: 0 3px;
+        &.ui.container {
+          margin-right: 0px !important;
+        }
+      }
+      &.author {
+        width: 30% !important;
+        word-break: break-all;
+        padding: 0px;
+        .analyst-or-team {
+          padding: 0px;
+          .ui.container.analysts-name {
+            line-height: inherit !important;
+            margin-left: 0px !important;
+            height: 100% !important;
+          }
+        }
+      }
+      &.triangle-mobile {
+        display: none;
+      }
+      .author-name {
+        color: $primaryGray;
+      }
+      .mobile-author-name {
+        text-align: center;
+        margin-left: 10px;
+      }
+      &.author {
+        width: 100%;
+        .team-name {
+          color: $primaryGray;
+          width: 100%;
+          padding-left: 15px;
+          text-align: left;
+        }
+        .ui.container.mobile-view-author-name {
+          display: block;
+          margin-left: 0px !important;
+        }
+        .author-name {
+          display: none;
+        }
+      }
+      &.subject {
+        padding-top: 15px;
+      }
+    }
+  }
+}
+
+// Large Breakpoint
+@media (min-width: $screen-lg-min) {
+  .publication-card-small {
+    // override md breakpoint styles
+  }
+}

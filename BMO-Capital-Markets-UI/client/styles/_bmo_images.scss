@@ -1,0 +1,720 @@
+/* @1x Images (Pixel Ratio 1.0) */
+.up-arrow,
+.down-arrow,
+.blue-bookmark,
+.white-bookmark,
+.bmo-close-btn,
+.blue-play-icon,
+.circle-link,
+.circle-link-white,
+.eye-active,
+.eye-inactive,
+.follow-contact,
+.footer-contact,
+.grey-dots,
+.mail-icon,
+.bmo-search-icon,
+.forgot-mail-icon,
+.forgot-phone-icon,
+.download-report,
+.bg-icon-props,
+.blue-angle-icon,
+.admin-accounts-icon,
+.admin-event-calendar-icon,
+.admin-event-requests-icon,
+.admin-search-defaults-icon,
+.quant-icons,
+.external-link-icon,
+.close-white-icon,
+.blue-circle-back-icon,
+.link-icon,
+.unlink-icon,
+.unlink-disable-icon,
+.Podcast,
+.Videocast,
+.lock-icon,
+.analyst-filter-close-btn {
+  background-size: contain !important;
+  // background-image:url($publicImagePath+'/sector_Icons/Energy_Selected.png')!important;
+  background-repeat: no-repeat !important;
+  background-color: transparent !important;
+}
+.quant-icons {
+  background-size: 85px 85px !important;
+  background-color: transparent !important;
+  background-position-x: 7px !important;
+  background-position-y: 7px !important;
+  z-index: -1;
+  position: relative;
+}
+.admin-sub-page-link {
+  .admin-accounts-icon {
+    background-image:url($publicImagePath+'/admin-icon/Accounts.png')!important;
+  }
+  .admin-event-requests-icon {
+    background-image:url($publicImagePath+'/admin-icon/Event_Requests.png')!important;
+  }
+  .admin-search-defaults-icon {
+    background-image:url($publicImagePath+'/admin-icon/Search_Defaults.png')!important;
+  }
+  .admin-event-calendar-icon {
+    background-image:url($publicImagePath+'/admin-icon/Event_Calendar.png')!important;
+  }
+  &.active {
+    .admin-accounts-icon {
+      background-image:url($publicImagePath+'/admin-icon/Accounts_Selected.png')!important;
+    }
+    .admin-event-requests-icon {
+      background-image:url($publicImagePath+'/admin-icon/Event_Requests_Selected.png')!important;
+    }
+    .admin-search-defaults-icon {
+      background-image:url($publicImagePath+'/admin-icon/Search_Defaults_Selected.png')!important;
+    }
+    .admin-event-calendar-icon {
+      background-image:url($publicImagePath+'/admin-icon/Event_Calendar_Selected.png')!important;
+    }
+  }
+}
+
+
+.up-arrow {
+  height: 10px;
+  width: 10px;
+  display: inline-block;
+  transform: rotate(180deg);
+  background-image:url($publicImagePath+'/Chart_Arrow@3x.png')!important;
+  background-position: center;
+}
+.down-arrow {
+  height: 10px;
+  width: 10px;
+  display: inline-block;
+  background-image:url($publicImagePath+'/Chart_Arrow@3x.png')!important;
+  background-position: center;
+}
+
+.quant-Energy {
+  background-image:url($publicImagePath+'/sector_Icons/Energy_Selected.png')!important;
+  &.selected {
+    background-image:url($publicImagePath+'/sector_Icons/Energy_Default.png')!important;
+  }
+}
+
+.quant-ConsumerStaples {
+  background-image:url($publicImagePath+'/sector_Icons/ConsumerStaples_Selected.png')!important;
+  &.selected {
+    background-image:url($publicImagePath+'/sector_Icons/ConsumerStaples_Default.png')!important;
+  }
+}
+
+.quant-ConsumerDiscretionary {
+  background-image:url($publicImagePath+'/sector_Icons/ConsumerDiscretionary_Selected.png')!important;
+  &.selected {
+    background-image:url($publicImagePath+'/sector_Icons/ConsumerDiscretionary_Default.png')!important;
+  }
+}
+
+.quant-TelecommunicationsServices {
+  background-image:url($publicImagePath+'/sector_Icons/TelecomServices_Selected.png')!important;
+  &.selected {
+    background-image:url($publicImagePath+'/sector_Icons/TelecomServices_Default.png')!important;
+  }
+}
+
+.quant-CommunicationServices {
+  background-image:url($publicImagePath+'/sector_Icons/TelecomServices_Selected.png')!important;
+  &.selected {
+    background-image:url($publicImagePath+'/sector_Icons/TelecomServices_Default.png')!important;
+  }
+}
+
+.quant-Financials {
+  background-image:url($publicImagePath+'/sector_Icons/Financials_Selected.png')!important;
+  &.selected {
+    background-image:url($publicImagePath+'/sector_Icons/Financials_Default.png')!important;
+  }
+}
+
+.quant-HealthCare {
+  background-image:url($publicImagePath+'/sector_Icons/HealthCare_Selected.png')!important;
+  &.selected {
+    background-image:url($publicImagePath+'/sector_Icons/HealthCare_Default.png')!important;
+  }
+}
+
+.quant-Industrials {
+  background-image:url($publicImagePath+'/sector_Icons/Industrials_Selected.png')!important;
+  &.selected {
+    background-image:url($publicImagePath+'/sector_Icons/Industrials_Default.png')!important;
+  }
+}
+
+.quant-InformationTechnology {
+  background-image:url($publicImagePath+'/sector_Icons/InformationTechnology_Selected.png')!important;
+  &.selected {
+    background-image:url($publicImagePath+'/sector_Icons/InformationTechnology_Default.png')!important;
+  }
+}
+
+.quant-Macro {
+  background-image:url($publicImagePath+'/sector_Icons/Macro_Selected.png')!important;
+  &.selected {
+    background-image:url($publicImagePath+'/sector_Icons/Macro_Default.png')!important;
+  }
+}
+
+.quant-Materials {
+  background-image:url($publicImagePath+'/sector_Icons/Materials_Selected.png')!important;
+  &.selected {
+    background-image:url($publicImagePath+'/sector_Icons/Materials_Default.png')!important;
+  }
+}
+
+.quant-RealEstate {
+  background-image:url($publicImagePath+'/sector_Icons/RealEstate_Selected.png')!important;
+  &.selected {
+    background-image:url($publicImagePath+'/sector_Icons/RealEstate_Default.png')!important;
+  }
+}
+
+.quant-TelecomServices {
+  background-image:url($publicImagePath+'/sector_Icons/TelecomServices_Selected.png')!important;
+  &.selected {
+    background-image:url($publicImagePath+'/sector_Icons/TelecomServices_Default.png')!important;
+  }
+}
+
+.quant-Utilities {
+  background-image:url($publicImagePath+'/sector_Icons/Utilities_Selected.png')!important;
+  &.selected {
+    background-image:url($publicImagePath+'/sector_Icons/Utilities_Default.png')!important;
+  }
+}
+
+.bmo-close-btn {
+  background-image:url($publicImagePath+'/close/path.png') !important;
+}
+
+.analyst-filter-close-btn {
+  background-image:url($publicImagePath+'/analyst-filter-close-icon/path.png') !important;
+}
+
+.bmo-close-white-btn {
+  background-image:url($publicImagePath+'/close-white-icon/white-x.png') !important;
+}
+
+.blue-bookmark {
+  background-image:url($publicImagePath+'/blue-bookmark/book-mark-icon@1x.png') !important;
+  &.selected {
+    background-image:url($publicImagePath+'/blue-bookmark/bookmark_selected.png') !important;
+  }
+}
+
+.white-bookmark {
+  background-image:url($publicImagePath+'/white-bookmark/bookmark-white-icon@1x.png') !important;
+}
+
+.link-icon {
+  background-image:url($publicImagePath+'/admin-link/link-icon.png') !important;
+}
+
+.blue-angle-icon {
+  background-image:url($publicImagePath+'/blue-angle-icon/np-chevron-712701-000000.png') !important;
+}
+
+.blue-play-icon {
+  background-image:url($publicImagePath+'/blue-play-icon/np-play-339192-000000.png') !important;
+}
+.circle-link {
+  background-image:url($publicImagePath+'/circle-link/blue-circle-link-icon@1x.png') !important;
+  &:hover {
+    background-image:url($publicImagePath+'/circle-link/blue-circle-link-icon-solid@1x.png') !important;
+  }
+}
+
+.circle-link-white {
+  background-image:url($publicImagePath+'/circle-link-white/group-4.png') !important;
+}
+
+.eye-active {
+  background-image:url($publicImagePath+'/eye-icon-active/group-10.png') !important;
+}
+
+.eye-inactive {
+  background-image:url($publicImagePath+'/eye-icon-inactive/group-10.png') !important;
+}
+
+.follow-contact {
+  background-image:url($publicImagePath+'/follow-contact/group-5.png') !important;
+  &.selected {
+    background-image:url($publicImagePath+'/follow-contact/Follow_Active.png') !important;
+  }
+}
+
+.footer-contact {
+  background-image:url($publicImagePath+'/footer-contact-icon/group.png') !important;
+}
+
+.grey-dots {
+  background-image:url($publicImagePath+'/grey-dots/np-more-408471-000000.png') !important;
+}
+
+.mail-icon {
+  background-image:url($publicImagePath+'/mail-icon/admin-mail-icon@3x.png') !important;
+}
+
+.mail-icon-disabled {
+  background-image:url($publicImagePath+'/mail-icon/mail-icon-disabled@3x.png') !important;
+}
+
+.bmo-search-icon {
+  background-image:url($publicImagePath+'/search-icon/search-icon-blue@1x.png') !important;
+}
+
+.forgot-mail-icon {
+  background-image:url($publicImagePath+'/forgot-mail-icon/contact-us-mail.png') !important;
+}
+.lock-icon {
+  background-image:url($publicImagePath+'/lock-icon/lock-icon@2x.png') !important;
+}
+.Podcast {
+  background-image:url($publicImagePath+'/podcast/podcast@2x.png') !important;
+}
+.Videocast {
+  background-image:url($publicImagePath+'/videocast/video@2x.png') !important;
+}
+
+.external-link-icon {
+  background-image:url($publicImagePath+'/external-link-icon/external-link@2x.png') !important;
+}
+
+.forgot-phone-icon {
+  background-image:url($publicImagePath+'/forgot-phone-icon/contact-us-phone.png') !important;
+}
+
+.blue-circle-back-icon {
+  background-image:url($publicImagePath+'/blue-circle-back-icon/group-4.png') !important;
+}
+
+.download-report {
+  background-image:url($publicImagePath+'/user-profile/Download.png') !important;
+  &.selected {
+    background-image:url($publicImagePath+'/user-profile/DownloadRequested.png') !important;
+  }
+}
+.user-profile {
+  .bookmarks {
+    background-image:url($publicImagePath+'/user-profile/Bookmarks.png') !important;
+  }
+  .calendar {
+    background-image:url($publicImagePath+'/user-profile/Calendar.png') !important;
+  }
+  .consumption {
+    background-image:url($publicImagePath+'/user-profile/Consumption.png') !important;
+  }
+  .emailAlerts {
+    background-image:url($publicImagePath+'/user-profile/EmailAlerts.png') !important;
+  }
+  .following {
+    background-image:url($publicImagePath+'/user-profile/Following.png') !important;
+  }
+  .publicationPrint {
+    background-image:url($publicImagePath+'/user-profile/Publication_Print@2x.png') !important;
+  }
+  .publicationSearch {
+    background-image:url($publicImagePath+'/user-profile/Publication_Search@2x.png') !important;
+  }
+  .publicationText {
+    background-image:url($publicImagePath+'/user-profile/Publication_Text@2x.png') !important;
+  }
+  &.active {
+    .bookmarks {
+      background-image:url($publicImagePath+'/user-profile/Bookmarks_Selected.png') !important;
+    }
+    .calendar {
+      background-image:url($publicImagePath+'/user-profile/Calendar_Selected.png') !important;
+    }
+    .consumption {
+      background-image:url($publicImagePath+'/user-profile/Consumption_Selected.png') !important;
+    }
+    .emailAlerts {
+      background-image:url($publicImagePath+'/user-profile/EmailAlerts_Selected.png') !important;
+    }
+    .following {
+      background-image:url($publicImagePath+'/user-profile/Following_Selected.png') !important;
+    }
+    .publicationPrint {
+      background-image:url($publicImagePath+'/user-profile/Publication_Print_Active@2x.png') !important;
+    }
+    .publicationSearch {
+      background-image:url($publicImagePath+'/user-profile/Publication_Search_Active@2x.png') !important;
+    }
+    .publicationText {
+      background-image:url($publicImagePath+'/user-profile/Publication_Text_Active@2x.png') !important;
+    }
+  }
+  .whiteChevron {
+    background-image:url($publicImagePath+'/white-chevron/Library_Chevron.png') !important;
+  }
+
+}
+
+.pdf-image {
+  background-image:url($publicImagePath+'/pdf_image/pdf.png') !important;
+  background-size: contain !important;
+  background-repeat: no-repeat !important;
+  background-color: transparent !important;
+}
+
+.unlink-disable-icon {
+  background-image:url($publicImagePath+'/unlink-disable-icon.png') !important;
+}
+
+.unlink-icon {
+  background-image:url($publicImagePath+'/admin-unlink/unlink-icon.png') !important;
+}
+
+/* @2x Images (Pixel Ratio of 1.25+) */
+@media only screen and (-o-min-device-pixel-ratio: 5/4),
+  only screen and (-webkit-min-device-pixel-ratio: 1.25),
+  only screen and (min--moz-device-pixel-ratio: 1.25),
+  only screen and (min-device-pixel-ratio: 1.25),
+  only screen and (min-resolution: 1.25dppx) {
+    .bmo-close-btn {
+      background-image:url($publicImagePath+'/close/path@2x.png') !important;
+    }
+    .analyst-filter-close-btn {
+      background-image:url($publicImagePath+'/analyst-filter-close-icon/path@2x.png') !important;
+    }
+    .link-icon {
+      background-image:url($publicImagePath+'/admin-link/link-icon.png') !important;
+    }
+    .unlink-icon {
+      background-image:url($publicImagePath+'/admin-unlink/unlink-icon.png') !important;
+    }
+    .unlink-disable-icon {
+      background-image:url($publicImagePath+'/unlink-disable-icon.png') !important;
+    }
+
+    .bmo-close-white-btn {
+      background-image:url($publicImagePath+'/close-white-icon/white-x@2x.png') !important;
+    }
+    .blue-bookmark {
+      background-image:url($publicImagePath+'/blue-bookmark/book-mark-icon@1x.png') !important;
+    }
+    .white-bookmark {
+      background-image:url($publicImagePath+'/white-bookmark/bookmark-white-icon@2x.png') !important;
+    }
+    .blue-play-icon {
+      background-image:url($publicImagePath+'/blue-play-icon/np-play-339192-000000@2x.png') !important;
+    }
+    .circle-link {
+      background-image:url($publicImagePath+'/circle-link/blue-circle-link-icon@2x.png') !important;
+    }
+    .eye-active {
+      background-image:url($publicImagePath+'/eye-icon-active/group-10@2x.png') !important;
+    }
+    .eye-inactive {
+      background-image:url($publicImagePath+'/eye-icon-inactive/group-10@2x.png') !important;
+    }
+    .follow-contact {
+      background-image:url($publicImagePath+'/follow-contact/group-5@2x.png') !important;
+      &.selected {
+        background-image:url($publicImagePath+'/follow-contact/Follow_Active@2x.png') !important;
+      }
+    }
+    .footer-contact {
+      background-image:url($publicImagePath+'/footer-contact-icon/group@2x.png') !important;
+    }
+    .grey-dots {
+      background-image:url($publicImagePath+'/grey-dots/np-more-408471-000000@2x.png') !important;
+    }
+    .mail-icon {
+      background-image:url($publicImagePath+'/mail-icon/admin-mail-icon@2x.png') !important;
+    }
+    .mail-icon-disabled {
+      background-image:url($publicImagePath+'/mail-icon/mail-icon-disabled@2x.png') !important;
+    }
+    .bmo-search-icon {
+      background-image:url($publicImagePath+'/search-icon/search-icon-blue@2x.png') !important;
+    }
+    .circle-link-white {
+      background-image:url($publicImagePath+'/circle-link-white/group-4@2x.png') !important;
+    }
+    .forgot-mail-icon {
+      background-image:url($publicImagePath+'/forgot-mail-icon/contact-us-mail@2x.png') !important;
+    }
+    .lock-icon {
+      background-image:url($publicImagePath+'/lock-icon/lock-icon@2x.png') !important;
+    }
+    .Podcast {
+      background-image:url($publicImagePath+'/podcast/podcast@2x.png') !important;
+    }
+    .Videocast {
+      background-image:url($publicImagePath+'/videocast/video@2x.png') !important;
+    }
+    .external-link-icon {
+      background-image:url($publicImagePath+'/external-link-icon/external-link@2x.png') !important;
+    }
+    .forgot-phone-icon {
+      background-image:url($publicImagePath+'/forgot-phone-icon/contact-us-phone@2x.png') !important;
+    }
+    .pdf-image {
+      background-image:url($publicImagePath+'/pdf_image/pdf.png') !important;
+    }
+    .download-report {
+      background-image:url($publicImagePath+'/user-profile/Download@2x.png') !important;
+    }
+    .user-profile {
+      .bookmarks {
+        background-image:url($publicImagePath+'/user-profile/Bookmarks@2x.png') !important;
+      }
+      .calendar {
+        background-image:url($publicImagePath+'/user-profile/Calendar@2x.png') !important;
+      }
+      .consumption {
+        background-image:url($publicImagePath+'/user-profile/Consumption@2x.png') !important;
+      }
+      .emailAlerts {
+        background-image:url($publicImagePath+'/user-profile/EmailAlerts@2x.png') !important;
+      }
+      .following {
+        background-image:url($publicImagePath+'/user-profile/Following@2x.png') !important;
+      }
+      &.active {
+        .bookmarks {
+          background-image:url($publicImagePath+'/user-profile/Bookmarks_Selected@2x.png') !important;
+        }
+        .calendar {
+          background-image:url($publicImagePath+'/user-profile/Calendar_Selected@2x.png') !important;
+        }
+        .consumption {
+          background-image:url($publicImagePath+'/user-profile/Consumption_Selected@2x.png') !important;
+        }
+        .emailAlerts {
+          background-image:url($publicImagePath+'/user-profile/EmailAlerts_Selected@2x.png') !important;
+        }
+        .following {
+          background-image:url($publicImagePath+'/user-profile/Following_Selected@2x.png') !important;
+        }
+      }
+    }
+    .blue-angle-icon {
+      background-image:url($publicImagePath+'/blue-angle-icon/np-chevron-712701-000000@2x.png') !important;
+    }
+    .admin-sub-page-link {
+      .admin-accounts-icon {
+        background-image:url($publicImagePath+'/admin-icon/Accounts@2x.png')!important;
+      }
+      .admin-event-requests-icon {
+        background-image:url($publicImagePath+'/admin-icon/Event_Requests@2x.png')!important;
+      }
+      .admin-search-defaults-icon {
+        background-image:url($publicImagePath+'/admin-icon/Search_Defaults@2x.png')!important;
+      }
+      .admin-event-calendar-icon {
+        background-image:url($publicImagePath+'/admin-icon/Event_Calendar@2x.png')!important;
+      }
+      &.active {
+        .admin-accounts-icon {
+          background-image:url($publicImagePath+'/admin-icon/Accounts_Selected@2x.png')!important;
+        }
+        .admin-event-requests-icon {
+          background-image:url($publicImagePath+'/admin-icon/Event_Requests_Selected@2x.png')!important;
+        }
+        .admin-search-defaults-icon {
+          background-image:url($publicImagePath+'/admin-icon/Search_Defaults_Selected@2x.png')!important;
+        }
+        .admin-event-calendar-icon {
+          background-image:url($publicImagePath+'/admin-icon/Event_Calendar_Selected@2x.png')!important;
+        }
+      }
+    }
+    .blue-circle-back-icon {
+      background-image:url($publicImagePath+'/blue-circle-back-icon/group-4@2x.png') !important;
+    }
+}
+
+/* @3x Images (Pixel Ratio of 2.25+) */
+@media only screen and (-o-min-device-pixel-ratio: 9/4),
+  only screen and (-webkit-min-device-pixel-ratio: 2.25),
+  only screen and (min--moz-device-pixel-ratio: 2.25),
+  only screen and (min-device-pixel-ratio: 2.25),
+  only screen and (min-resolution: 2.25dppx) {
+    .bmo-close-btn {
+      background-image:url($publicImagePath+'/close/path@3x.png') !important;
+    }
+    .analyst-filter-close-btn {
+      background-image:url($publicImagePath+'/analyst-filter-close-icon/path@3x.png') !important;
+    }
+    .unlink-disable-icon {
+      background-image:url($publicImagePath+'/unlink-disable-icon.png') !important;
+    }
+    .link-icon {
+      background-image:url($publicImagePath+'/admin-link/link-icon.png') !important;
+    }
+    .unlink-icon {
+      background-image:url($publicImagePath+'/admin-unlink/unlink-icon.png') !important;
+    }
+    .bmo-close-white-btn {
+      background-image:url($publicImagePath+'/close-white-icon/white-x@3x.png') !important;
+    }
+    .blue-bookmark {
+      background-image:url($publicImagePath+'/blue-bookmark/book-mark-icon@1x.png') !important;
+    }
+    .white-bookmark {
+      background-image:url($publicImagePath+'/white-bookmark/bookmark-white-icon@3x.png') !important;
+    }
+    .blue-play-icon {
+      background-image:url($publicImagePath+'/blue-play-icon/np-play-339192-000000@3x.png') !important;
+    }
+    .circle-link {
+      background-image:url($publicImagePath+'/circle-link/blue-circle-link-icon@3x.png') !important;
+    }
+    .eye-active {
+      background-image:url($publicImagePath+'/eye-icon-active/group-10@3x.png') !important;
+    }
+    .eye-inactive {
+      background-image:url($publicImagePath+'/eye-icon-inactive/group-10@3x.png') !important;
+    }
+    .follow-contact {
+      background-image:url($publicImagePath+'/follow-contact/group-5@3x.png') !important;
+    }
+    .footer-contact {
+      background-image:url($publicImagePath+'/footer-contact-icon/group@3x.png') !important;
+    }
+    .grey-dots {
+      background-image:url($publicImagePath+'/grey-dots/np-more-408471-000000@3x.png') !important;
+    }
+    .mail-icon {
+      background-image:url($publicImagePath+'/mail-icon/admin-mail-icon@3x.png') !important;
+    }
+    .mail-icon-disabled {
+      background-image:url($publicImagePath+'/mail-icon/mail-icon-disabled@3x.png') !important;
+    }
+    .bmo-search-icon {
+      background-image:url($publicImagePath+'/search-icon/search-icon-blue@3x.png') !important;
+      background-size: 20px !important;
+      background-position-y: 5px !important;
+      background-position-x: 5px !important;
+    }
+    .circle-link-white {
+      background-image:url($publicImagePath+'/circle-link-white/group-4@3x.png') !important;
+    }
+    .forgot-mail-icon {
+      background-image:url($publicImagePath+'/forgot-mail-icon/contact-us-mail@3x.png') !important;
+    }
+    .lock-icon {
+      background-image:url($publicImagePath+'/lock-icon/lock-icon@3x.png') !important;
+    }
+    .Podcast {
+      background-image:url($publicImagePath+'/podcast/podcast@3x.png') !important;
+    }
+    .Videocast {
+      background-image:url($publicImagePath+'/videocast/video@3x.png') !important;
+    }
+    .external-link-icon {
+      background-image:url($publicImagePath+'/external-link-icon/external-link@3x.png') !important;
+    }
+    .forgot-phone-icon {
+      background-image:url($publicImagePath+'/forgot-phone-icon/contact-us-phone@3x.png') !important;
+    }
+    .pdf-image {
+      background-image:url($publicImagePath+'/pdf_image/pdf.png') !important;
+    }
+    .blue-angle-icon {
+      background-image:url($publicImagePath+'/blue-angle-icon/np-chevron-712701-000000@3x.png') !important;
+    }
+    .blue-circle-back-icon {
+      background-image:url($publicImagePath+'/blue-circle-back-icon/group-4@3x.png') !important;
+    }
+}
+
+/* @4x Images (Pixel Ratio of 3.25+) */
+@media only screen and (-o-min-device-pixel-ratio: 13/4),
+  only screen and (-webkit-min-device-pixel-ratio: 3.25),
+  only screen and (min--moz-device-pixel-ratio: 3.25),
+  only screen and (min-device-pixel-ratio: 3.25),
+  only screen and (min-resolution: 3.25dppx) {
+    .bmo-close-btn {
+      background-image:url($publicImagePath+'/close/path@3x.png') !important;
+    }
+    .unlink-disable-icon {
+      background-image:url($publicImagePath+'/unlink-disable-icon.png') !important;
+    }
+    .link-icon {
+      background-image:url($publicImagePath+'/admin-link/link-icon.png') !important;
+    }
+    .unlink-icon {
+      background-image:url($publicImagePath+'/admin-unlink/unlink-icon.png') !important;
+    }
+    .bmo-close-white-btn {
+      background-image:url($publicImagePath+'/close-white-icon/white-x@3x.png') !important;
+    }
+    .blue-bookmark {
+      background-image:url($publicImagePath+'/blue-bookmark/book-mark-icon@3x.png') !important;
+    }
+    .white-bookmark {
+      background-image:url($publicImagePath+'/white-bookmark/bookmark-white-icon@3x.png') !important;
+    }
+    .blue-play-icon {
+      background-image:url($publicImagePath+'/blue-play-icon/np-play-339192-000000@3x.png') !important;
+    }
+    .circle-link {
+      background-image:url($publicImagePath+'/circle-link/blue-circle-link-icon@3x.png') !important;
+    }
+    .eye-active {
+      background-image:url($publicImagePath+'/eye-icon-active/group-10@3x.png') !important;
+    }
+    .eye-inactive {
+      background-image:url($publicImagePath+'/eye-icon-inactive/group-10@3x.png') !important;
+    }
+    .follow-contact {
+      background-image:url($publicImagePath+'/follow-contact/group-5@3x.png') !important;
+    }
+    .footer-contact {
+      background-image:url($publicImagePath+'/footer-contact-icon/group@3x.png') !important;
+    }
+    .grey-dots {
+      background-image:url($publicImagePath+'/grey-dots/np-more-408471-000000@3x.png') !important;
+    }
+    .mail-icon {
+      background-image:url($publicImagePath+'/mail-icon/admin-mail-icon@3x.png') !important;
+    }
+    .mail-icon-disabled {
+      background-image:url($publicImagePath+'/mail-icon/mail-icon-disabled@3x.png') !important;
+    }
+    .bmo-search-icon {
+      background-image:url($publicImagePath+'/search-icon/search-icon-blue@3x.png') !important;
+    }
+    .circle-link-white {
+      background-image:url($publicImagePath+'/circle-link-white/group-4@3x.png') !important;
+    }
+    .forgot-mail-icon {
+      background-image:url($publicImagePath+'/forgot-mail-icon/contact-us-mail@3x.png') !important;
+    }
+    .lock-icon {
+      background-image:url($publicImagePath+'/lock-icon/lock-icon@3x.png') !important;
+    }
+    .Podcast {
+      background-image:url($publicImagePath+'/podcast/podcast@3x.png') !important;
+    }
+    .Videocast {
+      background-image:url($publicImagePath+'/videocast/video@3x.png') !important;
+    }
+    .external-link-icon {
+      background-image:url($publicImagePath+'/external-link-icon/external-link@3x.png') !important;
+    }
+    .forgot-phone-icon {
+      background-image:url($publicImagePath+'/forgot-phone-icon/contact-us-phone@3x.png') !important;
+    }
+    .pdf-image {
+      background-image:url($publicImagePath+'/pdf_image/pdf.png') !important;
+    }
+    .blue-angle-icon {
+      background-image:url($publicImagePath+'/blue-angle-icon/np-chevron-712701-000000@3x.png') !important;
+    }
+    .blue-circle-back-icon {
+      background-image:url($publicImagePath+'/blue-circle-back-icon/group-4@3x.png') !important;
+    }
+}

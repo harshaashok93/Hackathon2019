@@ -1,0 +1,87 @@
+/*
+ * Component: PageLogo
+ */
+
+@import '../../../styles/variables';
+
+// (IMPORTANT: please create the styles such that the larger breakpoints
+// override the smaller ones. "Mobile First")
+
+.page-logo {
+  height: auto;
+  text-align: center;
+  .to-link {
+    display: inline-block;
+    height: 154px;
+    width: 154px;
+    background-color: $primaryBlue;
+    border-radius: 75px;
+    padding: 40px;
+  }
+  .page-logo-link,
+  .page-top-logo {
+    .page-logo-img {
+      width: 108px;
+      height: 107px;
+      margin: 0 auto;
+      border-radius: 54px;
+    }
+  }
+  .page-top-logo{
+    padding-top: 18px;
+  }
+  .ui.heading.logo-title {
+    margin-top: 17px;
+    color: $primaryBlack; // For Q-Model Page
+    width: 100%;
+    padding-bottom: 17px;
+  }
+}
+
+@media (max-width: $screen-xs-sm) {
+  .page-logo {
+    margin-top: unset;
+    height: 42px;
+    .page-top-logo {
+      .page-logo-img {
+        width: 40px;
+        height: 40px;
+        display: inline;
+        margin: 0px;
+        display: inline-block;
+      }
+      .logo-title {
+        margin: 0px;
+        display: inline-block;
+        padding-left: 16px;
+        font-size: $deskSz6;
+      }
+    }
+  }
+}
+
+
+
+// Small Breakpoint
+@media (min-width: $screen-sm-min) {
+  .page-logo {
+    // override xs breakpoint styles
+  }
+}
+
+// Medium Breakpoint
+@media (max-width: $screen-md-min) {
+  .page-logo {
+    .to-link {
+      height: 130px;
+      width: 130px;
+    }
+  }
+}
+
+// Large Breakpoint
+@media (min-width: $screen-lg-min) {
+  .page-logo {
+    // override md breakpoint styles
+  }
+}

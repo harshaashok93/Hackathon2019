@@ -1,0 +1,109 @@
+/*
+ * Component: RegularHeaderMenuItem
+ */
+
+@import '../../../styles/variables';
+
+// (IMPORTANT: please create the styles such that the larger breakpoints
+// override the smaller ones. "Mobile First")
+
+.regular-header-menu-item {
+  height: 44px;
+  line-height: 1;
+  display: block;
+  width: 15%;
+  position: relative;
+  text-align: center;
+  vertical-align: middle;
+  color: #4a4a4a;
+  display: inline-block;
+  vertical-align: middle;
+  font-size: $deskSz9;
+  @include appDefaultFontStyleRegular();
+  &:after {
+    border-right: 1px solid $secondaryGray;
+    content: '';
+    display: block;
+    height: 50px;
+    width: 5px;
+    position: absolute;
+    left: 100%;
+    top: 0;
+  }
+  .menu-text {
+    position: relative;
+    top: 50%;
+    transform: translateY(-40%);
+    padding: 0 15px;
+    line-height: 1.2;
+  }
+  &:last-child {
+    &:after {
+      border-right: none;
+    }
+  }
+  &::hover {
+    background-color: $primaryBlue;
+  }
+  &:last-child {
+    border: none;
+  }
+  &.active {
+    border-right: none;
+    color: $primaryGray;
+    z-index: 99;
+    &:after {
+      position: absolute;
+      height: 102px;
+      background-color: $backgroundGray;
+      width: 100%;
+      left: 0;
+      top: -25px;
+      left: 0;
+      z-index: -1;
+      border-right: 0;
+    }
+  }
+  &.active + a {
+    border-left: none;
+  }
+}
+
+// Tab Breakpoint
+@media (max-width: $screen-lg-min) {
+  .regular-header-menu-item {
+    padding: 0;
+    width: 16.6%;
+    padding-left: 5px;
+    &.active {
+      padding-left: 0px;
+    }
+    .menu-text {
+      padding: 0;
+    }
+  }
+}
+
+// Medium Breakpoint
+@media (max-width: $screen-md-min) {
+  .regular-header-menu-item {
+    top: 0;
+    display: table-cell;
+    &:first-child {
+      border-left: none;
+    }
+    margin-top: 0px;
+    &.active {
+      height: 44px;
+      padding-top: 2px;
+      padding-bottom: 2px;
+    }
+  }
+}
+
+// Large Breakpoint
+@media (max-width: $screen-lg-min) {
+  .regular-header-menu-item {
+    //code here
+  }
+}

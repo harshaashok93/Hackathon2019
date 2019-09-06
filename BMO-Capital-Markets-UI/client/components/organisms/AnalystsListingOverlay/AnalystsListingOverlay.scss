@@ -1,0 +1,292 @@
+/*
+ * Component: LibrarySearchResultOverlay
+ */
+
+@import '../../../styles/variables';
+
+// (IMPORTANT: please create the styles such that the larger breakpoints
+// override the smaller ones. "Mobile First")
+
+.analysts-listing-overlay {
+  &.ui.modal {
+    width: 100%;
+    margin: 0 0 0 -50%;
+    border-radius: 0;
+  }
+
+  .close-search-overlay {
+    &.ui.button {
+      width: 22px;
+      height: auto;
+      float: right;
+      cursor: pointer;
+      padding: 10px;
+      display: inline-block;
+    }
+  }
+  .library-overlay-top {
+    padding: 27px 30px;
+    width: 100%;
+    &.ui.container {
+      margin-left: 0px !important;
+    }
+    .library-overlay-top-section {
+      display: inline-block;
+      width: 100%;
+      .left-section {
+        width: 50%;
+        display: inline-block;
+        vertical-align: top;
+      }
+      .right-section {
+        display: inline-block;
+        width: 50%;
+        padding-top: 10px;
+        .team-member-heading {
+          color: $primaryGray;
+          .ui.heading {
+            font-size: 1rem;
+          }
+        }
+      }
+      .other-team-member-mob {
+        display: none;
+      }
+      .ui.heading {
+        &.analyst-name,
+        &.analyst-position {
+          text-align: left;
+          display: inline-block;
+          color: $primaryBlue;
+          margin: 0;
+          font-size: 1em;
+        }
+      }
+      .analyst-profile-image {
+        vertical-align: middle;
+        display: inline-block;
+        padding-top: 4px;
+        width: 66px;
+        height: auto;
+        z-index: 9;
+      }
+      .analyst-and-ticker {
+        width: calc(100% - 66px);
+        display: inline-block;
+        vertical-align: middle;
+        padding-left: 20px;
+      }
+      .analyst-contact-div {
+        width: calc(100% - 66px);
+        padding-left: 20px;
+        float: right;
+        .ui.button {
+          height: 21px;
+          width: 21px;
+          vertical-align: top;
+          padding: 0px;
+          margin: auto 13px;
+          &.forgot-mail-icon {
+            margin-left: 0px;
+            vertical-align: middle;
+            height: 17px;
+            margin-top: 4px;
+          }
+          &.follow-contact {
+            width: auto;
+            vertical-align: bottom;
+            margin-bottom: -1px;
+            span {
+              vertical-align: sub;
+              padding-left: 22px;
+              font-size: 1rem;
+              color: $primaryBlue;
+            }
+          }
+        }
+      }
+      .author-image {
+        display: table-cell;
+        vertical-align: middle;
+        width: 10%;
+        padding: 5px;
+      }
+    }
+  }
+  .library-overlay-bottom {
+    width: 100%;
+    padding: 5px 30px 36px 30px;
+    &.ui.container {
+      margin-left: 0px !important;
+    }
+    .library-overlay-bottom-section {
+      .date-ticker{
+        @include appDefaultFontStyleLight();
+        padding-bottom: 8px;
+        .ticker {
+          padding-left: 32px;
+        }
+      }
+      .title-and-bookmark{
+        display: table;
+        width: 100%;
+        .title {
+          width: 80%;
+          display: table-cell;
+          padding-bottom: 25px;
+          padding-right: 5%;
+          .ui.heading {
+            color: $headingBlue;
+          }
+        }
+        .bookmark-button {
+          display: table-cell;
+          width: 10%;
+          text-align: right;
+          vertical-align: top;
+          .bookmark-link.ui.button {
+            padding: 0px;
+            margin: 0px;
+            width: 22px;
+            min-height: 2em;
+            cursor: pointer;
+          }
+        }
+      }
+      .comment-section {
+        width: 100%;
+        line-height: 1.43;
+        font-size: $deskSzSmaller;
+        text-align: left;
+        .comment {
+          padding-bottom: 25px;
+          .comment-heading {
+            color: $primaryGray;
+          }
+          .comment-description {
+            @include appDefaultFontStyleLight();
+          }
+        }
+      }
+    }
+    .read-more-button.ui.button.secondary {
+      margin-left: 0px;
+    }
+  }
+}
+.library-search-result-overlay {
+}
+@media (max-width: $screen-xs-sm) {
+  .modals.dimmer {
+    .analysts-listing-overlay {
+      &.ui.modal {
+        width: 100%;
+        height: 100%;
+        .content {
+          height: auto;
+        }
+      }
+      .library-overlay-top-section {
+        .left-section {
+          width: 100%;
+          padding-bottom: 15px;
+          border-bottom: solid 1px $inputTextGray;
+        }
+        .right-section {
+          display: none;
+        }
+        .other-team-member-mob {
+          display: block;
+          .ui.button {
+            padding: 15px 0px;
+            width: 164px;
+            text-align: left;
+            &::before {
+              color: $primaryBlue;
+              top: 5px;
+            }
+          }
+          .ui.heading.team-member-heading {
+            font-size: 1rem;
+            color: $primaryGray;
+          }
+        }
+        .author-image {
+          width: 30%;
+        }
+        .top-right-analyst-details {
+          width: 80%;
+          .details-follow-div{
+            .author-details {
+              .analyst-name-div {
+                display: block;
+                .ui.heading {
+                  padding-right: 5%;
+                  font-size: $deskSz9;
+                }
+              }
+            }
+            .follow-contact-div {
+              float: right;
+            }
+          }
+        }
+        .ui.image.library-overlay-author-image{
+          width: 70px;
+          height: auto;
+        }
+      }
+      .close-search-overlay {
+        position: relative;
+        top: -41px;
+      }
+      &.ui.scrolling.modal{
+        margin-top: 0em !important;
+        margin-bottom: 0 !important;
+      }
+      .library-overlay-top {
+        padding: 60px 14px 0px 14px;
+      }
+      .library-overlay-bottom {
+        padding: 16px 16px 33px 16px;
+        width: 100%;
+        .library-overlay-bottom-section {
+          .title {
+            width: 91%;
+            padding-right: 0%
+          }
+          .bookmark-link.ui.button {
+            padding: 10px;
+          }
+        }
+        .read-more-button.ui.button.secondary {
+          margin-left: 0px;
+          padding: 10px;
+        }
+        .comment-section {
+          width: 85%;
+          .comment {
+            display: none;
+            &:first-child {
+              display: block;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// Medium Breakpoint
+@media (min-width: $screen-md-min) {
+  .library-search-result-overlay {
+    // override sm breakpoint styles
+  }
+}
+
+// Large Breakpoint
+@media (min-width: $screen-lg-min) {
+  .library-search-result-overlay {
+    // override md breakpoint styles
+  }
+}

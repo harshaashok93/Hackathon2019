@@ -1,0 +1,393 @@
+/*
+ * Component: PublicationSearchResult
+ */
+
+@import '../../../styles/variables';
+
+// (IMPORTANT: please create the styles such that the larger breakpoints
+// override the smaller ones. "Mobile First")
+
+.bmo-models-report-result-section {
+  text-align: left;
+  padding-bottom: 10px;
+  .no-results-found {
+    margin-top: 5%;
+    text-align: center;
+  }
+  .ui.button.filter-btn {
+    display: none;
+  }
+  .result-cards {
+    border-left: solid 1px $borderGray;
+    border-right: solid 1px $borderGray;
+    &.ui.list {
+      .item {
+        padding: 0px;
+      }
+    }
+    .author-profile-pic {
+      display: none;
+      width: 80px;
+      height: 80px;
+    }
+  }
+  .search-summary {
+    color: $lightGray;
+    @include appDefaultFontStyleRegular();
+  }
+  .search-result-count {
+    display: none;
+    @include appDefaultFontStyleLight();
+    text-align: left;
+  }
+
+  .ui.list {
+    margin: 0;
+    //padding: 15px 0;
+  }
+  .mobile-view{
+    display: none;
+  }
+  .title-bar {
+    background-color: $primaryBlue;
+    color: $primaryWhite;
+    border-radius: 5px 5px 0px 0px;
+    height: 40px;
+    .ui.button {
+      font-size: 1em;
+      padding: 10px;
+      line-height: 14px;
+      color: $primaryWhite;
+      outline: none;
+      vertical-align: text-top;
+      .underline {
+        border-bottom: solid 1px $primaryWhite;
+      }
+    }
+    .result-column {
+      display: inline-block;
+      padding: 0 15px;
+      i {
+        padding-left: 9px;
+      }
+      &.date {
+        width: 15%;
+        text-align: left;
+      }
+      &.ticker {
+        width: 15%;
+        text-align: left;
+      }
+      &.author {
+        width: 16%;
+        text-align: left;
+      }
+      &.subject {
+        text-align: left;
+        .ui.heading {
+          color: $headingBlue;
+          &.subject-details {
+            color: $hardBlack;
+            @include appDefaultFontStyleLight();
+          }
+        }
+      }
+      .ui.button {
+        padding: 10px 0px;
+        margin-right: 0px;
+        i {
+          margin-right: 0px !important;
+          padding-left: 0px;
+        }
+      }
+      &.user-pref {
+        width: 16%;
+        text-align: right;
+        .ui.button {
+          padding: 10px 0px;
+          margin-right: 0px;
+          i {
+            margin-right: 0px;
+            padding-left: 0px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: $screen-xs) {
+  .bmo-models-report-result-section {
+    .search-summary {
+      padding-left: 15px !important;
+      margin-bottom: 5px !important;
+      display: inline-block;
+    }
+    .mobile-view {
+      .ui.button.sorting-icon-btn {
+        background-color: transparent;
+        padding: 11px !important;
+      }
+      .title-bar {
+        margin-top: 0px;
+        padding: 5px 15px;
+        .title-bar-sort-text {
+          vertical-align: sub;
+        }
+        .linkBtn {
+          padding-top: 13px;
+          &:before {
+            top: 0px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: $screen-tab) {
+  .bmo-models-report-result-section {
+    .result-cards {
+      .author-profile-pic {
+        height: 67px;
+        width: 67px;
+      }
+    }
+    .search-result-count {
+      display: block;
+    }
+    .title-bar {
+      .title-bar-sort-text {
+        line-height: 2;
+      }
+      .result-column {
+        &.user-pref {
+          text-align: left;
+          padding: 0px;
+          padding-right: 7px;
+          .ui.button {
+            padding: 10px 0px !important;
+            margin-right: 0px;
+          i {
+            padding: 0px;
+            margin: 0px !important;
+          }
+        }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: $screen-md) {
+  .bmo-models-report-result-section {
+    top: 0;
+    padding: 0px;
+    padding-bottom: 10px;
+    .desktop-view{
+      display: none;
+    }
+    .search-result-count {
+      top: 25px;
+      display: block;
+    }
+    .mobile-view{
+      margin: 0px;
+      padding: 0px;
+      display: block;
+      position: relative;
+      .title-bar {
+        margin-top: 0px;
+        padding: 5px 15px;
+        .linkBtn {
+          float: right;
+          &:before {
+            top: -5px;
+          }
+        }
+      }
+      .ui.button.sorting-icon-btn {
+        background-color: transparent;
+        padding: 10px;
+        padding-top: 7px;
+      }
+      .options-div {
+        box-shadow: $dropDownOptionBoxShadow;
+        border: solid 1px $borderGray;
+        position: absolute;
+        z-index: 1;
+        background-color: $primaryWhite;
+        width: 100%;
+        .ui.list{
+          .item {
+            border-top: 1px solid $lightGrayBorder;
+            padding: .78571rem 1.14286rem!important;
+            .single-option{
+              span {
+                display: inline-block;
+                color: $primaryGray;
+                @include appDefaultFontStyleLight();
+                &.selected-value {
+                  @include appDefaultFontStyleRegular();
+                }
+              }
+              .bmo_chevron.tick {
+                display: inline-block;
+                vertical-align: top;
+                &:before {
+                  left: 0.55em;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    .ui.selection.dropdown {
+      color: $primaryWhite;
+      border-color: $primaryBlue;
+      background: $primaryBlue;
+      border-radius: 0px;
+      .menu.transition.visible {
+        border-color: $primaryBlue;
+        border-radius: 0px;
+      }
+    }
+    .search-result-count {
+      top: -27px;
+    }
+  }
+}
+
+// Medium Breakpoint
+@media (max-width: $screen-sm) {
+  .bmo-models-report-result-section {
+    padding: 0px;
+    padding-bottom: 10px;
+    .ui.button.filter-btn {
+      display: none;
+    }
+    .search-result-count {
+      top: -23px;
+    }
+    .search-summary {
+      padding-left: 0px;
+    }
+    .mobile-view {
+      position: relative;
+      .title-bar {
+        padding-left: 15px;
+        margin-top: 0px;
+        .result-column {
+          &.date,
+          &.ticker,
+          &.author {
+            width: 33%;
+            text-align: left;
+          }
+          &.subject {
+            display: none;
+          }
+        }
+      }
+    }
+
+  }
+}
+
+@media (max-width: $screen-xs-sm){
+  .bmo-models-report-result-section {
+    top: -32px;
+    padding: 0px;
+    padding-top: 0px;
+    .search-result-count {
+      top: 22px;
+    }
+    .title-bar {
+      border-radius: 0px 0px 0px 0px;
+      &.desktop-view{
+        display: none;
+      }
+      &.mobile-view{
+        margin: 0px;
+        padding: 0px;
+        display: block;
+      }
+      .ui.selection.dropdown {
+        border-color: $primaryBlue;
+        background: $primaryBlue;
+        border-radius: 0px;
+        .menu.transition.visible {
+          border-color: $primaryBlue;
+          border-radius: 0px;
+        }
+      }
+    }
+    .filter-btn {
+      position: relative;
+      &.bmo_chevron::before {
+        color: $primaryBlue;
+        height: 0.50em;
+        left: 0.25em !important;
+        top: 0.25em;
+        width: 0.5em;
+      }
+      &.ui.button {
+        display: block;
+        padding: 0px;
+        padding-left: 78px;
+        font-size: $deskSz7;
+        top: -318px;
+        &.bmo-models {
+          padding-left: 78px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: $screen-lg) {
+  .bmo-models-report-result-section {
+    .title-bar {
+      .result-column {
+        display: inline-block;
+        &.user-pref {
+          text-align: right;
+          padding-left: 0px;
+          //padding-right: 23px;
+          .ui.button {
+            padding: 10px 0px;
+            margin-right: 0px;
+            i {
+              margin-right: -9px;
+            }
+        }
+      }
+    }
+  }
+  }
+}
+
+// Large Breakpoint
+@media (min-width: $screen-lg-min) {
+  .bmo-models-report-result-section {
+    .title-bar {
+      .result-column {
+        &.user-pref {
+          text-align: right;
+          padding-left: 0px;
+          //padding-right: 7px;
+          .ui.button {
+            padding: 10px 14px;
+            margin-right: 0px;
+            i {
+              margin-right: -8px;
+            }
+        }
+      }
+    }
+  }
+  }
+}
+
+

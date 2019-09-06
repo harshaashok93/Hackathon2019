@@ -1,0 +1,134 @@
+/*
+ * Component: PageLogo
+ */
+
+@import '../../../styles/variables';
+
+// (IMPORTANT: please create the styles such that the larger breakpoints
+// override the smaller ones. "Mobile First")
+
+.ui.container.page-logo {
+  .back-link-holder {
+    position: absolute;
+    z-index: 2;
+    .bmo_chevron.left {
+      &:before {
+        float: left;
+        color: $primaryBlue;
+        height: 10px;
+        width: 10px;
+        top: 5px;
+      }
+    }
+    .back-link {
+      font-size: $deskSz7;
+      color: $primaryBlue;
+      padding-left: 8px;
+    }
+  }
+  .coverage-universe-pdf-link {
+    float: right;
+    padding-top: 10px;
+    .ui.button {
+      min-width: 230px !important;
+    }
+  }
+  max-width: $screen-windows-lg !important; // need
+  padding: 30px 40px 50px 40px;
+  display: inline-block;
+  text-align: left;
+  margin-bottom: 15px;
+  .analyst-name-and-desig {
+    display: none;
+  }
+  .image {
+    display: inline-block;
+    width: 70px;
+    height: auto;
+  }
+  .ui.heading.logo-text {
+    display: inline-block;
+    vertical-align: middle;
+    padding-left: 22px;
+    font-size: $deskSzBigest;
+    @include appDefaultFontStyleLight();
+    color: $pageTitleGrey;
+    margin-top: 0;
+    margin-bottom: 0;
+
+    &.no-padding-left {
+      padding-left: 0;
+    }
+  }
+}
+
+// Medium Breakpoint
+@media (max-width: $screen-md-min) {
+  .ui.container.page-logo {
+    padding: 40px 29px 50px 29px;
+    max-width: $screen-windows-lg !important; // need
+    padding: 56px 30px;
+  }
+}
+
+// Small Breakpoint
+@media (max-width: $screen-sm) {
+  .ui.container.page-logo {
+    padding-bottom: 45px;
+    padding-top: 0;
+    .ui.heading.logo-text {
+      &.no-padding-left {
+        padding-left: 10px;
+        position: relative;
+      }
+    }
+  }
+}
+
+// Small Breakpoint
+@media (max-width: $screen-xs-sm) {
+  .ui.container.page-logo {
+    padding: 15px 0;
+    margin-bottom: 0px;
+    height: auto;
+    max-width: $screen-windows-lg !important;
+    border-radius: 0;
+    width: 90% !important;
+    .back-link-holder {
+      position: relative;
+      padding-bottom: 20px;
+      border-bottom: 1px solid $startegyVideocastBorderGray;
+    }
+    .coverage-universe-pdf-link {
+      padding-top: 15px;
+      text-align: center;
+      float: unset;
+    }
+    .image {
+      width: 51px;
+    }
+    .ui.heading.logo-text {
+      margin-top: 0px;
+      font-size: $deskSzOdd2;
+
+      padding-left: 10px;
+      display: inline-block;
+      width: calc(100% - 65px);
+      &.no-padding-left {
+        padding-left: 0;
+        left: 0;
+      }
+    }
+  }
+}
+
+@media (max-width: $screen-xs) {
+  // ...
+}
+
+// Large Breakpoint
+@media (min-width: $screen-lg-min) {
+  .page-logo {
+    // override md breakpoint styles
+  }
+}

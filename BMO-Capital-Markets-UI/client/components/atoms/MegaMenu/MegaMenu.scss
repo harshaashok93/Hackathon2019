@@ -1,0 +1,306 @@
+/*
+ * Component: MegaMenu
+ */
+
+@import '../../../styles/variables';
+
+// (IMPORTANT: please create the styles such that the larger breakpoints
+// override the smaller ones. "Mobile First")
+.ui.modal.mega-menu-modal {
+  width: $screen-windows !important;
+  margin: 0 0 0 -640px !important;
+  top: calc(50% - 320px);
+  &.mega-menu-corp {
+    top: calc(50% - 247px);
+  }
+  @media (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    /* IE10+ CSS styles go here */
+    top: 15%;
+    width: 96%;
+    right: 0px;
+    left: 0px;
+    margin: 0 auto 150px auto !important;
+    position: relative;
+    &.mega-menu-corp {
+      top: 15%;
+    }
+  }
+  @-moz-document url-prefix() {
+    // firefox
+    top: 15%;
+    width: 96%;
+    right: 0px;
+    left: 0px;
+    margin: 0 auto !important;
+    &.mega-menu-corp {
+      top: 15%;
+    }
+  }
+  .content {
+    padding: 0px;
+  }
+}
+.mega-menu {
+  top: 55px;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: $primaryWhite;
+  z-index: 999;
+  overflow: hidden;
+  .twelve.wide.computer.column.mega-menu-title {
+    text-align: right;
+    padding: 0px;
+  }
+  .ui.button.mega-menu-close-icon {
+    margin: 0;
+    padding: 0px;
+    height: 22px;
+    width: 20px;
+    vertical-align: middle;
+    background-position: center;
+  }
+  .mega-menu-holder {
+    .row {
+      height: auto;
+      &.menu-header {
+        box-shadow: none;
+        padding-top: 0px;
+      }
+    }
+    &.ui.grid {
+      background-color: $primaryWhite;
+      max-width: $screen-windows-lg;
+      margin: auto;
+      height: calc(100% - 16px);
+      display: block;
+      padding: 15px;
+      .row.mega-menu-links-set{
+        height: calc(100% - 115px);
+        overflow: scroll;
+        padding: 0;
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+        .mega-menu-column {
+          padding: 0 30px;
+          width: 25% !important; //need
+          display: inline-block;
+        }
+      }
+      .row.mega-menu-links-set::-webkit-scrollbar {
+        display: none;
+      }
+      .ui.button.menu-name.blue:hover {
+        background-color: $primaryWhite;
+      }
+      .mega-menu-title {
+        display: table;
+        padding: 30px;
+        .heading {
+          display: table-cell;
+          vertical-align: middle;
+          padding-left: 1em;
+          color: $primaryBlue;
+        }
+      }
+    }
+  }
+}
+
+// Small Breakpoint
+@media (max-width: $screen-md - 1) {
+  .mega-menu {
+    .mega-menu-holder.ui.grid .row.mega-menu-links-set {
+      .mobile.column.mega-menu-column {
+        padding: 0 15px;
+      }
+    }
+    .twelve.wide.computer.column.mega-menu-title {
+      padding: 0 10px;
+    }
+  }
+}
+
+// Landscape mode for mobiles and Tablet
+@media (max-width: $screen-tab) {
+  .ui.modal.mega-menu-modal {
+    width: 96% !important;
+    margin: 0 auto !important;
+    left: 0;
+    right: 0;
+  }
+  .mega-menu {
+    .ui.grid.mega-menu-holder {
+      .row.mega-menu-links-set {
+        .mobile.column.mega-menu-column.Corp {
+          width: 32% !important;
+        }
+      }
+    }
+  }
+}
+
+// Small Breakpoint
+@media (max-width: $screen-sm-min) {
+  .modals.dimmer {
+    .ui.scrolling.modal.mega-menu-modal {
+      margin-top: 0px !important;
+      margin-bottom: 0px !important;
+    }
+    .ui.modal.mega-menu-modal {
+      width: 100% !important;
+      height: 100%;
+      left: 0px;
+      .content {
+        border-radius: 0px;
+      }
+    }
+  }
+  .mega-menu {
+    padding: 0;
+    top: 0;
+    .ui.button.mega-menu-close-icon {
+      margin-top: 0;
+      width: 26px !important;
+      padding: 10px !important;
+
+    }
+    .twelve.wide.computer.column.mega-menu-title {
+      padding: 15px;
+    }
+    .mega-menu-holder {
+      &.ui.grid {
+        padding: 0;
+      }
+      .row {
+        height: auto;
+        &.menu-header {
+          padding: 0;
+          box-shadow: none;
+        }
+      }
+      &.ui.grid {
+        height: 100%;
+        overflow: scroll;
+      }
+    }
+    .mega-menu-holder.ui.grid .row.mega-menu-links-set {
+      height: calc(100% - 60px);
+      padding: 0;
+      .mobile.column.mega-menu-column {
+        padding: 0;
+        width: 100% !important;
+        display: inline-block;
+      }
+    }
+  }
+  .mega-menu {
+    .ui.grid.mega-menu-holder {
+      .row.mega-menu-links-set {
+        .mobile.column.mega-menu-column.Corp {
+          width: 100% !important;
+        }
+      }
+    }
+  }
+}
+
+.mega-menu-container {
+  height: auto;
+  display: inline-flex;
+  vertical-align: middle;
+  cursor: pointer;
+  padding-top: 37px;
+  .ui.image.desktop {
+    display: block;
+  }
+  .ui.image.mobile {
+    display: none;
+  }
+  .ui.image{
+    width: 35px;
+    display: inline-block;
+    height: $mega-menu-icon-width + 1;
+    border: none;
+  }
+  .ui.button.menu-name {
+    background: transparent;
+    display: table-cell;
+
+    vertical-align: middle;
+    font-size: $deskSz8;
+    border: none;
+    padding: unset;
+    padding-left: 18px;
+  }
+  .menu-name{
+    &.ui.button.blue {
+      color: $primaryBlue;
+      font-size: $deskSz9;
+    }
+    &.ui.button.white {
+      color: $primaryWhite;
+      font-size: $deskSz9;
+    }
+  }
+}
+
+// Small Breakpoint
+@media (max-width: $screen-sm-min - 1) {
+  .mega-menu-container {
+    top: -86px;
+    position: relative;
+    background-color: #fff;
+    padding-top: 0px;
+    .ui.image.desktop {
+      display: none;
+    }
+    .ui.image.mobile {
+      display: block;
+      height: 20px;
+      width: 25px;
+    }
+    .ui.button.menu-name {
+      display: none;
+    }
+    .mega-menu-holder {
+      .row {
+        height: auto;
+        &.menu-header {
+          padding: 0;
+          box-shadow: none;
+        }
+      }
+    }
+  }
+}
+
+// Small Breakpoint
+@media (max-width: $screen-xs-sm) {
+  .ui.modal.mega-menu-modal {
+    width: 100%;
+    height: 100%;
+    margin-top: 0px !important;
+    margin-bottom: 0px !important;
+    margin: 0px;
+    left: 0px;
+    .content {
+      border-radius: 0px !important;
+      padding: 0px !important;
+    }
+  }
+  .mega-menu-container {
+    top: -81px;
+    position: relative;
+    background-color: #fff;
+    padding-top: 0px;
+  }
+}
+
+
+// Large Breakpoint
+@media (min-width: $screen-lg-min) {
+  .mega-menu-container {
+    // override md breakpoint styles
+  }
+}

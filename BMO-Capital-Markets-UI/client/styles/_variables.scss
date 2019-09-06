@@ -1,0 +1,400 @@
+$imagePath : '../../node_modules/unchained-ui-react/src/styles/themes/default/assets/images' !default;
+$fontPath  : '../../node_modules/unchained-ui-react/src/styles/themes/default/assets/fonts' !default;
+
+$publicImagePath : '../../public/assets/images' !default;
+$publicFontsPath : '../../public/fonts' !default;
+
+
+// =============== Column Count ===============
+
+$columnCount: 12;
+
+// =============== Colors ==============
+
+//=====Primary colors
+$primaryRed: #ed1c24;
+$errorPageRed: #ed2324;
+$primaryBlue: #0079c1;
+$primaryWhite: #ffffff;
+$primaryBlack: #212121;
+$primaryGray: #4a4a4a;
+$hardRed: #d0021b;
+$pageTitleGrey: #565656;
+$dotGray: #b1b1b1;
+$dropDownTextColor: #b8b8b8;
+$downloadRequestedColor: #8c8c8c;
+$plyr-color-main: #0079c1 !default;
+$overlay-background: rgba(0, 0, 0, 0.5);
+
+//=====Secondary colors
+$secondaryBlack: #4c4c4c;
+$secondaryBlue: #1685c6;
+$headingBlue: #0c5d8d;
+$secondaryGray: #b3b3b3;
+$borderGray: #e9e9e9;
+$borderGreyShade: #b2b2b2;
+$screen-sm-min: #dfdfdf;
+$borderBottomGrey: #dfdfdf;
+$backgroundGray: #e3e1e1;
+$popupGreyBorder: #bababc;
+$dropdownOptionGrey: #fafafa;
+$qModelBgColor: #f3f3f3;
+$secondaryRed: #ed2324;
+$oddGray: #979797;
+$eventCardBackgroundColor: #f6f6f6;
+$onBoardBorderColorGrey: #979797;
+$inputBorderLightGrey: #9b9b9b;
+$slightBlue:  #cce4f3;
+$onboardingCoverageList: #f2f2f2;
+$startegyVideocastBorderGray: #dedede;
+$calendarHoverText: #ea2c03;
+$boxShadowCommentOverlay: #a6a6a6;
+$previousTextGrey: #8d8a8e;
+$accordianBorderBottomGrey: #9c9c9c;
+$loaderGreay: #ededed;
+$adminPageError: #ea2128;
+$bmoChartBackgroundColor: #e9e8e8;
+$bmoContactFocusBorder: #057abf;
+$tickMarkGreen: #15a937;
+
+//=======hard colors
+$hardBlue: #023e69;
+$hardBlack: #000000;
+$menuBlue: #004a7c;
+$fieldGray: #706e6e;
+$accordionGray: #ebebeb;
+$lightGrayBorder: #c7c7c7;
+
+//======light Color
+$lightBlue: #008cc6;
+$lightGray: #6d6d6d;
+$brightGray: #efefef;
+$adminSummaryCardGray: #d8d8d8;
+$inputPlaceholderColor: #8e8e8e !important;
+
+//=====Business Colors
+$statusPendingApproval: #aeabab;
+$statusTrialMode: #ff8808;
+$statusApproved: #1aab0d;
+$statusDenied: #de3535;
+$inputTextGray: #8c8c8c;
+
+// Rating color
+$colorOP: #349672;
+// Graph Background
+$graphBackground: #f2f2f2;
+//=================Font Size
+
+//=====Desktop
+$deskSzVeryBig: 3.75em; //50px
+$deskSzBigest: 3.125em; //50px
+$deskSzBigger: 2.938em; //47px
+$deskSzBig: 2.500em; //40px
+
+$deskSz1: 2.250em; //36px
+$deskSz11: 2.187em; //35px
+$deskSz2: 2.000em; //32px
+$deskSz21: 1.875em; //30px
+$deskSz3: 1.750em; //28px
+$deskSz4: 1.250em; //20px -> Previous value: 1.625em (26px)
+$deskSz41: 1.5625em; //25px
+$deskSz5: 1.500em; //24px
+$deskSz6: 1.375em; //22px
+$deskSz7: 1.250em; //20px
+$deskSz8: 1.125em; //18px
+$deskSz9: 1em; 	   //16px
+
+$deskSzSmall: 0.938em;   //15px;
+$deskSzSmaller: 0.875em; //14px;
+$deskSzSmallest: 0.75em; //12px;
+$deskSzVerySmall: 0.625em; //10px;
+
+
+$deskSzOdd1: 1.063em; //17px
+$deskSzOdd2: 1.563em; //25px
+
+
+
+// =============== Fonts Family =============
+
+$appDefaultFont: 'Heebo';
+
+
+// ============== Font Weight ===============
+$Smaller: 100;
+$Small: 300;
+$Regular: 400;
+$Medium: 500;
+$SemiBold: 600;
+$Bold: 700;
+$Bolder: 800;
+$SuperBolder: 900;
+
+// =============== Container Variables ================
+
+$containerMobileWidth: 100%;
+$containerTabletWidth: 100%;
+$containerComputerWidth: 100%;
+$containerLargeMonitorWidth: 100%;
+
+// ----------------------------------------------------------------------------
+// Breakpoint Values
+// ----------------------------------------------------------------------------
+
+// Extra small screen / phone
+$screen-xs             : 767px;
+$screen-xs-min         : $screen-xs;
+$screen-phone          : $screen-xs-min;
+
+$screen-xs-sm            : 767px;
+
+// Small screen / tablet
+$screen-sm             : 768px;
+$screen-sm-min         : $screen-sm;
+$screen-tablet         : $screen-sm-min;
+
+// Small tablet
+$screen-md-sm             : 992px;
+
+$qmodel-101-mobile      : 940px;
+
+// Medium screen / desktop
+$screen-md             : 1023px;
+$screen-md-min         : $screen-md;
+$screen-desktop        : $screen-md-min;
+
+// Large/wide desktop
+$screen-tab            : 1024px;
+
+// Large/wide desktop
+$screen-lg             : 1200px;
+$screen-lg-min         : $screen-lg;
+$screen-lg-desktop     : $screen-lg-min;
+
+// Windows
+$screen-windows        : 1280px;
+$screen-windows-min    : $screen-windows;
+$screen-windows-max   :$screen-windows+1;
+
+// Windows Large
+$screen-windows-lg     : 1440px;
+$screen-windows-min-lg : $screen-windows-lg;
+$screen-windows-max-lg : $screen-windows-lg+1;
+
+$screen-xs-max     : ($screen-sm-min - 1);
+$screen-sm-max     : ($screen-md-min - 1);
+$screen-md-max     : ($screen-lg-min - 1);
+$screen-lg-max     : ($screen-windows-lg - 1);
+
+
+// =============== Card Box-Shadow =============
+
+$cardBoxShadow: 0 1px 17px 0 rgba(0, 0, 0, 0.1);
+$cardBoxShadowTop: 0 8px 17px 4px rgba(0, 0, 0, 0.1);
+$filterBoxShadow: 0 2px 6px 2px rgba(129, 129, 129, 0.4);
+$leftLayoutBoxshadow: 2px 0 4px 0 rgba(0, 0, 0, 0.18);
+$dropDownOptionBoxShadow: 0 5px 13px 0 rgba(0, 0, 0, 0.13);
+$footerButton: 0 2px 17px 0 rgba(0, 0, 0, 0.1);
+$footerInput: 0 2px 17px 0 rgba(0, 0, 0, 0.1), inset 0 1px 3px 0 rgba(0, 0, 0, 0.5);
+$footerAddressFontColor: rgba(256, 256, 256, 0.67);
+$userProfileHeadersBoxShadow: 0 5px 13px 0 rgba(166, 166, 166, 0.5);
+
+// =============== Other const =====
+
+
+$quantScalecolor_0: transparent;
+$quantScalecolor_1: rgb(0, 255, 1);
+$quantScalecolor_2: rgb(1, 204, 0);
+$quantScalecolor_3: rgb(0, 152, 1);
+$quantScalecolor_4: rgb(0, 102, 1);
+$quantScalecolor_5 : rgb(0, 55, 1);
+$quantScalecolor_6 : rgb(55, 1, 0);
+$quantScalecolor_7 : rgb(102, 0, 0);
+$quantScalecolor_8 : rgb(153, 0, 0);
+$quantScalecolor_9 : rgb(205, 0, 0);
+$quantScalecolor_10: rgb(255, 0, 0);
+
+$mega-menu-icon-width: 28px;
+$filterSectionWidth: 280px;
+$ReportsPageRightLayoutWidth: 300px;
+$leftLayoutWidth:280px;
+$leftLayoutMaxWidth: 35%;
+$rightLayoutWidth: calc(100% - #{$leftLayoutWidth + 40px});
+$rightLayoutMinWidth: calc(100% - #{$filterSectionWidth});
+$ReportsPageLeftLayoutWidth: calc(100% - #{$ReportsPageRightLayoutWidth});
+$commonPadding: 40px;
+
+$headingFontFamily: $appDefaultFont;
+$buttonFontFamily: $appDefaultFont;
+$accordionTitleFont: $appDefaultFont;
+$menuFontFamily: $appDefaultFont;
+
+@mixin boxShadow($top, $left, $blur, $size, $color, $inset: false) {
+  @if $inset {
+    -webkit-box-shadow:inset $top $left $blur $size $color;
+    -moz-box-shadow:inset $top $left $blur $size $color;
+    box-shadow:inset $top $left $blur $size $color;
+  } @else {
+    -webkit-box-shadow: $top $left $blur $size $color;
+    -moz-box-shadow: $top $left $blur $size $color;
+    box-shadow: $top $left $blur $size $color;
+  }
+}
+
+@mixin transform($transforms) {
+  -moz-transform: $transforms;
+  -o-transform: $transforms;
+  -ms-transform: $transforms;
+  -webkit-transform: $transforms;
+  transform: $transforms;
+}
+
+@mixin appDefaultFontStyleLight() {
+  font-family: $appDefaultFont !important;
+  font-weight: 300 !important;
+  font-style: normal !important;
+}
+
+@mixin appDefaultFontStyleRegular() {
+  font-family: $appDefaultFont !important;
+  font-weight: 400 !important;
+  font-style: normal !important;
+}
+
+@mixin appDefaultFontStyleMedium() {
+  font-family: $appDefaultFont !important;
+  font-weight: 500 !important;
+  font-style: normal !important;
+}
+
+@mixin appDefaultFontStyleBold() {
+  font-family: $appDefaultFont !important;
+  font-weight: 700 !important;
+  font-style: normal !important;
+}
+
+// rotate
+@mixin rotate ($deg) {
+  @include transform(rotate($deg));
+}
+
+@mixin transition($transition) {
+  -webkit-transition: $transition;
+  -moz-transition: $transition;
+  -ms-transition: $transition;
+  -o-transition: $transition;
+  transition: $transition;
+}
+
+// scale
+@mixin scale($scale) {
+   @include transform(scale($scale));
+}
+@mixin scaleX($scale) {
+  @include transform(scaleX($scale));
+}
+@mixin scaleY($ratio) {
+  @include transform(scaleY($scale));
+}
+
+// translate
+@mixin translate ($x, $y) {
+   @include transform(translate($x, $y));
+}
+
+
+@mixin bmoContactSectionStyle() {
+  margin-top: 60px;
+  *.hide {
+    display: none !important;
+  }
+  .heading {
+    font-weight: $Small !important;
+    margin-bottom: 25px;
+    text-align: left;
+    font-size: $deskSz7;
+  }
+  .bmo-contact-column {
+    width: 50%;
+    display: inline-block;
+    position: relative;
+    vertical-align: bottom;
+    span.bmo_chevron {
+      position: absolute;
+      left: -20px;
+      top: 3px;
+      color: $tickMarkGreen;
+      &:before {
+        color: $tickMarkGreen;
+      }
+    }
+    .ui.loader {
+      &:before,
+      &:after{
+        width: 15px;
+        height: 15px;
+        top: -5px;
+        left: -115px;
+        border-width: 2px;
+      }
+    }
+  }
+  .bmo-contact-row {
+    margin-bottom: 5px;
+    font-size: $deskSz9;
+    color: $primaryGray;
+    font-weight: $Regular;
+    padding-right: 50px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    &.no-contact {
+      @include appDefaultFontStyleLight();
+      font-size: $deskSz7;
+      color: $primaryGray;
+      opacity: 0.88;
+      &.user-id {
+        font-size: $deskSz9;
+        font-weight: normal !important;
+      }
+    }
+  }
+  .bmo-contact-email,
+  .bmo-contact-last-mail-sent {
+    margin-bottom: 5px;
+  }
+  .ui.button.bmo-contact-send-email-btn {
+    padding-top: 0;
+    margin-bottom: 5px;
+    span {
+      line-height: 22.85px;
+    }
+    &.client-match-bmo-contact-send-email-btn {
+      display: block;
+      padding: 0;
+      margin: 40px auto 0;
+      position: relative;
+      border: 1px solid $primaryBlue;
+      span.bmo_chevron {
+        position: absolute;
+        top: 3px;
+        left: -22px;
+        color: $tickMarkGreen;
+        &:before {
+          color: $tickMarkGreen;
+        }
+      }
+      &.email-sent {
+        border: none;
+        box-shadow: none;
+        color: $primaryGray;
+      }
+      &.disabled {
+        color: $primaryGray;
+      }
+    }
+    &.disabled {
+      border: 1px solid $downloadRequestedColor;
+      background-color: transparent;
+    }
+  }
+}

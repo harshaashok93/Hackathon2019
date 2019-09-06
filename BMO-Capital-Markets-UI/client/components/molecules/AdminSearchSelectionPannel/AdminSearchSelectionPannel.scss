@@ -1,0 +1,166 @@
+/*
+ * Component: AdminSearchSelectionPannel
+ */
+
+@import '../../../styles/variables';
+
+// (IMPORTANT: please create the styles such that the larger breakpoints
+// override the smaller ones. "Mobile First")
+.admin-search-selection-pannel {
+  padding-left: 40px;
+  padding-right: 45px;
+  .change-will-reflect {
+    font-size: $deskSzSmaller;
+    font-weight: $Bolder;
+    color: $primaryRed;
+    width: 100%;
+    margin-top: 15px;
+  }
+  h2.ui.heading {
+    font-size: $deskSz21;
+    color: $primaryGray;
+    
+    margin-bottom: 60px;
+  }
+  .button-div {
+    width: 100%;
+    text-align: center;
+    .ui.button.secondary {
+      margin: 30px 0 0 0;
+      width: 185px;
+      border-radius: 20px;
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+  .filter-title {
+    
+    font-size: $deskSz4;
+    display: inline-block;
+    width: 20%;
+    vertical-align: top;
+  }
+  .indiviadual-filters {
+    padding: 40px 0;
+    border-bottom: solid 1px $borderBottomGrey;
+    .dropdown-chevron.ui.dropdown {
+      width: auto;
+      padding-top: 0;
+      padding-bottom: 9px;
+      height: auto;
+      min-height: unset;
+      &::before {
+        top: 0;
+      }
+      &.date {
+        min-width: 68px;
+        padding-right: 17px;
+      }
+    }
+    .ui.list.checkBoxes {
+      display: inline-block;
+      width: 80%;
+      vertical-align: top;
+      margin: 0;
+      .item {
+        display: inline-block;
+        width: 25%;
+        padding-bottom: 10px;
+        vertical-align: top;
+        padding-top: 0;
+        .ui.checkbox {
+          width: unset !important;
+        }
+      }
+    }
+  }
+  .ui.accordion .title .dropdown.icon {
+    float: right;
+    height: 38px;
+    width: 38px;
+    background-color: transparent;
+    display: inline-block;
+    border-radius: 50rem;
+    border: solid 1px $primaryBlue;
+    &:before{
+      border-style: solid;
+      border-width: 1px 1px 0 0;
+      content: '';
+      display: inline-block;
+      height: 12px;
+      left: -12px;
+      position: relative;
+      top: 10px;
+      transform: rotate(135deg);
+      vertical-align: top;
+      width: 12px;
+      float: right;
+      color: $primaryBlue;
+    }
+  }
+
+  .ui.accordion .active.content {
+    margin-bottom: 40px;
+  }
+  .ui.accordion .active {
+    &.title {
+      margin-bottom: 5px !important;
+      .dropdown.icon {
+        transform: rotate(180deg);
+      }
+    }
+  }
+  .ui.fluid.accordion {
+    .title {
+      border-bottom: solid 1px $borderBottomGrey;
+      margin-bottom: 29px;
+    }
+  }
+  .ui.label.accord-title {
+    background-color: transparent;
+    font-size: $deskSz41;
+    color: $primaryBlue;
+    
+    padding: 0;
+    width: 82%;
+    line-height: 45px;
+  }
+}
+
+// Small Breakpoint
+@media (min-width: $screen-sm-min) {
+  .admin-search-selection-pannel {
+    // override xs breakpoint styles
+  }
+}
+
+// Medium Breakpoint
+@media (max-width: $screen-xs-sm) {
+  .admin-search-selection-pannel {
+    padding: 16px;
+    .filter-title {
+      width: 40%;
+    }
+    .indiviadual-filters {
+      .dropdown-chevron.ui.dropdown {
+        min-width: 60%;
+        max-width: 60%;
+      }
+      .ui.list.checkBoxes {
+        width: 60%;
+        .item {
+          display: block;
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+// Large Breakpoint
+@media (min-width: $screen-lg-min) {
+  .admin-search-selection-pannel {
+    // override md breakpoint styles
+  }
+}

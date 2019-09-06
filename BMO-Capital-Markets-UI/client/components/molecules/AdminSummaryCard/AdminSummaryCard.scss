@@ -1,0 +1,1253 @@
+/*
+ * Component: AdminSummaryCard
+ */
+
+@import '../../../styles/variables';
+
+// (IMPORTANT: please create the styles such that the larger breakpoints
+// override the smaller ones. "Mobile First")
+
+.ui.modal.User-Account-Edit {
+  width: 548px;
+  max-width: 600px;
+  top: 50%;
+  left: 50%;
+  margin-left: -275px !important;
+  @media (max-width: $screen-xs ) {
+    margin-left: -160px !important;
+  }
+  z-index: 10000;
+  .content {
+    .user-edit-form {
+      .unlink-modal-message {
+        text-align: center;
+      }
+      .response-message {
+        color: $primaryBlue;
+        font-size: $deskSz8;
+        min-height: 150px;
+        padding-top: 41px;
+        @include appDefaultFontStyleRegular();
+        &.error {
+          color: $adminPageError;
+        }
+      }
+      .row {
+        .ui.message.error-text {
+          box-shadow: none;
+          background: none;
+          padding: 0px;
+          color: $adminPageError;
+          margin-top: 8px;
+          float: right;
+          margin-bottom: 0px;
+        }
+      }
+    }
+  }
+  .field-text {
+    width: 100px;
+  }
+  .edit-form-head {
+    height: 18px;
+    text-align: right;
+    .ui.button.bmo-close-btn {
+      margin: 0;
+      padding: 0px;
+      height: 22px;
+      width: 20px;
+      vertical-align: middle;
+      background-position: center;
+    }
+  }
+  .ui.heading.form-header {
+    font-size: $deskSz4;
+    line-height: 2;
+    border-bottom: solid 0.5px $inputTextGray;
+    margin-bottom: 30.5px;
+    &.slesforce-header {
+      width: 152px;
+      @media (max-width: $screen-xs ) {
+        width: 100%;
+      }
+    }
+    &.cms-header {
+      width: 101px;
+      @media (max-width: $screen-xs ) {
+        width: 100%;
+      }
+    }
+  }
+  .ui.input {
+    height: 35px;
+    width: 100%;
+  }
+  .edit-form-head {
+    width: 100%;
+    text-align: right;
+  }
+  .row {
+    padding-bottom: 15px;
+    min-height: 75px;
+    &.checkbox-edit {
+      min-height: 40px;
+    }
+    .field-text {
+      color: $primaryGray;
+      @include appDefaultFontStyleLight();
+    }
+    .input-error-field {
+      .ui.message.error-text {
+        box-shadow: none;
+        background: none;
+        padding: 0px;
+        color: $adminPageError;
+        margin-top: 8px;
+        float: right;
+        margin-bottom: 0px;
+      }
+    }
+    .error {
+      .ui.input {
+        input {
+          color: $inputTextGray;
+          @include boxShadow(0, 0, 1px, 0, $adminPageError);
+        }
+        &:focus {
+          border: 1px solid $adminPageError;
+          background-color: transparent;
+        }
+      }
+    }
+    .field-value {
+      color: $primaryGray;
+      word-break: break-all;
+      display: flex;
+    }
+  }
+  .ui.button {
+    height: 45px;
+    width: 146px;
+  }
+  .action-buttons {
+    text-align: center;
+    .ui.secondary.button {
+        margin: 15px;
+    }
+    .saleforce-link-btn {
+      &.ui.button.disabled {
+        border: solid 1px $fieldGray;
+        border-radius: 2em;
+      }
+    }
+  }
+  .save-button-holder {
+    text-align: center;
+  }
+  .field-input {
+    display: inline-block;
+    width: 267px;
+    .input {
+      width: 100%;
+      margin-bottom: 12px;
+      input {
+        padding: 5px 10px;
+        background-color: $adminSummaryCardGray;
+        border: none;
+        border-radius: 0;
+      }
+    }
+  }
+  .cms-salesforce-record {
+    width: 100%;
+    display: inline-block;
+    .cms-record {
+      width: 50%;
+      @media (max-width: $screen-xs ) {
+        width: 100%;
+      }
+      display: inline-block;
+    }
+    .ui.heading.associate-account {
+      font-size: $deskSz4;
+    }
+    .salesforce-record {
+      width: 50%;
+      @media (max-width: $screen-xs ) {
+        width: 100%;
+      }
+      display: inline-block;
+      vertical-align: top;
+      .ui.loader {
+        margin-left: 15%;
+      }
+    }
+  }
+}
+
+.ui.modal.Client-Look-Up {
+  width: 548px;
+  max-width: 600px;
+  top: 50%;
+  left: 50%;
+  margin-left: -275px !important;
+  .content {
+    padding-left: 30px;
+    padding-right: 0;
+    padding-bottom: 50px;
+    padding-top: 0px;
+    min-height: 100px;
+    span.no-result {
+      display: block;
+      margin-top: 28px;
+      @include appDefaultFontStyleLight();
+      font-size: $deskSz7;
+      color: $primaryGray;
+      opacity: 0.88;
+    }
+    .bmo-contact-section {
+      @include bmoContactSectionStyle();
+      &.client-lookup-match {
+        margin-top: 30px;
+      }
+      .heading {
+        position: relative;
+        &:before {
+          content: "";
+          border: 1px solid $downloadRequestedColor;
+          width: 72.6px;
+          top: -29.5px;
+          position: absolute;
+        }
+      }
+    }
+    .status-error-message {
+      color: $primaryRed;
+      padding: 60px 0px;
+      @include appDefaultFontStyleRegular();
+      font-size: $deskSz8;
+    }
+    .edit-form-head {
+      text-align: right;
+      height: 18px;
+      span {
+        padding: 10px;
+      }
+      .button-holder {
+        .ui.button.modal-close-icon.bmo-close-btn {
+          margin: 0;
+          padding: 0px;
+          height: 22px;
+          width: 20px;
+          vertical-align: middle;
+          background-position: center;
+        }
+      }
+    }
+    .button-holder {
+      text-align: right;
+      .ui.button.modal-close-icon.bmo-close-btn {
+        margin-top: 14px;
+        margin-right: 14px;
+        margin-bottom: 12px;
+        padding: 0px;
+        height: 20px;
+        width: 20px;
+        vertical-align: middle;
+        background-position: center;
+      }
+    }
+    .go-back {
+      color: $primaryBlue;
+      font-size: $deskSz9;
+      margin-bottom: 40px;
+      cursor: pointer;
+      &:focus {
+        outline: none;
+      }
+    }
+    .back-icon {
+      display: inline-block;
+      width: 25px;
+      height: 25px;
+      margin-bottom: -6px;
+      margin-right: 10px;
+    }
+    .navigation-tab {
+      padding-bottom: 30px;
+      outline: none;
+      .ui.button.linkBtn {
+        color: $primaryBlue;
+        text-align: left;
+        margin-right: 40px;
+        font-size: $deskSz7;
+        padding: 0;
+        border-radius: 0;
+        padding-bottom: 10px;
+        width: fit-content;
+        font-weight: $Small !important;
+        &.error {
+          color: $adminPageError;
+        }
+        &.active:active, &.active:hover {
+          background-color: $primaryWhite;
+        }
+      }
+      .underline {
+        border-bottom: 1px solid $downloadRequestedColor;
+        &.error {
+          border-bottom: 1px solid $adminPageError;
+        }
+      }
+      .ui.button.linkBtn.active {
+        font-weight: $Regular !important;
+      }
+    }
+    .saving-message-edit-modal {
+      text-align: center;
+      padding-top: 30px;
+      color: green;
+    }
+    .client-details {
+      .row {
+        padding-bottom: 20px;
+        .field-text {
+          display: inline-block;
+          padding-bottom: 5px;
+        }
+        .ui.input.field-value {
+          width: 95%;
+          height: 35px;
+        }
+      }
+    }
+    .modal-title {
+      margin-bottom: 10px;
+      .ui.heading {
+        font-size: $deskSz7;
+        width: 123px;
+        border-bottom: solid 1px $inputTextGray;
+        line-height: 2;
+      }
+    }
+    .client-lookup-modal {
+      padding: 30px 0px;
+      border-bottom: solid 1px $inputTextGray;
+      span {
+        display: block;
+        color: $primaryGray;
+      }
+      display: inline-block;
+      width: 100%;
+      .create-date {
+        display: inline-block;
+        font-weight: $Small;
+        width: 15%;
+        word-break: break-word;
+        -ms-word-break: break-all;
+        @media (max-width: $screen-xs ) {
+          width: 25%;
+        }
+        vertical-align: top;
+        span {
+          color: $hardBlack ;
+        }
+      }
+      .client-info {
+        display: inline-block;
+        margin-left: 1%;
+        width: 49%;
+        word-break: break-word;
+        -ms-word-break: break-all;
+        span {
+          padding-bottom: 5px;
+        }
+        @media (max-width: $screen-xs ) {
+          width: 70%;
+        }
+        vertical-align: middle;
+      }
+      .select-btn {
+        display: inline-block;
+        width: 35%;
+        font-size: $deskSz9;
+        @media (max-width: $screen-xs ) {
+          width: 100%;
+          padding-top: 25px;
+        }
+        vertical-align: middle;
+        .ui.button {
+          width: 146px;
+          height: 45px;
+        }
+      }
+    }
+    .client-lookup-modal:last-child {
+      border-bottom: none;
+    }
+    .close-button {
+      text-align: center;
+      margin: 20px 0px;
+      .ui.button {
+        width: 146px;
+        height: 45px;
+      }
+      &.load-padding {
+        padding-top: 70px;
+      }
+    }
+    .client-details {
+      font-size: $deskSz9;
+      .region {
+        .field-text {
+          display: inline-block;
+          margin-bottom: 10px;
+        }
+        .status-circle {
+          display: inline-block;
+          margin-right: 5px;
+          height: 23px;
+          width: 23px;
+          border: solid 1px;
+          background-color: transparent;
+          border-radius: 50rem;
+          vertical-align: middle;
+        }
+        .region-div {
+          display: inline;
+          padding-right: 25px;
+          .individual-region {
+            border-color: $primaryBlue;
+            vertical-align: middle;
+            &.selected {
+              background-color: $primaryBlue;
+            }
+            &:focus {
+              outline: none;
+            }
+          }
+          .region-name {
+            display: inline;
+            font-weight: $Small;
+          }
+        }
+      }
+    }
+    .user-ids-container {
+      font-size: $deskSz9;
+      .ui.button.linkBtn {
+        padding: 0;
+        padding-top: 20px;
+        display: block;
+        .link-btn.unlink-icon, .unlink-disable-icon {
+          display: inline-block;
+          width: 16px;
+          height: 15px;
+          margin-bottom: -1px;
+          margin-left: 5px;
+        }
+      }
+      .user-id-section {
+        .field-text {
+          padding-bottom: 5px;
+          width: 100px;
+          display: inline-block;
+        }
+        .ui.message.error-text {
+          margin-right: 85px;
+        }
+        .ui.input.field-value {
+          width: 95%;
+          max-height: 35px;
+          input {
+            font-size: 14px;
+            color: $primaryBlue;
+          }
+        }
+        .ui.input.field-value.rds-error {
+          input {
+            color: $adminPageError;
+          }
+        }
+
+      }
+      .user-id-section:not(:first-child) {
+        padding-top: 20px;
+      }
+      .ui.button.forgotPasswordLinkBtn {
+        position: relative;
+        .bmo_chevron.tick {
+          &:before {
+            left: 10px;
+            color: $tickMarkGreen;
+          }
+        }
+        .ui.loader {
+          &:before,
+          &:after{
+            width: 14px;
+            height: 14px;
+            top: 20px;
+            left: 100px;
+            border-width: 2px;
+          }
+        }
+      }
+      .bmo-contact-section {
+        @include bmoContactSectionStyle();
+        &.client-lookup-match {
+          margin-top: 30px;
+        }
+      }
+      .rds-error-container {
+        padding-top: 40px;
+        .error-message.rds-error {
+          color: $adminPageError;
+          font-size: 20px;
+          font-weight: $Small;
+        }
+        .linked-user {
+          padding-top : 30px;
+          flex-direction: row;
+          display: flex;
+          padding-right: 30px;
+          .created-at {
+            width: 25%;
+            word-break: break-word;
+            font-weight: $Small;
+            span {
+              display: block;
+              padding-bottom: 5px;
+            }
+          }
+          .user-other-info {
+            width: 75%;
+            word-break: break-word;
+            span {
+              display: block;
+              padding-bottom: 5px;
+            }
+          }
+        }
+      }
+    }
+    .user-edit-actions {
+      margin-top: 40px;
+      padding-right: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      .disabled-button {
+        color: $downloadRequestedColor;
+        background: transparent;
+        &.ui.button.secondary {
+          border: solid 1px $downloadRequestedColor;
+        }
+        margin: 0;
+      }
+      .ui.button {
+        font-size: $deskSz9;
+        font-weight: $Regular;
+        margin: 0;
+      }
+    }
+    .client-matches-header{
+      padding: 0;
+      color: $primaryBlue;
+      font-weight: $Small;
+      font-size: $deskSz7;
+      border-bottom: solid 1px $inputTextGray;
+      display: inline-block;
+      padding-bottom: 5px;
+    }
+    .client-matches {
+      padding-right: 30px;
+      font-size: $deskSz9;
+      .close-button {
+        display: block;
+        margin: 40px auto 0;
+      }
+    }
+    .entitlements {
+      flex-direction: row;
+      display: flex;
+      flex-wrap: wrap;
+      .entitlement-detail {
+        min-width: 50%;
+        font-size: $deskSz9;
+        .sub-heading {
+          font-weight: $Medium;
+          padding-bottom: 15px;
+        }
+        .entitlements-options {
+          font-weight: $Small;
+        }
+        .status-option {
+          display: inline;
+          padding-left: 5px;
+        }
+        .status-circle {
+          display: inline-block;
+          margin-right: 5px;
+          height: 23px;
+          width: 23px;
+          border: solid 1px;
+          background-color: transparent;
+          border-radius: 50rem;
+          vertical-align: middle;
+          &:focus {
+            outline: none;
+          }
+        }
+        .all-status-color {
+          padding-bottom: 15px;
+          .Pending_with_access, .Pending_without_access {
+            border-color: $statusPendingApproval;
+            &.true {
+              background-color: $statusPendingApproval;
+            }
+          }
+          .Trial {
+            border-color: $statusTrialMode;
+            &.true {
+              background-color: $statusTrialMode;
+            }
+          }
+          .Approved {
+            border-color: $statusApproved;
+            &.true {
+              background-color: $statusApproved;
+            }
+          }
+          .Denied, .Expired {
+            border-color: $statusDenied;
+            &.true {
+              background-color: $statusDenied;
+            }
+          }
+        }
+      }
+      .entitlement-detail:last-child {
+        margin-left: auto;
+        margin-top: -60px;
+      }
+      .checkboxes {
+        padding-bottom: 15px;
+      }
+      .ui.checkbox.box,.ui.checkbox label {
+        padding-left: 33px;
+        font-size: $deskSz9;
+      }
+    }
+    .record-matches {
+      display: flex;
+      flex-flow: row wrap;
+      .record-section {
+        width: 50%;
+        padding-right: 10px;
+        .row {
+          padding-top: 16px;
+          font-size: $deskSz9;
+          word-break: break-word;
+          .field-text {
+            font-weight: $Small;
+            padding-bottom: 5px;
+          }
+        }
+      }
+    }
+    .link-account-question {
+      padding-top: 50px;
+      padding-bottom: 40px;
+      font-size: $deskSz7;
+      font-weight: $Small;
+    }
+    .button-actions {
+      padding-right: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      .ui.secondary.button {
+        margin-right: 20px;
+        font-size: $deskSz9;
+      }
+    }
+    .actions.unlink-user-actions {
+      padding-right: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding-top: 40px;
+      .ui.secondary.button {
+        font-size: $deskSz9;
+        font-weight: $Regular;
+      }
+    }
+  }
+  .row {
+    .ui.message.error-text {
+      display: inline-block;
+      box-shadow: none;
+      background: none;
+      color: $adminPageError;
+      margin-top: 0;
+      margin-bottom: 0;
+      margin-right: 30px;
+      float: right;
+      padding-bottom: 5px;
+      padding: 0;
+      .content {
+        margin-top: 0;
+        min-height: 0;
+        padding: 0;
+      }
+    }
+    .error-box {
+      @include boxShadow(0, 0, 1px, 0, $primaryRed);
+      border-radius: 5px;
+    }
+  }
+  .ui.button {
+    font-size: $deskSz9;
+  }
+  .ui.disabled.button {
+    opacity: unset !important;
+  }
+}
+.admin-mobile-view {
+  display: none !important;
+}
+.admin-summary-card {
+  display: table;
+  width: 100%;
+  min-height: 50px;
+  background-color: $adminSummaryCardGray;
+  @include appDefaultFontStyleLight();
+  padding: 0px 0px 30px 0;
+  border-bottom: solid 1px $secondaryGray;
+  &:focus {
+    outline: none;
+  }
+  .remove-dimmer-bg {
+    .ui.page.modals.dimmer.transition.visible.active {
+      background: transparent;
+    }
+  }
+  &.true {
+    background-color: rgba(216, 216, 216, 0.37);
+    .name.result-cell {
+      padding-top: 10px;
+    }
+  }
+  .admin-name {
+    color: $primaryBlue;
+    @include appDefaultFontStyleRegular();
+    font-size: $deskSz9;
+    &:focus {
+      outline: none;
+    }
+    .user-display-name {
+      position: relative;
+      .link-btn {
+        display: inline-block;
+        width: 15px;
+        height: 15px;
+        margin-bottom: -1px;
+        &:focus {
+          outline: none;
+        }
+      }
+      .link-icon{
+        margin-right: 5px;
+        position: absolute;
+        top: 4px;
+        left: -20px;
+      }
+      .mail-icon,
+      .mail-icon-disabled {
+        position: absolute;
+        top: 5px;
+        left: -40px;
+        width: 15px;
+        height: 12px;
+      }
+      .mail-icon-disabled {
+        background-size: cover;
+      }
+      .name {
+        cursor: pointer;
+        &:focus {
+          outline: none;
+        }
+      }
+      .empty-linked-div {
+        margin-right: 5px;
+        width: 14px;
+        height: 14px;
+        display: inline-block;
+      }
+    }
+  }
+  .name-col-other-info {
+    padding-left: 0;
+  }
+  .email {
+    margin-top: 20px;
+    margin-bottom: 5px;
+    word-break: break-all;
+  }
+  .rw {
+    display: inline-block;
+    width: 100%;
+  }
+  .result-cell {
+    display: table-cell;
+    vertical-align: top;
+    &.date{
+      width: 20%;
+      padding-left: 32px;
+      height: 40px;
+      line-height: 3;
+      &:focus {
+        outline: none;
+      }
+    }
+    &.name {
+      width: 25%;
+      word-break: break-word;
+      -ms-word-break: break-all;
+      padding-left: 20px;
+      .sf-rds-info {
+        padding: 20px 0px;
+        span.sub-heading{
+          padding-right: 5px;
+        }
+      }
+      .to-unlink.linkBtn.ui.button {
+        padding: 0px;
+        .link-icon {
+          display: inline-block;
+          width: 14px;
+          height: 15px;
+          margin-bottom: -1px;
+          margin-left: 5px;
+        }
+        .unlink-icon, .unlink-disable-icon {
+          display: inline-block;
+          width: 16px;
+          height: 15px;
+          margin-bottom: -1px;
+          margin-left: 5px;
+        }
+      }
+      .to-unlink.linkBtn.ui.button.disabled-unlink {
+        padding-top : 20px;
+      }
+      .edit-button.ui.button {
+        height: 45px;
+        width: 146px;
+        margin: auto;
+        margin-top: 30px;
+        margin-bottom: 15px;
+        background: transparent;
+      }
+      .client-lookup-link {
+        display: block;
+        padding-left: 0px;
+        padding-right: 0;
+        span {
+          width: auto;
+          text-align: left;
+          display: block;
+          color: $primaryBlue;
+        }
+        &.disabled {
+          background: transparent;
+        }
+      }
+    }
+    &.status {
+      width: 20%;
+      padding-top: 15px;
+    }
+    &.company {
+      width: 20%;
+      height: 40px;
+      line-height: 3;
+      &:focus {
+        outline: none;
+      }
+    }
+    &.linked {
+      width: 15%;
+      padding-top: 10px;
+      &:focus {
+        outline: none;
+      }
+    }
+    &.event {
+      .event-title {
+        width: 192px;
+        @include appDefaultFontStyleRegular();
+      }
+      .event-place-div {
+        margin-top: 20px;
+        width: 192px;
+      }
+    }
+  }
+  &.false {
+    background-color: $primaryWhite;
+    height: 60px;
+    overflow: hidden;
+    display: table;
+    padding: 0px;
+    cursor: pointer;
+    .result-cell {
+      vertical-align: middle;
+      &.status {
+        padding-top: 0px;
+      }
+      &.result-cell-status {
+        .rw.status {
+          padding-bottom: 0px;
+        }
+        .result-cell-collaps-icon {
+          vertical-align: middle;
+          line-height: 0;
+        }
+      }
+      &.event {
+        padding-top: 19px;
+      }
+      &.linked {
+        padding-top: 0px;
+      }
+    }
+  }
+  .status-circle {
+    display: inline-block;
+    margin-right: 5px;
+    height: 23px;
+    width: 23px;
+    border: solid 1px;
+    background-color: transparent;
+    border-radius: 50rem;
+    vertical-align: middle;
+    &:focus {
+      outline: none;
+    }
+  }
+  .status-circle-text {
+    vertical-align: middle;
+  }
+
+  .result-cell-status {
+    .left {
+      width: 80%;
+      display: inline-block;
+      vertical-align: middle;
+      .desktop-row.status-circle {
+        &.Approved { background-color: $statusApproved; border-color: $statusApproved; }
+        &.Pending_with_access { background-color: $statusPendingApproval; border-color: $statusPendingApproval; }
+        &.Pending_without_access { background-color: $statusPendingApproval; border-color: $statusPendingApproval; }
+        &.Trial { background-color: $statusTrialMode; border-color: $statusTrialMode; }
+        &.Denied { background-color: $statusDenied; border-color: $statusDenied; }
+        &.Expired { background-color: $statusDenied; border-color: $statusDenied; }
+      }
+      .rw.status {
+        padding-bottom: 19px;
+      }
+      .all-status-color {
+        .Pending_with_access, .Pending_without_access {
+          border-color: $statusPendingApproval;
+          &.true {
+            background-color: $statusPendingApproval;
+          }
+        }
+        .Trial {
+          border-color: $statusTrialMode;
+          &.true {
+            background-color: $statusTrialMode;
+          }
+        }
+        .Approved {
+          border-color: $statusApproved;
+          &.true {
+            background-color: $statusApproved;
+          }
+        }
+        .Denied, .Expired {
+          border-color: $statusDenied;
+          &.true {
+            background-color: $statusDenied;
+          }
+        }
+      }
+      .linked.result-cell {
+        font-weight: bold;
+        &.YES {
+          color: $statusApproved;
+        }
+        &.NO {
+          color: $statusPendingApproval;
+        }
+      }
+    }
+    .result-cell-collaps-icon {
+      width: 20%;
+      display: inline-block;
+      vertical-align: top;
+      .ui.button {
+        font-size: 8px;
+        width: 14px;
+      }
+      .icon {
+        background-repeat: no-repeat !important;
+        background-size: contain !important;
+        padding-top: 0 !important;
+        &.true {
+          -webkit-transform: rotate(180deg) translateY(4px);
+          transform: rotate(180deg) translateY(4px);
+        }
+      }
+    }
+  }
+}
+.ui.button.linkBtn.disabled-unlink,
+.user-ids-container > .ui.button.disabled-unlink
+{
+  color: $downloadRequestedColor;
+  cursor: default;
+}
+.ui.modal.transition.visible.active.Client-Look-Up {
+  position: absolute !important;
+  top: 5%;
+  left: 5%;
+  right: 5%;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  margin-top: 0 !important;
+  width: auto;
+}
+
+// @media (max-width: $screen-sm) {
+//   .admin-summary-card {
+//     .result-cell {
+//       &.date{
+//         padding-left: 16px;
+//         width: 17%;
+//       }
+//       &.name {
+//         width: 30%;
+//         .email {
+//           word-break: break-all;
+//         }
+//       }
+//       &.company {
+//         width: 28%;
+//       }
+//       &.status {
+//         width: 25%;
+//       }
+//     }
+//   }
+// }
+
+// Medium Breakpoint
+@media (max-width: $screen-xs-sm) {
+  .admin-summary-card {
+    display: none !important;
+  }
+  .admin-mobile-view {
+    display: block !important;
+    padding: 15px;
+    padding-bottom: 0px;
+    &.true {
+      background-color: rgba(216, 216, 216, 0.37);
+    }
+    &.false {
+      background-color: $primaryWhite;
+      padding: 15px;
+      padding-bottom: 0px;
+    }
+    .account-info-left {
+      display: inline-block;
+      width: 50%;
+      .name-div, .company-div, .date-div, .linked-div {
+        padding-bottom: 15px;
+      }
+      .linked-div {
+        .NO {
+          font-style: bold;
+          color: $statusPendingApproval;
+        }
+        .YES {
+          font-style: bold;
+          color: $statusApproved;
+        }
+      }
+      .title {
+        display: block;
+        font-weight: 100;
+      }
+      .field {
+        @include appDefaultFontStyleRegular;
+        &.admin-name {
+          color: $primaryBlue;
+          word-break: break-all;
+        }
+      }
+    }
+    .accout-info-right {
+      display: inline-block;
+      width: 50%;
+      &.true {
+        vertical-align: top;
+      }
+      &.false {
+        vertical-align: bottom;
+      }
+      .desktop-row.status-circle {
+        &.Approved { background-color: $statusApproved; border-color: $statusApproved; }
+        &.Pending_with_access { background-color: $statusPendingApproval; border-color: $statusPendingApproval; }
+        &.Pending_without_access { background-color: $statusPendingApproval; border-color: $statusPendingApproval; }
+        &.Trial { background-color: $statusTrialMode; border-color: $statusTrialMode; }
+        &.Denied { background-color: $statusDenied; border-color: $statusDenied; }
+        &.Expired { background-color: $statusDenied; border-color: $statusDenied; }
+      }
+      .rw.status {
+        padding-bottom: 19px;
+      }
+      .all-status {
+        .Pending_with_access, .Pending_without_access {
+          border-color: $statusPendingApproval;
+          &.true {
+            background-color: $statusPendingApproval;
+          }
+        }
+        .Trial {
+          border-color: $statusTrialMode;
+          &.true {
+            background-color: $statusTrialMode;
+          }
+        }
+        .Approved {
+          border-color: $statusApproved;
+          &.true {
+            background-color: $statusApproved;
+          }
+        }
+        .Denied, .Expired {
+          border-color: $statusDenied;
+          &.true {
+            background-color: $statusDenied;
+          }
+        }
+      }
+      .status-circle {
+        display: inline-block;
+        margin-right: 5px;
+        height: 23px;
+        width: 23px;
+        border: solid 1px;
+        background-color: transparent;
+        border-radius: 50rem;
+      }
+    }
+    .result-cell-collaps-icon {
+      text-align: center;
+      border-bottom: solid 0.2px $oddGray;
+      padding-bottom: 15px;
+      width: 100%;
+      display: inline-block;
+      vertical-align: top;
+      .ui.button {
+        font-size: 8px;
+        width: 14px;
+      }
+      .icon {
+        background-repeat: no-repeat !important;
+        background-size: contain !important;
+        padding-top: 0 !important;
+        &.true {
+          -webkit-transform: rotate(180deg) translateY(4px);
+          transform: rotate(180deg) translateY(4px);
+        }
+      }
+    }
+    .account-actions {
+      text-align: center;
+      padding-top: 11px;
+      .ui.button.edit-button {
+        background-color: transparent;
+      }
+    }
+  }
+}
+
+// Large Breakpoint
+@media (min-width: $screen-lg-min) {
+  .admin-summary-card {
+    // override md breakpoint styles
+  }
+}
+
+  /* IE10+ CSS */
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  .ui.modal.transition.visible.active.Client-Look-Up {
+    left: 29%;
+  }
+  .Client-Look-Up {
+    .client-details {
+      .input.ui input {
+        padding-bottom: 0.5em;
+        padding-top: 0.5em;
+      }
+    }
+  }
+  .ui.modal.Client-Look-Up {
+    .content {
+      .record-matches {
+        .record-section {
+          .row {
+            word-break: break-all;
+          }
+        }
+      }
+    }
+  }
+  .admin-summary-card {
+    .admin-name {
+      .user-display-name {
+        .name {
+          word-break: break-all;
+        }
+      }
+    }
+  }
+}
+
+/* Edge specific CSS styles go here */
+@supports (-ms-ime-align:auto) {
+  .ui.modal.Client-Look-Up {
+    .content {
+      .record-matches {
+        .record-section {
+          .row {
+            word-break: break-all;
+          }
+        }
+      }
+    }
+  }
+  .admin-summary-card {
+    .admin-name {
+      .user-display-name {
+        .name {
+          word-break: break-all;
+        }
+      }
+    }
+  }
+}

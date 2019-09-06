@@ -1,0 +1,33 @@
+/*
+ * Component: ResultWrapperWithScroll
+ */
+
+@import '../../../styles/variables';
+
+// (IMPORTANT: please create the styles such that the larger breakpoints
+// override the smaller ones. "Mobile First")
+
+.result-wrapper-with-scroll {
+  position: relative;
+}
+
+// Small Breakpoint
+@media (min-width: $screen-sm-min) {
+  .result-wrapper-with-scroll {
+    // override xs breakpoint styles
+  }
+}
+
+// Medium Breakpoint
+@media (min-width: $screen-md-min) {
+  .result-wrapper-with-scroll {
+    // override sm breakpoint styles
+  }
+}
+
+// Large Breakpoint
+@media (min-width: $screen-lg-min) {
+  .result-wrapper-with-scroll {
+    // override md breakpoint styles
+  }
+}

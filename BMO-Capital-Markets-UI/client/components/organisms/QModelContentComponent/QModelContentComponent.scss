@@ -1,0 +1,329 @@
+/*
+ * Component: QModelContentComponent
+ */
+
+@import '../../../styles/variables';
+
+// (IMPORTANT: please create the styles such that the larger breakpoints
+// override the smaller ones. "Mobile First")
+.one_zero_one_accordions {
+  padding: 10px;
+  padding-top: 0;
+  .ui.accordion .title .dropdown.icon {
+    float: right;
+    height: 38px;
+    width: 38px;
+    background-color: transparent;
+    display: inline-block;
+    border-radius: 50rem;
+    border: solid 1px $primaryBlue;
+    &:before{
+      border-style: solid;
+      border-width: 1px 1px 0 0;
+      content: '';
+      display: inline-block;
+      height: 12px;
+      left: -12px;
+      position: relative;
+      top: 10px;
+      transform: rotate(135deg);
+      vertical-align: top;
+      width: 12px;
+      float: right;
+      color: $primaryBlue;
+    }
+    &:hover {
+      box-shadow: 0 0 1px $primaryBlue;
+    }
+  }
+  .ui.accordion .active {
+    &.title {
+      margin-bottom: 5px !important;
+      .dropdown.icon {
+        transform: rotate(180deg);
+      }
+    }
+  }
+  .ui.fluid.accordion {
+    .title {
+      border-bottom: solid 1px $borderBottomGrey;
+      margin-bottom: 45px;
+      padding: 0 25px;
+      padding-bottom: 17px;
+      &:not(.active):nth-last-child(2) {
+        border-bottom: none;
+      }
+    }
+    .accord-content {
+      color: $primaryGray;
+      padding: 0 30px;
+      margin-bottom: 55px;
+      p {
+        @include appDefaultFontStyleRegular();
+        font-size: $deskSz9;
+        line-height: 26px;
+      }
+      h4 {
+        font-size: $deskSz4;
+
+      }
+      hr {
+        color: $oddGray;
+        border-width: 0.5px;
+      }
+      .rich-text {
+        img {
+          width: auto;
+          height: auto;
+        }
+      }
+    }
+  }
+  .ui.label.accord-title {
+    background-color: transparent;
+    font-size: $deskSz1;
+    color: $primaryGray;
+    @include appDefaultFontStyleLight();
+
+    padding: 0;
+    width: 82%;
+    line-height: 45px;
+  }
+}
+.q-model-content-component {
+  text-align: left;
+  padding-top: 0;
+  width: $rightLayoutWidth;
+  vertical-align: top;
+  display:  inline-block;
+  .ui.heading{
+    &.title {
+      color: $primaryBlack;
+      @include appDefaultFontStyleLight();
+      font-size: $deskSz1;
+    }
+  }
+  .details {
+    padding: 0px 39px;
+    text-overflow: ellipsis;
+    //background-color: $qModelBgColor;
+    .richText .rich-text {
+      padding: 0;
+      font-size: $deskSz9;
+
+      @include appDefaultFontStyleLight();
+      p {
+        color: $primaryGray;
+        @include appDefaultFontStyleLight();
+        font-size: $deskSz9;
+
+        line-height: 26px;
+      }
+      h1 {
+        font-size: $deskSz1;
+        @include appDefaultFontStyleLight();
+        color: $primaryGray;
+        margin-bottom: 20px;
+      }
+    }
+  }
+  .report-btn {
+    padding: 0;
+    margin-right: 38px;
+    min-width: 173px;
+    display: inline-block;
+    text-align: center;
+    color: $primaryBlue;
+    line-height: 15px;
+  }
+
+  .button-pair {
+    margin-bottom: 65px;
+    margin-top: 48px;
+    padding-left: 39px;
+    .canadian-report {
+      margin-right: 38px;
+    }
+  }
+  img.ui.image.q-model-graph,
+  img.ui.image.q-model-stats{
+    border: solid 2px;
+    margin-left: 39px;
+    max-width: 63%; //Previous value: calc(100% - 80px);
+    position: relative;
+    display: block;
+    vertical-align: top;
+    margin-bottom: 50px;
+  }
+}
+@media (max-width: $qmodel-101-mobile) {
+  .one_zero_one_accordions {
+    .ui.fluid.accordion {
+      .accord-content {
+        .rich-text {
+          img {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: $screen-sm-min) {
+  .q-model-content-component {
+    padding-top: 0;
+    img.ui.image.q-model-graph,
+    img.ui.image.q-model-stats{
+      margin-left: 46px;
+      max-width: calc(100% - 80px);
+    }
+    .button-pair {
+      margin-top: 28px;
+      margin-bottom: 50px;
+    }
+    .details {
+      background-color: $primaryWhite;
+      padding-left: 47px;
+      padding-top: 0px;
+      height: auto;
+    }
+    .button-pair {
+      max-width: 100%;
+      position: relative;
+      padding-left: 47px;
+    }
+    .report-btn{
+      display: inline-block;
+      text-align: center;
+      width: 173px;
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+}
+
+// Small Breakpoint
+@media (max-width: $screen-xs-sm) {
+  .q-model-content-component {
+    width: 100%;
+    padding: 0 15px;
+    .button-pair {
+      margin-bottom: 53px;
+      margin-top: 33px;
+      padding-left: 0;
+      .canadian-report {
+        margin-bottom: 25px;
+      }
+    }
+    .details {
+      padding-left: 0;
+      padding-right: 0;
+      height: auto;
+      .richText .rich-text {
+        h1 {
+          margin-bottom: 25px;
+        }
+      }
+    }
+    img.ui.image.q-model-graph,
+    img.ui.image.q-model-stats{
+      max-width: 100%;
+      margin: 20px 0;
+      padding: 0;
+    }
+  }
+
+  .one_zero_one_accordions {
+    padding: 0;
+    .ui.accordion .title {
+      position: relative;
+      .dropdown.icon {
+        float: right;
+        height: 40px;
+        width: 40px;
+        background-color: transparent;
+        display: inline-block;
+        border-radius: 50rem;
+        border: none;
+        vertical-align: middle;
+        position: absolute;
+        left: 45%;
+        bottom: 0;
+        &:before{
+          border-style: solid;
+          border-width: 1px 1px 0 0;
+          content: '';
+          display: inline-block;
+          height: 0.60em;
+          left: -14px;
+          position: relative;
+          top: 12px;
+          transform: rotate(135deg);
+          vertical-align: top;
+          width: 0.60em;
+          float: right;
+          color: $primaryBlue;
+        }
+      }
+    }
+    .ui.accordion .active {
+      &.title {
+        margin-bottom: 5px !important;
+        .dropdown.icon {
+          transform: rotate(180deg);
+        }
+      }
+    }
+    .ui.fluid.accordion {
+      .title {
+        border-bottom: solid 1px $borderBottomGrey;
+        margin-bottom: 10px;
+        padding: 0;
+        padding-bottom: 35px;
+        &:not(.active):nth-last-child(2) {
+          border-bottom: none;
+        }
+      }
+      .accord-content {
+        padding: 0;
+        margin-bottom: 55px;
+        p {
+          @include appDefaultFontStyleRegular();
+          font-size: $deskSzSmaller;
+          max-width: 540px;
+          line-height: 26px;
+        }
+        .rich-text {
+          img {
+            width: 100%;
+          }
+        }
+      }
+    }
+    .ui.label.accord-title {
+      background-color: transparent;
+      font-size: $deskSz4;
+      color: $primaryGray;
+      @include appDefaultFontStyleLight();
+
+      padding: 0;
+      line-height: 26px;
+    }
+  }
+}
+
+// Medium Breakpoint
+@media (min-width: $screen-md-min) {
+  .q-model-monthly-review {
+    // override sm breakpoint styles
+  }
+}
+
+// Large Breakpoint
+@media (min-width: $screen-lg-min) {
+  .q-model-monthly-review {
+    // override md breakpoint styles
+  }
+}

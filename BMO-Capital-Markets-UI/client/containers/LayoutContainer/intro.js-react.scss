@@ -1,0 +1,635 @@
+.introjs-overlay {
+  position: absolute;
+  box-sizing: content-box;
+  z-index: 999999;
+  background-color: #000;
+  opacity: 0;
+  background: -moz-radial-gradient(center,ellipse farthest-corner,rgba(0,0,0,0.4) 0,rgba(0,0,0,0.9) 100%);
+  background: -webkit-gradient(radial,center center,0px,center center,100%,color-stop(0%,rgba(0,0,0,0.4)),color-stop(100%,rgba(0,0,0,0.9)));
+  background: -webkit-radial-gradient(center,ellipse farthest-corner,rgba(0,0,0,0.4) 0,rgba(0,0,0,0.9) 100%);
+  background: -o-radial-gradient(center,ellipse farthest-corner,rgba(0,0,0,0.4) 0,rgba(0,0,0,0.9) 100%);
+  background: -ms-radial-gradient(center,ellipse farthest-corner,rgba(0,0,0,0.4) 0,rgba(0,0,0,0.9) 100%);
+  background: radial-gradient(center,ellipse farthest-corner,rgba(0,0,0,0.4) 0,rgba(0,0,0,0.9) 100%);
+  filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#66000000',endColorstr='#e6000000',GradientType=1)";
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+  filter: alpha(opacity=50);
+  -webkit-transition: all 0.3s ease-out;
+     -moz-transition: all 0.3s ease-out;
+      -ms-transition: all 0.3s ease-out;
+       -o-transition: all 0.3s ease-out;
+          transition: all 0.3s ease-out;
+}
+
+.introjs-fixParent {
+  z-index: auto !important;
+  opacity: 1.0 !important;
+  -webkit-transform: none !important;
+     -moz-transform: none !important;
+      -ms-transform: none !important;
+       -o-transform: none !important;
+          transform: none !important;
+}
+
+.introjs-showElement,
+tr.introjs-showElement > td,
+tr.introjs-showElement > th {
+  z-index: 9999999 !important;
+  @media all and (min-width: 768px) and (max-width: 1023px) {
+    z-index: 0 !important;
+  }
+  @media all and (max-width: 767px) {
+    z-index: 0 !important;
+  }
+}
+
+.introjs-disableInteraction {
+  z-index: 99999999 !important;
+  position: absolute;
+  background-color: white;
+  opacity: 0;
+  filter: alpha(opacity=0);
+}
+
+.introjs-relativePosition,
+tr.introjs-showElement > td,
+tr.introjs-showElement > th {
+  position: relative;
+}
+
+.introjs-helperLayer {
+  box-sizing: content-box;
+  position: absolute;
+  z-index: 9999998;
+  background-color: transparent;
+  -webkit-transition: all 0.3s ease-out;
+     -moz-transition: all 0.3s ease-out;
+      -ms-transition: all 0.3s ease-out;
+       -o-transition: all 0.3s ease-out;
+          transition: all 0.3s ease-out;
+  @media all and (min-width: 768px) and (max-width: 1023px) {
+    &.bgWhite {
+      background-color: transparent !important;
+    }
+  }
+  @media all and (max-width: 767px) {
+    &.bgWhite {
+      background-color: transparent !important;
+    }
+  }
+}
+
+.introjs-tooltipReferenceLayer {
+  box-sizing: content-box;
+  position: absolute;
+  visibility: hidden;
+  z-index: 100000000;
+  background-color: transparent;
+  -webkit-transition: all 0.3s ease-out;
+     -moz-transition: all 0.3s ease-out;
+      -ms-transition: all 0.3s ease-out;
+       -o-transition: all 0.3s ease-out;
+          transition: all 0.3s ease-out;
+}
+
+.introjs-helperLayer *,
+.introjs-helperLayer *:before,
+.introjs-helperLayer *:after {
+  -webkit-box-sizing: content-box;
+     -moz-box-sizing: content-box;
+      -ms-box-sizing: content-box;
+       -o-box-sizing: content-box;
+          box-sizing: content-box;
+  @media all and (min-width: 768px) and (max-width: 1023px) {
+    &.bgWhite {
+      background-color: transparent !important;
+    }
+  }
+  @media all and (max-width: 767px) {
+    &.bgWhite {
+      background-color: transparent !important;
+    }
+  }
+}
+
+.introjs-helperNumberLayer {
+  box-sizing: content-box;
+  position: absolute;
+  visibility: visible;
+  top: -5px;
+  left: -16px;
+  z-index: 9999999999 !important;
+  padding: 2px;
+  font-family: Arial, verdana, tahoma;
+  font-size: 13px;
+  font-weight: bold;
+  color: white;
+  text-align: center;
+  text-shadow: 1px 1px 1px rgba(0,0,0,.3);
+  width: 20px;
+  height:20px;
+  line-height: 20px;
+  border-radius: 50%;
+  background: #ed2324;
+  text-shadow: none;
+  @media all and (min-width: 768px) and (max-width: 1023px) {
+    display: none !important;
+  }
+  @media all and (max-width: 767px) {
+    display: none !important;
+  }
+}
+
+.introjs-arrow {
+  border: 10px solid transparent;
+  content:'';
+  position: absolute;
+  @media all and (min-width: 768px) and (max-width: 1023px) {
+    display: none !important;
+  }
+  @media all and (max-width: 767px) {
+    display: none !important;
+  }
+}
+.introjs-arrow.top {
+  top: -20px;
+  border-bottom-color:white;
+}
+.introjs-arrow.top-right {
+  top: -18px;
+  right: 20px;
+  border-bottom-color:white;
+}
+.introjs-arrow.top-middle {
+  top: -18px;
+  left: 50%;
+  margin-left: -5px;
+  border-bottom-color:white;
+}
+.introjs-arrow.right {
+  right: -18px;
+  top: 20px;
+  border-left-color:white;
+}
+.introjs-arrow.right-bottom {
+  bottom:18px;
+  right: 20px;
+  border-left-color:white;
+}
+.introjs-arrow.bottom {
+  bottom: -18px;
+  border-top-color:white;
+}
+.introjs-arrow.bottom-right {
+  bottom: -18px;
+  right: 20px;
+  border-top-color:white;
+}
+.introjs-arrow.bottom-middle {
+  bottom: -18px;
+  left: 50%;
+  margin-left: -5px;
+  border-top-color:white;
+}
+.introjs-arrow.left {
+  left: -18px;
+  top: 20px;
+  border-right-color:white;
+}
+.introjs-arrow.left-bottom {
+  left: -18px;
+  bottom:20px;
+  border-right-color:white;
+}
+
+.introjs-tooltip {
+  box-sizing: content-box;
+  position: absolute;
+  visibility: visible;
+  padding: 16px 24px;
+  background-color: white;
+  min-width: 340px;
+  max-width: 300px;
+  border-radius: 3px;
+  box-shadow: 0 1px 10px rgba(0,0,0,.4);
+  display: flex !important;
+  flex-direction: column;
+  -webkit-transition: opacity 0.1s ease-out;
+     -moz-transition: opacity 0.1s ease-out;
+      -ms-transition: opacity 0.1s ease-out;
+       -o-transition: opacity 0.1s ease-out;
+          transition: opacity 0.1s ease-out;
+  @media all and (min-width: 768px) and (max-width: 1023px) {
+    bottom: auto !important;
+    height: auto !important;
+    left: 10% !important;
+    right: 10% !important;
+    top: 22% !important;
+    max-width: 767px !important;
+    width: unset !important;
+    min-width: 256px !important;
+    position: fixed !important;
+    padding: 10px !important;
+    margin-left: 0px !important;
+    margin-top: 0px !important;
+    margin: 0 auto !important;
+    .introjs-tooltipbuttons {
+      text-align: center;
+    }
+  }
+  @media all and (max-width: 767px) {
+    bottom: unset !important;
+    height: auto !important;
+    left: 7% !important;
+    right: 10% !important;
+    top: 22% !important;
+    max-width: 767px!important;
+    width: 80% !important;
+    min-width: 256px !important;
+    position: fixed !important;
+    padding: 10px !important;
+    margin-left: 0px !important;
+    margin-top: 0px !important;
+    .introjs-tooltipbuttons {
+      text-align: center;
+      .introjs-button.introjs-skipbutton {
+        display: inline-block;
+        margin-right: 5px;
+        width: 40px;
+      }
+      .introjs-button {
+        width: 100px;
+        margin-right: 5px;
+      }
+    }
+  }
+}
+
+.introjs-tooltipbuttons {
+  white-space: nowrap;
+  order: 2;
+  margin-bottom: 25px;
+}
+
+.introjs-tooltiptext {
+  margin-bottom: 25px;
+  order: 1;
+}
+
+.introjs-bullets {
+  order: 3;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/*
+ Buttons style by http://nicolasgallagher.com/lab/css3-github-buttons/
+ Changed by Afshin Mehrabani
+*/
+.introjs-button {
+  box-sizing: content-box;
+  position: relative;
+  overflow: visible;
+  display: inline-block;
+  padding: 0.3em 0.8em;
+  border: 1px solid #d4d4d4;
+  margin: 0;
+  text-decoration: none;
+  text-shadow: 1px 1px 0 #fff;
+  font: 11px/normal sans-serif;
+  color: #333;
+  white-space: nowrap;
+  cursor: pointer;
+  outline: none;
+  background-color: #ececec;
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#f4f4f4), to(#ececec));
+  background-image: -moz-linear-gradient(#f4f4f4, #ececec);
+  background-image: -o-linear-gradient(#f4f4f4, #ececec);
+  background-image: linear-gradient(#f4f4f4, #ececec);
+  -webkit-background-clip: padding;
+  -moz-background-clip: padding;
+  -o-background-clip: padding-box;
+  /*background-clip: padding-box;*/ /* commented out due to Opera 11.10 bug */
+  -webkit-border-radius: 0.2em;
+  -moz-border-radius: 0.2em;
+  border-radius: 0.2em;
+  /* IE hacks */
+  zoom: 1;
+  *display: inline;
+  margin-top: 10px;
+}
+
+/* overrides extra padding on button elements in Firefox */
+.introjs-button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+.introjs-skipbutton {
+  width: 31px;
+  height: 35px;
+  font-family: Heebo;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 2.18;
+  letter-spacing: normal;
+  text-align: center;
+  background: transparent;
+  border: none;
+  color: #0079c1;
+  padding: 0;
+  margin-right: 20px;
+}
+
+.introjs-button.introjs-prevbutton, .introjs-button.introjs-nextbutton, {
+  width: 133px;
+  height: 45px;
+  border-radius: 20.6px;
+  border: solid 1px #0079c1;
+  font-family: Heebo;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  letter-spacing: normal;
+  text-align: center;
+  color: #0079c1;
+  background: transparent;
+  line-height: 45px;
+  padding: 0;
+  margin-right: 20px;
+}
+
+.introjs-button.introjs-disabled {
+  color: #8c8c8c;
+  border-color: #8c8c8c;
+  background: transparent;
+}
+.introjs-button.introjs-disabled:hover {
+  background: transparent;
+  border-color: #8c8c8c;
+  color: #8c8c8c;
+}
+
+.introjs-prevbutton {
+  -webkit-border-radius: 0.2em 0 0 0.2em;
+  -moz-border-radius: 0.2em 0 0 0.2em;
+  border-radius: 0.2em 0 0 0.2em;
+  border-right: none;
+}
+
+.introjs-prevbutton.introjs-fullbutton {
+  border: 1px solid #d4d4d4;
+  -webkit-border-radius: 0.2em;
+  -moz-border-radius: 0.2em;
+  border-radius: 0.2em;
+}
+
+.introjs-nextbutton {
+  -webkit-border-radius: 0 0.2em 0.2em 0;
+  -moz-border-radius: 0 0.2em 0.2em 0;
+  border-radius: 0 0.2em 0.2em 0;
+}
+
+.introjs-nextbutton.introjs-fullbutton {
+  -webkit-border-radius: 0.2em;
+  -moz-border-radius: 0.2em;
+  border-radius: 0.2em;
+}
+
+.introjs-disabled, .introjs-disabled:hover, .introjs-disabled:focus {
+  color: #9a9a9a;
+  border-color: #d4d4d4;
+  box-shadow: none;
+  cursor: default;
+  background-color: #f4f4f4;
+  background-image: none;
+  text-decoration: none;
+}
+
+.introjs-hidden {
+  display: none;
+}
+
+
+.introjs-bullets ul {
+  box-sizing: content-box;
+  clear: both;
+  margin: 15px auto 0;
+  padding: 0;
+  display: inline-block;
+}
+.introjs-bullets ul li {
+  box-sizing: content-box;
+  list-style: none;
+  float: left;
+  margin: 0 2px;
+}
+.introjs-bullets ul li a {
+  box-sizing: content-box;
+  display: block;
+  width: 8px;
+  height: 8px;
+  background: #e9e9e9;;
+  border-radius: 10px;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  text-decoration: none;
+  cursor: pointer;
+}
+.introjs-bullets ul li a:hover {
+  background: #999;
+}
+.introjs-bullets ul li a.active {
+  background: #0079c1;
+}
+
+.introjs-progress {
+  box-sizing: content-box;
+  overflow: hidden;
+  height: 10px;
+  margin: 10px 0 5px 0;
+  border-radius: 4px;
+  background-color: #ecf0f1
+}
+.introjs-progressbar {
+  box-sizing: content-box;
+  float: left;
+  width: 0%;
+  height: 100%;
+  font-size: 10px;
+  line-height: 10px;
+  text-align: center;
+  background-color: #08c;
+}
+
+.introjsFloatingElement {
+  position: absolute;
+  height: 0;
+  width: 0;
+  left: 50%;
+  top: 50%;
+}
+
+.introjs-fixedTooltip {
+  position: fixed;
+}
+
+.introjs-hint {
+  box-sizing: content-box;
+  position: absolute;
+  background: transparent;
+  width: 20px;
+  height: 15px;
+  cursor: pointer;
+}
+.introjs-hint:focus {
+    border: 0;
+    outline: 0;
+}
+.introjs-hidehint {
+  display: none;
+}
+
+.introjs-fixedhint {
+  position: fixed;
+}
+
+.introjs-hint:hover > .introjs-hint-pulse {
+  border: 5px solid rgba(60, 60, 60, 0.57);
+}
+
+.introjs-hint-pulse {
+  box-sizing: content-box;
+  width: 10px;
+  height: 10px;
+  border: 5px solid rgba(60, 60, 60, 0.27);
+  -webkit-border-radius: 30px;
+  -moz-border-radius: 30px;
+  border-radius: 30px;
+  background-color: rgba(136, 136, 136, 0.24);
+  z-index: 10;
+  position: absolute;
+  -webkit-transition: all 0.2s ease-out;
+     -moz-transition: all 0.2s ease-out;
+      -ms-transition: all 0.2s ease-out;
+       -o-transition: all 0.2s ease-out;
+          transition: all 0.2s ease-out;
+}
+.introjs-hint-no-anim .introjs-hint-dot {
+  -webkit-animation: none;
+  -moz-animation: none;
+  animation: none;
+}
+.introjs-hint-dot {
+  box-sizing: content-box;
+  border: 10px solid rgba(146, 146, 146, 0.36);
+  background: transparent;
+  -webkit-border-radius: 60px;
+  -moz-border-radius: 60px;
+  border-radius: 60px;
+  height: 50px;
+  width: 50px;
+  -webkit-animation: introjspulse 3s ease-out;
+  -moz-animation: introjspulse 3s ease-out;
+  animation: introjspulse 3s ease-out;
+  -webkit-animation-iteration-count: infinite;
+  -moz-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  position: absolute;
+  top: -25px;
+  left: -25px;
+  z-index: 1;
+  opacity: 0;
+}
+
+@-webkit-keyframes introjspulse {
+    0% {
+        -webkit-transform: scale(0);
+        opacity: 0.0;
+    }
+    25% {
+        -webkit-transform: scale(0);
+        opacity: 0.1;
+    }
+    50% {
+        -webkit-transform: scale(0.1);
+        opacity: 0.3;
+    }
+    75% {
+        -webkit-transform: scale(0.5);
+        opacity: 0.5;
+    }
+    100% {
+        -webkit-transform: scale(1);
+        opacity: 0.0;
+    }
+}
+
+@-moz-keyframes introjspulse {
+    0% {
+        -moz-transform: scale(0);
+        opacity: 0.0;
+    }
+    25% {
+        -moz-transform: scale(0);
+        opacity: 0.1;
+    }
+    50% {
+        -moz-transform: scale(0.1);
+        opacity: 0.3;
+    }
+    75% {
+        -moz-transform: scale(0.5);
+        opacity: 0.5;
+    }
+    100% {
+        -moz-transform: scale(1);
+        opacity: 0.0;
+    }
+}
+
+@keyframes introjspulse {
+    0% {
+        transform: scale(0);
+        opacity: 0.0;
+    }
+    25% {
+        transform: scale(0);
+        opacity: 0.1;
+    }
+    50% {
+        transform: scale(0.1);
+        opacity: 0.3;
+    }
+    75% {
+        transform: scale(0.5);
+        opacity: 0.5;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 0.0;
+    }
+}
+
+.introjs-button.introjs-hidden {
+  display: inline-block;
+}
+.library-filter .introjs-fixParent.ui.sidebar {
+  will-change: inherit;
+}
+.introjs-relativePosition#intro-research-layout-filter-part .column, 
+.introjs-showElement#intro-library-filter-part>div, 
+#intro-our-coverage-name-id.intro-part-our-coverage.introjs-showElement.company-name-btn {
+  position: relative;
+  z-index: 9999999 !important;
+  @media all and (min-width: 768px) and (max-width: 1023px) {
+    position: relative;
+    z-index: 0 !important;
+  }
+  @media all and (max-width: 767px) {
+    position: relative;
+    z-index: 0 !important;
+  }
+}

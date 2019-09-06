@@ -1,0 +1,146 @@
+/*
+ * Component: AnalystsStockList
+ */
+
+@import '../../../styles/variables';
+
+// (IMPORTANT: please create the styles such that the larger breakpoints
+// override the smaller ones. "Mobile First")
+
+.analysts-stock-list {
+  padding: 40px;
+  padding-top: 0;
+  display: inline-block;
+  .ui.fluid.dropdown.show-mobile {
+    display: none;
+  }
+  .stock-list-heading {
+    font-size: $deskSz7;
+    color: $primaryGray;
+    margin-bottom: 40px;
+  }
+  button.ui.sector-button {
+    background-color: transparent;
+    font-size: $deskSz7;
+    color: $primaryGray;
+    padding: 0;
+    display: inline-block;
+    width: auto;
+    height: 20px;
+    width: 100%;
+    padding-left: 10px;
+    &:active, &:hover {
+      background-color: transparent;
+    }
+    &:focus {
+      outline: none;
+    }
+  }
+  .table-wrap {
+    display: table;
+    table-layout: fixed;
+    width: 100%;
+    padding-bottom: 15px;
+    .show-desktop {
+      display: table-row;
+      .button-wrap {
+        position: relative;
+        display: inline-block;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        margin-bottom: 10px;
+        .ui.button {
+          font-size: $deskSz9;
+          margin: 0;
+          padding: 0 15px;
+        }
+        &:before {
+          border-right: 1px solid $oddGray;
+          content: '';
+          width: 1px;
+          left: 100%;
+          height: 33px;
+          display: inline-block;
+          vertical-align: middle;
+          margin: 0;
+        }
+      }
+      .button-wrap.all {
+        &:before {
+          border-right: 1px solid transparent;
+          margin: 0;
+        }
+        .ui.button {
+          padding-left: 0px;
+          text-align: left;
+        }
+      }
+      .button-wrap.active {
+        button.ui.sector-button {
+          color: $primaryBlue;
+          @include appDefaultFontStyleMedium();
+        }
+      }
+    }
+  }
+  &:after {
+    content: '';
+    display: inline-block;
+    height: 1px;
+    width: 100%;
+    position: relative;
+    margin-top: 30px;
+  }
+}
+
+.coverageStockListPopup.ui.popup {
+  color: $primaryGray;
+}
+
+// Small Breakpoint
+@media (max-width: $screen-sm-min) {
+  .analysts-stock-list {
+    .table-wrap .show-desktop .button-wrap.all {
+      width: 10%;
+    }
+  }
+}
+
+// Medium Breakpoint
+@media (max-width: $screen-xs-max) {
+  .analysts-stock-list {
+    .stock-list-heading {
+      padding: 0 16px;
+    }
+    .table-wrap {
+      display: none;
+    }
+    .ui.selection.visible.dropdown {
+      .text:not(.default) {
+        color: $primaryWhite;
+      }
+    }
+    .show-mobile.ui.fluid.dropdown {
+      width: 90%;
+      margin: 0 auto;
+      display: block;
+      background-color: $menuBlue;
+      color: $primaryWhite;
+      .menu {
+        background-color: $primaryBlue;
+      }
+      .text {
+        color: $primaryWhite;
+      }
+    }
+    padding: 0;
+    padding-top: 0;
+  }
+}
+
+// Large Breakpoint
+@media (min-width: $screen-lg-min) {
+  .analysts-stock-list {
+    // override md breakpoint styles
+  }
+}

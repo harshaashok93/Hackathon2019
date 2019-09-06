@@ -1,0 +1,193 @@
+{
+  "name": "BMO-Capital-Markets",
+  "version": "0.0.1",
+  "description": "front end development for BMO Capital Markets application",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "start": "npm run local",
+    "start-analyze": "BUNDLE_ANALYZE=true npm run local",
+    "start-analyze-corp": "BUNDLE_ANALYZE=true npm run local_corp",
+    "start-corp": "npm run local_corp",
+    "env:local": "cross-env SITE_ENV=equity HOST_ENV=local NODE_ENV=development",
+    "env:local_corp": "cross-env SITE_ENV=corp HOST_ENV=local NODE_ENV=development",
+    "local": "npm run env:local -- webpack-dev-server --progress --config webpack.config.dev.js",
+    "local_corp": "npm run dumbledore & npm run env:local_corp -- webpack-dev-server --progress --config webpack.config.dev.js",
+    "env:bmo_equity_dev": "cross-env SITE_ENV=equity HOST_ENV=dev NODE_ENV=production",
+    "env:bmo_equity_qa": "cross-env SITE_ENV=equity HOST_ENV=qa NODE_ENV=production",
+    "env:bmo_equity_uat": "cross-env SITE_ENV=equity HOST_ENV=uat NODE_ENV=production",
+    "env:bmo_equity": "cross-env SITE_ENV=equity HOST_ENV=prod NODE_ENV=production",
+    "build:clean:equity": "rimraf \"dist_equity/!(.git*|Procfile)**\"",
+    "build:copy:equity": "cpx 'public/**/*' dist_equity",
+    "prebuild_equity": "npm run build:clean:equity && npm run build:copy:equity",
+    "build:bmo_equity_dev": "npm run prebuild_equity && npm run env:bmo_equity_dev -- webpack --config webpack.config.dev.js",
+    "build:bmo_equity_qa": "npm run prebuild_equity && npm run env:bmo_equity_qa -- webpack --config webpack.config.prod.js",
+    "build:bmo_equity_uat": "npm run prebuild_equity && npm run env:bmo_equity_uat -- webpack --config webpack.config.prod.js",
+    "build:bmo_equity": "npm run prebuild_equity && npm run env:bmo_equity -- webpack --config webpack.config.prod.js",
+    "env:bmo_corp_dev": "cross-env SITE_ENV=corp HOST_ENV=dev NODE_ENV=production",
+    "env:bmo_corp_qa": "cross-env SITE_ENV=corp HOST_ENV=qa NODE_ENV=production",
+    "env:bmo_corp_uat": "cross-env SITE_ENV=corp HOST_ENV=uat NODE_ENV=production",
+    "env:bmo_corp": "cross-env SITE_ENV=corp HOST_ENV=prod NODE_ENV=production",
+    "build:clean:corp": "rimraf \"dist_corp/!(.git*|Procfile)**\"",
+    "build:copy:corp": "cpx 'public/**/*' dist_corp",
+    "prebuild_corp": "npm run build:clean:corp && npm run build:copy:corp",
+    "build:bmo_corp_dev": "npm run prebuild_corp && npm run env:bmo_corp_dev -- webpack --config webpack.config.prod.js",
+    "build:bmo_corp_qa": "npm run prebuild_corp && npm run env:bmo_corp_qa -- webpack --config webpack.config.prod.js",
+    "build:bmo_corp_uat": "npm run prebuild_corp && npm run env:bmo_corp_uat -- webpack --config webpack.config.prod.js",
+    "build:bmo_corp": "npm run prebuild_corp && npm run env:bmo_corp -- webpack --config webpack.config.prod.js",
+    "generate": "gulp generate",
+    "g": "npm run generate",
+    "flow": "flow",
+    "dumbledore": "gulp dumbledore-watch",
+    "gulp": "gulp",
+    "dumbledore-oneshot": "gulp dumbledore-lint"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Gale43/BMO-Capital-Markets-UI.git"
+  },
+  "author": "GALE Partners",
+  "license": "ISC",
+  "engines": {
+    "node": ">=6.2.1",
+    "npm": ">=3.9.3"
+  },
+  "browserslist": [
+    ">1%",
+    "last 4 versions",
+    "Firefox ESR",
+    "not ie < 11"
+  ],
+  "pre-commit": [
+    "lint"
+  ],
+  "webpackHtml": {
+    "equity": {
+      "title": "BMO Capital Markets",
+      "gtmID": "GTM-M993LG6",
+      "cmsFilePath": "cms-data-equity",
+      "local": {
+        "devPublicPath": "https:\\//bmo-capital-markets-dev-ui-equity.galepartners.com"
+      },
+      "dev": {
+        "devPublicPath": ""
+      },
+      "qa": {
+        "devPublicPath": ""
+      },
+      "uat": {
+        "devPublicPath": ""
+      },
+      "prod": {
+        "devPublicPath": ""
+      }
+    },
+    "corp": {
+      "title": "BMO Capital Markets Corp",
+      "gtmID": "GTM-M993LG6",
+      "cmsFilePath": "cms-data-corp",
+      "local": {
+        "devPublicPath": "https:\\//bmo-capital-markets-osqa-ui-corp.galepartners.com"
+      },
+      "dev": {
+        "devPublicPath": ""
+      },
+      "qa": {
+        "devPublicPath": ""
+      },
+      "uat": {
+        "devPublicPath": ""
+      },
+      "prod": {
+        "devPublicPath": ""
+      }
+    }
+  },
+  "dependencies": {
+    "babel-plugin-lodash": "^3.2.11",
+    "babel-polyfill": "^6.23.0",
+    "body-scroll-lock": "^2.6.1",
+    "cpx": "^1.5.0",
+    "cross-env": "^5.1.3",
+    "intro.js": "git+ssh://git@github.com:Gale43/intro.js.git",
+    "intro.js-react": "^0.2.0",
+    "md5": "^2.2.1",
+    "moment": "^2.20.1",
+    "node-sass": "^4.5.3",
+    "plyr": "^3.4.3",
+    "rc-pagination": "^1.17.14",
+    "react": "^15.5.4",
+    "react-cookie-banner": "^4.0.0",
+    "react-date-picker": "^6.6.2",
+    "react-dom": "^15.5.4",
+    "react-helmet": "^5.2.0",
+    "react-highcharts": "^16.0.2",
+    "react-image-gallery": "^0.8.7",
+    "react-slick": "^0.16.0",
+    "react-slider": "^0.11.0",
+    "resolve-url-loader": "^2.0.2",
+    "rimraf": "^2.6.2",
+    "sass-loader": "^6.0.6",
+    "single-spa": "^4.4.1",
+    "single-spa-react": "^2.10.2",
+    "single-spa-vue": "^1.5.4",
+    "vue": "^2.6.10",
+    "vue-loader": "^15.7.1",
+    "vue-template-compiler": "^2.6.10",
+    "whatwg-fetch": "^2.0.3"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.0",
+    "babel-eslint": "^8.0.1",
+    "babel-loader": "^7.1.2",
+    "babel-plugin-transform-decorators-legacy": "^1.3.4",
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.26.0",
+    "babel-plugin-transform-react-handled-props": "^0.2.5",
+    "babel-plugin-transform-react-remove-prop-types": "^0.4.9",
+    "babel-preset-env": "^1.6.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-flow": "^6.23.0",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "babel-preset-stage-1": "^6.24.1",
+    "classnames": "^2.2.5",
+    "compression-webpack-plugin": "^1.0.1",
+    "css-loader": "^0.28.7",
+    "eslint": "^4.8.0",
+    "eslint-config-airbnb": "^15.1.0",
+    "eslint-import-resolver-webpack": "^0.8.3",
+    "eslint-loader": "^1.9.0",
+    "eslint-plugin-import": "^2.7.0",
+    "eslint-plugin-jsx-a11y": "^5.0.3",
+    "eslint-plugin-react": "^7.4.0",
+    "extract-text-webpack-plugin": "^2.1.0",
+    "file-loader": "^1.1.4",
+    "friendly-errors-webpack-plugin": "^1.6.1",
+    "gulp": "^3.9.1",
+    "gulp-eslint": "^4.0.0",
+    "gulp-flowtype": "^1.0.0",
+    "html-webpack-plugin": "^2.30.1",
+    "inquirer": "^3.3.0",
+    "lodash": "^4.17.4",
+    "lodash-webpack-plugin": "^0.11.4",
+    "optimize-css-assets-webpack-plugin": "^3.2.0",
+    "react-addons-perf": "^15.4.2",
+    "react-hot-loader": "^3.0.0-beta.6",
+    "react-redux": "^5.0.4",
+    "react-router-dom": "^4.1.1",
+    "react-router-redux": "^5.0.0-alpha.6",
+    "redux": "^3.6.0",
+    "redux-devtools-extension": "^2.13.2",
+    "redux-thunk": "^2.2.0",
+    "style-loader": "^0.17.0",
+    "unchained-ui-react": "git+ssh://git@github.com/Gale43/GALE-Unchained-UI-React.git",
+    "url-loader": "^0.5.8",
+    "webpack": "^2.5.1",
+    "webpack-bundle-analyzer": "^2.4.5",
+    "webpack-dev-server": "^2.9.1",
+    "webpack-merge": "^4.1.0"
+  }
+}

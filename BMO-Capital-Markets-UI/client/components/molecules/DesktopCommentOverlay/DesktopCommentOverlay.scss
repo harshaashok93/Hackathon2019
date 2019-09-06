@@ -1,0 +1,226 @@
+/*
+ * Component: DesktopCommentOverlay
+ */
+
+@import '../../../styles/variables';
+
+// (IMPORTANT: please create the styles such that the larger breakpoints
+// override the smaller ones. "Mobile First")
+.desktop-comment-overlay {
+  width: 790px;
+  z-index: 99;
+  text-align: left;
+  background-color: $primaryWhite;
+  position: relative;
+  display: inline-block;
+  padding: 40px;
+  border-radius: 3px;
+  box-shadow: 1px 1px 5px 2px $popupGreyBorder !important;
+  cursor: auto;
+  font-size: 16px;
+  .eye-close-button.modal-close-icon{
+    position: absolute;
+    z-index: 999;
+    top: 14px;
+    right: 0;
+    padding: 10px;
+    margin-right: 12px;
+  }
+  .customnavlinMessageHolder {
+    position: absolute;
+    left: 0;
+    top: 5px;
+    background: #ffffffa6;
+  }
+  .ui.button.title {
+    padding: 0px;
+    color: $primaryBlue;
+    font-size: 1em;
+    @include appDefaultFontStyleRegular();
+  }
+  .author-metainfo {
+    padding: 10px 0;
+  }
+  .publication-right-section {
+    width: 60%;
+    display: inline-block;
+    .title {
+      margin-bottom: 16px;
+      text-align: left;
+      line-height: 1.3;
+      .ui.button.component-overlay-pub-title {
+        padding: 0px;
+        .richText {
+          text-align: left;
+          line-height: 1.25;
+        }
+      }
+      .richText {
+        color: $primaryBlue;
+      }
+    }
+  }
+  .comment-section {
+    font-size: 1em;
+    line-height: 1.38;
+    word-break: break-word;
+    -ms-word-break: break-all;
+    .ui.button.linkBtn {
+      padding: 0px;
+    }
+    .comment {
+      .comment-heading {
+        color: $primaryBlue;
+        @include appDefaultFontStyleRegular();
+      }
+      .custom-nav-link {
+        a {
+          margin-bottom: 0 !important;
+        }
+      }
+    }
+  }
+  .analyst-details-left-section {
+    display: inline-block;
+    width: 39%;
+    vertical-align: top;
+    margin-right: 1%;
+    .ui.button.analyst-name {
+      padding: 0px;
+      text-align: left;
+      display: inline-block;
+      color: $primaryBlue;
+      margin: 0;
+      font-size: 1em;
+      @include appDefaultFontStyleRegular();
+    }
+    .ui.heading {
+      &.analyst-position {
+        text-align: left;
+        display: inline-block;
+        color: $primaryBlue;
+        margin: 0;
+        font-size: 1em;
+        @include appDefaultFontStyleRegular();
+      }
+    }
+    .team-member-heading {
+      display: inline-block;
+      color: $primaryGray;
+      margin-bottom: 8px;
+      padding-top: 15px;
+      &.ui.heading {
+        @include appDefaultFontStyleRegular();
+        font-size: 1em;
+      }
+    }
+    .ui.button.analyst-profile-button {
+      display: inline-block;
+      padding: 0;
+      background: none;
+      background-color: transparent;
+      outline:none;
+    }
+    .analyst-profile-image {
+      vertical-align: middle;
+      width: 80px;
+      height: 80px;
+      z-index: 9;
+    }
+    .ui.button.analyst-profile-button:hover:focus{
+      background: none;
+      background-color: transparent;
+      outline:none
+    }
+    .analyst-and-ticker {
+      display: inline-block;
+      vertical-align: middle;
+      padding-top: 15px;
+      text-align: left;
+      .ui.container {
+        margin-bottom: 2px;
+      }
+      .ui.button.analyst-name.cursor-auto {
+        cursor: auto;
+      }
+      .ui.button.analyst-name,
+      .author-metainfo {
+        font-size: $deskSz9;
+      }
+      .author-designation, .author-designation-entity {
+        margin-top: 6px;
+        color: $primaryGray;
+      }
+      .author-designation-entity {
+        font-size: $deskSzSmaller;
+      }
+    }
+    .analyst-contact-div {
+      width: calc(100% - 66px);
+      float: left;
+      padding: 15px 0px;
+      padding-bottom: 0;
+      a {
+        margin-bottom: 0 !important;
+      }
+      &.border-grey {
+        // border-bottom: solid 0.5px $inputTextGray;
+      }
+      .ui.button {
+        height: 21px;
+        width: 21px;
+        vertical-align: top;
+        padding: 0px;
+        margin: auto 13px;
+        &.forgot-mail-icon {
+          margin-left: 0px;
+          vertical-align: middle;
+          height: 17px;
+          margin-top: 4px;
+        }
+        &.follow-contact {
+          vertical-align: bottom;
+          margin-bottom: -1px;
+          width: auto;
+          span {
+            vertical-align: sub;
+            padding-left: 22px;
+            font-size: 16px;
+            color: $primaryBlue;
+          }
+        }
+      }
+    }
+    .author-image {
+      display: table-cell;
+      vertical-align: middle;
+      width: 10%;
+      padding: 5px;
+    }
+    .ui.container {
+      margin-bottom: 0;
+    }
+  }
+}
+
+
+// Small Breakpoint
+@media (min-width: $screen-sm-min) {
+  .desktop-comment-overlay {
+    // override xs breakpoint styles
+  }
+}
+
+// Medium Breakpoint
+@media (min-width: $screen-md-min) {
+  .desktop-comment-overlay {
+    // override sm breakpoint styles
+  }
+}
+
+// Large Breakpoint
+@media (min-width: $screen-lg-min) {
+  .desktop-comment-overlay {
+    // override md breakpoint styles
+  }
+}

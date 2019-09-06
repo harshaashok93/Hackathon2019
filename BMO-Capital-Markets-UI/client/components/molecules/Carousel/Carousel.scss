@@ -1,0 +1,149 @@
+/*
+ * Component: CarouselComponent
+ */
+
+@import '../../../styles/variables';
+
+// (IMPORTANT: please create the styles such that the larger breakpoints
+// override the smaller ones. "Mobile First")
+
+.carousel-component {
+  max-width: 1440px;
+  margin: auto;
+  width: 100%;
+  height: 100%;
+  display: block;
+  position: relative;
+  .ui.segment.carousel-segment {
+    padding: 0;
+    height: 100%;
+    overflow: hidden;
+    background-repeat: repeat;
+    border: 0;
+    margin: 0;
+    border-radius: 0px;
+
+    .slick-slider {
+      overflow: hidden;
+      .slick-track {
+        display: flex;
+        flex-direction: row;
+        height: 300px;
+        .slick-slide {
+          height: auto;
+          min-height: 0;
+          position: relative;
+          margin-bottom: 20px;
+          display: -ms-flexbox;
+          display: flex;
+          &.featured-research-carousel-image {
+            img {
+              width: 100%;
+              height: 100%;
+            }
+          }
+        }
+      }
+    }
+
+    button {
+      &.slick-prev,
+      &.slick-next {
+        position: absolute;
+        z-index: 99;
+        border: none;
+        background: transparent;
+        color: red;
+        font-size: 0;
+        outline: none;
+        top: 50%;
+        transform: translateY(-50%);
+        padding-bottom: 76px;
+      }
+      &.slick-prev {
+        left: 0px;
+        &::before {
+          content: "";
+          background: url(/assets/images/left-arrow.png);
+          background-repeat: no-repeat;
+          background-size: cover;
+          width: 20px;
+          height: 36px;
+          position: absolute;
+          left: 10px;
+          right: 0;
+          display: block;
+          margin: 0 auto;
+          top: 15px;
+          bottom: 0;
+        }
+      }
+      &.slick-next {
+        right: 0px;
+        &::before {
+          content: "";
+          background: url(/assets/images/right-arrow.png);
+          background-repeat: no-repeat;
+          background-size: cover;
+          width: 18px;
+          height: 36px;
+          position: absolute;
+          left: -18;
+          right: 14px;
+          display: block;
+          margin: 0 auto;
+          top: 15px;
+          bottom: 0;
+        }
+      }
+    }
+
+    .slick-dots {
+      padding: 0;
+      margin: 0 auto;
+      width: 50%;
+      list-style: none;
+      text-align: center;
+      position: absolute;
+      bottom: 7px;
+      left: 50%;
+      transform: translateX(-50%);
+      li {
+        display: inline-block;
+        button {
+          padding: 0;
+          width: 15px;
+          height: 15px;
+          margin: 0 10px;
+          border-radius: 50%;
+          text-indent: -9999px;
+          background: transparent;
+          border: 1px solid $primaryBlue;
+
+
+          &:focus {
+            outline: 0;
+          }
+        }
+        &.slick-active {
+          button {
+            background: $primaryBlue;
+            border: 1px solid $primaryWhite;
+          }
+        }
+      }
+    }
+
+  }
+}
+
+@media (max-width: $screen-xs-sm) {
+  .carousel-component {
+    button {
+      &.slick-prev,
+      &.slick-next {
+        display: none !important;
+      }
+    }
+  }
+}

@@ -1,0 +1,100 @@
+/*
+ * Component: Logo
+ */
+
+@import '../../../styles/variables';
+
+// (IMPORTANT: please create the styles such that the larger breakpoints
+// override the smaller ones. "Mobile First")
+
+.logo {
+  padding-left: 0;
+  padding-right: 0;
+  .white-logo {
+    width: 25em;
+  }
+  .blue-logo.ui.image {
+    max-width: 200px;
+    width: 100%;
+    background-color: $primaryBlue;
+  }
+  .ui.image.bmo-header-logo {
+    height: 35px;
+    display: inline;
+    width: auto;
+    vertical-align: middle;
+  }
+  .ui.heading.logo-text {
+    display: inline;
+    @include appDefaultFontStyleRegular();
+    font-size: $deskSz4 !important;
+    vertical-align: middle;
+    color: $primaryWhite;
+    padding-left: 11px;
+  }
+}
+
+// Large Breakpoint
+@media (max-width: $screen-lg-min) {
+  .logo {
+    .ui.heading.logo-text {
+      font-size: $deskSz5;
+    }
+  }
+}
+
+// Medium Breakpoint
+@media (max-width: $screen-md-min) {
+  .footer-grid-row {
+    .logo {
+      text-align: center;
+      margin: auto;
+      float: right;
+      .white-logo {
+        padding-bottom: 1.5em;
+        margin: auto;
+      }
+      .ui.heading.logo-text {
+        font-size: $deskSz5;
+      }
+    }
+  }
+}
+
+// Small Breakpoint
+@media (max-width: $screen-sm-min) {
+  .logo {
+    .white-logo {
+      &.ui.image {
+        max-width: 18em;
+      }
+      padding-bottom: 1.5em;
+      margin: auto;
+    }
+    .blue-logo {
+      padding-top: 10px;
+      margin: auto;
+    }
+  }
+}
+
+@media (max-width: $screen-xs-sm) {
+  .logo {
+    .white-logo {
+      padding-bottom: 0;
+      margin: auto;
+    }
+    .ui.image.bmo-header-logo {
+      height: 27px;
+    }
+    .blue-logo {
+      padding-top: 10px;
+      margin: auto;
+    }
+    .ui.heading.logo-text {
+      font-size: $deskSz9 !important;
+      padding-left: 4px;
+    }
+  }
+}
+

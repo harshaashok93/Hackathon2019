@@ -1,0 +1,609 @@
+/*
+ * Component: VideocastDetailsListing
+ */
+
+@import '../../../styles/variables';
+
+// (IMPORTANT: please create the styles such that the larger breakpoints
+// override the smaller ones. "Mobile First")
+.ui.modal.publication-page-modal {
+  width: 100%;
+  left: 25%;
+  .top-section {
+    width: 100%;
+    display: inline-block;
+    padding-left: 40px;
+    .time-zone-date {
+      display: inline-block;
+      width: 65%;
+      margin-bottom: 40px;
+      .title {
+        margin-top: 16px;
+        width: 80%;
+        .ui.heading {
+          font-size: $deskSz11;
+          color: $primaryGray;
+          margin-top: 0px;
+          margin-bottom: 0px;
+        }
+      }
+    }
+    .author-details {
+      vertical-align: top;
+      display: inline-block;
+      width: 35%;
+      .profile {
+        width: 79px;
+        height: 79px;
+        display: inline-block;
+        margin-right: 20px;
+      }
+      .author-details {
+        display: inline-block;
+        vertical-align: top;
+        margin-bottom: 40px;
+        span {
+          &.row {
+            display: block;
+          }
+        }
+        .preferences {
+          padding-top: 5px;
+          .ui.button {
+            vertical-align: middle;
+            padding: 0px;
+            margin: auto 13px;
+            height: 21px;
+            width: 21px;
+            &.forgot-mail-icon {
+              margin-left: 0px;
+              height: 16px;
+              width: 25px;
+              background-position-x: 1px;
+              font-size: $deskSz8;
+            }
+            &.follow-contact {
+              width: auto;
+              span {
+                padding-left: 22px;
+                color: $primaryBlue;
+                font-size: 14px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .slideshow {
+    width: 931px;
+    margin: auto;
+    margin-bottom: 30px;
+    .image-gallery  {
+      .image-gallery-left-nav {
+        &:before {
+          border-style: solid;
+          border-width: 1px 1px 0 0;
+          content: '';
+          display: inline-block;
+          height: 0.2em;
+          /* left: 0.15em; */
+          position: relative;
+          top: 0.5em;
+          transform: rotate(-45deg);
+          vertical-align: top;
+          width: 0.2em;
+          float: right;
+          color: $primaryBlue;
+          left: 0.25em;
+          transform: rotate(-135deg);
+        }
+      }
+      .image-gallery-right-nav {
+        &:before {
+          border-style: solid;
+          border-width: 1px 1px 0 0;
+          content: '';
+          display: inline-block;
+          height: 0.2em;
+          position: relative;
+          top: 0.5em;
+          transform: rotate(-45deg);
+          vertical-align: top;
+          width: 0.2em;
+          float: right;
+          color: $primaryBlue;
+          left: 0;
+          transform: rotate(45deg);
+        }
+      }
+      .image-gallery-left-nav, .image-gallery-right-nav {
+        padding: 10px;
+        top: 100%;
+        transform: translateY(50%);
+      }
+      .image-gallery-content {
+        .image-gallery-swipe {
+          height: 520px;
+          box-shadow: 0 2px 9px 0 rgba(166, 166, 166, 0.5), 0 2px 7px 0 rgba(129, 129, 129, 0.5);
+          margin-bottom: 30px;
+          .image-gallery-slides {
+            height: 100%;
+            .center, .left, .right {
+              height: 100%;
+              .image-gallery-image {
+                height: 100%;
+                img {
+                  height: 100%;
+                }
+              }
+            }
+          }
+        }
+        .image-gallery-thumbnails-wrapper {
+          width: 850px;
+          height: 125px;
+          margin: auto;
+          .image-gallery-thumbnails {
+            height: 100%;
+            .image-gallery-thumbnails-container {
+              .image-gallery-thumbnail {
+                transition: border .4s ease-out;
+                width: 155px;
+                height: 87px;
+                border: solid 0.9px $inputTextGray;
+                &.active {
+                  border: 4px solid #337ab7;
+                }
+                margin: 0px 30px;
+                div {
+                  height: 100%;
+                  img {
+                    height: 100%;
+                  }
+                  .image-gallery-thumbnail-label {
+                    margin-top: 15px;
+                  }
+                }
+                &:first-child() {
+                  margin-left: 0px;
+                }
+                &:last-child() {
+                  margin-right: 0px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+.videocast-details-listing {
+  padding-left: 40px;
+  padding-right: 45px;
+  .top-section {
+    padding-bottom: 10px;
+    margin-bottom: 30px;
+    .time-zone-date {
+      margin-bottom: 40px;
+      .title {
+        margin-top: 16px;
+        .ui.heading {
+          font-size: 35px;
+          color: $primaryGray;
+          margin-top: 0px;
+          margin-bottom: 0px;
+          font-weight: $Regular;
+        }
+      }
+      .triangle-image {
+        vertical-align: top;
+        margin-top: 16px;
+        .ui.image.brand-triangle-licon {
+          width: 24px;
+          height: 24px;
+          display: inline-block;
+        }
+        .brand-text {
+          font-size: $deskSz8;
+          padding-left: 10px;
+        }
+      }
+    }
+    .author-details {
+      .profile {
+        width: 79px;
+        height: 79px;
+        display: inline-block;
+        margin-right: 20px;
+      }
+      .author-details {
+        display: inline-block;
+        vertical-align: top;
+        margin-bottom: 40px;
+        span {
+          &.row {
+            display: block;
+          }
+        }
+        .preferences {
+          padding-top: 5px;
+          .ui.button {
+            vertical-align: middle;
+            padding: 0px;
+            margin: auto 13px;
+            height: 21px;
+            width: 21px;
+            &.forgot-mail-icon {
+              margin-left: 0px;
+              height: 16px;
+              width: 23px;
+              background-position-x: 0px;
+              border-radius: 0px;
+            }
+            &.follow-contact {
+              vertical-align: bottom;
+              margin-bottom: -1px;
+              width: auto;
+              span {
+                vertical-align: sub;
+                padding-left: 22px;
+                color: $primaryBlue;
+                font-size: 14px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .research-layout-filters {
+    display: inline-block;
+    width: 10%;
+    vertical-align: top;
+    padding: 6px;
+    padding-top: 0px;
+    text-align: center;
+    .ui.grid {
+      .print-grid, .font-grid {
+        display: none;
+      }
+    }
+  }
+  .video-section {
+    display: inline-block;
+    width: 90%;
+    .no-video {
+      text-align: center;
+      font-size: 28px;
+      line-height: 1.3;
+    }
+    .video-play-div {
+      width: 100%;
+      height: 100%;
+      margin: auto;
+      margin-bottom: 17px;
+      box-shadow: 0 3px 13px 0 rgba(166, 166, 166, 0.5);
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+      video {
+        display: block;
+        width: 100%;
+        height: 100%;
+      }
+      .plyr__progress input[type=range], .plyr__volume input[type=range] {
+        cursor: pointer;
+      }
+      .plyr button.plyr__control.plyr__control--overlaid {
+        border: 2px solid white;
+        &:focus {
+          box-shadow: none;
+        }
+      }
+      video .player .progress-bar {
+        &:hover {
+          cursor: pointer;
+        }
+      }
+      iframe.youtube-iframe {
+        border: none;
+        outline: none;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
+    }
+    .link-section {
+      margin: auto;
+      margin-bottom: 20px;
+      .ui.button.row {
+        display: block;
+        padding-left: 0px;
+      }
+    }
+  }
+  .podcast-main-section {
+    .podcast-iframe {
+      margin-bottom: 50px;
+    }
+    .overview-message {
+      padding-bottom: 40px;
+      border-bottom: solid 0.3px $primaryGray;
+      margin-bottom: 24px;
+      .overview-text {
+        font-size: $deskSzSmaller;
+        color: $pageTitleGrey;
+        margin-bottom: 22px;
+      }
+      .description {
+        font-size: $deskSz9;
+        width: 800px;
+        color: $primaryGray;
+        margin-bottom: 10px;
+      }
+      .report-link {
+        font-size: $deskSz9;
+        color: $primaryBlue;
+      }
+    }
+    .subscribe-section {
+      padding-bottom: 40px;
+      margin-bottom: 40px;
+      border-bottom: solid 0.3px $primaryGray;
+      .heading {
+        font-size: $deskSz2;
+        color: $primaryBlack;
+        @include appDefaultFontStyleLight;
+        margin-bottom: 10px;
+        line-height: 1.25;
+      }
+      .description {
+        color: $primaryGray;
+        font-size: $deskSz9;
+        margin-bottom: 20px;
+        width: 590px;
+      }
+      .subscribe-links {
+        display: inline-block;
+        .each-link {
+          display: inline-block;
+          padding-right: 22px;
+          .ui.image {
+            width: 138px;
+            height: 35px;
+          }
+        }
+      }
+    }
+    .ui.grid.disclosure {
+      margin: 0px;
+      margin-bottom: 24px;
+      .empty-grid {
+        display: none;
+      }
+      .disclosure-data-grid {
+        width: 100% !important;
+      }
+      .ui.button {
+        font-size: 16px;
+      }
+    }
+  }
+  .video-listing {
+    width: 90%;
+    margin: 0 0 0 auto;
+    margin-bottom: 80px;
+    .other-related-publication {
+      color: $primaryBlack;
+      font-size: $deskSz2;
+      line-height: 1.25;
+      margin-bottom: 15px;
+    }
+    .ui.list.result-cards {
+      border: solid 1px $borderGray;
+    }
+  }
+  .research-layout-filters-modal {
+    .research-layout-filters-content {
+      .print-grid, .font-grid {
+        display: none;
+      }
+    }
+  }
+}
+
+// Small Breakpoint
+@media (max-width: $screen-md) {
+  .videocast-details-listing {
+    .video-listing {
+      margin-bottom: 80px;
+      .video-castcard {
+        box-shadow: none;
+      }
+      .ui.grid {
+        margin: auto;
+        .cards.column {
+          width: 48% !important;
+          margin: 0 1%;
+          margin-bottom: 2%;
+          &:nth-child(3n+1), &:nth-child(3n) {
+            margin: 0px 1%;
+            margin-bottom: 2%;
+          }
+        }
+      }
+    }
+  }
+}
+
+// Medium Breakpoint
+@media (max-width: $screen-xs-sm) {
+  .videocast-details-listing {
+    padding-left: 0;
+    padding-right: 0;
+    .podcast-main-section {
+      padding-left: 15px;
+      padding-right: 15px;
+      .ui.grid.disclosure .disclosure-data-grid {
+        padding-top: 0;
+        padding-bottom: 0;
+        .ui.button.secondary {
+          box-shadow: none;
+          font-size: $deskSz9;
+        }
+      }
+      .podcast-iframe {
+        margin-bottom: 20px;
+      }
+      .subscribe-section {
+        padding-bottom: 40px;
+        margin-bottom: 20px;
+        border-bottom: 1px solid $accordianBorderBottomGrey;
+        .heading {
+          font-size: $deskSz6;
+        }
+        .description {
+          width: fit-content;
+          margin-bottom: 0;
+        }
+        .subscribe-links {
+          .each-link {
+            width: 100%;
+            padding-right: 0;
+            vertical-align: middle;
+            .ui.image {
+              margin: auto;
+              margin-top: 20px;
+            }
+          }
+        }
+      }
+      .overview-message{
+        padding-bottom: 20px !important;
+        border-bottom: 1px solid $accordianBorderBottomGrey;
+        margin-bottom: 20px;
+        .overview-text {
+          margin-bottom: 10px;
+          color: $pageTitleGrey;
+          opacity: 0.75;
+        }
+        .description {
+          width: 100%;
+          .richText {
+            font-size: $deskSz9;
+          }
+        }
+      }
+    }
+    .video-section {
+      width: 100%;
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+    .accordion-border {
+      border-bottom: 1px solid $accordianBorderBottomGrey;
+    }
+    .preferences-mobile-view-padding {
+      padding-top: 15px !important;
+    }
+    .accordion-open-container {
+      padding-bottom: 15px;
+    }
+    .accordion-closed-container {
+      padding-bottom: 5px;
+    }
+    .video-listing {
+      margin: 0;
+      width: 100%;
+      margin-bottom: 0;
+      .other-related-publication {
+        font-size: $deskSz6;
+        font-weight: $Small;
+        padding-left: 15px;
+      }
+      .ui.grid {
+        margin: auto;
+        .cards.column {
+          width: 98% !important;
+          margin: 0 1%;
+          margin-bottom: 2%;
+          &:nth-child(3n+1), &:nth-child(3n) {
+            margin: 0px 1%;
+            margin-bottom: 2%;
+          }
+        }
+      }
+      .ui.button.linkBtn.bmo_chevron.bottom {
+        padding-right: 12px;
+      }
+    }
+    .top-section {
+      padding-bottom: 0px;
+      margin-bottom: 21px;
+      padding-left: 15px;
+      padding-right: 15px;
+      font-size: 16px;
+      .time-zone-date {
+        margin-bottom: 5px;
+        font-size: $deskSzSmaller;
+        .title {
+          .ui.heading {
+            font-size: 20px!important;
+            font-weight: $Regular;
+          }
+        }
+      }
+      .link-section {
+        border-bottom: 1px solid $accordianBorderBottomGrey;
+        margin-bottom: 20px;
+      }
+      .analystsLink.ui.container {
+        width: fit-content !important;
+        span.row {
+          font-size: $deskSzSmaller;
+        }
+      }
+      .author-details .author-details  {
+        min-width: 100%;
+        margin-bottom: 0;
+        span.row {
+          font-size: $deskSzSmaller;
+        }
+      }
+    }
+    .research-layout-filters {
+      width: fit-content;;
+      padding: 0;
+    }
+  }
+}
+
+@media (max-width: $screen-tab) {
+  .videocast-details-listing  {
+    .podcast-main-section .overview-message .description {
+      width: fit-content;
+    }
+  }
+}
+
+// Tablet portrait mode
+@media (min-width: $screen-sm) and (max-width: $screen-tab) and (orientation: portrait) {
+  .videocast-details-listing {
+    .video-section {
+      .video-play-div {
+        width: 100%;
+      }
+    }
+  }
+}
+
+// Large Breakpoint
+@media (min-width: $screen-lg-min) {
+  .videocast-details-listing {
+    // override md breakpoint styles
+  }
+}

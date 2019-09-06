@@ -1,0 +1,1875 @@
+/*
+ * Component: ResearchLayoutBuilder
+ */
+
+@import '../../styles/variables';
+
+// (IMPORTANT: please create the styles such that the larger breakpoints
+// override the smaller ones. "Mobile First")
+
+.rl-disclosures-modal {
+  .disclosure-modal-close {
+    text-align: right;
+    .ui.button.modal-close-icon {
+      padding: 0px;
+      height: 22px;
+      width: 20px;
+      vertical-align: middle;
+      background-position: center;
+    }
+  }
+  .disclosure-modal-content {
+    padding-top: 5px;
+  }
+  .heading-text-component {
+    .ui.heading {
+      @include appDefaultFontStyleRegular();
+      color: $primaryGray;
+    }
+    strong {
+      @include appDefaultFontStyleMedium();
+    }
+    .richText {
+      table {
+        tbody {
+          tr {
+            td {
+              border: solid 1px;
+            }
+            &:first-child, &:last-child {
+              td {
+                border: none;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .richText {
+    color: $primaryGray;
+  }
+  .disclosure-chart-modal img{
+    padding-bottom: 20px;
+    text-align: center;
+    width: 100%;
+  }
+
+  .richText table {
+    width: 100% !important;
+    margin-bottom: 15px;
+    tr:nth-child(3) {
+      td:first-child{
+        width: 5% !important;
+      }
+    }
+
+    td {
+      text-align: center;
+    }
+  }
+}
+
+.research-layout-builder {
+  color: $primaryGray;
+  font-family: $appDefaultFont !important;
+  .ui.grid > .column:not(.row) {
+    position: initial;
+  }
+  .comp-desc-library-link,
+  .comp-desc-model-link {
+    display: inline-block;
+    width: 33%;
+    vertical-align: middle;
+    text-align: center;
+  }
+  .simple-list-view {
+    .ui.heading {
+      font-weight: 400;
+      font-size: $deskSz8;
+    }
+  }
+  .a {
+    .main-content-details, &.sections {
+      font-size: 75%;
+    }
+  }
+  .aa {
+    .main-content-details, &.sections {
+      font-size: 100%;
+    }
+  }
+  .aaa {
+    .main-content-details, &.sections {
+      font-size: 125%;
+    }
+  }
+  .company-data {
+    box-shadow: 0 1px 17px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    .ui.card {
+      width: 100%;
+      border-radius: 5px;
+      overflow: hidden;
+      .content {
+        padding: 0;
+        .header.header {
+          background-color: $primaryBlue;
+          color: $primaryWhite;
+          padding: 15px;
+          font-size: $deskSz6;
+          font-weight: $Regular;
+        }
+        .description {
+          padding: 10px;
+          display: inline-block;
+          width: 100%;
+        }
+      }
+    }
+    &.label-value {
+      .ui.table.research-layout-table {
+        tbody {
+          tr {
+            td {
+              vertical-align: top;
+            }
+            td:nth-child(2) {
+              padding-right: 10px !important;
+            }
+          }
+        }
+      }
+    }
+    .ui.table.research-layout-table tbody td:first-child {
+       word-break: break-word;
+       -ms-word-break: break-all;
+     }
+  }
+  .related-content {
+    text-align: center;
+    h2.heading {
+      text-align: left;
+      width: 86%;
+      margin: auto;
+      @include appDefaultFontStyleRegular();
+      font-size: $deskSz11;
+      margin-bottom: 22px;
+    }
+    .list-container {
+      box-shadow: 0px 0px 9px 0px $inputBorderLightGrey;
+      display: inline-block;
+      width: 86%;
+      margin: auto;
+      margin-top: 10px;
+      border-radius: 5px;
+      .header {
+        padding: 10px;
+        background-color: $primaryBlue;
+        color: $primaryWhite;
+        margin: 0;
+      }
+      ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        li {
+          padding: 15px;
+          border-bottom: solid 1px $borderGray;
+          .left-side {
+            width: 88%;
+            display: inline-block;
+            text-align: left;
+            vertical-align: middle;
+            .date {
+              text-align: left;
+              width: 50%;
+              display: inline-block;
+              vertical-align: middle;
+            }
+            .cat {
+              text-align: left;
+              width: 50%;
+              display: inline-block;
+              vertical-align: middle;
+              line-height: 12px;
+            }
+            .analyst-name {
+              text-align: left;
+              width: 100%;
+              display: inline-block;
+              color: $primaryBlue;
+              text-align: left;
+              vertical-align: middle;
+              line-height: 12px;
+            }
+            .details-section {
+              display: inline-block;
+              text-align: left;
+              margin-top: 10px;
+              width: 40%;
+              color: $primaryBlue;
+              word-break: break-word;
+              -ms-word-break: break-word;
+              .type {
+                font-weight: $Small;
+                margin-left: 3px;
+              }
+            }
+          }
+          .right-side {
+            width: 12%;
+            text-align: right;
+            display: inline-block;
+            text-align: center;
+            vertical-align: middle;
+            .eye-icon {
+              width: 25px;
+              height: 15px;
+              display: inline-block;
+            }
+          }
+        }
+      }
+    }
+  }
+  .industry-research {
+    width: 100%;
+    margin: auto;
+    display:inline-block;
+    text-align: left;
+    margin: 0;
+    margin-bottom: 30px;
+    .heading {
+      @include appDefaultFontStyleRegular();
+      font-size: $deskSz11;
+    }
+    .list-container {
+      box-shadow: 0px 0px 9px 0px $inputBorderLightGrey;
+      display: inline-block;
+      width: 100%;
+      margin: auto;
+      border-radius: 7px;
+      .header {
+        padding: 10px;
+        background-color: $primaryBlue;
+        color: $primaryWhite;
+        margin: 0;
+      }
+      ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        li {
+          padding: 15px;
+          border-bottom: solid 1px $borderGray;
+          .left-side {
+            width: 100%;
+            display: inline-block;
+            text-align: left;
+            vertical-align: middle;
+            .date {
+              width: 35%;
+              text-align: left;
+              display: inline-block;
+              vertical-align: top;
+            }
+            .cat {
+              text-align: left;
+              width: 60%;
+              display: inline-block;
+              vertical-align: top;
+            }
+            .analyst-name {
+              text-align: left;
+              width: 100%;
+              margin-top: 10px;
+              display: inline-block;
+              text-align: left;
+              vertical-align: top;
+            }
+            .details-section {
+              display: inline-block;
+              text-align: left;
+              margin-top: 10px;
+              width: 100%;
+              color: $primaryBlue;
+              word-break: break-word;
+              -ms-word-break: break-word;
+              .type {
+                font-weight: $Small;
+                margin-left: 4px;
+              }
+            }
+          }
+          .right-side {
+            width: 100%;
+            text-align: right;
+            display: inline-block;
+            vertical-align: middle;
+            .ui.button.user-pref-icon.bookmark-icon.blue-bookmark {
+              padding: 12px 8px;
+              text-align: right;
+              margin: 0;
+              border-radius: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+  .ui.visible.research-layout-filters-modal {
+    display: none !important;
+  }
+  .richText {
+    color: $primaryGray;
+    font-family: $appDefaultFont !important;
+    * {
+      font-family: $appDefaultFont !important;
+      line-height: 28px;
+      font-size: inherit;
+    }
+    h1, h2, h3, h4, h5 {
+      @include appDefaultFontStyleMedium();
+    }
+
+    .Exhibit_Title_Bold, .Heading_1, .Heading_1_for_Top_of_Page {
+      padding: 10px 0;
+    }
+
+    .Heading_1, .Heading_1_for_Top_of_Page {
+      font-size: $deskSz5 !important;
+    }
+
+    .Source {
+      padding: 10px 0;
+      font-size: $deskSzSmaller !important;
+    }
+  }
+  .display-publish-date {
+    color: $primaryGray;
+    padding-bottom: 15px;
+    font-size: $deskSzSmaller;
+  }
+  .ui.heading.headingTab, .price-title-text-block .item .ui.card > .content > .header {
+    background-color: $primaryBlue;
+    color: #fff;
+    padding: 10px;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+    font-size: 20px;
+    @include appDefaultFontStyleRegular();
+    word-wrap: break-word;
+    .subtext {
+      font-size: 14px;
+      margin-left: 6px;
+
+    }
+  }
+  img {
+    width: 100%;
+    max-width: 100%;
+  }
+  .main-content-details {
+    img {
+      width: auto;
+      height: auto;
+      max-width: 100%;
+    }
+  }
+  .pixelated-image-container {
+    position: relative;
+    img.pixelated-image {
+      width: 96%;
+      margin: 0 auto;
+    }
+    .read-more-content {
+      text-align: center;
+      position: absolute;
+      top: 0;
+
+      width: 100%;
+      .linkBtn {
+        padding-left: 8px;
+      }
+    }
+  }
+  .breakWord {
+    word-wrap: break-word;
+  }
+  .research-layout-builder-grid{
+    .ui.grid.layouts {
+      padding-bottom: 50px;
+      position: relative;
+      .ui.divider {
+        border-bottom: solid 0.3px $primaryGray;
+        width: calc(100% - 100px);
+        position: absolute;
+        bottom: -15px;
+        right: 0;
+        z-index: -1;
+      }
+    }
+    padding: 10px 20px;
+    >.ui.grid {
+      margin: 0;
+      .layout-right {
+        padding-top: 55px;
+      }
+      .layout-left {
+        .ui.grid {
+          .empty-grid {
+            width: 100px !important
+          }
+          .move-right {
+            padding: 0 16px 0 0;
+          }
+        }
+        .coverage-universe-model {
+          .mobile-view {
+            display: none;
+          }
+          .desktop-view {
+            .ui.table.research-layout-table {
+              font-size: $deskSzSmaller;
+              td, th {
+                &.first-table-cell {
+                  width: 100px;
+                  max-width: 70px;
+                }
+              }
+              tbody {
+                td {
+                  &.first-table-cell {
+                    span {
+                      word-break: break-word;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    .research-layout-filters {
+      padding: 20px;
+      z-index: 2;
+    }
+  }
+  .research-title {
+    .ui.heading{
+      font-size: $deskSz21;
+      @include appDefaultFontStyleMedium();
+    }
+  }
+  .focus-highlight {
+    margin-top: 30px;
+  }
+  .research-layout-builder-main-wrapper {
+    min-height: 350px;
+    position: relative;
+    .error-message {
+      text-align: center;
+      font-size: 20px;
+      padding: 40px;
+      color: $primaryRed;
+    }
+    .richText.summary-content {
+      ul {
+        li {
+          display: block;
+          list-style-type: inherit;
+          display: list-item;
+        }
+      }
+    }
+    .richText.keypoints-content {
+      ul  li  ul {
+        display: inline-block;
+      }
+      ul {
+        li {
+          list-style-type: inherit;
+          display: list-item;
+        }
+      }
+    }
+  }
+  .ui.grid.company-performance {
+    margin: 0;
+    padding: 10px 0;
+    font-size: $deskSzSmaller;
+    color: $previousTextGrey;
+    .ui.image.flash_image {
+      max-width: 55px;
+    }
+    .top15label {
+      width: 15px;
+      height: 15px;
+      display: inline-block;
+      background-image: url('/assets/images/top15.png') !important;
+      background-size: 15px;
+      background-repeat: no-repeat;
+      margin: 4px;
+    }
+    >.column {
+      padding: 14px 0px 0  0;
+      margin-top: 0px;
+      word-break: break-all;
+      &:first-child {
+        padding-top: 22px;
+      }
+    }
+    .flash_logo {
+      padding-top:5px;
+    }
+    .header {
+      opacity: 1;
+      margin-bottom: 10px;
+      @include appDefaultFontStyleMedium;
+    }
+    .company-performance-value {
+      @include appDefaultFontStyleRegular;
+    }
+    .ticker {
+      padding: 0;
+      height: 65px;
+      display: inherit !important;
+      font-size: $deskSzSmaller;
+      @include appDefaultFontStyleMedium();
+      text-align: left;
+      border-right: solid 2px $previousTextGrey;
+      margin-right: 15px;
+      max-width: 98px;
+      margin-bottom: 0px;
+      .ticker-name {
+        word-break: break-all;
+      }
+    }
+  }
+  .ui.grid.disclosure {
+    .column {
+      .btn-div {
+        text-align: center;
+        #view-full-publication {
+          border-radius: 50rem;
+        }
+      }
+    }
+  }
+  .disclosures {
+    padding: 40px;
+    .secondary.ui.button {
+      display: block;
+      margin: 0 auto;
+    }
+    .empty-div {
+      height: 48px;
+      width: 100px;
+      display: inline-block;
+    }
+    .btn-div {
+      width: 80%;
+      display: inline-block;
+      &.ui.button {
+        padding: 10px;
+      }
+    }
+
+  }
+  .main-content {
+    .triangle-image {
+      display: inline-block;
+      vertical-align: top;
+      text-align: center;
+      .ui.image.brand-triangle-licon {
+        width: 24px;
+        height: 24px;
+        display: inline-block;
+      }
+      .brand-text {
+        font-size: $deskSz8;
+        padding-left: 10px;
+      }
+    }
+    &.ui.grid {
+      margin-top: 20px;
+      margin-bottom: 15px !important;
+      .rl-filters-section.column {
+        width: 100px !important;
+      }
+    }
+    .ui.heading {
+      color: $primaryGray;
+      @include appDefaultFontStyleRegular();
+      margin-bottom: 25px;
+    }
+    &.ui.grid {
+      .rl-filters-section.column {
+        padding-left: 0;
+        padding-right: 0;
+      }
+      .main-content-details {
+        padding-left: 0;
+        padding-right: 0px !important;
+        word-break: break-word;
+        -ms-word-wrap: break-word;
+      }
+    }
+    .keyPoints-header {
+      color: $hardBlack;
+      &.ui.heading {
+        @include appDefaultFontStyleBold();
+      }
+    }
+    .richText {
+      &.keypoints-content {
+        * {
+          font-size: inherit !important;
+        }
+      }
+      .bottomline-header {
+        @include appDefaultFontStyleBold();
+      }
+      strong {
+        @include appDefaultFontStyleBold();
+      }
+      .bottomline-content {
+        * {
+          font-size: inherit !important;
+        }
+        >* {
+          display: inline;
+        }
+      }
+      color: $primaryGray;
+
+      line-height: 28px;
+    }
+  }
+  .sector-name {
+    &.ui.heading {
+      margin-bottom: 0;
+    }
+  }
+  .analysts-card {
+    @include boxShadow(0, 2px, 7px, 2px, rgba(0, 0, 0, 0.2));
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 30px;
+    .nameBold {
+      @include appDefaultFontStyleBold();
+    }
+    .analysts-detail-grid {
+      margin: 0;
+      border-bottom: solid 1px #979797;
+      padding-bottom: 10px;
+      color: $primaryGray;
+      &.remove-line {
+        border-bottom: none;
+      }
+      .analysts-detail-grid-right-section {
+        padding: 0 0 0 0px !important;
+      }
+      .analystsLink {
+        margin: 0 !important;
+      }
+      &.ui.grid {
+        .image-holder.column {
+          padding: 0;
+          img {
+            width: 80px;
+            border-radius: 100%;
+            margin: auto;
+          }
+        }
+        .analysts-detail-grid-right-section {
+          padding-left: 10px !important;
+        }
+      }
+
+    }
+    .analysts-detail-grid-remove-border {
+      border-bottom: none !important;
+    }
+    .icon-holder {
+      margin-top: 15px;
+    }
+    .other-team-members {
+      padding-top: 10px;
+      .title {
+        padding-bottom: 5px;
+      }
+    }
+    .legal-entities {
+      padding-top: 15px;
+      .richText.legalEntity {
+        font-size: $deskSzSmaller;
+        color: $downloadRequestedColor;
+        p {
+          display: inline;
+        }
+      }
+    }
+    .firstItem {
+      .name {
+        font-size: $deskSz9;
+      }
+      .legal-entity {
+        font-size: 14px;
+      }
+    }
+    .icon {
+      width: 21px;
+      height: 21px;
+      display: inline-block;
+      margin-right: 15px;
+      vertical-align: top;
+      background-position: center;
+      &.forgot-mail-icon,
+      &.forgot-phone-icon {
+        margin-right: 25px;
+      }
+    }
+    .ui.button.follow-contact {
+      vertical-align: bottom;
+      padding: 0;
+      margin-right: 13px;
+      height: 21px;
+      width: auto;
+      margin-bottom: -1px;
+      span {
+        vertical-align: sub;
+        padding-left: 22px;
+        color: $primaryBlue;
+        font-size: 14px;
+      }
+    }
+  }
+
+  .whats-inside {
+    margin-bottom: 30px;
+  }
+
+  .volume-chart {
+    max-height: 272px;
+    margin: auto;
+    margin-bottom: 30px;
+    width: 100%;
+    background-color: $bmoChartBackgroundColor;
+    @include boxShadow(0, 2px, 7px, 2px, rgba(0, 0, 0, 0.2));
+    .volume-chart-image {
+      width: 100%;
+      height: 227px;
+    }
+  }
+  .ui.table.research-layout-table {
+    margin-bottom: 30px;
+    @include boxShadow(0, 2px, 7px, 2px, rgba(0, 0, 0, 0.2));
+    thead {
+      display: table !important;
+      width: 100% !important;
+      table-layout: fixed;
+      tr {
+        &:nth-child(2) {
+          th {
+            padding: 4px;
+          }
+        }
+        display: table-row !important;
+      }
+      .headerRow {
+        th {
+          padding: 0;
+
+        }
+      }
+    }
+    tbody {
+      display: table !important;
+      width: 100% !important;
+      table-layout: fixed;
+      tr {
+        display: table-row !important;
+      }
+      tr:nth-child(even) {
+        background: #FFF;
+      }
+      tr:nth-child(odd) {
+        background: #f2f2f2;
+      }
+      td {
+        display: table-cell !important;
+        border-left: none;
+        padding: 10px 0px;
+        &:first-child{
+          padding-left: 10px;
+        }
+        &:last-child{
+          padding-right: 10px;
+        }
+        span {
+          display: inline-block;
+          &.no-data {
+            padding-left: 15px;
+          }
+          &.up-arrow,
+          &.down-arrow {
+            width: 10px;
+          }
+        }
+      }
+    }
+    th, td {
+      max-width: 55px;
+      font-size: $deskSzSmall;
+    }
+    th {
+      background: #0079c1;
+      font-size: $deskSz9;
+      color: #fff;
+      border: 0;
+      padding: 10px 2px !important;
+      &:last-child {
+        padding-right: 10px !important;
+        border: solid 1px $primaryBlue;
+      }
+      &.first-table-cell {
+        padding-left: 10px !important;
+        padding-right: 0px !important;
+        border: solid 1px $primaryBlue;
+      }
+    }
+  }
+
+  .key-changes {
+    .ui.table.research-layout-table {
+      td.turn-text-italics {
+        font-style: italic;
+        color: $previousTextGrey;
+      }
+    }
+  }
+
+  .price-title-text-block {
+    margin-bottom: 30px;
+    .item {
+      .ui.card {
+        width: 100%;
+        > .content {
+          padding: 0;
+          @include boxShadow(0, 2px, 7px, 2px, rgba(0, 0, 0, 0.2));
+          > .header {
+            padding: 10px 15px;
+            .price-block {
+              font-size: 16px;
+              margin-top: 5px;
+            }
+          }
+          .description {
+            padding: 10px 15px;
+            margin-top: 0;
+          }
+        }
+      }
+    }
+  }
+
+  .bmo-highlighted-search {
+    display: inline !important;
+    background-color: rgba(0, 121, 193, 0.15);
+  }
+  .ui.grid.heading-text-component {
+    margin: 10px 0;
+    >.column {
+      padding: 10px 0;
+    }
+    .heading {
+      color: $primaryGray;
+    }
+  }
+
+  .our-thesis {
+    margin-top: 20px;
+  }
+
+  .top-15-member {
+    .title {
+      color: $primaryBlue;
+      size: $deskSz8;
+      font-weight: $Bold;
+    }
+    .red-circle-container {
+      margin: 0 auto;
+      width: 100%;
+      .description {
+        margin-top: 5px !important;
+      }
+      .top15-link-detail {
+        margin-bottom: 15px;
+        a {
+          // @include appDefaultFontStyleMedium;
+          color: $primaryBlue;
+          &:hover {
+            color: #195d9f;
+          }
+        }
+
+      }
+      .market-name {
+          color: $primaryGray;
+      }
+      .wide.column.top15ImageHolder-container {
+        padding-right: 0;
+      }
+      .top15ImageHolder {
+        text-align: center;
+        margin-bottom: 10px;
+        .ui.image {
+          max-width: 63px;
+        }
+      }
+      .red-circle {
+        width: 90px;
+        height: 90px;
+        border-radius: 50%;
+        background: $primaryRed;
+        color: #fff;
+        text-align: center;
+        word-wrap: break-word;
+        display: inline-block;
+        padding-top: 28px;
+        font-size: 14px;
+      }
+    }
+  }
+
+  .scenarios {
+    position: relative;
+    margin-bottom: 15px;
+    font-size: 20px;
+    padding: 0 15px 0px;
+    @include appDefaultFontStyleMedium();
+    .scenarios-circle {
+      width: 90px;
+      height: 90px;
+      position: absolute;
+      border-radius: 50%;
+      background: #0078c4;
+      padding-top: 20px;
+      text-align: center;
+      word-wrap: break-word;
+      display: inline-block;
+      color: #fff;
+      top: -75px;
+      left: 30%;
+      z-index: 10;
+    }
+  }
+  .floatLeft {
+    float: left;
+  }
+  .floatRight {
+    float: right;
+  }
+  .clearBoth {
+    clear: both;
+  }
+  .attachments {
+    margin-top: 60px;
+    h1, h2, h3, h4 {
+      color: $primaryGray;
+    }
+    .view-publication-btn {
+      text-align: center;
+      .showMorePublicationBtn.ui.button.primary {
+        border-radius: 50px;
+        margin-top: 40px;
+      }
+    }
+  }
+  .simple-list-view {
+    margin-top: 20px;
+    ul {
+      margin-bottom: 0;
+      padding: 0;
+      list-style: none;
+      li {
+        margin-bottom: 8px;
+      }
+    }
+    .linkBtn {
+      padding-left: 0;
+      padding-top: 0;
+    }
+    &.column{
+      ul {
+        margin-top: 0;
+        li {
+          width: 24%;
+          display: inline-block;
+          margin-right: 1%;
+          word-wrap: break-word;
+        }
+      }
+    }
+  }
+  .sections {
+    .parent-wrapper {
+      margin-top: 30px;
+      .section-title {
+        border-bottom: 2px solid #0079c1;
+      }
+      .child-wrapper {
+        margin: 20px 0;
+        .section-company {
+          font-size: $deskSz8;
+          .section-company-name {
+            margin-right: 15px;
+          }
+          @include appDefaultFontStyleMedium();
+          .ui.image {
+            max-width: 12px;
+            display: inline;
+            margin: 0 15px 0 0;
+            top: -2px;
+            &.countryCode {
+              max-width: 28px;
+            }
+            &.globe-icon {
+              max-width: 22px;
+            }
+          }
+        }
+        .industry {
+          font-size: 1em;
+          margin: 5px 0;
+        }
+        .author {
+          margin: 5px 0 15px 0;
+        }
+        .title {
+          margin: 15px 0px;
+          font-size: 1em;
+          color: $primaryBlue;
+        }
+        .row {
+          .column {
+            width: 25%;
+            display: inline-block;
+            div:first-child {
+              font-weight: 500;
+            }
+          }
+        }
+
+        .sections-rating {
+          margin-top: 20px;
+        }
+
+        .sections-summary {
+          margin-top: 20px;
+        }
+      }
+    }
+  }
+
+  .block-summary-model {
+    .ui.table thead tr:first-child > th:last-child {
+      border: solid 1px $primaryBlue;
+    }
+    .Source {
+      font-size: $deskSzSmaller !important;
+    }
+  }
+
+  .summary-header {
+    color: $primaryBlue !important;
+    font-weight: $Bolder !important;
+    font-size: $deskSz5 !important;
+
+    .ui.heading {
+      color: $primaryBlue !important;
+      font-weight: $Bolder !important;
+      font-size: $deskSz5 !important;
+    }
+  }
+
+  .title-subtext {
+    display: inline-block;
+    color: #fff !important;
+  }
+
+  .four-zero-four {
+    width: 100%;
+    text-align: center;
+    padding: 30px;
+    padding-bottom: 140px;
+    margin-top:24px;
+
+    .rich-text {
+      h1 {
+        font-size: $deskSzVeryBig;
+        margin-bottom: 56px;
+        color: $primaryBlue;
+        @include appDefaultFontStyleLight;
+      }
+      p {
+        line-height: normal;
+      }
+    }
+  }
+
+  .publication-footnote {
+    position: relative;
+    top: -20px;
+  }
+}
+
+// Medium Breakpoint
+@media (max-width: $screen-md-min) {
+  .research-layout-builder {
+    // override sm breakpoint styles
+    .research-layout-builder-grid {
+      .layouts {
+        .layout-right {
+          padding-top: 16px;
+        }
+
+        .ui.divider {
+          display: none;
+        }
+      }
+    }
+    .analysts-detail-grid {
+      .analysts-detail-grid-right-section {
+        .firstItem, .icon-holder {
+          padding-left: 10px;
+        }
+      }
+    }
+    .top-15-member
+    .red-circle-container
+    .top15ImageHolder {
+      .ui.image {
+        max-width: 90px;
+      }
+    }
+  }
+}
+
+@media (max-width: $screen-md-sm) {
+  .research-layout-builder {
+    // override sm breakpoint styles
+    .research-layout-builder-grid {
+      .ui.grid.layouts {
+        padding-bottom: 0;
+      }
+      .ui.grid {
+        .related-content {
+          margin-left: 0px;
+          text-align: center;
+          .heading {
+            font-size: $deskSz41;
+          }
+          .list-container {
+            width: 100%;
+          }
+        }
+        .in-this-issue {
+          margin-top: 64px;
+        }
+      }
+      .disclosures {
+        padding: 10px;
+        .empty-div {
+          display: none;
+        }
+        .btn-div {
+          width: 100%;
+        }
+      }
+    }
+    .ui.grid.company-performance {
+      color: $primaryGray;
+    }
+  }
+}
+
+// Small Breakpoint
+@media (max-width: $screen-xs-sm) {
+  .modals.dimmer .ui.scrolling.modal.coverageUniverseModal {
+    margin-top: 0 !important;
+  }
+  .analystsLink.ui.container {
+    margin-left: 0 !important;
+    color: $primaryBlue;
+  }
+  .ui.modal.coverageUniverseModal {
+    height: 100%;
+    margin-top: 0px !important;
+    margin-bottom: 0px !important;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    border-radius: 0px;
+    margin: 0 !important;
+    .content {
+      padding: 0px !important;
+      border-radius: 0px;
+      .button-holder {
+        text-align: right;
+        .ui.button.bmo-close-btn {
+          padding: 10px;
+          margin-right: 10px;
+        }
+      }
+      .company-name {
+        padding: 10px 0px;
+        text-align: center;
+        color: $primaryBlue;
+        font-size: $deskSz9;
+        @include appDefaultFontStyleMedium;
+      }
+      .company-universe-Overlay-row {
+        display: table;
+        width: 100%;
+        height: 35px;
+        &:nth-child(odd) {
+          background: $onboardingCoverageList;
+        }
+        .title, .value {
+          display: table-cell;
+          width: 50%;
+          font-size: $deskSzSmaller;
+          vertical-align: middle;
+        }
+        .title {
+          text-align: right;
+          padding-right: 8px;
+          @include appDefaultFontStyleMedium;
+        }
+        .value {
+          padding-left: 8px;
+        }
+      }
+    }
+  }
+  .rl-disclosures-modal {
+    .modal-close-icon {
+      float: right;
+      padding: 12px !important;
+    }
+  }
+
+  .research-layout-builder {
+    .analysts-card{
+      .image-holder {
+        .ui.container {
+          margin-left: 0 !important;
+        }
+      }
+      .analysts-detail-grid .analysts-detail-grid-right-section {
+        padding-top: 10px !important;
+      }
+    }
+    .ui.table.research-layout-table {
+      th {
+        width: 50px !important;
+        padding: 10px 2px !important;
+        &.first-table-cell {
+          padding-left: 2px !important;
+          word-break: break-word;
+          width: 60px !important
+        }
+        &:last-child {
+          padding-right: 2px !important;
+        }
+      }
+
+      td {
+        width: 50px !important;
+        padding: 2px !important;
+        &.first-table-cell {
+          width: 60px !important
+        }
+        &:last-child {
+          padding-right: 2px !important;
+        }
+      }
+    }
+    .ui.visible.research-layout-filters-modal {
+      display: block !important;
+    }
+    .research-layout-builder-grid {
+      padding: 10px 0;
+      .ui.grid.layouts {
+        padding-bottom: 15px;
+      }
+      .ui.grid {
+        .related-content {
+          .heading {
+            font-size: $deskSz7;
+          }
+        }
+      }
+      .layouts {
+        display: flex;
+        flex-direction: column;
+        .ui.divider {
+          display: none;
+        }
+        .layout-left {
+          padding-top: 0;
+          .coverage-universe-model {
+            .desktop-view {
+              display: none;
+            }
+            .mobile-view {
+              display: block !important;
+            }
+            .research-layout-table {
+              th, tbody tr td {
+                max-width: unset;
+                width: 21% !important;
+
+                &.first-table-cell {
+                  padding-right: 10px !important;
+                  width: 35% !important;
+                }
+                &.right-table-align {
+                  text-align: left !important;
+                }
+              }
+              th.first-table-cell, td.first-table-cell {
+                padding-left: 5px !important;
+              }
+              tbody tr td {
+                &.first-table-cell span {
+                  color: $primaryBlue;
+                }
+              }
+            }
+          }
+        }
+        .layout-right {
+          padding-top: 0 !important;
+        }
+      }
+    }
+    .ui.table thead tr {
+      th {
+        display: table-cell !important;
+        font-size: $deskSzSmallest !important;
+        line-height: 12px;
+        padding: 10px !important;
+      }
+      span {
+        font-size: $deskSzSmallest !important;
+      }
+    }
+    .main-content.ui.grid {
+      .rl-filters-section {
+        padding: 0px;
+        height: 0px;
+      }
+    }
+    .main-content {
+      .richText {
+        font-size: $deskSzSmaller;
+      }
+      .keyPoints-header.ui.heading {
+        font-size: $deskSzSmaller;
+      }
+      .ui.heading {
+        font-weight: $Medium !important;
+      }
+    }
+    .layout-left {
+      .ui.table.research-layout-table thead tr th {
+        font-size: $deskSzSmaller !important;
+      }
+      .ui.table.research-layout-table tbody td {
+        font-size: $deskSzSmaller !important;
+      }
+    }
+    .main-content.ui.grid .main-content-details {
+      padding: 15px;
+      padding-right: 15px !important;
+      padding-top: 0;
+    }
+    .block-summary-grid.ui.grid {
+      .ui.heading {
+        font-size: $deskSz7;
+      }
+    }
+    .block-summary-grid.ui.grid, .block-summary-model-grid.ui.grid, .ui.grid.attachments-grid, .ui.grid.keychanges, .ui.grid.disclosure {
+      .empty-grid {
+        display: none;
+      }
+      .move-right {
+        padding: 15px !important;
+      }
+      .attachments {
+        margin-top: 10px;
+        .showMorePublicationBtn.ui.button {
+          margin-right: 0px;
+        }
+      }
+      .view-publication-btn {
+        padding-bottom: 0px;
+        .showMorePublicationBtn.ui.button.primary {
+          margin-top: 20px;
+        }
+      }
+      .key-changes {
+        table {
+          tr {
+            td:first-child {
+              padding-left: 0px !important;
+            }
+          }
+        }
+      }
+    }
+    .disclosures {
+      padding: 15px;
+      padding-bottom: 0px;
+    }
+    .ui.table.research-layout-table tbody td {
+      font-size: $deskSzSmallest !important;
+    }
+    .other-team-members {
+      .ui.container.cat {
+        margin-left: 0 !important;
+      }
+    }
+    ul {
+      li {
+        .left-side {
+          .head-section {
+            .ui.container.cat {
+              margin-left: 0px !important;
+              margin-right: 0px !important;
+            }
+            .analyst-name {
+              width: 100% !important;
+              .ui.container{
+                margin-left: 0 !important;
+              }
+            }
+          }
+        }
+      }
+    }
+    .related-content {
+      .list-container {
+        ul {
+          li {
+            .left-side {
+              .date {
+                width: 50%;
+              }
+              .cat {
+                width: 50%;
+              }
+              .details-section {
+                width: 100%;
+              }
+              .analyst-name {
+                width: 100%;
+              }
+            }
+          }
+        }
+      }
+    }
+    .disclosures {
+      .empty-div {
+        display: none;
+      }
+      .btn-div {
+        width: 100%;
+      }
+    }
+
+    .triangle-image {
+      display: inline-block;
+      vertical-align: top;
+      text-align: center;
+      font-size: 16px;
+      padding-bottom: 10px;
+      .ui.image.brand-triangle-licon {
+        width: 24px;
+        height: 24px;
+        display: inline-block;
+      }
+      .brand-text {
+        font-size: $deskSzSmaller;
+        padding-left: 10px;
+      }
+    }
+
+    .ui.grid.company-performance {
+      font-size: 16px;
+      border-bottom: 1px solid $accordianBorderBottomGrey;
+      margin-bottom: 10px;
+      padding-bottom: 10px;
+      padding-top: 30px;
+      text-align: center;
+      vertical-align: middle;
+      .ticker-name {
+        font-size: $deskSzSmaller;
+        font-weight: $Medium;
+        margin-bottom: 10px;
+      }
+      .header,.company-performance-value {
+        font-size: $deskSzSmaller;
+        color: $primaryGray;
+        display: inline-block;
+        width: 50%;
+        margin: 0;
+      }
+      .company-performance-value {
+        font-weight: $Regular;
+        text-align: left;
+      }
+      .header {
+        padding-right: 15px;
+        text-align: right;
+      }
+      .twelve {
+        padding: 5px;
+      }
+      .twelve:nth-child(even) {
+        background: $onboardingCoverageList;
+      }
+      .twelve:first-child {
+        padding: 0;
+        text-align: left;
+      }
+      .twelve:nth-child(2) {
+        margin-top: 10px;
+      }
+      .mobile-accordion {
+        margin-right: 0;
+        width: 100%;
+      }
+      .column:first-child {
+        //margin-right: 70%;
+        max-width: unset;
+        .top15label {
+          width: 16px;
+        }
+      }
+      .flash_logo {
+        margin-bottom: 15px;
+        .ui.image.flash_image {
+          margin: 0 auto;
+        }
+      }
+      .chevron-block {
+        margin-left: 85%;
+      }
+      .chevron-bottom {
+        margin-top: -15px;
+      }
+      .chevron-top {
+        margin-top: -30px;
+      }
+    }
+    .layout-right {
+      padding-top: 0px;
+    }
+    .four-zero-four {
+      width: 100%;
+      text-align: center;
+      padding: 30px;
+      padding-bottom: 140px;
+      margin-top: 8px;
+
+      .rich-text {
+        h1 {
+          font-size: $deskSzVeryBig;
+          margin-bottom: 24px;
+          color: $primaryBlue;
+          @include appDefaultFontStyleLight;
+        }
+      }
+    }
+    .ui.heading.sector-name.headingTab {
+      background: none;
+      color: $primaryGray;
+      font-size: $deskSzSmaller;
+      padding-left: 0;
+    }
+    .analysts-card {
+      box-shadow: none;
+      padding: 0;
+      border-radius: 0;
+      margin-bottom: 15px;
+      border-bottom: 1px solid $accordianBorderBottomGrey;
+      .analysts-detail-grid {
+        border-bottom: none;
+      }
+      .analysts-detail-grid-right-section{
+        margin-left: 0 !important;
+        .firstItem{
+          font-size: $deskSzSmaller;
+        }
+      }
+      .other-team-members {
+        font-size: $deskSzSmaller;
+        border-top: 1px solid $accordianBorderBottomGrey;
+      }
+      .ui.button.linkBtn.bmo_chevron{
+        margin-top: -41px;
+      }
+      .legal-entities{
+        padding: 0;
+        padding-bottom: 10px;
+        br {
+          display: none;
+        }
+        .legalEntity{
+        font-size: $deskSzSmaller;
+        }
+        .richText.legalEntity {
+          color: $primaryGray;
+        }
+      }
+    }
+    .ui.button.linkBtn.bmo_chevron{
+      float : right;
+      padding: 0;
+      padding-top: 15px;
+      padding-right: 15px;
+      &:before {
+        top: 0px;
+      }
+    }
+    .videocast-details-listing {
+      .ui.button.linkBtn.bmo_chevron {
+        margin-top: -25px;
+      }
+      .ui.button.linkBtn.bmo_chevron.bottom {
+        margin-top: -34px;
+      }
+    }
+    .volume-chart{
+      box-shadow: none;
+      background: none;
+      border-bottom: 1px solid $accordianBorderBottomGrey;
+      margin-bottom: 20px;
+      .volume-chart-image {
+        max-height: 170px;
+        width: 100%;
+        margin-top: 10px;
+        margin-bottom: 50px;
+        background-color: $bmoChartBackgroundColor;
+      }
+      .ui.button.linkBtn.bmo_chevron{
+        margin-top: -45px;
+      }
+    }
+    .research-title{
+      font-size: $deskSz9;
+      .ui.heading{
+        font-size: $deskSz7;
+      }
+    }
+    .read-more-cards{
+      font-size: $deskSzSmaller;
+      color: $primaryGray;
+      border-bottom: 1px solid $accordianBorderBottomGrey;
+      padding-bottom: 10px;
+      .ui.table:not(.unstackable) th:first-child,
+      .ui.table:not(.unstackable) td:first-child {
+        font-weight: $Medium;
+      }
+      .ui.table thead tr:first-child > th:last-child {
+        border-radius: 0;
+      }
+      .more-contents {
+        padding-bottom: 10px;
+        margin-top: 10px;
+        margin-bottom: 30px;
+        margin-left: -16px;
+        margin-right: -16px;
+        .item {
+          .ui.card {
+            .content {
+            font-size: 16px;
+            .header {
+              font-size: $deskSzSmaller;
+            }
+            .description{
+              font-size: $deskSzSmaller;
+            }
+            }
+          }
+        }
+        .ui.heading.headingTab, .price-title-text-block .item .ui.card > .content > .header {
+          font-size: 14px !important;
+          border-radius: 0;
+          margin-top: 0;
+        }
+        .ui.table.research-layout-table {
+          box-shadow: none;
+          border: 0;
+          margin-bottom: 0;
+          th.first-table-cell {
+            border-radius: 0;
+          }
+        }
+        .ui.table.research-layout-table .headerRow{
+          font-size: 14px!important;
+          th {
+            border-radius: 0 !important;
+          }
+        }
+        .ui.table.research-layout-table thead tr th {
+          font-size: 14px!important;
+          font-weight: $Regular;
+        }
+        .ui.table.research-layout-table tbody td {
+          font-size: 14px !important;
+          padding-top: 17px !important;
+          padding-bottom: 13px !important;
+        }
+        .company-data.label-value .research-layout-table td:nth-child(3) {
+          font-weight: $Medium;
+        }
+      }
+      .our-thesis {
+        margin-top: 0px;
+      }
+      .ui.button.linkBtn.bmo_chevron{
+        margin-top: -30px;
+      }
+      .price-title-text-block {
+        margin-bottom : 0;
+        .item .ui.card > .content > .header .price-block {
+          margin-top: 0;
+        }
+        .item .ui.card {
+          box-shadow: none;
+        }
+        .item .ui.card > .content {
+          box-shadow : none;
+        }
+      }
+      .industry-research {
+        margin-bottom: 0;
+        .list-container {
+          box-shadow: none;
+        }
+      }
+      .scenarios {
+        padding-top: 30px;
+        padding-bottom: 10px;
+      }
+      .company-data{
+        box-shadow: none;
+      }
+    }
+    .ui.grid.keychanges .key-changes .research-layout-table .ui.heading.headingTab{
+      font-size: 14px;
+    }
+    .display-publish-date{
+      padding-bottom: 5px;
+    }
+    .bmo_chevron::before  {
+      color: $primaryBlue;
+      height: 12px;
+      left: 0.25em !important;
+      top: -0.35px;
+      width: 12px;
+      padding: 0;
+      padding-top: 10px;
+      padding-right: 10px;
+    }
+    .hide-bottom-border {
+      border-bottom: none !important;
+    }
+    .layout-left {
+      font-size: 16px;
+      .display-publish-date,
+      .research-title,
+      .company-performance,
+      .main-content-details .triangle-image{
+        display: none;
+      }
+      .ui.table:not(.unstackable) td:first-child {
+        font-weight: $Medium;
+        word-break: break-word;
+      }
+      .ui.table.research-layout-table thead tr th {
+        font-weight: $Regular;
+      }
+      .triangle-image {
+        display: block !important;
+        text-align: left;
+        .brand-text {
+          font-size: $deskSzSmaller;
+        }
+      }
+      .main-content.ui.grid {
+        margin-top: 0;
+      }
+      .main-content-details {
+        h1{
+          margin-top: 0;
+        }
+        h1.ui.heading {
+          font-size: $deskSz7;
+        }
+      }
+    }
+    .attachments .view-publication-btn {
+      .publication-btn-message {
+        margin-bottom: 10px;
+        margin-top: 15px;
+      }
+    }
+    .attachments .view-publication-btn {
+      .publication-btn-message {
+        margin-bottom: 10px;
+        margin-top: 10px;
+      }
+    }
+  }
+}
+
+//windows screen
+@media(max-width: $screen-windows-max) {
+  .research-layout-builder {
+    .analysts-card {
+      .icon {
+        &.forgot-mail-icon,
+        &.forgot-phone-icon {
+          margin-right: 19px;
+        }
+      }
+    }
+  }
+}
+
+// Large Breakpoint
+@media (min-width: $screen-lg-min) {
+  .research-layout-builder {
+    // override md breakpoint styles
+  }
+}
+
+// IE specific query.
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  .ui.grid.analysts-detail-grid {
+    .analysts-detail-grid-right-section {
+      .ui.button.follow-contact {
+        padding-left: 8px;
+      }
+    }
+  }
+}

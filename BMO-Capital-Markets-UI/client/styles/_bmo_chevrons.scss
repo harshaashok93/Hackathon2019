@@ -1,0 +1,48 @@
+.bmo_chevron::before { // use className as "bmo_chevron" for top chevron
+    border-style: solid;
+    border-width: 2px 2px 0 0;
+    content: '';
+    display: inline-block;
+    height: 0.60em;
+    left: 0.15em;
+    position: relative;
+    top: 0.15em;
+    transform: rotate(-45deg);
+    vertical-align: top;
+    width: 0.60em;
+    float: right;
+    color: $primaryWhite;
+}
+.bmo_chevron.right:before { // use className as "bmo_chevron right"
+    left: 0;
+    transform: rotate(45deg);
+}
+.bmo_chevron.bottom:before { // use className as "bmo_chevron bottom" for bottom chevron
+    top: 5px;
+    transform: rotate(135deg);
+}
+.bmo_chevron.left:before { // use className as "bmo_chevron left" for left chevron
+    left: 0.25em;
+    transform: rotate(-135deg);
+}
+.bmo_chevron.tick:before { // use className as "bmo_chevron tick" for option tick
+    top: 3px;
+    transform: rotate(135deg);
+    border-width: 2px 2px 0 0;
+    height: 0.4em;
+    width: 0.7em;
+    color: $menuBlue;
+}
+
+div.solid-triangle-up { // use className as "solid-triangle-up" only for div for white solid triangle up
+    width: 10px;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-bottom: 5px solid $primaryWhite;
+}
+div.solid-triangle-down { // use className as "solid-triangle-down" only for div for white solid triangle down
+    width: 10px;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid $primaryWhite;
+}

@@ -1,0 +1,374 @@
+/*
+ * Component: AdminRegistrationPanel
+ */
+
+@import '../../../styles/variables';
+
+// (IMPORTANT: please create the styles such that the larger breakpoints
+// override the smaller ones. "Mobile First")
+.ui.modal.user-filter-modal {
+  width: 1104px;
+  margin: 0 0 0 -552px !important;
+  top: calc(50% - 360px);
+  .content {
+    .filter-modal {
+      .button-holder{
+        text-align: right;
+        .ui.button.modal-close-icon {
+          margin: 0;
+          padding: 0px;
+          height: 22px;
+          width: 20px;
+          vertical-align: middle;
+          background-position: center;
+        }
+      }
+      .modal-header {
+        font-size: $deskSz2;
+        @include appDefaultFontStyleLight();
+        padding-bottom: 10px;
+      }
+      .filter-row {
+        display: inline-block;
+        width: 100%;
+        padding: 24px 0px;
+        border-bottom: solid 1px $downloadRequestedColor;
+        &.row-1 {
+          border-top: solid 1px $downloadRequestedColor;
+        }
+        .column-1 {
+          display: inline-block;
+          width: 10%;
+          vertical-align: top;
+          font-size: $deskSz4;
+          @include appDefaultFontStyleMedium();
+          line-height: 1;
+        }
+        .column-2 {
+          display: inline-block;
+          width: 90%;
+          .checkbox-division {
+            width: 100%;
+            display: inline-block;
+            padding-bottom: 10px;
+            .sub-column {
+              display: inline-block;
+              padding-left: 22px;
+              .ui.checkbox{
+                label {
+                  padding-left: 33px;
+                }
+              }
+            }
+            .sub-column-header {
+              display: inline-block;
+              width: 12%;
+              text-align: right;
+              margin-right: 25px;
+            }
+          }
+        }
+      }
+    }
+    .number-users-filterd {
+      font-size: $deskSz4;
+      padding-top: 30px;
+      padding-bottom: 40px;
+      text-align: center;
+      .ui.button.count-loader {
+        vertical-align: middle;
+        margin-right: 0px;
+        position: relative;
+        padding: 15px;
+        .ui.loader::before,
+        .ui.loader::after {
+          width: 30px;
+          height: 30px;
+        }
+        .ui.loader::after {
+          border-color: $primaryBlue $loaderGreay $loaderGreay !important;
+          border-width: 0.12em;
+        }
+      }
+      .number {
+        @include appDefaultFontStyleMedium()
+      }
+    }
+    .clear-all-submit {
+      width: 100%;
+      padding-bottom: 25px;
+      display: inline-block;
+      .clear-all-btn {
+        width: 50%;
+        display: inline-block;
+        text-align: right;
+        .disabled-reset.ui.button.linkBtn {
+          color: $downloadRequestedColor !important;
+        }
+      }
+      .submit-btn {
+        width: 50%;
+        display: inline-block;
+        .ui.button {
+          font-size: $deskSz9;
+        }
+      }
+    }
+  }
+}
+.admin-registration-pannel {
+  padding-left: 40px;
+  padding-right: 45px;
+
+  .disabled-reset.ui.button.linkBtn {
+    color: $downloadRequestedColor !important;
+  }
+  .head-section {
+    @include appDefaultFontStyleLight();
+    width: 100%;
+    display: inline-block;
+    margin-bottom: 23px;
+    .new-request-total-account {
+      font-size: $deskSz7;
+      color: $primaryGray;
+      width: 20%;
+      display: inline-block;
+      @include appDefaultFontStyleRegular();
+      vertical-align: middle;
+    }
+    .header-reset-filter {
+      width: 12%;
+      display: inline-block;
+      margin-right: 2%;
+      text-align: left;
+      .ui.button {
+        padding: 12.5px;
+      }
+    }
+    .search-filter {
+      width: 26%;
+      vertical-align: bottom;
+      display: inline-block;
+      .search-text{
+        vertical-align: middle;
+      }
+      .ui.input {
+        vertical-align: middle;
+        margin-left: 3%;
+        height: 33px;
+        opacity: 0.56;
+        border-radius: 5px !important;
+        background-color: $adminSummaryCardGray;
+        input {
+          width: 215px;
+        }
+      }
+    }
+    .status-filter {
+      width: 23%;
+      margin-right: 3%;
+      vertical-align: bottom;
+      display: inline-block;
+      .dropdown-chevron.ui.dropdown.selection, .dropdown-chevron.ui.dropdown {
+        border-bottom: solid 1px $primaryBlue;
+        width: 265px;
+        .menu.transition.visible {
+          .item {
+            padding: 8px 18.36px !important;
+            color: $primaryBlue !important;
+            &:hover {
+              @include appDefaultFontStyleBold();
+            }
+          }
+        }
+      }
+      .ui.dropdown {
+        padding-left: 15px;
+        padding-right: 8px;
+        .default.text {
+          color: $primaryBlue;
+        }
+        .menu > .item:last-child {
+          display: none;
+        }
+      }
+    }
+    .advance-filter {
+      display: inline-block;
+      width: 14%;
+      text-align: right;
+      .ui.button.advance-filter {
+        margin-right: 0px;
+        text-align: center;
+        font-size: $deskSz9;
+      }
+
+    }
+    .ui.search.selection.dropdown > input.search {
+      padding-left: 15px;
+    }
+  }
+  .card-wraper {
+    min-height: 100px;
+    padding-bottom: 35px;
+    .admin-acounts-result-not-found {
+      text-align: center;
+      padding-top: 50px;
+    }
+  }
+  .title-bar {
+    background-color: $primaryBlue;
+    color: $primaryWhite;
+    border-radius: 5px 5px 0px 0px;
+    width: 100%;
+    .result-column {
+      display: inline-block;
+      .ui.button.btn-text-color {
+        color: $primaryWhite;
+        outline: none; //Added
+        padding: 12.57px 0px;
+        .underline {
+          border-bottom: solid 1px $primaryWhite;
+        }
+      }
+      i {
+        padding-left: 9px;
+      }
+      &.date{
+        padding-left: 32px;
+        width: 20%;
+      }
+      &.name {
+        width: 25%;
+        padding-left: 20px;
+      }
+      &.company {
+        width: 20%;
+      }
+      &.status {
+        width: 20%;
+      }
+      &.linked {
+        width: 15%
+      }
+    }
+  }
+  .pagination-div {
+    text-align: center;
+    padding-bottom: 50px;
+    .total-account {
+      display: block;
+      width: auto;
+      padding-bottom: 15px;
+      @include appDefaultFontStyleLight();
+      span {
+        @include appDefaultFontStyleMedium();
+      }
+    }
+  }
+}
+
+// Small Breakpoint
+@media (max-width: $screen-tab) {
+  .admin-registration-pannel {
+    padding-left: 30px;
+    padding-right: 30px;
+    .head-section {
+      .new-request-total-account {
+        font-size: $deskSz9;
+        width: 20%;
+        vertical-align: middle;
+      }
+      .header-reset-filter {
+        width: 11%;
+        margin-right: 1%;
+        .ui.button {
+          padding: 5px;
+        }
+      }
+      .search-filter {
+        .ui.input {
+          input {
+            width: 182px;
+          }
+        }
+      }
+      .status-filter {
+        margin-right: 1%;
+        .dropdown-chevron.ui.dropdown.selection, .dropdown-chevron.ui.dropdown {
+          width: 224px;
+        }
+      }
+      .advance-filter {
+        width: 18%;
+        vertical-align: bottom;
+      }
+      .ui.search.selection.dropdown > input.search {
+        padding-left: 0;
+      }
+    }
+  }
+}
+
+// @media (max-width: $screen-sm) {
+//   .admin-registration-pannel {
+//     .title-bar {
+//       .result-column {
+//         &.date{
+//           padding-left: 16px;
+//           width: 17%;
+//         }
+//         &.name {
+//           width: 30%;
+//         }
+//         &.company {
+//           width: 28%;
+//         }
+//         &.status {
+//           width: 25%;
+//           text-align: left;
+//           padding-left: 18px;
+//         }
+//       }
+//     }
+//   }
+// }
+
+// Medium Breakpoint
+@media (max-width: $screen-xs-sm) {
+  .admin-registration-pannel {
+    padding-left: 0px;
+    padding-right: 0px;
+    .title-bar {
+      display: none;
+    }
+    .head-section {
+      text-align: center;
+      .new-request-total-account {
+        width: 270px;
+        font-size: $deskSz4;
+        display: block;
+        margin: auto;
+        text-align: left;
+        margin-bottom: 30px;
+      }
+      .search-filter {
+        display: block;
+        margin-right: 0px;
+        margin-bottom: 25px;
+      }
+      .status-filter {
+        .ui.dropdown {
+          margin-bottom: 0px;
+        }
+      }
+    }
+  }
+}
+
+// Large Breakpoint
+@media (min-width: $screen-lg-min) {
+  .admin-registration-pannel {
+    // override md breakpoint styles
+  }
+}

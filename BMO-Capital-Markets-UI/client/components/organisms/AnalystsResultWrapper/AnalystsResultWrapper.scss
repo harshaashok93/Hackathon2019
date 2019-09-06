@@ -1,0 +1,56 @@
+/*
+ * Component: AnalystsResultWrapper
+ */
+
+@import '../../../styles/variables';
+
+// (IMPORTANT: please create the styles such that the larger breakpoints
+// override the smaller ones. "Mobile First")
+
+.analysts-result-wrapper {
+  // width: $rightLayoutWidth !important;
+  // margin-left: 20px;
+  width: calc(100% - 300px) !important;
+  margin-left: 7px;
+  position: relative;
+  float: right;
+  &.corp-site {
+    width: 100% !important;
+    text-align: left;
+    right: 0%;
+    float: unset !important;
+
+    @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+      float: none !important;
+    }
+  }
+}
+
+// Small Breakpoint
+@media (max-width: 1250px) and (min-width: 1025px) {
+  .analysts-result-wrapper {
+    margin-left: 0px;
+  }
+}
+
+// Small Breakpoint
+@media (max-width: $screen-xs-max) {
+  .analysts-result-wrapper {
+    width: calc(100% - 300px) !important;
+    padding-left: 0;
+  }
+}
+
+// Medium Breakpoint
+@media (max-width: $screen-xs-sm) {
+  .analysts-result-wrapper {
+    width: 100%  !important;
+  }
+}
+
+// Large Breakpoint
+@media (max-width: $screen-lg-min) {
+  .analysts-result-wrapper {
+    // override md breakpoint styles
+  }
+}

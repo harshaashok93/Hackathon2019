@@ -1,0 +1,180 @@
+/*
+ * Component: ContactUsForm
+ */
+
+@import '../../../styles/variables';
+
+// (IMPORTANT: please create the styles such that the larger breakpoints
+// override the smaller ones. "Mobile First")
+
+.footer-wrapper .ui.page.modals.dimmer.transition.visible.active {
+  background-color: rgba(0, 0, 0, 0);
+  z-index: 1003;
+  position: fixed;
+}
+.footer-wrapper.dimmable.dimmed {
+  overflow: visible !important;
+}
+.ui.page.modals.dimmer.transition.visible.active {
+  z-index: 1003;
+}
+.ui.modal.contact-us-form {
+  background: transparent;
+  box-shadow: none;
+  .contact-us-form-content {
+    background: $primaryWhite;
+    margin: auto;
+    width: 548px;
+    max-width: 100%;
+    box-shadow: 0px 0px 12px 0px $oddGray;
+    padding: 15px;
+    .ui.label.input-label {
+      background-color: transparent;
+      padding-left: 0;
+    }
+  }
+  .ui.form {
+    .field {
+      margin: 0;
+      .comment {
+        height: 100px;
+        margin-bottom: 40px;
+        background-color: $borderGray;
+      }
+      .ui.message.error-text {
+        box-shadow: none;
+        background: none;
+        padding: 0;
+        color: $primaryRed;
+        margin-top: 4px;
+        float: right;
+        font-size: $deskSzSmaller;
+        @include appDefaultFontStyleLight();
+        margin-bottom: 0;
+        .content {
+          width: auto;
+          float: right;
+        }
+      }
+    }
+  }
+  .contact-us-form-heading {
+    margin-bottom: 25px;
+    @include appDefaultFontStyleLight();
+    .button-holder {
+      width: 100%;
+      text-align: right;
+      display: inline-block;
+      .modal-close-icon {
+        margin: 0;
+        padding: 0px;
+        height: 22px;
+        width: 20px;
+        vertical-align: middle;
+        background-position: center;
+      }
+    }
+    .form-name {
+      width: 100%;
+      text-align: left;
+      font-size: $deskSz7;
+      color: $primaryBlue;
+    }
+    .conference-top-section {
+      .conference-date{
+        font-size: $deskSz9;
+        color: $primaryGray;
+        @include appDefaultFontStyleLight();
+        span {
+          display: inline-block;
+        }
+        .seperator-dot {
+          display: inline-block;
+          padding: 0 6px;
+        }
+      }
+      .ui.heading.title {
+        margin-top: 18px;
+        margin-bottom: 0px;
+        font-size: $deskSz21;
+        @include appDefaultFontStyleLight();
+      }
+      .ui.heading.info {
+        margin: 0px;
+        font-size: $deskSz7;
+        @include appDefaultFontStyleLight();
+        line-height: 1.5;
+      }
+    }
+  }
+  .input-label {
+    display: block;
+    position: relative;
+    width: 100%;
+    color: $primaryGray;
+    font-size: $deskSz9;
+    @include appDefaultFontStyleLight();
+    &.error {
+      color: $primaryRed;
+    }
+  }
+  .ui.secondary.button {
+    width: 144px;
+    left: calc(50% - 72px);
+    position: relative;
+    margin: auto;
+    &.disabled {
+      border-color: $secondaryGray;
+    }
+  }
+  .ui.input {
+    width: 100%;
+    input {
+      padding: 10px 15px;
+      font-size: $deskSzSmaller;
+      background-color: $borderGray;
+      color: $primaryGray;
+      border: none;
+      margin-bottom: 15px;
+    }
+    &.error {
+      input {
+        border: solid 1px $primaryRed;
+      }
+    }
+  }
+}
+
+// Small Breakpoint
+@media (max-width: $screen-xs-min) {
+  .ui.modal.contact-us-form {
+    .contact-us-form-content {
+      box-shadow: none;
+    }
+    .contact-us-form-heading {
+      .conference-top-section {
+        .ui.heading.title {
+          font-size: $deskSz41;
+        }
+      }
+    }
+  }
+  .ui.scrolling.modal.transition.visible.active.contact-us-form {
+    margin: 0 !important;
+    width: 100%;
+  }
+}
+
+// Medium Breakpoint
+@media (min-width: $screen-md-min) {
+  .contact-us-form {
+    // override sm breakpoint styles
+  }
+}
+
+// Large Breakpoint
+@media (min-width: $screen-lg-min) {
+  .contact-us-form {
+    // override md breakpoint styles
+  }
+}

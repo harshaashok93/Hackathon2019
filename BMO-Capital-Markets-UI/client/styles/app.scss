@@ -1,0 +1,258 @@
+@import "variables";
+@import "~unchained-ui-react/src/styles/default.theme";
+@import "bmo_checkbox";
+@import "bmo_buttons";
+@import "bmo_header";
+@import "bmo_images";
+@import "bmo_chevrons";
+@import "bmo_dropdown";
+@import "bmo_textbox";
+@import "node_modules/react-image-gallery/styles/scss/image-gallery.scss";
+@import "node_modules/plyr/src/sass/plyr.scss";
+
+#docs-loading-dimmer.ui.dimmer {
+  background-color: rgba(255, 255, 255, 0.75);
+}
+
+.ui.loader::after {
+  border-color: #0079c1 transparent transparent !important;
+}
+.ui.checkbox label{
+  color: $primaryGray;
+}
+
+.ui.loader::before, .ui.loader::after {
+  width: 2.8571428625rem;
+  height: 2.8571428625rem;
+  margin: 0 0 0 -1.85rem;
+}
+.ui.loader::after {
+  content: '';
+  animation: bmoloader $loaderSpeed linear;
+  animation-iteration-count: infinite;
+}
+
+.ui.label.input-label {
+  @include appDefaultFontStyleRegular();
+  padding-bottom: 5px;
+}
+.ui.page.modals.dimmer.transition.visible.active {
+  z-index: 10031;
+}
+.ui.form input:not([type]),
+.ui.form input[type="date"],
+.ui.form input[type="datetime-local"],
+.ui.form input[type="email"],
+.ui.form input[type="number"],
+.ui.form input[type="password"],
+.ui.form input[type="search"],
+.ui.form input[type="tel"],
+.ui.form input[type="time"],
+.ui.form input[type="text"],
+.ui.form input[type="file"],
+.ui.form input[type="url"] {
+  @include appDefaultFontStyleRegular();
+  font-size: $deskSz8;
+}
+
+.asterisk-message {
+  font-size: $deskSzSmaller;
+  font-weight: bold;
+  @media (max-width: $screen-xs-sm) {
+    padding-left: 5px;
+  }
+}
+
+/* Active Animation */
+@keyframes bmoloader {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+html, body {
+  font-family: $appDefaultFont !important;
+  font-size: 16px !important;
+  width: 100%;
+  -moz-osx-font-smoothing: auto;
+  -webkit-font-smoothing: antialiased;
+  font-smooth: always;
+  color: $primaryGray;
+  #app{
+    font-family: $appDefaultFont !important;
+    overflow: hidden;
+  }
+  .ui.fluid.container {
+    max-width: $screen-windows-lg !important;
+    margin: 0 auto !important;
+  }
+  input::-ms-clear {
+    display: none;
+  }
+  .lollypop-carousel + .left-bar-menu {
+    .v-hr {
+      display: none;
+    }
+  }
+}
+
+.ui.dropdown.selected, .ui.dropdown .menu .selected.item, .ui.dropdown .menu > .item, .ui.search.dropdown > .text {
+  color: $primaryGray;
+}
+.ui.dropdown.selected, .ui.dropdown .menu .selected.item {
+  @include appDefaultFontStyleMedium();
+}
+.ui.page.modals.dimmer.transition.visible.active {
+  overflow-y: scroll !important;
+  background-color: $overlay-background;
+}
+.clearBoth {
+  clear: both;
+}
+.textCenter {
+  text-align: center;
+}
+
+body.noscroll {
+  overflow: hidden !important;
+  position: fixed !important;
+  width: 100%;
+  -webkit-overflow-scrolling: touch;
+}
+
+body.noscroll-login {
+  @media (max-width: $screen-xs-sm) {
+    overflow: hidden !important;
+    position: fixed !important;
+    width: 100%;
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+body.noscroll-login-tablet {
+  @media (max-width: $screen-sm-min) {
+    overflow: hidden !important;
+    position: fixed !important;
+    width: 100%;
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+body.noscroll-thank {
+  overflow: hidden !important;
+  -webkit-overflow-scrolling: touch;
+}
+
+.borderRadius100 {
+  border-radius: 100%;
+}
+
+.external-link-icon {
+  background-position: center;
+  padding: 6px;
+  margin-left: 10px;
+}
+
+.customWarningMsgModal  {
+  width: 550px;
+  margin: 0 auto;
+  padding: 30px;
+  background: white;
+  box-shadow: 0 5px 13px 0 rgba(166, 166, 166, 0.5);
+  border-radius: 5px;
+  font-size: $deskSz4;
+  font-weight: 300;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.5;
+  letter-spacing: normal;
+  text-align: left;
+  color: $primaryBlue;
+  font-weight: 400;
+  position: relative;
+  .closeButtonHolder {
+    text-align: right;
+    line-height: 1;
+    .bmo-close-btn {
+      margin: 0;
+      padding: 0px;
+      height: 22px;
+      width: 20px;
+      vertical-align: middle;
+      background-position: center;
+    }
+  }
+  .ui.button.secondary.closeBtn {
+    display: block;
+    margin: 0 auto;
+    line-height: 1 !important;
+  }
+  .actionButtons {
+    margin: 20px auto;
+    text-align: center;
+    .ui.button.navBtn {
+      background-color: inherit;
+      color: inherit;
+    }
+  }
+  .image-link-div-wrapper {
+    margin-top: 40px;
+  }
+  .warningMsgModalCloseDiv {
+    padding-bottom: 20px;
+    font-size: 16px !important;
+    .ui.secondary.button.closeBtn {
+      font-size: $deskSz8 !important;
+    }
+  }
+  .image-link-div {
+    padding-bottom: 40px;
+    font-size: 16px;
+    .forgot-email-template-image {
+      height: 29px;
+      width: 29px;
+      display: inline-block;
+      vertical-align: middle;
+    }
+    .forgot-email-template-label {
+      background: none;
+      font-size: 1em;
+      line-height: 1.38;
+      text-align: left;
+      color: $primaryBlue !important;
+      padding-left: 14px;
+      vertical-align: top;
+    }
+  }
+}
+
+@media (max-width: $screen-xs-sm) {
+  .customWarningMsgModal  {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    z-index: 100;
+    border-radius: 0;
+  }
+}
+
+.ui.button.disabled {
+  border-radius: 50px;
+}
+
+.richText {
+  div, h1, h2, h3, h4, h5, h6, p {
+    span {
+      font-family: $appDefaultFont !important;
+    }
+  }
+}
+
+.bgWhite {
+  background: #fff;
+}

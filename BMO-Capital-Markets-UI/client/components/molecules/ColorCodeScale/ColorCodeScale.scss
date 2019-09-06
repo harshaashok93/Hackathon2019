@@ -1,0 +1,33 @@
+/*
+ * Component: ColorCodeScale
+ */
+
+@import '../../../styles/variables';
+
+// (IMPORTANT: please create the styles such that the larger breakpoints
+// override the smaller ones. "Mobile First")
+
+.color-code-scale {
+  // ...
+}
+
+// Small Breakpoint
+@media (min-width: $screen-sm-min) {
+  .color-code-scale {
+    // override xs breakpoint styles
+  }
+}
+
+// Medium Breakpoint
+@media (min-width: $screen-md-min) {
+  .color-code-scale {
+    // override sm breakpoint styles
+  }
+}
+
+// Large Breakpoint
+@media (min-width: $screen-lg-min) {
+  .color-code-scale {
+    // override md breakpoint styles
+  }
+}

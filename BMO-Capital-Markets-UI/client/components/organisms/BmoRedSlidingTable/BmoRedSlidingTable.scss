@@ -1,0 +1,478 @@
+/*
+ * Component: SlidingTable
+ */
+
+@import '../../../styles/variables';
+
+// (IMPORTANT: please create the styles such that the larger breakpoints
+// override the smaller ones. "Mobile First")
+
+.bmo-red-sliding-table {
+  .mobile-result {
+    display: none;
+  }
+  .load-more-button {
+    width: 100%;
+    text-align: center;
+    .ui.button.load-more {
+      color: #0079c1;
+      background-color: transparent;
+      border: none;
+      width: auto;
+    }
+  }
+  .table-top-section {
+      width: 100%;
+      display: table;
+      margin-bottom: 10px;
+      position: relative;
+    .download-link {
+      width: 80%;
+      float: right;
+      display: table-cell;
+      vertical-align: middle;
+      text-align: right;
+      margin-bottom: 5px;
+      .universal-download {
+        margin-bottom: 20px;
+      }
+      .ui.button.download-report {
+        background-position: right;
+        padding-right: 25px;
+        min-height: 10px;
+        padding-bottom: 0px;
+        padding-top: 0;
+        &.selected {
+          color: $downloadRequestedColor;
+          pointer-events: none !important;
+          cursor: default;
+        }
+      }
+    }
+    .num-of-companies {
+      color: $primaryGray;
+      width: 25%;
+      float: right;
+      display: table-cell;
+      vertical-align: bottom;
+      position: absolute;
+      bottom: 0;
+    }
+  }
+  .results {
+    margin-bottom: 70px;
+    .asterisk-message {
+      padding-top: 5px;
+    }
+  }
+  .header-cell-checkbox {
+    text-align: left;
+    display: table-cell;
+    height: 40px;
+    font-size: $deskSzSmallest;
+    color: $primaryWhite;
+    vertical-align: middle;
+    min-width: 50px;
+    padding-top: 9px;
+    padding-left: 17px;
+    label::before {
+      border: solid 0.5px $primaryWhite !important;
+    }
+    .ui.checkbox input:checked ~ label::before {
+      border-color: white !important;
+    }
+    .ui.checkbox.tick:before {
+      left: -6px;
+      color: $primaryWhite;
+      z-index: 9;
+      top: 6px;
+    }
+  }
+  .table-left,
+  .table-right {
+    display: inline-block;
+    vertical-align: top;
+    .head-section {
+      background-color: $primaryBlue;
+      font-size: $deskSz9;
+      display: table-row;
+      .header-cell {
+        display: table-cell;
+        height: 60px;
+        font-size: $deskSzSmaller;
+        color: $primaryWhite;
+        vertical-align: middle;
+        min-width: 115px;
+        .cell {
+          line-height: 1.13;
+        }
+        &:last-child{
+          border-right: none;
+          &.no-checkbox {
+          min-width: 193px;
+          text-align: center;
+          }
+        }
+      }
+    }
+    .result-section {
+      padding: 5px 0;
+      display: table-row;
+    }
+  }
+  .wrapper1 {
+    height: 20px;
+    position: absolute;
+    display: inline-block;
+    width: calc(100% - 195px);
+    overflow-x: scroll;
+    overflow-y: hidden;
+    margin-top: -19px;
+    z-index: 0;
+    .div1 {
+      height: 14px;
+    }
+  }
+  .table-right {
+    border-bottom: solid 1px $borderBottomGrey;
+    .head-section {
+      .header-cell {
+        text-align: right;
+        min-width: 95px;
+        &:last-child {
+          border-radius: 0 5px 0 0;
+        }
+      }
+    }
+    .result-section {
+      .result-cell {
+        text-align: right;
+      }
+    }
+  }
+  .mini-summary {
+    margin-bottom: 10px;
+    color: $primaryGray;
+  }
+  .table-left {
+    display: inline-block;
+    width: 170px;
+    border-right: solid 1px $primaryWhite;
+    overflow: hidden;
+    @include boxShadow(0, 3px, 11px, 2px, rgba(129, 129, 129, 0.5));
+    padding-right: 2px;
+    .head-section .header-cell:first-child {
+      border-bottom-left-radius: 0;
+    }
+    .result-section {
+      &:hover {
+        .ui.button.desktop-lock {
+          z-index: 999;
+        }
+      }
+    }
+  }
+  .table-right {
+    display: inline-block;
+    width: calc(100% - 180px);
+    overflow-x: scroll;
+    table-layout: fixed;
+    .head-section .header-cell {
+      &:last-child{
+        border-top-right-radius: 5px;
+        border-bottom-right-radius: 0;
+      }
+    }
+  }
+  .table-left {
+    .head-section {
+      .header-cell-checkbox {
+        border-radius: 5px 0 0 0;
+      }
+      .header-cell {
+        min-width: 117px;
+        height: 60px;
+        padding-left: 0;
+        padding-right: 0;
+        &:last-child {
+          text-align: left;
+        }
+      }
+    }
+    .empty-table {
+      text-align: left;
+      height: 40px;
+      margin-top: 12px;
+      padding-left: 12px;
+    }
+    .result-section, .head-section{
+      .cell {
+        padding: 0;
+      }
+      .companyTicker {
+        padding: 0;
+      }
+    }
+    .result-section {
+      .ui.container.result-cell {
+        .cell.companyName {
+          display: inline-block;
+          width: 116px;
+          line-height: 15px;
+        }
+      }
+    }
+    .cell {
+      outline: none;
+    }
+  }
+  .row-color-0 {
+    background-color: $borderGray;
+  }
+  .result-cell-checkbox {
+    display: table-cell;
+    height: 35px;
+    font-size: $deskSzSmallest;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    vertical-align: middle;
+    min-width: 50px;
+    padding-top: 7px;
+    padding-left: 17px;
+    text-align: left;
+    &:hover {
+      .ui.button.desktop-lock {
+        z-index: 999;
+      }
+    }
+    .ui.button.lock-icon {
+      margin: auto;
+      margin-left: 2px;
+      padding: 0px;
+      height: 25px;
+      width: 20px;
+      vertical-align: middle;
+      background-position: center;
+    }
+    .ui.button.desktop-lock {
+      position: absolute;
+      transform: translateY(-50%);
+      &:hover {
+        z-index: 999;
+      }
+    }
+    .ui.checkbox.tick:before {
+      left: -6px;
+      color: $primaryWhite;
+      z-index: 9;
+      top: 6px;
+    }
+    .ui.checkbox input:checked ~ label::before {
+      border-color: white !important;
+    }
+  }
+  .ui.container.result-cell, .result-cell {
+    display: table-cell;
+    padding: 8px 0;
+    font-size: $deskSzSmaller;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    vertical-align: middle;
+    width: unset!important;
+    &:last-child{
+      border-right: none;
+    }
+  }
+
+  .cell {
+    display: block;
+    width: auto;
+    line-height: 1.32;
+    min-width: 62px;
+    padding: 0 10px;
+  }
+  .companyName {
+    @include appDefaultFontStyleMedium();
+    overflow: hidden;
+  }
+  .companyTicker {
+    color: $primaryGray;
+    padding: 0 10px;
+  }
+}
+
+// Medium Breakpoint
+@media (max-width: $screen-tab) {
+  .bmo-red-sliding-table {
+    .mobile-result {
+      display: none;
+    }
+    .table-top-section {
+      display: inline-block;
+      .download-link {
+        width: 75%;
+        float: none;
+        display: inline-block;
+        text-align: left;
+        .universal-download {
+          margin-bottom: 0;
+        }
+        button {
+          padding-left: 0px;
+          display: block;
+          margin-bottom: 10px;
+        }
+      }
+      .num-of-companies {
+        width: 100%;
+        float: unset;
+        display: block;
+        padding: 11px 0 10px 0px; //Previous value: 59px 0 10px 0px
+        margin-top: 0px;
+        position: relative;
+      }
+    }
+    .table-left {
+      margin-right: 2px;
+      max-width: 152px;
+      .head-section {
+        .header-cell-checkbox {
+          min-width: 50px;
+        }
+        .header-cell {
+          &:last-child {
+            min-width: 100px;
+            text-align: left;
+          }
+        }
+      }
+      .cell {
+        min-width: 100px;
+        max-width: 100px;
+      }
+      .result-section {
+        .result-cell-checkbox {
+          min-width: 50px;
+        }
+      }
+    }
+    .table-right {
+      display: inline-block;
+      width: calc(100% - 155px);
+      .head-section {
+        .header-cell:first-child {
+          padding-left: 8px;
+        }
+      }
+      .result-section {
+        .result-cell {
+          font-size: $deskSzSmallest;
+        }
+        .result-cell:first-child {
+          padding-left: 8px;
+        }
+      }
+    }
+  }
+}
+
+//more than tab and max windows
+@media (min-width: $screen-tab + 1) and (max-width: $screen-windows-max) {
+  .bmo-red-sliding-table .wrapper1 {
+    width: calc(100% - 207px);
+  }
+}
+
+// Small Breakpoint
+@media (max-width: $screen-xs-sm) {
+  .bmo-red-sliding-table {
+    .wrapper1 {
+      width: calc(100% - 205px);
+    }
+    .asterisk-message {
+      padding-bottom: 10px;
+    }
+    // .results {
+    //   display: none;
+    // }
+    .table-top-section {
+      padding-left: 16px;
+      .download-link {
+        width: 100%;
+      }
+    }
+    .mobile-result {
+      // display: block;
+      font-size: $deskSzSmaller;
+      .empty-table {
+        padding: 16px;
+      }
+      .header-row{
+        display: table;
+        width: 100%;
+        height: 40px;
+        background-color: $primaryBlue;
+        color: $primaryWhite;
+        @include appDefaultFontStyleLight();
+        .header-value {
+          display: table-cell;
+          width: 25%;
+          text-align: left;
+          padding-left: 15px;
+          vertical-align: middle;
+        }
+      }
+      .body-row {
+        border-bottom: solid 1px $qModelBgColor;
+        .result-cell-checkbox {
+          width: 50px;
+          display: inline-block;
+          vertical-align: text-top;
+        }
+        .result-row {
+          height: 60px;
+          display: inline-block;
+          width: calc(100% - 50px);
+          .company {
+            padding: 5px;
+            padding-left: 15px;
+            display: block;
+            margin-left: 0 !important;
+          }
+          .row-items {
+            display: table;
+            width: 100%;
+            span {
+              display: table-cell;
+              width: 25%;
+              text-align: left;
+              padding-left: 15px;
+              vertical-align: middle;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// Medium Breakpoint
+@media (min-width: $screen-md-min) {
+  .sliding-table {
+    // override sm breakpoint styles
+  }
+}
+
+// Large Breakpoint
+@media (min-width: $screen-lg-min) {
+  .sliding-table {
+    // override md breakpoint styles
+  }
+}
+
+//IE Specific
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  .ui.checkbox input:checked ~ .box::after, .ui.checkbox input:checked ~ label::after {
+    content: none !important;
+  }
+}

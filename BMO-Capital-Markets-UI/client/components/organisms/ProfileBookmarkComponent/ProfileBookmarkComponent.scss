@@ -1,0 +1,176 @@
+/*
+ * Component: ProfileBookmarkComponent
+ */
+
+@import '../../../styles/variables';
+
+// (IMPORTANT: please create the styles such that the larger breakpoints
+// override the smaller ones. "Mobile First")
+
+.profile-bookmark-component {
+  .linkBtn.filter-btn.bmo_chevron {
+    display: none;
+  }
+  .item, .ui.checkbox {
+    margin-bottom: 0 !important;
+    padding-bottom: 5px;
+  }
+  .publication-search-result .result-cards.ui.list .item .event-card .left .event-details .blue-bookmark.ui.button{
+    background-size: 16px !important;
+    margin-right: 2px;
+    margin-top: -20px;
+  }
+  .bookmark-library-wrapper-class {
+    margin-top: 30px;
+    .publication-search-result {
+      padding-top: 0;
+      top: -15px;
+      .search-result-count {
+        top: -30px;
+      }
+    }
+  }
+  .publication-search-result{
+    .result-cards{
+      .event-card{
+        .left {
+          .event-card-image {
+            padding-right: 4%;
+            .event-card-side-image {
+              width: 100%;
+            }
+          }
+        }
+    }
+    } 
+  }
+  .sticky-component {
+    .library-page {
+      padding: 0px;
+      margin-top: 30px;
+    }
+  }
+  .ui.accordion {
+    .title {
+      width: 100%;
+      margin-bottom: 0px;
+    }
+  }
+}
+
+@media (max-width: $screen-md) {
+  .profile-bookmark-component {
+    .bookmark-library-wrapper-class {
+      .publication-search-result {
+        top: 0px;
+      }
+    }
+  }
+}
+
+// Small Breakpoint
+
+@media (max-width: $screen-sm-min) {
+  .profile-bookmark-component {
+    .bookmark-library-wrapper-class {
+      .publication-search-result {
+        top: 5px;
+      }
+    }
+    .sticky-component {
+      .library-page {
+        margin-top: 0px;
+      }
+    }
+  }
+}
+
+// Medium Breakpoint
+@media (max-width: $screen-md-min) {
+  .profile-bookmark-component {
+
+  .sticky-component {
+    .library-page {
+      .right-layout {
+        width: calc(100% - 290px);
+      }
+    }
+  }
+    .left-drawer-layout.left-layout {
+      padding-left: 0;
+    }
+  }
+}
+
+@media (max-width: $screen-xs-sm) {
+  .profile-bookmark-component {
+    .filter-btn {
+      display: block;
+      position: relative;
+      left: -15px;
+      &.bmo_chevron::before {
+        color: $primaryBlue;
+        height: 0.50em;
+        left: 0.25em !important;
+        top: 0.25em;
+        width: 0.5em;
+      }
+      &.ui.button {
+        display: block;
+        padding: 10px;
+        top: 0px;
+        font-size: $deskSz9;
+      }
+    }
+    .title {
+      padding-left: 0 !important;
+    }
+    .bookmark-library-wrapper-class {
+      margin-top: 0px !important;
+      .publication-search-result {
+        padding-top: 0;
+        top: 0;
+        .linkBtn.filter-btn.bmo_chevron.right {
+          padding: 5px 15px;
+        }
+        .search-result-count {
+          top: 0;
+          padding: 5px 15px;;
+          position: relative;
+          display: inline-block;
+          .search-summary {
+            padding: 0;
+          }
+        }
+        .mobile-view {
+          margin-top: 0;
+        }
+      }
+    }
+    .title {
+      padding-left: 15px;
+    }
+    .publication-search-result .filter-btn.ui.button {
+      top: 0;
+      padding-left: 15px;
+
+    }
+    .left-drawer-layout.left-layout {
+      padding-left: 0;
+    }
+    .sticky-component {
+      .library-page {
+        .right-layout {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+// Large Breakpoint
+@media (min-width: $screen-lg-min) {
+  .profile-bookmark-component {
+    // override md breakpoint styles
+  }
+}

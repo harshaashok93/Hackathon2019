@@ -1,0 +1,177 @@
+/*
+ * Component: VideoCastcard
+ */
+
+@import '../../../styles/variables';
+
+// (IMPORTANT: please create the styles such that the larger breakpoints
+// override the smaller ones. "Mobile First")
+
+.video-castcard {
+  .ui.grid{
+    .row {
+      .videocast-column.four.wide.computer {
+        padding-bottom: 88px;
+        border: solid 1px $startegyVideocastBorderGray;
+        box-shadow: $dropDownOptionBoxShadow;
+        .videocast-info-card {
+          width: 100%;
+          padding-top: 16px;
+          .videocast-info {
+            color: $primaryGray;
+            width: 90%;
+            display: inline-block;
+            .date-name {
+              padding-bottom: 20px;
+              .date {
+                vertical-align: top;
+              }
+              .date, .name {
+                display: inline-block;
+                width: 50%;
+              }
+              .name {
+                color: $primaryBlue;
+                text-align: center;
+                padding: 0 2px;
+              }
+            }
+            .videocast-link {
+              color: $primaryBlue;
+              width: 110%;
+              padding-bottom: 30px;
+            }
+          }
+          .book-mark {
+            width: 10%;
+            display: inline-block;
+            vertical-align: top;
+            .ui.button {
+              background-position-x: 2px;
+            }
+          }
+          .ui.button.user-pref-icon.lock-icon {
+            margin: 0;
+            padding: 0px;
+            height: 29px;
+            width: 19px;
+            background-position: center;
+            vertical-align: top;
+            position: relative;
+            &:hover, &:focus {
+              cursor: default;
+            }
+          }
+        }
+        .ui.button.secondary {
+          width: 126px;
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          margin: auto;
+          margin-bottom: 40px;
+          padding: 10px;
+          &.grey-play-icon {
+            color: $oddGray;
+            box-shadow: 0 0 0 1px $oddGray;
+            border: solid 1px $oddGray;
+            &:hover, &:focus {
+              background-color: $primaryWhite;
+              cursor: default;
+              color: $oddGray;
+              font-weight: 400 !important;
+            }
+          }
+        }
+      }
+    }
+  }
+  .show-more {
+    text-align: center;
+    .ui.button {
+      font-size: $deskSz4;
+      &:before {
+        color: $primaryBlue;
+        top: 2px;
+        left: 1em;
+      }
+    }
+  }
+}
+
+@media (min-width: $screen-tab) {
+  .video-castcard {
+    .ui.grid{
+      .row {
+        .videocast-column.four.wide.computer {
+          padding-left: 10px;
+          padding-right: 10px;
+        }
+      }
+    }
+  }
+}
+
+// Small Breakpoint
+@media (min-width: $screen-sm-min) {
+  .video-castcard {
+    .videocast-info-card {
+      .videocast-info {
+        color: $primaryBlue;
+        .date {
+          color: $primaryGray;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: $screen-xs-sm) {
+  .video-castcard {
+    .ui.grid .row .videocast-column.four.wide.computer {
+      box-shadow: $dropDownOptionBoxShadow;
+      .videocast-info-card {
+        margin-bottom: 23px;
+        .videocast-info {
+          color: $primaryBlue;
+          font-size: $deskSzSmaller;
+          .date-name {
+            padding-bottom: 20px;
+            .date {
+              display: inline-block;
+              color: $primaryGray;
+            }
+            .name {
+              text-align: left;
+            }
+            .ui.container.name {
+              color: $primaryBlue;
+              width: 50% !important;
+              margin-left: 0px !important;
+              margin-right: 0px !important;
+            }
+          }
+          .videocast-link {
+            margin-left: 0px !important;
+            padding-bottom: 0px;
+          }
+        }
+        .book-mark {
+          width: 10%;
+          display: inline-block;
+          .ui.button.blue-bookmark {
+            background-position-x: 13px;
+          }
+        }
+      }
+    }
+  }
+}
+
+// Large Breakpoint
+@media (min-width: $screen-lg-min) {
+  .video-castcard {
+    // override md breakpoint styles
+  }
+}

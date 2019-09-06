@@ -1,0 +1,256 @@
+#!groovy
+@Library('gale43-library') _
+
+/**
+ * The _ here is intentional. Java/Groovy Annotations such as @Library must be applied to an element.
+ * That is often a using statement, but that isn’t needed here so by convention we use an _.
+ */
+
+
+pipeline {
+
+  agent {
+    node {
+      label 'Slave01'
+    }
+  }
+
+  environment {
+    teams_webhook_url = 'https://outlook.office.com/webhook/0f8d02e8-24b7-4314-9de1-04e86bd5d827@64cb5177-e6ec-469f-9e9a-e00360f46507/JenkinsCI/272942d0d8c54dc1802d624f32629a73/33e51d0c-7ea1-43f4-ac2a-4a63276443bb'
+    ssh_user = 'gale-ciagent'
+    frontend_dir = '/application/data/EFS/BMO/Capital-Markets/UI'
+    nfs_server = 'ec2-uw2b-a-bmo-capitalmarkets-nfs.galepartners.com'
+    os_staging_server= 'ec2-uw2a-a-bmo-capitalmarkets-openshiftstaging.galepartners.com'
+    os_deply_script_dir = '/home/gale-ciagent/Scripts'
+    os_namespace_staging = 'bmo-capital-markets-staging'
+  }
+
+  stages {
+   stage('SonarQube Analysis') {
+      steps {
+        timeout(unit: 'MINUTES', time: 1) {
+          withCredentials([[$class: 'StringBinding', credentialsId: 'github_oath_token', variable: 'GITHUB_ACCESS_TOKEN']]) {
+            script {
+              withSonarQubeEnv('SonarQube Server') {
+                def scannerHome = tool 'SonarQube Scanner'
+                if(env.CHANGE_ID) {
+                  sh "${scannerHome}/bin/sonar-scanner " +
+                     "-Dsonar.analysis.mode=preview " +
+                     "-Dsonar.github.pullRequest=${env.CHANGE_ID} " +
+                     "-Dsonar.github.oauth=${GITHUB_ACCESS_TOKEN} "
+                } else {
+                  sh "${scannerHome}/bin/sonar-scanner"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    stage('Lint') {
+      steps {
+        timeout(time: 3, unit: 'MINUTES') {
+          sh 'yarn install'
+          // Runs the command, and saves the output
+          // stdoutToFile('yarn run dumbledore-oneshot', 'dumbledore_stdout.txt')
+        }
+      }
+    }
+
+    stage('Building development branch') {
+      when {
+        branch 'Phase-5'
+      }
+      environment {
+        appserver = 'ec2-uw2a-d-bmo-capitalmarkets-appdb.galepartners.com'
+        app_dir = '/application/BMO/Capital-Markets/App'
+        app_domain_equity = 'bmo-capital-markets-dev-ui-equity.galepartners.com'
+        app_domain_corp ='bmo-capital-markets-dev-ui-corp.galepartners.com'
+        ht_root = '/nfsshares/BMO/Dev/CMS/htroot'
+        os_build_config = 'bmo-app-dev'
+      }
+      steps {
+        timeout(time: 15, unit: 'MINUTES') {
+          sh 'npm run build:bmo_equity_dev'
+          sh 'npm run build:bmo_corp_dev'
+          // Copy assets over to NFS server
+          sh 'ssh -o "StrictHostKeyChecking=no" ${ssh_user}@${nfs_server} "rm -rf ${ht_root}/${app_domain_corp}/*"'
+          sh 'ssh -o "StrictHostKeyChecking=no" ${ssh_user}@${nfs_server} "rm -rf ${ht_root}/${app_domain_equity}/*"'
+          sh 'scp -o "StrictHostKeyChecking=no" -rp dist_corp/* ${ssh_user}@${nfs_server}:${ht_root}/${app_domain_corp}/'
+          sh 'scp -o "StrictHostKeyChecking=no" -rp dist_equity/* ${ssh_user}@${nfs_server}:${ht_root}/${app_domain_equity}/'
+          // Build command execution - On App Server
+          sh 'ssh -o "StrictHostKeyChecking=no" ${ssh_user}@${os_staging_server} "/bin/bash ${os_deply_script_dir}/frontend_build_command.sh ${os_namespace_staging} ${os_build_config} ${app_domain_equity}" '
+        }
+      }
+      post {
+        success {
+          office365ConnectorSend message:"SUCCESS ${env.JOB_NAME} ${env.BUILD_NUMBER} (<${env.BUILD_URL}|Open>)", status:"SUCCESS", webhookUrl:"$teams_webhook_url", color: "009900"
+        }
+        failure {
+          office365ConnectorSend message:"FAILED ${env.JOB_NAME} ${env.BUILD_NUMBER} (<${env.BUILD_URL}|Open>)", status:"FAILED", webhookUrl:"$teams_webhook_url", color: "ED1C24"
+        }
+      }
+    }
+
+    stage('Building QA branch') {
+      when {
+        branch 'Support-Release-4.2.0'
+      }
+      environment {
+        appserver = 'ec2-uw2a-q-bmo-capitalmarkets-appdb.galepartners.com'
+        app_dir = '/application/BMO/Capital-Markets/App'
+        app_domain_equity = 'bmo-capital-markets-qa-ui-equity.galepartners.com'
+        app_domain_corp = 'bmo-capital-markets-qa-ui-corp.galepartners.com'
+        app_domain_equity_os = 'bmo-capital-markets-osqa-ui-equity.galepartners.com'
+        app_domain_corp_os = 'bmo-capital-markets-osqa-ui-corp.galepartners.com'
+        ht_root = '/nfsshares/BMO/QA/CMS/htroot'
+        os_build_config = 'bmo-app-qa'
+      }
+      steps {
+        timeout(time: 15, unit: 'MINUTES') {
+          sh 'npm run build:bmo_equity_qa'
+          sh 'npm run build:bmo_corp_qa'
+          // Copy assets over to NFS server
+          // For separate openshift url
+          sh 'ssh -o "StrictHostKeyChecking=no" ${ssh_user}@${nfs_server} "rm -rf ${ht_root}/${app_domain_corp_os}/*"'
+          sh 'ssh -o "StrictHostKeyChecking=no" ${ssh_user}@${nfs_server} "rm -rf ${ht_root}/${app_domain_equity_os}/*"'
+          sh 'scp -o "StrictHostKeyChecking=no" -rp dist_corp/* ${ssh_user}@${nfs_server}:${ht_root}/${app_domain_corp_os}/'
+          sh 'scp -o "StrictHostKeyChecking=no" -rp dist_equity/* ${ssh_user}@${nfs_server}:${ht_root}/${app_domain_equity_os}/'
+          // Build command on Openshift pod
+          sh 'ssh -o "StrictHostKeyChecking=no" ${ssh_user}@${os_staging_server} "/bin/bash ${os_deply_script_dir}/frontend_build_command.sh ${os_namespace_staging} ${os_build_config} ${app_domain_equity_os}" '
+        }
+      }
+      post {
+        success {
+          office365ConnectorSend message:"SUCCESS ${env.JOB_NAME} ${env.BUILD_NUMBER} (<${env.BUILD_URL}|Open>)", status:"SUCCESS", webhookUrl:"$teams_webhook_url", color: "009900"
+        }
+        failure {
+          office365ConnectorSend message:"FAILED ${env.JOB_NAME} ${env.BUILD_NUMBER} (<${env.BUILD_URL}|Open>)", status:"FAILED", webhookUrl:"$teams_webhook_url", color: "ED1C24"
+        }
+      }
+    }
+
+
+    stage('Building UAT branch') {
+      when {
+        branch 'UAT'
+      }
+      environment {
+        appserver = 'ec2-uw2a-u-bmo-capitalmarkets-appdb.galepartners.com'
+        app_dir = '/application/BMO/Capital-Markets/App'
+        app_domain_equity = 'bmo-capital-markets-uat-ui-equity.galepartners.com'
+        app_domain_corp ='bmo-capital-markets-uat-ui-corp.galepartners.com'
+        app_domain_equity_os = 'bmo-capital-markets-osuat-ui-equity.galepartners.com'
+        app_domain_corp_os = 'bmo-capital-markets-osuat-ui-corp.galepartners.com'
+        ht_root = '/nfsshares/BMO/UAT/CMS/htroot'
+        os_build_config = 'bmo-app-uat'
+      }
+      steps {
+        timeout(time: 15, unit: 'MINUTES') {
+          sh 'npm run build:bmo_equity_uat'
+          sh 'npm run build:bmo_corp_uat'
+          // Copy assets over to EFS
+          sh 'ssh -o "StrictHostKeyChecking=no" ${ssh_user}@${appserver} "rm -rf ${frontend_dir}/data/${app_domain_corp}/*"'
+          sh 'ssh -o "StrictHostKeyChecking=no" ${ssh_user}@${appserver} "rm -rf ${frontend_dir}/data/${app_domain_equity}/*"'
+          sh 'scp -o "StrictHostKeyChecking=no" -rp dist_corp/* ${ssh_user}@${appserver}:${frontend_dir}/data/${app_domain_corp}/'
+          sh 'scp -o "StrictHostKeyChecking=no" -rp dist_equity/* ${ssh_user}@${appserver}:${frontend_dir}/data/${app_domain_equity}/'
+          // Copy assets over to NFS server
+          sh 'ssh -o "StrictHostKeyChecking=no" ${ssh_user}@${nfs_server} "rm -rf ${ht_root}/${app_domain_corp}/*"'
+          sh 'ssh -o "StrictHostKeyChecking=no" ${ssh_user}@${nfs_server} "rm -rf ${ht_root}/${app_domain_equity}/*"'
+          sh 'scp -o "StrictHostKeyChecking=no" -rp dist_corp/* ${ssh_user}@${nfs_server}:${ht_root}/${app_domain_corp}/'
+          sh 'scp -o "StrictHostKeyChecking=no" -rp dist_equity/* ${ssh_user}@${nfs_server}:${ht_root}/${app_domain_equity}/'
+          // For separate openshift url
+          sh 'ssh -o "StrictHostKeyChecking=no" ${ssh_user}@${nfs_server} "rm -rf ${ht_root}/${app_domain_corp_os}/*"'
+          sh 'ssh -o "StrictHostKeyChecking=no" ${ssh_user}@${nfs_server} "rm -rf ${ht_root}/${app_domain_equity_os}/*"'
+          sh 'scp -o "StrictHostKeyChecking=no" -rp dist_corp/* ${ssh_user}@${nfs_server}:${ht_root}/${app_domain_corp_os}/'
+          sh 'scp -o "StrictHostKeyChecking=no" -rp dist_equity/* ${ssh_user}@${nfs_server}:${ht_root}/${app_domain_equity_os}/'
+          // Build command execution - On App Server
+          sh 'ssh -o "StrictHostKeyChecking=no" ${ssh_user}@${appserver} "cd ${app_dir} && docker-compose exec -T app python manage.py build"'
+          // Build command on Openshift pod
+          sh 'ssh -o "StrictHostKeyChecking=no" ${ssh_user}@${os_staging_server} "/bin/bash ${os_deply_script_dir}/frontend_build_command.sh ${os_namespace_staging} ${os_build_config} ${app_domain_equity_os}" '
+        }
+      }
+      post {
+        success {
+          office365ConnectorSend message:"SUCCESS ${env.JOB_NAME} ${env.BUILD_NUMBER} (<${env.BUILD_URL}|Open>)", status:"SUCCESS", webhookUrl:"$teams_webhook_url", color: "009900"
+        }
+        failure {
+          office365ConnectorSend message:"FAILED ${env.JOB_NAME} ${env.BUILD_NUMBER} (<${env.BUILD_URL}|Open>)", status:"FAILED", webhookUrl:"$teams_webhook_url", color: "ED1C24"
+        }
+      }
+    }
+
+    stage('Archive') {
+       when {
+         branch 'UAT'
+       }
+       steps {
+         sh 'zip -r Frontend-archive.zip dist_equity dist_corp'
+         archiveArtifacts(onlyIfSuccessful: true, artifacts: 'dist_corp/**')
+         archiveArtifacts(onlyIfSuccessful: true, artifacts: 'dist_equity/**')
+         sh 'cp Frontend-archive.zip /tmp/'
+       }
+     }
+
+
+    stage('Copy files from Slave01') {
+      when {
+        branch 'UAT'
+      }
+      steps {
+        node('Master') {
+          sh 'hostname'
+          sh 'rm -rf /ci-folder/workspace-extra/BMO-Capital-Markets-UI/UAT/*'
+          sh 'scp jenkins@slave01:/tmp/Frontend-archive.zip /ci-folder/workspace-extra/BMO-Capital-Markets-UI/UAT/'
+        }
+      }
+    }
+
+    stage('Create Release') {
+      when {
+        branch 'UAT'
+      }
+      steps {
+        node('Master') {
+          echo 'creating a release'
+          sh 'whoami'
+          sh 'pwd'
+          sh 'ls -lah'
+          withCredentials([[$class: 'StringBinding', credentialsId: 'github_oath_token', variable: 'GITHUB_ACCESS_TOKEN']]) {
+            createGithubRelease(
+                "gale43",                                    // owner
+                "BMO-Capital-Markets-UI",              // repo
+                "${env.BRANCH_NAME}.${env.BUILD_NUMBER}",    // tagName,releaseName
+                "${env.BRANCH_NAME}",                        // commitish
+                "Frontend-archive.zip",                               // archivefile
+                // "${WORKSPACE}/Frontend-archive.zip",                  // archive file path
+                "/ci-folder/workspace-extra/BMO-Capital-Markets-UI/UAT/Frontend-archive.zip",
+                "${GITHUB_ACCESS_TOKEN}"
+            )
+          }
+          echo 'release successfull!'
+        }
+      }
+    }
+
+  }
+
+  post {
+    always {
+      echo 'One way or another, I have finished'
+      // addFileToPullRequest("${env.WORKSPACE}/dumbledore_stdout.txt", "${env.CHANGE_ID}", 'Gale43/BMO-Capital-Markets-UI')
+      // echo 'Uploaded file as comment'
+      deleteDir() /* clean up our workspace */
+    }
+    success {
+      echo 'Build successful'
+      addCommentToPullRequest('Build success!', "${env.CHANGE_ID}", 'Gale43/BMO-Capital-Markets-UI')
+
+    }
+    failure {
+      echo 'Buid failure'
+      addCommentToPullRequest('Build Failed!', "${env.CHANGE_ID}", 'Gale43/BMO-Capital-Markets-UI')
+    }
+  }
+}

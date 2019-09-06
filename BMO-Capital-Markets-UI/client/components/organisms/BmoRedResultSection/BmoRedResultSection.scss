@@ -1,0 +1,91 @@
+/*
+ * Component: BmoRedResultSection
+ */
+
+@import '../../../styles/variables';
+
+// (IMPORTANT: please create the styles such that the larger breakpoints
+// override the smaller ones. "Mobile First")
+
+.bmo-red-result-section {
+  .ui.button.filter-btn {
+    display: none;
+  }
+  .download-link {
+    width: 100%;
+    float: right;
+    display: table-cell;
+    vertical-align: middle;
+    text-align: right;
+    .universal-download {
+      margin-bottom: 20px;
+    }
+    .ui.button.download-report {
+      text-align: left;
+      background-position: right;
+      padding-right: 25px;
+      min-height: 10px;
+      padding-bottom: 0px;
+      padding-top: 0;
+      &.selected {
+        color: $downloadRequestedColor;
+        pointer-events: none !important;
+        cursor: default;
+      }
+    }
+  }
+  .bmo-red-loader .ui.loader {
+    position: relative;
+    top: 5%;
+  }
+  .no-results {
+    margin-top: 40px;
+    text-align: center;
+    font-size: $deskSz5;
+    color: $primaryGray;
+  }
+}
+
+// Small Breakpoint
+@media (max-width: $screen-xs-sm) {
+  .bmo-red-result-section {
+    position: relative;
+    .no-results {
+      margin-bottom: 20px;
+      margin-top: 0;
+      font-size: $deskSz7;
+    }
+    .download-link {
+      text-align: left;
+      float: unset;
+    }
+    
+    .filter-btn {
+      &.ui.button {
+        position: absolute;
+        display: block;
+        padding-left: 76px;
+        padding-top: 7px;
+        top: -95px;
+        font-size: $deskSz7;
+      }
+    &:before {
+      color: $primaryBlue;
+    }
+    }
+  }
+}
+
+// Medium Breakpoint
+@media (min-width: $screen-md-min) {
+  .bmo-red-result-section {
+    // override sm breakpoint styles
+  }
+}
+
+// Large Breakpoint
+@media (min-width: $screen-lg-min) {
+  .bmo-red-result-section {
+    // override md breakpoint styles
+  }
+}

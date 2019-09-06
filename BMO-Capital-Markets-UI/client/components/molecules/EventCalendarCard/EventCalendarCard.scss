@@ -1,0 +1,178 @@
+/*
+ * Component: EventCalendarCard
+ */
+
+@import '../../../styles/variables';
+
+// (IMPORTANT: please create the styles such that the larger breakpoints
+// override the smaller ones. "Mobile First")
+.ui.modal.publish-modal-edit {
+  width: 548px;
+  max-width: 600px;
+  top: 50%;
+  left: 50%;
+  margin-left: -275px !important;
+  span {
+    display: inline-block;
+    color: $primaryGray;
+    @include appDefaultFontStyleLight();
+  }
+  .ui.heading.cms-heading {
+    font-size: $deskSz4;
+    width: 105px;
+    line-height: 2;
+    border-bottom: solid 1px $inputTextGray;
+    @include appDefaultFontStyleLight();
+    margin-top: auto;
+    margin-bottom: 30px;
+  }
+  .ui.input {
+    width: 487px;
+    height: 35px;
+    margin-bottom: 20px;
+    margin-top: 5px;
+  }
+  .ui.heading {
+    font-size: $deskSz4;
+    margin-top: 20px;
+    margin-bottom: 40px;
+  }
+  .event-date {
+    .date-picker {
+      position: relative;
+      padding-top: 5px;
+      padding-bottom: 20px;
+      .calender-input-btns {
+        left: 0;
+        width: 50%;
+      }.react-date-picker .react-date-picker__calendar {
+        left: -30px;
+        top: 40px;
+      }
+      .react-date-picker {
+        padding-left: 0px;
+        .react-date-picker__button {
+          padding: 5px 8px 5px 3px;
+        }
+      }
+    }
+  }
+  .action-buttons {
+    text-align: center;
+    margin-bottom: 80px;
+    .ui.button.secondary {
+      width: 146px;
+      height: 45px;
+      margin: 15px;
+    }
+    .cancel-button {
+      margin-right: 40px;
+    }
+  }
+}
+
+.event-calendar-card {
+  display: inline-block;
+  width: 100%;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-left: 44px;
+  border-bottom: solid 1px $borderGray;
+  background-color: $eventCardBackgroundColor;
+  &:first-child {
+    border-top: solid 1px $borderGray;
+  }
+  .ui.dimmer {
+    background-color: transparent;
+  }
+  .row {
+    display: inline-block;
+    &.event-id {
+      width: 20%;
+      vertical-align: top;
+      color: $primaryGray;
+    }
+    &.event-details {
+      width: 60%;
+      vertical-align: middle;
+      color: $primaryGray;
+      span {
+        display: block;
+        padding-bottom: 10px;
+      }
+    }
+    &.event-action {
+      vertical-align: middle;
+      width: 20%;
+      color: $primaryBlue;
+      .published-text {
+        padding-left: 27px;
+      }
+      .hover-help {
+        width: 20px;
+        height: 20px;
+        border: solid 1px #0079c1;
+        border-radius: 20px;
+        color: #0079c1;
+        text-align: center;
+        margin-left: 5px;
+        display: inline-block;
+        font-size: 0.875em;
+      }
+      .recently-updated {
+        color: $calendarHoverText;
+      }
+      .publish-btn {
+        .ui.button.publish-button {
+          background-color: transparent;
+          width: 126px;
+        }
+      }
+    }
+  }
+}
+
+// Small Breakpoint
+@media (max-width: $screen-md) {
+  .event-calendar-card {
+    padding-left: 15px;
+    .row {
+      &.event-id {
+        width: 25%;
+      }
+      &.event-details {
+        width: 53%;
+      }
+      &.event-action {
+        width: 22%;
+      }
+    }
+  }
+}
+
+// Medium Breakpoint
+@media (max-width: $screen-xs-sm) {
+  .event-calendar-card {
+    padding: 15px;
+    .row {
+      &.event-id {
+        padding-bottom: 10px;
+        width: 100%;
+      }
+      &.event-details {
+        width: 100%;
+      }
+      &.event-action {
+        text-align: center;
+        width: 100%;
+      }
+    }
+  }
+}
+
+// Large Breakpoint
+@media (min-width: $screen-lg-min) {
+  .event-calendar-card {
+    // override md breakpoint styles
+  }
+}

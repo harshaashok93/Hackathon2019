@@ -1,0 +1,130 @@
+/*
+ * Component: AnalystsSlidingTable
+ */
+
+@import '../../../styles/variables';
+
+// (IMPORTANT: please create the styles such that the larger breakpoints
+// override the smaller ones. "Mobile First")
+
+.analysts-sliding-table {
+  // margin-top: -20px;
+  .table-right {
+    display: table;
+    float: left;
+    vertical-align: top;
+    border: solid 1px #ccc;
+    border-radius: 5px;
+    color: $primaryGray;
+    .first-cell {
+      width: 200px;
+      .cell {
+        text-align: left;
+      }
+      a {
+        span {
+          @include appDefaultFontStyleMedium();
+        }
+      }
+    }
+    .head-section {
+      display: table-row;
+      background-color: $primaryBlue;
+      .header-cell {
+        display: table-cell;
+        height: 40px;
+        font-size: $deskSzSmaller;
+        color: $primaryWhite;
+        vertical-align: middle;
+        @include appDefaultFontStyleRegular();
+        &:last-child{
+          border-right: none;
+          border-top-right-radius: 5px;
+          padding-right: 5px;
+        }
+        &:first-child{
+          border-top-left-radius: 5px;
+        }
+      }
+    }
+    .result-section {
+      display: table-row;
+    }
+  }
+  .row-color-1 {
+    background-color: $borderGray;
+  }
+  .result-cell {
+    display: table-cell;
+    height: 35px;
+    font-size: $deskSzSmaller;
+    vertical-align: middle;
+    padding: 5px 0;
+    &:last-child{
+      border-right: none;
+      padding-right: 5px;
+    }
+  }
+  .cell {
+    display: block;
+    width: auto;
+    padding-left: 10px;
+    word-wrap: break-word;
+    line-height: 16px;
+    text-align: right;
+    &.financial-year {
+      margin-top: 2px;
+    }
+  }
+  .table-right {
+    width: 100%;
+    table-layout: fixed;
+  }
+  .asterisk-message {
+    position: relative;
+    top: 2px;
+  }
+}
+
+// Small Breakpoint
+@media (max-width: $screen-xs-max) {
+  .analysts-sliding-table {
+    margin-top: 25px;
+    .table-right {
+      border-radius: 0;
+      border: none;
+      .head-section {
+        .header-cell.first-cell {
+          border-radius: 0px;
+        }
+        .hide-mobile {
+          display: none;
+        }
+      }
+    }
+    .hide-mobile {
+      display: none;
+    }
+  }
+}
+
+// Medium Breakpoint
+@media (max-width: $screen-sm-min) {
+  .analysts-sliding-table {
+    .table-right {
+      .first-cell {
+        width: 170px;
+      }
+    }
+    .cell {
+      padding-left: 5px;
+    }
+  }
+}
+
+// Large Breakpoint
+@media (max-width: $screen-lg-min) {
+  .analysts-sliding-table {
+    // override md breakpoint styles
+  }
+}

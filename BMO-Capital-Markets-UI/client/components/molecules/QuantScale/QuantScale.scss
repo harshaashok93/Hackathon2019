@@ -1,0 +1,295 @@
+/*
+ * Component: QuantScale
+ */
+
+@import '../../../styles/variables';
+
+// (IMPORTANT: please create the styles such that the larger breakpoints
+// override the smaller ones. "Mobile First")
+
+.quant-scale {
+  width: 280px;
+  text-align: left;
+  display: inline-block;
+  background-color: $primaryWhite;
+  @include boxShadow(0, 5px, 13px, 5px, rgba(0, 0, 0, 0.13));
+  padding: 20px;
+  color: $primaryGray;
+  border-radius: 5px;
+  .strength {
+    margin-bottom: 8px;
+  }
+  &.true {
+    opacity: 0;
+    pointer-events: none;
+  }
+  .scale {
+    background: linear-gradient(to right, #22d4be , #cd0303);
+    height: 10px;
+    width: 100%;
+    margin-bottom: 15px;
+  }
+  .linksHolder {
+    padding: 15px 0;
+    .ui.button.show-all-link, a.show-all-link{
+      color: $primaryBlue;
+      padding: 5px 10px;
+      padding-left: 0;
+      background-color: transparent;
+      font-size: $deskSz9;
+    }
+    .ui.button.show-all-link {
+      padding-left: 15px;
+      border-left: solid 1px #ccc;
+      border-radius: 0;
+    }
+  }
+  .title {
+    font-size: $deskSz4;
+  }
+  .strength,
+  .momentum {
+    span {
+      font-size: $deskSzSmaller;
+    }
+  }
+  .strength-scale .handle.handle-0 {
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 18px solid black;
+    display: inline-block;
+    resize: both;
+  }
+  .momentum-scale .handle.handle-0  {
+    height: 18px;
+    width: 18px;
+    resize: both;
+    border-radius: 50rem;
+    background-color: black;
+    display: inline-block;
+  }
+  .bgColorHolderContainer {
+    position: relative;
+    .triangle {
+      top: -3px;
+      width: 0;
+      height: 0;
+      z-index: 1;
+      border-left: 14px solid transparent;
+      border-right: 14px solid transparent;
+      border-bottom: 25px solid #fff;
+      position: absolute;
+      display: none;
+      &:after {
+        content: '';
+        position: absolute;
+        left: -10px;
+        border-left: 10px solid transparent;
+        border-right: 10px solid transparent;
+        border-bottom: 18px solid;
+        top: 5px;
+      }
+    }
+    .circle {
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      display: inline-block;
+      position: absolute;
+      border: 2px solid #fff;
+      top: 2px;
+      display: none;
+    }
+  }
+  .bgColorHolder {
+    width: 9.09%;
+    height: 10px;
+    display: inline-block;
+  }
+
+  .bgColorHolder_0 {
+    background-color: $quantScalecolor_0;
+    border: solid 1px #ccc !important;
+  }
+  .bgColorHolder_1 {
+    background-color: $quantScalecolor_1;
+  }
+
+  .bgColorHolder_2 {
+    background-color: $quantScalecolor_2;
+  }
+
+  .bgColorHolder_3 {
+    background-color: $quantScalecolor_3;
+  }
+
+  .bgColorHolder_4 {
+    background-color: $quantScalecolor_4;
+  }
+
+  .bgColorHolder_5 {
+    background-color: $quantScalecolor_5;
+  }
+
+  .bgColorHolder_6 {
+      background-color: $quantScalecolor_6;
+  }
+
+  .bgColorHolder_7 {
+    background-color: $quantScalecolor_7;
+  }
+
+  .bgColorHolder_8 {
+    background-color: $quantScalecolor_8;
+  }
+
+  .bgColorHolder_9 {
+    background-color: $quantScalecolor_9;
+  }
+
+  .bgColorHolder_10 {
+    background-color: $quantScalecolor_10;
+  }
+
+  .triangle_0 {
+    &:after {
+      border-bottom-color: #fff !important;
+    }
+    display: block !important;
+    border-bottom-color: #999 !important;
+  }
+  .triangle_1 {
+    &:after {
+      border-bottom-color: $quantScalecolor_1 !important;
+    }
+    display: block !important;
+  }
+  .triangle_2 {
+    &:after {
+      border-bottom-color: $quantScalecolor_2 !important;
+    }
+    display: block !important;
+  }
+  .triangle_3 {
+    &:after {
+      border-bottom-color: $quantScalecolor_3 !important;
+    }
+    display: block !important;
+  }
+  .triangle_4 {
+    &:after {
+      border-bottom-color: $quantScalecolor_4 !important;
+    }
+    display: block !important;
+  }
+  .triangle_5 {
+    &:after {
+      border-bottom-color: $quantScalecolor_5 !important;
+    }
+    display: block !important;
+  }
+  .triangle_6 {
+    &:after {
+      border-bottom-color: $quantScalecolor_6 !important; 
+    }
+    display: block !important;
+  }
+  .triangle_7 {
+    &:after {
+      border-bottom-color: $quantScalecolor_7 !important;
+    }
+    display: block !important;
+  }
+  .triangle_8 {
+    &:after {
+      border-bottom-color: $quantScalecolor_8 !important;
+    }
+    display: block !important;
+  }
+  .triangle_9 {
+    &:after {
+      border-bottom-color: $quantScalecolor_9 !important;
+    }
+    display: block !important;
+  }
+  .triangle_10 {
+    &:after {
+      border-bottom-color: $quantScalecolor_10 !important;
+    }
+    display: block !important;
+  }
+  .circle_0 {
+    background: $primaryWhite !important;
+    display: block !important;
+    border: solid 1px #999 !important;
+  }
+  .circle_1 {
+    background: $quantScalecolor_1 !important;
+    display: block !important;
+  }
+  .circle_2 {
+    background: $quantScalecolor_2 !important;
+    display: block !important;
+  }
+  .circle_3 {
+    background: $quantScalecolor_3 !important;
+    display: block !important;
+  }
+  .circle_4 {
+    background: $quantScalecolor_4 !important;
+    display: block !important;
+  }
+  .circle_5 {
+    background: $quantScalecolor_5 !important;
+    display: block !important;
+  }
+  .circle_6 {
+    background: $quantScalecolor_6 !important; 
+    display: block !important;
+  }
+  .circle_7 {
+    background: $quantScalecolor_7 !important;
+    display: block !important;
+  }
+  .circle_8 {
+    background: $quantScalecolor_8 !important;
+    display: block !important;
+  }
+  .circle_9 {
+    background: $quantScalecolor_9 !important;
+    display: block !important;
+  }
+  .circle_10 {
+    background: $quantScalecolor_10 !important;
+    display: block !important;
+  }
+
+}
+
+// Small Breakpoint
+@media (min-width: $screen-sm-min) {
+  .quant-scale {
+    // override xs breakpoint styles
+  }
+}
+@media (max-width: $screen-xs-min) {
+  .quant-scale {
+    box-shadow: none;
+  }
+}
+
+// Medium Breakpoint
+@media (min-width: $screen-md-min) {
+  .quant-scale {
+    // override sm breakpoint styles
+  }
+}
+
+// Large Breakpoint
+@media (min-width: $screen-lg-min) {
+  .quant-scale {
+    // override md breakpoint styles
+  }
+}

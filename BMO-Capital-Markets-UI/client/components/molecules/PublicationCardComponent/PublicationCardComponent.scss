@@ -1,0 +1,118 @@
+/*
+ * Component: PublicationCardComponent
+ */
+
+@import '../../../styles/variables';
+
+// (IMPORTANT: please create the styles such that the larger breakpoints
+// override the smaller ones. "Mobile First")
+
+.publication-card-component {
+
+  .publication-description {
+    margin-bottom: 20px;
+  }
+  .videocast-info-card {
+    padding-top: 16px;
+    .mobile-view {
+      display: none;
+    }
+    .videocast-info {
+      width: 90%;
+      display: inline-block;
+      .date-name{
+        padding-bottom: 10px;
+        .date {
+          vertical-align: top;
+          width: 50%;
+          display: inline-block;
+        }
+      }
+      .ui.container.name-and-pos {
+        display: inline-block;
+        width: 50%;
+        color: $primaryBlue;
+        &.no-link {
+          color: $primaryGray;
+        }
+      }
+      .research-type {
+        padding-left: 3px;
+        @include appDefaultFontStyleLight();
+        font-weight: 300 !important;
+        font-style: normal !important;
+      }
+    }
+    .book-mark {
+      width: 10%;
+      display: inline-block;
+      padding-left: 2%;
+    }
+    .publication-title {
+      padding-bottom: 20px;
+    }
+  }
+  .publication-description {
+    margin-bottom: 20px;
+  }
+}
+
+// Small Breakpoint
+@media (max-width: $screen-xs) {
+  .publication-card-component {
+    .videocast-info-card {
+      .mobile-view {
+        display: block;
+      }
+      .videocast-info {
+        .date-name {
+          .date, .ticker {
+            width: 30% !important;
+            display: inline-block;
+            text-align: center;
+            &.ticker {
+              width: 29% !important;
+              word-break: break-all;
+            }
+          }
+          .ui.container.name-and-pos {
+            width: 40% !important;
+            display: inline-block;
+            margin-left : 0px !important;
+            margin-right: 0px !important;
+          }
+          .ticker {
+            color: $primaryGray;
+            vertical-align: top;
+          }
+        }
+      }
+      .book-mark {
+        .ui.button.blue-bookmark {
+          display: none;
+        }
+        .ui.button.eye-inactive {
+          background-position-x: 0px !important;
+          padding: 15px;
+        }
+      }
+    }
+    .publication-description {
+      display: none;
+    }
+  }
+}
+
+// Medium Breakpoint
+@media (min-width: $screen-md-min) {//1023px
+  .publication-card-component {
+    // override sm breakpoint styles
+  }
+}
+
+// Large Breakpoint
+@media (min-width: $screen-lg-min) {
+  .publication-card-component {
+    // override md breakpoint styles
+  }
+}

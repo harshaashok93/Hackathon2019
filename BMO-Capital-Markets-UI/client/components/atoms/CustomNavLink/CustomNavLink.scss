@@ -1,0 +1,40 @@
+/*
+ * Component: CustomNavLink
+ */
+
+@import '../../../styles/variables';
+
+// (IMPORTANT: please create the styles such that the larger breakpoints
+// override the smaller ones. "Mobile First")
+
+.custom-nav-link {
+  .customnavlinMessageHolder {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000000001;
+  }
+}
+
+// Small Breakpoint
+@media (min-width: $screen-sm-min) {
+  .custom-nav-link {
+    // override xs breakpoint styles
+  }
+}
+
+// Medium Breakpoint
+@media (min-width: $screen-md-min) {
+  .custom-nav-link {
+    // override sm breakpoint styles
+  }
+}
+
+// Large Breakpoint
+@media (min-width: $screen-lg-min) {
+  .custom-nav-link {
+    // override md breakpoint styles
+  }
+}

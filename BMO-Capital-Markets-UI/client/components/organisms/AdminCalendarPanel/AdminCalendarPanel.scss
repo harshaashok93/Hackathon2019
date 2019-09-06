@@ -1,0 +1,274 @@
+/*
+ * Component: AdminCalendarPanel
+ */
+
+@import '../../../styles/variables';
+
+// (IMPORTANT: please create the styles such that the larger breakpoints
+// override the smaller ones. "Mobile First")
+
+.admin-calendar-panel {
+  padding-left: 40px;
+  padding-right: 45px;
+  .calendar-top-sectoion {
+    .ui.heading.calendar-page-heading {
+      font-size: $deskSz21;
+      color: $primaryGray;
+      margin-bottom: 30px;
+      @include appDefaultFontStyleRegular();
+    }
+    .sf-cms {
+      margin-bottom: 32px;
+      .ui.button.linkBtn {
+        padding: 7px;
+        font-size: $deskSz4;
+        padding-left: 0px;
+        border-radius: 0px;
+        color: $primaryGray;
+        &.current {
+          color: $primaryBlue;
+        }
+        &.sales-force {
+          padding-right: 34px;
+          border-right: solid 1px $oddGray;
+        }
+        &.cms {
+          padding-left: 34px;
+        }
+      }
+    }
+    .filter {
+      display: inline-block;
+      width: 100%;
+      margin-bottom: 60px;
+      .row {
+        display: inline-block;
+        width: 20%;
+        .ui.dropdown {
+          padding-left: 0px;
+          padding-right: 5px;
+        }
+        &.from-date {
+          width: 216px;
+          margin-right: 33px;
+          .date-picker {
+            .date-picker-title {
+              width: 34px;
+              padding-left: 0px !important;
+            }
+            .react-date-picker {
+              padding-left: 9px;
+            }
+          }
+        }
+        &.to-date {
+          width: 198px;
+          .date-picker {
+            .date-picker-title {
+              width: 15px;
+              padding-left: 0px !important;
+            }
+            .react-date-picker {
+              padding-left: 9px;
+            }
+          }
+        }
+        &.event-type {
+          margin: 0px 60px;
+          width: 265px;
+          .text {
+            color: $primaryBlue !important;
+          }
+        }
+        &.location-dropdown {
+          width: 265px;
+          .text {
+            color: $primaryBlue !important;
+          }
+        }
+      }
+    }
+  }
+  .result-lists {
+    margin-bottom: 30px;
+    .no-results-found {
+      text-align: center;
+      height: 100px;
+    }
+    .event-card {
+      .left {
+        height: 168px;
+        .event-card-image {
+          height: 100%;
+          width: 295px;
+          padding: 3px;
+          .event-card-side-image {
+            width: 100%;
+          }
+        }
+        .event-details {
+          padding: 15px 22px 15px 28px;
+          height: 100%;
+          .ui.heading {
+            color: $primaryGray;
+          }
+          .presenter {
+            margin-top: 15px;
+            margin-bottom: 43px;
+            span {
+              @include appDefaultFontStyleLight();
+            }
+          }
+        }
+        .edit-btn {
+          width: calc(100% - 55% - 295px);
+          display: inline-block;
+          text-align: center;
+          .ui.button {
+            width: 126px;
+            background-color: transparent;
+          }
+        }
+      }
+    }
+    .show-more-btn-holder {
+      width: 100%;
+      text-align: center;
+      margin: 25px 0;
+      .ui.button.show-more-btn {
+        background-color: transparent;
+        color: $primaryBlue;
+        .bmo_chevron.bottom.drop-down-indicator {
+          &:before {
+            color: $primaryBlue;
+            top: 0;
+            left: 7px;
+          }
+        }
+      }
+    }
+  }
+}
+
+// Small Breakpoint
+@media (max-width: $screen-tab) {
+  .admin-calendar-panel {
+    padding-left: 15px;
+    padding-right: 15px;
+    .calendar-top-sectoion {
+      .filter {
+        .row {
+          &.from-date {
+            margin-right: 15px;
+          }
+          &.event-type {
+            margin: 0px 15px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: $screen-sm) {
+  .admin-calendar-panel {
+    .calendar-top-sectoion {
+      .filter {
+        .row {
+          &.from-date {
+            margin-right: 15px;
+            padding-bottom: 25px;
+            width: 267px;
+            .date-picker {
+              .react-date-picker {
+                padding-left: 42px;
+              }
+            }
+          }
+          &.to-date {
+            margin-right: 15px;
+            .date-picker {
+              .react-date-picker {
+                padding-left: 25px;
+              }
+            }
+          }
+          &.event-type {
+            margin: 0px 0px;
+            margin-right: 20px;
+          }
+        }
+      }
+    }
+  }
+}
+
+// Medium Breakpoint
+@media (max-width: $screen-xs) {
+  .admin-calendar-panel {
+    .calendar-top-sectoion {
+      .sf-cms {
+        .ui.button.linkBtn {
+          &.sales-force {
+            padding-right: 10px;
+          }
+          &.cms {
+            padding-left: 0px;
+          }
+        }
+      }
+      .filter {
+        .row {
+          &.from-date {
+            width: 100%;
+            .date-picker {
+              .react-date-picker {
+                padding-left: 42px;
+              }
+            }
+          }
+          &.to-date {
+            width: 100%;
+            .date-picker {
+              .react-date-picker {
+                padding-left: 40px;
+              }
+            }
+          }
+          &.event-type {
+            margin: 0px 0px;
+            margin-right: 68%;
+            padding-top: 25px;
+          }
+          &.location-dropdown {
+            padding-top: 25px;
+          }
+        }
+      }
+    }
+    .result-lists {
+      margin-bottom: 30px;
+      .event-card {
+        .left {
+          width: 100%;
+          height: unset;
+          .event-details {
+            padding: 15px;
+          }
+          .edit-btn {
+            width: 100%;
+            display: block;
+            text-align: center;
+          }
+        }
+      }
+    }
+  }
+}
+
+// Large Breakpoint
+@media (min-width: $screen-lg-min) {
+  .admin-calendar-panel {
+    // override md breakpoint styles
+  }
+}

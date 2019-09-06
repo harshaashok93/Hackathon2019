@@ -1,0 +1,313 @@
+/*
+ * Component: EventCard
+ */
+
+@import '../../../styles/variables';
+
+// (IMPORTANT: please create the styles such that the larger breakpoints
+// override the smaller ones. "Mobile First")
+
+.ui.modal.admin-edit-publish-modal {
+  width: 548px;
+  max-width: 600px;
+  top: 50%;
+  left: 50%;
+  margin-left: -275px !important;
+  .header {
+    border-bottom: 0px;
+    padding-bottom: 0px;
+    .close-image {
+      text-align: right;
+      .ui.button {
+        padding: 10px;
+      }
+    }
+  }
+  .content {
+    padding-top: 15px;
+    .ui.heading.cms-heading {
+      font-size: $deskSz4;
+      width: 36px;
+      line-height: 2;
+      border-bottom: solid 1px $inputTextGray;
+      @include appDefaultFontStyleLight();
+      margin-top: auto;
+      margin-bottom: 30px;
+    }
+  }
+  span {
+    display: block;
+    color: $primaryGray;
+    @include appDefaultFontStyleLight();
+  }
+  .ui.input {
+    width: 487px;
+    height: 35px;
+    margin-bottom: 20px;
+    margin-top: 5px;
+  }
+  .action-buttons {
+    text-align: center;
+    .ui.button.secondary {
+      width: 146px;
+      height: 45px;
+      margin: 0 20px;
+    }
+  }
+  .event-date {
+    .date-picker {
+      padding-top: 5px;
+      padding-bottom: 20px;
+      .react-date-picker {
+        padding-left: 0px;
+        .react-date-picker__button {
+          padding: 5px 8px 5px 3px;
+        }
+      }
+    }
+  }
+
+  .image-date-overlay {
+    display: inline-block;
+    width: 100%;
+    .image-overlay {
+      display: inline-block;
+      vertical-align: top;
+      margin-bottom: 20px;
+      span {
+        padding-bottom: 5px;
+      }
+      .event-card-image {
+        width: 100%;
+        .file-upload-input {
+          display: none;
+        }
+        .ui.button.pencil {
+          float: right;
+          margin-top: -36px;
+          padding: 10px;
+          color: $primaryBlue;
+        }
+      }
+    }
+    .date-overlay {
+      width: 220px;
+    }
+
+  }
+}
+.event-card {
+  position: relative;
+  .ui.modals.dimmer {
+    background-color: transparent;
+    .ui.modal.popup-conference-success {
+      position: absolute;
+      height: 240px;
+      width: 540px;
+      margin-left: -270px !important;
+      .header {
+        border-bottom: none;
+        .ui.button.bmo-close-btn {
+          padding: 0px;
+          height: 26px;
+          width: 26px;
+          float: right;
+        }
+      }
+      .content {
+        .ui.heading {
+          padding-top: 20px;
+          width: 488px;
+          font-size: $deskSz7;
+          color: $primaryBlue;
+        }
+      }
+      .actions {
+        text-align: center;
+        background-color: $primaryWhite;
+        border-top: none;
+        .ui.button.secondary {
+          text-align: center;
+          width: 146px;
+          height: 45px;
+        }
+      }
+    }
+  }
+  width: 100%;
+  background-color: $eventCardBackgroundColor;
+  border-bottom: solid 1px $borderGray;
+  .event-card-image {
+    width: 46%;
+    display: inline-block;
+    vertical-align: middle;
+    .event-card-side-image {
+      height: 162px;
+      max-width: 346px;
+    }
+  }
+  .event-details {
+    width: 38%;
+    display: inline-block;
+    padding: 15px 10px;
+    vertical-align: middle;
+    .ui.heading {
+      margin: 0px;
+      padding-top: 7px;
+    }
+    .type-location{
+      font-size: 1rem;
+      color: $primaryGray;
+      @include appDefaultFontStyleLight();
+      span {
+        display: inline-block;
+      }
+      .seperator-dot {
+        display: inline-block;
+        padding: 0 6px;
+      }
+    }
+    .ui.button.secondary {
+      border-radius: 20.6px;
+      background-color: $eventCardBackgroundColor;
+      &.disabled {
+        border: solid 1px $inputTextGray;
+        color: $inputTextGray;
+      }
+      width: 126px;
+      margin-top: 5px;
+      margin-left: 0px;
+      height: 40px;
+      padding: 0px;
+      &.not-available-button {
+        border: solid 1px $inputTextGray;
+        color: $inputTextGray;
+        @include appDefaultFontStyleLight();
+        opacity: unset !important;
+      }
+    }
+    .ui.button.blue-bookmark {
+      float: right;
+    }
+  }
+  .user-profile-event {
+    display: inline-block;
+    vertical-align: middle;
+    width: 15%;
+    padding: 0 5px;
+    height: 25px;
+    text-align: right;
+    .ui.button.blue-bookmark {
+      margin: 0px;
+      background-size: 15px !important;
+      background-position-x: 0px;
+      background-position-y: 1px;
+      padding: 0px;
+      height: 23px;
+      width: 16px;
+      vertical-align: middle;
+      background-size: 16px !important;
+      border-radius: 0px;
+    }
+  }
+  .right {
+    display: none;
+  }
+}
+
+@media (max-width: $screen-md-min) {
+  .event-card {
+    .left {
+      width: 80% !important;
+      position: relative;
+      display: inline-block;
+      vertical-align: middle;
+      .blue-bookmark, .event-card-image {
+        display: none;
+      }
+      .event-details {
+        width: 100%;
+        padding: 15px 22px;
+      }
+    }
+    .right {
+      width: 20%;
+      position: relative;
+      display: inline-block;
+      text-align: right;
+      .ui.button.blue-bookmark {
+        padding-right: 10px;
+      }
+      .linkBtn {
+        padding: 0px;
+      }
+      .plus-icon {
+        width: 30px;
+        height: auto;
+      }
+    }
+  }
+}
+
+@media (max-width: $screen-xs-sm) {
+  .event-card {
+    position: relative;
+    .ui.modals.dimmer {
+      .ui.modal.popup-conference-success {
+        position: fixed;
+        height: 100vh;
+        margin: 0 0 0 -50%;
+        width: 100%;
+        z-index: 9999;
+        margin-top: 0 !important;
+        margin-bottom: 0 !important;
+        margin-left: auto !important;
+        .header {
+          padding-right: 20px !important;
+          height: 18%;
+        }
+        .content {
+          .ui.heading {
+            padding-top: 20px;
+            width: 300px;
+            margin: auto;
+            font-size: $deskSz7;
+          }
+        }
+        .actions {
+          text-align: center;
+          background-color: $primaryWhite;
+          border-top: none;
+          .ui.button.secondary {
+            text-align: center;
+            width: 146px;
+            height: 45px;
+          }
+        }
+      }
+    }
+    .left {
+      vertical-align: middle;
+    }
+    .right {
+      width: 20%;
+      position: relative;
+      text-align: right;
+      display: inline-block;
+    }
+  }
+}
+
+// Medium Breakpoint
+@media (min-width: $screen-md-min) {
+  .event-card {
+    // override sm breakpoint styles
+  }
+}
+
+// Large Breakpoint
+@media (min-width: $screen-lg-min) {
+  .event-card {
+    // override md breakpoint styles
+  }
+}

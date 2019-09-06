@@ -1,0 +1,121 @@
+/*
+ * Component: FullAttachmentPublication
+ */
+
+@import '../../../styles/variables';
+
+// (IMPORTANT: please create the styles such that the larger breakpoints
+// override the smaller ones. "Mobile First")
+
+.full-attachment-publication {
+  padding-left: 40px;
+  padding-right: 45px;
+  .top-section {
+    padding-bottom: 10px;
+    .time-zone-date {
+      margin-bottom: 40px;
+      .title {
+        margin-top: 16px;
+        .ui.heading {
+          font-size: $deskSz11;
+          color: $primaryGray;
+          margin-top: 0px;
+          margin-bottom: 0px;
+        }
+      }
+    }
+    .author-details {
+      .profile {
+        width: 79px;
+        height: 79px;
+        display: inline-block;
+        margin-right: 20px;
+      }
+      .author-details {
+        display: inline-block;
+        vertical-align: top;
+        margin-bottom: 40px;
+        span {
+          &.row {
+            display: block;
+            &.legal-entity {
+              font-size: $deskSzSmaller;
+            }
+          }
+        }
+        .preferences {
+          padding-top: 5px;
+          .ui.button {
+            vertical-align: middle;
+            padding: 0px;
+            margin: auto 13px;
+            height: 21px;
+            width: 21px;
+            &.forgot-mail-icon {
+              margin-left: 0px;
+              height: 16px;
+              width: 23px;
+              background-position-x: 0px;
+              border-radius: 0px;
+            }
+            &.follow-contact {
+              width: auto;
+              span {
+                padding-left: 22px;
+                color: $primaryBlue;
+                font-size: 14px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .ui.grid.main-content {
+    margin-top: 0px !important;
+    border-bottom: solid 0.3px $primaryGray;
+    .rl-filters-section.column {
+      padding-left: 8px !important;
+    }
+    .main-content-details.column {
+      padding-left: 15px;
+      .ui.heading.summary-header {
+        margin-top: 18px;
+      }
+      .summary-content {
+        font {
+          font-size: 16px !important;
+        }
+      }
+    }
+  }
+  .related-content {
+    padding-top: 70px;
+  }
+}
+
+// Small Breakpoint
+@media (max-width: $screen-xs) {
+  .full-attachment-publication {
+    padding: 0 15px;
+    .related-content {
+      .list-container {
+        width: 100% !important;
+      }
+    }
+  }
+}
+
+// Medium Breakpoint
+@media (min-width: $screen-md-min) {
+  .full-attachment-publication {
+    // override sm breakpoint styles
+  }
+}
+
+// Large Breakpoint
+@media (min-width: $screen-lg-min) {
+  .full-attachment-publication {
+    // override md breakpoint styles
+  }
+}

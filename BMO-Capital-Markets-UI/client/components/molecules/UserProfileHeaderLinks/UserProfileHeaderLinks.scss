@@ -1,0 +1,1086 @@
+/*
+ * Component: UserProfileHeaderLinks
+ */
+
+@import "../../../styles/variables";
+
+// (IMPORTANT: please create the styles such that the larger breakpoints
+// override the smaller ones. "Mobile First")
+.auth-modal-not-logged {
+  &.ui.modal {
+    max-width: 340px;
+    @include boxShadow(0, 0, 20px, 0, rgba(109, 109, 109, 0.53));
+    margin-top: 0px !important; // need
+    position: absolute;
+    margin: 0 !important;
+    left: -116px;
+    top: 40px;
+    &:before {
+      width: 0;
+      height: 0;
+      border-left: 16px solid transparent;
+      border-right: 16px solid transparent;
+      border-bottom: 16px solid #fff;
+      content: "";
+      top: -16px;
+      position: absolute;
+      right: 36px;
+      overflow-y: unset;
+    }
+    .not-logged-modal-close {
+      width: 20px;
+      height: 20px;
+      float: right;
+      padding: 0;
+      margin-bottom: 17px;
+    }
+  }
+  .form-container {
+    clear: both;
+    .ui.heading {
+      @include appDefaultFontStyleLight();
+      font-size: $deskSz7;
+
+      text-align: left;
+      color: $primaryBlue;
+      line-height: 1.36;
+    }
+  }
+}
+
+.login-register {
+  .auth-modal.ui.modal {
+    top: 40px;
+  }
+}
+
+.user-profile-header-links {
+  color: $primaryWhite;
+  display: table-cell;
+  vertical-align: middle;
+  text-align: right;
+  position: relative;
+  left: 9px;
+  span {
+    padding: 0;
+  }
+  .user-bookmark .notification-circle, .user-notification .notification-circle {
+    background-color: $primaryRed;
+    color: $primaryWhite;
+    height: 20px;
+    width: 20px;
+    position: absolute;
+    top: -8px;
+    border-radius: 20px;
+    padding: 0;
+    font-size: 0.875em;
+    right: 2px;
+    text-decoration: none;
+    z-index: 1;
+    font-size: $deskSzSmaller;
+    &:hover {
+      text-decoration: none;
+    }
+  }
+  .user-book-mark-menu {
+    ul {
+      .profile-icon-sub-links {
+        word-break: break-word;
+        -ms-word-break: break-word;
+        &:focus,
+        a:focus {
+          outline: none;
+        }
+        &:first-child {
+          padding-top: 18px;
+        }
+        &:last-child {
+          padding-bottom: 6px;
+          border-top: solid 1px $borderGray;
+          padding-top: 10px;
+          margin-top: 8px;
+          @include appDefaultFontStyleMedium();
+        }
+      }
+    }
+  }
+  .user-notification-menu {
+    ul {
+      .read-notification-background {
+        background: $qModelBgColor;
+      }
+      .notitification-following {
+        text-align: left;
+        font-size: $deskSz4;
+        color: $primaryGray;
+        font-weight: $Small;
+        padding-top: 25px !important;
+      }
+      .profile-icon-sub-links {
+        &:focus,
+        a:focus,
+        a:hover {
+          outline: none;
+          box-shadow: none;
+        }
+        &:first-child {
+          padding-top: 18px;
+        }
+        &:last-child {
+          padding-bottom: 6px;
+          @include appDefaultFontStyleMedium();
+        }
+        .notification-detail {
+          font-size: $deskSz9;
+          font-weight: $Regular;
+          word-break: break-word;
+          -ms-word-break: break-word;
+        }
+        .followed-by {
+          padding-top: 5px;
+          font-size: $deskSzSmaller;
+          font-weight: $Small;
+          max-width: 275px;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+      }
+    }
+  }
+  .user-prof-short-cut-icons {
+    margin-left: 0px;
+  }
+  .user-notification-icons {
+    margin-left: 4px;
+    display: inline;
+    vertical-align: middle;
+    .user-notification {
+      .first-unread-notification {
+        margin-top: 7px;
+      }
+      cursor: pointer;
+      position: relative;
+      display: inline-block;
+      width: 42px;
+      height: 28px;
+      text-align: center;
+      &:focus,
+      span:focus {
+        outline: none;
+      }
+      &:hover {
+        .ui.image.pop-up-element.on-hover {
+          display: inline-block !important;
+        }
+        .ui.image.pop-up-element {
+          display: none !important;
+        }
+      }
+      .ui.image.pop-up-element.on-hover {
+        display: none !important;
+      }
+      .ui.image.pop-up-element {
+        display: inline-block !important;
+      }
+      img {
+        display: inline-block;
+        height: 29px;
+        width: 23px;
+        &:focus {
+          outline: none;
+        }
+      }
+      .bmo-pop-up {
+        z-index: 999;
+        .triangle {
+          top: 9px !important;
+          background-color: $primaryWhite !important;
+          box-shadow: none !important;
+        }
+        .popup-text-content {
+          top: 16px;
+          left: -25px;
+          position: relative;
+          z-index: 1000;
+          .user-notification-menu {
+            position: relative;
+            top: 0;
+            max-height: 370px;
+            width: 320px;
+            &.length-zero {
+              padding: 25px;
+              text-align: left;
+              .ui.heading {
+                color: $primaryGray;
+                @include appDefaultFontStyleRegular();
+              }
+            }
+            .notification-second-para.ui.heading {
+              margin-top: 0px;
+            }
+          }
+        }
+      }
+      .mobile-view {
+        display: none;
+      }
+    }
+    .pop-up-element {
+      cursor: pointer;
+    }
+    .user-notification-menu {
+        position: absolute;
+        background-color: $primaryWhite;
+        display: block;
+        z-index: 100;
+        box-shadow: $userProfileHeadersBoxShadow;
+        ul {
+          padding-left: 0;
+          margin: 0;
+          list-style: none;
+          @include appDefaultFontStyleLight();
+          max-height: 327px;
+          overflow-y: auto;
+        }
+        .log-out-link {
+          overflow: hidden;
+          height: 43px;
+          @include appDefaultFontStyleRegular();
+          border-top: solid 1px $borderGray;
+          padding-top: 10px;
+          padding-bottom: 6px;
+          margin-top: 0px;
+          padding-left: 25px;
+          color: $primaryGray;
+          background: $primaryWhite;
+          text-align: left;
+          border-radius: 0 0 5px 5px;
+          a {
+            color: $primaryGray;
+            &:hover {
+              @include boxShadow(0, 1px, 0, 0, $primaryGray);
+              color: $primaryGray;
+            }
+          }
+          &:focus {
+            outline: none;
+          }
+          .pop-up-element{
+            font-weight: $Bold !important;
+          }
+        }
+        .notification-icon-sub-links {
+          a {
+            white-space: normal;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: inline-block;
+            color: $primaryGray;
+          }
+        }
+    }
+  }
+  .name-and-date,
+  .user-prof-short-cut-icons,
+  .user-notification-icons {
+    display: inline;
+    vertical-align: middle;
+    .can-not-bookmark {
+      .popup-text-content {
+        left: -23px !important;
+      }
+    }
+    .user-profile {
+      &:focus,
+      span:focus {
+        outline: none;
+      }
+      position: relative;
+      display: inline-block;
+      // width: 45px;
+      text-align: center;
+      .name-and-date {
+        margin-right: 10px;
+      }
+      &:hover {
+        .ui.image.pop-up-element.on-hover {
+          display: inline-block !important;
+        }
+        .ui.image.pop-up-element {
+          display: none !important;
+        }
+      }
+      .ui.image.pop-up-element.on-hover {
+        display: none !important;
+      }
+      .ui.image.pop-up-element {
+        display: inline-block !important;
+      }
+      img {
+        display: inline-block;
+        height: 28px;
+        width: 23px;
+        padding-bottom: 5px;
+        &:focus {
+          outline: none;
+        }
+      }
+      .bmo-pop-up {
+        z-index: 9999;
+        .triangle {
+          top: 9px !important;
+          background-color: $primaryWhite !important;
+          box-shadow: none !important;
+        }
+        .popup-text-content {
+          top: 16px;
+          left: -65px;
+          position: relative;
+          @include appDefaultFontStyleRegular();
+          .user-profile-menu.not-loggedin-profile {
+            height: 85px;
+            padding: 25px;
+            text-align: left;
+            .ui.heading {
+              color: $primaryGray;
+              @include appDefaultFontStyleRegular();
+            }
+          }
+        }
+      }
+      .mobile-view {
+        display: none;
+      }
+    }
+    .user-bookmark {
+      cursor: pointer;
+      position: relative;
+      display: inline-block;
+      width: 45px;
+      height: 28px;
+      text-align: center;
+      &:focus,
+      span:focus {
+        outline: none;
+      }
+      &:hover {
+        .ui.image.pop-up-element.on-hover {
+          display: inline-block !important;
+        }
+        .ui.image.pop-up-element {
+          display: none !important;
+        }
+      }
+      .ui.image.pop-up-element.on-hover {
+        display: none !important;
+      }
+      .ui.image.pop-up-element {
+        display: inline-block !important;
+      }
+      img {
+        display: inline-block;
+        height: 28px;
+        width: 16.3px;
+        padding-bottom: 4px;
+        &:focus {
+          outline: none;
+        }
+      }
+      .bmo-pop-up {
+        z-index: 999;
+        .triangle {
+          top: 9px !important;
+          background-color: $primaryWhite !important;
+          box-shadow: none !important;
+        }
+        .popup-text-content {
+          top: 16px;
+          left: -25px;
+          position: relative;
+          .user-book-mark-menu {
+            position: relative;
+            top: 0;
+            &.no-bookmarks {
+              height: 85px;
+              padding: 25px;
+              text-align: left;
+              .ui.heading {
+                color: $primaryGray;
+                @include appDefaultFontStyleRegular();
+              }
+            }
+            &.length-zero {
+              padding: 25px;
+              text-align: left;
+              .ui.heading {
+                color: $primaryGray;
+                @include appDefaultFontStyleRegular();
+              }
+            }
+            .bookmark-first-para.ui.heading {
+            }
+            .bookmark-second-para.ui.heading {
+              margin-top: 0px;
+            }
+          }
+        }
+      }
+      .mobile-view {
+        display: none;
+      }
+    }
+    .user-profile-menu {
+      position: relative;
+      background-color: $primaryWhite;
+      display: block;
+      width: 320px;
+      z-index: 100;
+      border-radius: 0 0 5px 5px;
+      box-shadow: $userProfileHeadersBoxShadow;
+      ul {
+        padding-left: 0;
+        margin: 0;
+        list-style: none;
+        @include appDefaultFontStyleRegular();
+        .profile-icon-sub-links {
+          outline: none;
+          color: $primaryGray;
+          a {
+            color: $primaryGray;
+            &:hover {
+              @include boxShadow(0, 1px, 0, 0, $primaryGray);
+              color: $primaryGray;
+            }
+          }
+          &:focus,
+          &:hover,
+          &:active,
+          &:visited,
+          a:focus,
+          a:hover,
+          a:active,
+          a:visited {
+            outline: none;
+            color: $primaryGray;
+          }
+          &:first-child {
+            padding-top: 18px;
+          }
+        }
+        li:focus {
+          outline: none;
+        }
+        li.log-out-link {
+          @include appDefaultFontStyleBold();
+          border-top: solid 1px $borderGray;
+          padding-top: 10px;
+          padding-bottom: 6px;
+          margin-top: 9px;
+          &:focus {
+            outline: none;
+          }
+        }
+      }
+    }
+    .pop-up-element {
+      cursor: pointer;
+    }
+    .user-notification-menu {
+      position: absolute;
+      background-color: $primaryWhite;
+      display: block;
+      z-index: 100;
+      border-radius: 0 0 5px 5px;
+      box-shadow: $userProfileHeadersBoxShadow;
+      ul {
+        padding-left: 0;
+        margin: 0;
+        list-style: none;
+        @include appDefaultFontStyleLight();
+        li.log-out-link {
+          @include appDefaultFontStyleRegular();
+        }
+        li {
+          padding-top: 15px;
+          padding-left: 25px;
+          padding-right: 20px;
+          -webkit-tap-highlight-color: transparent;
+        }
+      }
+      .profile-icon-sub-links {
+        a {
+          white-space: normal;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          display: inline-block;
+          color: $primaryGray;
+          .notification-detail {
+            &:hover {
+              @include boxShadow(0, 1px, 0, 0, $primaryGray);
+              color: $primaryGray;
+            }
+          }
+        }
+
+        &:focus,
+        &:hover,
+        &:active,
+        &:visited,
+        a:focus,
+        a:hover,
+        a:active,
+        a:visited {
+          outline: none;
+          color: $primaryGray;
+        }
+        &:first-child {
+          padding-top: 18px;
+        }
+      }
+      li:focus {
+        outline: none;
+      }
+      li.log-out-link {
+        @include appDefaultFontStyleMedium();
+        border-top: solid 1px $borderGray;
+        padding-top: 10px;
+        padding-bottom: 6px;
+        padding-left: 25px;
+        text-align: left;
+        &:focus {
+          outline: none;
+        }
+      }
+    }
+    .user-book-mark-menu {
+      position: absolute;
+      background-color: $primaryWhite;
+      display: block;
+      width: 320px;
+      z-index: 100;
+      border-radius: 0 0 5px 5px;
+      box-shadow: $userProfileHeadersBoxShadow;
+      ul {
+        padding-left: 0;
+        margin: 0;
+        list-style: none;
+        @include appDefaultFontStyleLight();
+        li.log-out-link {
+          @include appDefaultFontStyleBold();
+        }
+      }
+      .profile-icon-sub-links {
+        a {
+          white-space: normal;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          display: inline-block;
+          color: $primaryGray;
+          &:hover {
+            @include boxShadow(0, 1px, 0, 0, $primaryGray);
+            color: $primaryGray;
+          }
+        }
+      }
+    }
+  }
+  .name-and-date {
+    display: inline-block;
+    position: relative;
+  }
+  .name-label {
+    color: $primaryWhite;
+    margin: 0px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    cursor: pointer;
+    max-width: 300px;
+    display: inline-block;
+    vertical-align: middle;
+    font-size: $deskSzSmall;
+    margin-top: 2px;
+    &.not-logged:hover {
+      @include boxShadow(0, 1px, 0, 0, $primaryWhite);
+      cursor: pointer;
+    }
+    cursor: auto;
+
+    &:focus {
+      outline: none;
+    }
+  }
+  .name-and-date.login {
+    .bmo-pop-up {
+      .popup-text-content {
+        top: 16px;
+        position: relative;
+      }
+      .triangle {
+        top: 9px !important;
+        box-shadow: none !important;
+        background-color: $primaryWhite !important;
+      }
+    }
+    .name-label {
+      cursor: pointer;
+      margin-right: 10px;
+      padding-top: 5px;
+    }
+    &:hover {
+      .ui.image.pop-up-element.on-hover {
+        display: inline-block !important;
+      }
+      .ui.image.pop-up-element {
+        display: none !important;
+      }
+    }
+  }
+}
+
+.windows-enable-bmo-pop-up {
+  display: block !important;
+}
+// Medium Breakpoint
+@media (max-width: $screen-md-min) {
+  .auth-modal-not-logged {
+    &.ui.modal {
+      width: 500px !important;
+      left: -119px;
+      top: 39px;
+    }
+  }
+  .user-notification-menu {
+    .bmo-pop-up {
+      .triangle {
+        top: 9px !important;
+        background-color: $primaryWhite !important;
+        box-shadow: none !important;
+      }
+    }
+  }
+}
+
+@media (max-width: $screen-tab) {
+  .auth-modal-not-logged {
+    &.ui.modal {
+      width: 500px !important;
+      left: -147px;
+    }
+    .ui.container {
+      margin-left: 0px !important;
+      margin-right: 0px !important;
+    }
+  }
+  .user-profile-header-links {
+    .name-and-date {
+      margin-right: 10px;
+      max-width: 64%;
+      // z-index: 1;
+      &.login-register {
+        max-width: 75%;
+      }
+    }
+    .login-user-name {
+      display: flex;
+    }
+    .name-label {
+      padding: 0 5px;
+      max-width: 100%;
+      margin: 0;
+      // &.not-logged:hover {
+      //     -webkit-box-shadow: none;
+      //     -moz-box-shadow: none;
+      //     box-shadow: none;
+      // }
+    }
+    .not-logged {
+      overflow: unset;
+    }
+    .user-prof-short-cut-icons,
+    .user-notification-icons {
+      margin-left: 0px;
+    }
+    .user-notification-icons {
+      .user-notification {
+        position: relative;
+        width: 40px;
+        cursor: pointer;
+        .ui.image.pop-up-element.on-hover {
+          display: none !important;
+        }
+        .ui.image.pop-up-element {
+          display: inline-block !important;
+        }
+        .mobile-view {
+          display: block;
+          .popup-text-content {
+            position: absolute;
+            top: 42px;
+            right: -45px;
+            z-index: 1000;
+            .user-notification-menu {
+              position: relative;
+              top: 0;
+              max-height: 370px;
+              width: 320px;
+              &.length-zero {
+                padding: 25px;
+                text-align: left;
+                .ui.heading {
+                  color: $primaryGray;
+                  @include appDefaultFontStyleRegular();
+                }
+              }
+            }
+          }
+        }
+        &.true {
+          .triangle {
+            left: calc(100% - 28.5px);
+            transform: rotate(225deg);
+            top: 35px !important;
+            background-color: $primaryWhite;
+            box-shadow: none !important;
+            height: 15px;
+            width: 15px;
+            position: absolute;
+            z-index: 999;
+          }
+          .active-back-side {
+            position: absolute;
+            display: block;
+            top: -20px;
+            height: 62px;
+            width: 45px;
+            background-color: $primaryWhite;
+          }
+          .ui.image.pop-up-element.on-hover {
+            display: inline-block !important;
+          }
+          .ui.image.pop-up-element {
+            display: none !important;
+          }
+        }
+        .bmo-pop-up {
+          display: none;
+        }
+      }
+      .user-notification-menu {
+        top: 30px;
+      }
+    }
+    .user-prof-short-cut-icons {
+      .user-bookmark {
+        position: relative;
+        width: 40px;
+        cursor: pointer;
+        .ui.image.pop-up-element.on-hover {
+          display: none !important;
+        }
+        .ui.image.pop-up-element {
+          display: inline-block !important;
+        }
+        .mobile-view {
+          display: block;
+          .popup-text-content {
+            position: absolute;
+            top: 41px;
+            right: -5px;
+            .user-book-mark-menu {
+              position: relative;
+              top: 0;
+              &.no-bookmarks {
+                height: 85px;
+                padding: 25px;
+                text-align: left;
+                .ui.heading {
+                  color: $primaryWhite;
+                  @include appDefaultFontStyleRegular();
+                }
+              }
+              &.length-zero {
+                padding: 25px;
+                text-align: left;
+                .ui.heading {
+                  color: $primaryGray;
+                  @include appDefaultFontStyleRegular();
+                }
+              }
+            }
+          }
+        }
+        &.true {
+          .triangle {
+            left: calc(100% - 28.5px);
+            transform: rotate(225deg);
+            top: 34px !important;
+            background-color: $primaryWhite;
+            box-shadow: none !important;
+            height: 15px;
+            width: 15px;
+            position: absolute;
+            z-index: 999;
+          }
+          .ui.image.pop-up-element.on-hover {
+            display: inline-block !important;
+          }
+          .ui.image.pop-up-element {
+            display: none !important;
+          }
+        }
+        .bmo-pop-up {
+          display: none;
+        }
+      }
+      .user-profile {
+        position: relative;
+        width: 40px;
+        cursor: pointer;
+        text-align: center !important;
+        &.true {
+          .triangle {
+            left: calc(100% - 28.5px);
+            transform: rotate(225deg);
+            top: 29px !important;
+            background-color: $primaryWhite;
+            box-shadow: none !important;
+            height: 15px;
+            width: 15px;
+            position: absolute;
+            z-index: 999;
+          }
+        }
+        .bmo-pop-up {
+          display: none;
+        }
+        .mobile-view {
+          display: block;
+          .popup-text-content {
+            position: absolute;
+            right: -45px;
+            top: 41px;
+            .user-profile-menu.not-loggedin-profile {
+              height: 85px;
+              padding: 25px;
+              text-align: left;
+              .ui.heading {
+                color: $primaryWhite;
+                @include appDefaultFontStyleRegular();
+              }
+            }
+          }
+        }
+      }
+      .user-book-mark-menu {
+        top: 30px;
+      }
+      a {
+        img {
+          display: inline-block;
+          height: 1.5em;
+        }
+      }
+    }
+    .name-and-date.login {
+      .name-label {
+        position: relative;
+        z-index: 1;
+      }
+      .user-profile {
+        .ui.image.pop-up-element.on-hover {
+          display: none !important;
+        }
+        .ui.image.pop-up-element {
+          display: inline-block !important;
+        }
+      }
+      .user-profile.true {
+        .ui.image.pop-up-element.on-hover {
+          display: inline-block !important;
+        }
+        .ui.image.pop-up-element {
+          display: none !important;
+        }
+      }
+      .mobile-view {
+        .triangle {
+          left: calc(100% - 60px);
+          transform: rotate(225deg);
+          top: 35px !important;
+          background-color: $primaryWhite;
+          box-shadow: none !important;
+          height: 15px;
+          width: 15px;
+          position: absolute;
+          z-index: 999;
+        }
+        .popup-text-content {
+          position: absolute !important;
+          top: 42px !important;
+          right: -93px !important;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: $screen-xs-min) and (orientation: landscape) {
+  .user-notification-menu {
+    width: 100vw;
+    max-height: 220px !important;
+    ul {
+      max-height: 177px !important;
+    }
+    .log-out-link {
+      max-height:  43px !important;
+    }
+  }
+}
+
+// Small Breakpoint
+@media (max-width: $screen-xs-min) {
+  .user-profile-header-links {
+    span {
+      display: inline-block;
+    }
+    .user-notification-icons {
+      .user-notification {
+        .mobile-view {
+          .popup-text-content {
+            position: absolute !important;
+            top: 36px !important;
+            right: -41px !important;
+            .user-notification-menu {
+              width: 100vw;
+            }
+          }
+        }
+      }
+    }
+    .user-prof-short-cut-icons {
+      .user-bookmark {
+        .mobile-view {
+          .popup-text-content {
+            position: absolute !important;
+            top: 36px !important;
+            right: -1px !important;
+            .user-book-mark-menu {
+              width: 100vw;
+            }
+          }
+        }
+      }
+      .user-profile {
+        .popup-text-content {
+          position: absolute !important;
+          top: 36px !important;
+          right: -41px !important;
+          .user-profile-menu {
+            width: 100vw;
+          }
+        }
+      }
+    }
+    .name-and-date.login {
+      max-width: unset !important;
+      .login-user-name {
+        display: inline-block;
+      }
+      .name-label {
+        position: relative;
+        z-index: 1;
+        max-width: 190px;
+        display: inline-block;
+        margin-right: 0px;
+        padding-top: 0;
+      }
+      .user-profile.true {
+        .ui.image.pop-up-element {
+          margin-left: 5px;
+        }
+      }
+      .user-profile.false {
+        .ui.image.pop-up-element {
+          margin-left: 5px;
+        }
+      }
+      .mobile-view {
+        .popup-text-content {
+          position: absolute !important;
+          top: 35px !important;
+          right: -91px !important;
+          .user-profile-menu {
+            width: 100vw;
+          }
+        }
+      }
+    }
+  }
+  .login-register {
+    .auth-modal.ui.modal {
+      top: 0px;
+    }
+  }
+}
+
+@media (max-width: $screen-xs-sm) {
+  .auth-modal-not-logged {
+    &.ui.modal {
+      width: 100% !important;
+      position: fixed;
+      left: 0.58px;
+      max-width: 99.55%;
+      top: 48px;
+      height: 161px;
+      border-radius: 8px;
+      &:before {
+        top: -10px;
+        right: 45px;
+      }
+      .content {
+        border-radius: 8px;
+        overflow-y: scroll;
+        height: 100%;
+        position: relative;
+      }
+    }
+  }
+  .user-profile-header-links {
+    width: calc(100% - #{$mega-menu-icon-width});
+    padding-right: 10px;
+    top: 2px;
+    .name-and-date.login .mobile-view .triangle {
+      top : 29px !important;
+    }
+    .user-notification-icons .user-notification.true .triangle ,
+    .user-prof-short-cut-icons .user-bookmark.true .triangle {
+      top : 31px !important;
+    }
+    .user-bookmark .notification-circle, .user-notification .notification-circle {
+      background-color: $primaryRed;
+      color: $primaryWhite;
+      height: 20px;
+      width: 20px;
+      position: absolute;
+      top: -11px;
+      border-radius: 20px;
+      padding: 1px;
+      font-size: $deskSzSmallest;
+      right: 0px;
+      text-decoration: none;
+      z-index: 1;
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+// Large Breakpoint
+@media (min-width: $screen-lg-min) {
+  .user-profile-header-links {
+    // override md breakpoint styles
+  }
+}

@@ -1,0 +1,38 @@
+.dropdown-chevron {
+  &.ui.dropdown.selection, &.ui.dropdown {
+    cursor: pointer;
+
+    i.dropdown.icon {
+      display: none;
+    }
+    border: none;
+    border-bottom: solid 1px $inputBorderLightGrey;
+    border-radius: 0;
+    width: 100%;
+    &.bmo_chevron.bottom {
+      &:before {
+        color: $primaryBlue;
+      }
+    }
+    &.active {
+      box-shadow: none;
+      &.bmo_chevron.bottom {
+        &:before {
+          transform: rotate(-45deg);
+        }
+      }
+      .menu {
+        border: none;
+        margin-top: 1px;
+      }
+
+      input[type=text] {
+        cursor: pointer;
+      }
+    }
+
+    input[type=text], .text {
+      cursor: pointer;
+    }
+  }
+}

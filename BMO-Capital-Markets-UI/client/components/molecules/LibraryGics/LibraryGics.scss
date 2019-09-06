@@ -1,0 +1,60 @@
+/*
+ * Component: LibraryGics
+ */
+
+@import '../../../styles/variables';
+
+// (IMPORTANT: please create the styles such that the larger breakpoints
+// override the smaller ones. "Mobile First")
+
+.library-gics {
+  .bmo_chevron.right{
+    position: absolute;
+    right: 20px;
+    top: 14px;
+  }
+  .text {
+    position: relative;
+    width: auto;
+    display: inline-block;
+    padding-right: 25px;
+  }
+  .ui.button.no-selection {
+    font-size: $deskSz9;
+    color: $primaryBlue;
+    background-color: transparent;
+    padding: 0;
+  }
+  .ui.button.remove-gic-btn {
+    font-size: 12px;
+    width: 12px;
+    margin-left: 10px;
+    padding: 0;
+    position: absolute;
+    top: 50%;
+    right: 4px;
+    padding: 6px;
+    transform: translateY(-50%);
+  }
+}
+
+// Small Breakpoint
+@media (min-width: $screen-sm-min) {
+  .library-gics {
+    // override xs breakpoint styles
+  }
+}
+
+// Medium Breakpoint
+@media (min-width: $screen-md-min) {
+  .library-gics {
+    // override sm breakpoint styles
+  }
+}
+
+// Large Breakpoint
+@media (min-width: $screen-lg-min) {
+  .library-gics {
+    // override md breakpoint styles
+  }
+}

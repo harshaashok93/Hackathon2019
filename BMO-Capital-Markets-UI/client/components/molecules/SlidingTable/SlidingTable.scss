@@ -1,0 +1,244 @@
+/*
+ * Component: SlidingTable
+ */
+
+@import '../../../styles/variables';
+
+// (IMPORTANT: please create the styles such that the larger breakpoints
+// override the smaller ones. "Mobile First")
+
+.sliding-table {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  color: $primaryGray;
+  .only-mobile {
+    display: none;
+    &.mob-text-center {
+      text-align: center;
+    }
+  }
+  .cell:focus {
+    outline: none;
+  }
+  .ui.loader {
+    left: 40%;
+    margin-top: 20%;
+  }
+  .table-left,
+  .table-right {
+    display: table;
+    float: left;
+    table-layout: fixed;
+    vertical-align: top;
+    .head-section {
+      display: table-row;
+      min-width: 100%;
+      background-color: $primaryBlue;
+      .header-cell {
+        display: table-cell;
+        height: 60px;
+        font-size: $deskSz9;
+        color: $primaryWhite;
+        @include appDefaultFontStyleRegular();
+        vertical-align: middle;
+        &:last-child{
+          border-right: none;
+        }
+      }
+    }
+    .result-section {
+      display: table-row;
+      min-width: 100%;
+    }
+  }
+  .mini-summary {
+    margin-bottom: 10px;
+    color: $primaryGray;
+  }
+  .table-left {
+    //box-shadow: 1px 0px 1px -1px $primaryBlack;
+    margin-right: 2px;
+    .head-section .header-cell {
+      min-width: 60px;
+      padding-left: 0;
+      padding-right: 0;
+      &:first-child {
+        border-top-left-radius: 5px;
+        border-bottom-left-radius: 5px;
+      }
+      &:last-child {
+        min-width: 115px;
+        text-decoration: underline;
+      }
+    }
+    .cell {
+      width: 158px;
+    }
+    .result-section {
+      .result-cell {
+        padding: 8px 0;
+      }
+    }
+  }
+  .row-color-1 {
+    background-color: $borderGray;
+  }
+  .result-cell {
+    display: table-cell;
+    height: 35px;
+    font-size: $deskSzSmall;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    vertical-align: middle;
+    padding-left: 5px;
+    &:last-child{
+      border-right: none;
+    }
+  }
+  .cell {
+    display: block;
+    line-height: 12px;
+    margin: 0 5px;
+    min-width: 83px;
+    width: auto;
+    line-height: 1.2;
+    .text {
+      max-width: calc(100% - 26px);
+      display: inline-block;
+      vertical-align: middle;
+      cursor: pointer;
+      padding-left: 5px;
+    }
+    .company-name {
+      @include appDefaultFontStyleMedium();
+    }
+    .company-ticker {
+      color: $primaryGray;
+    }
+    i {
+      cursor: pointer;
+    }
+  }
+  .table-left {
+    display: inline-block;
+    width: 170px;
+    @include boxShadow(0, 3px, 11px, 2px, rgba(129, 129, 129, 0.5));
+    padding-right: 2px;
+    .head-section .header-cell:first-child {
+      border-bottom-left-radius: 0;
+    }
+  }
+  .wrapper1 {
+    $Wrapwidth: calc(100% - 172px);
+    width: $Wrapwidth;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    float: right;
+    position: absolute;
+    left: 172px;
+    .div1 {
+      height: 10px;
+    }
+  }
+  .table-right {
+    display: inline-block;
+    width: calc(100% - 172px);
+    overflow-x: scroll;
+    table-layout: fixed;
+    .result-section {
+      .result-cell {
+        text-align: right;
+        padding-right: 23px;
+      }
+    }
+    .head-section .header-cell {
+      text-align: right;
+      &:last-child{
+        border-top-right-radius: 5px;
+        border-bottom-right-radius: 0;
+      }
+    }
+  }
+}
+
+
+.modals.dimmer .ui.scrolling.modal.stock-screener-mobile-overlay {
+  margin-top: 0 !important;
+}
+.ui.modal.stock-screener-mobile-overlay {
+  margin: 0 !important;
+  padding: 0;
+  top: 0;
+  left: 0;
+  width: 100%;
+  border-radius: 0;
+  height: 100%;
+  .ui.grid {
+    .close-button-bar {
+      padding-top: 10px;
+      padding-bottom: 20px;
+      .ui.button {
+        font-size: $deskSzSmallest;
+        background-position: right;
+      }
+    }
+    .heading-overlay {
+      width: 100%;
+      text-align: center;
+
+    }
+    .row {
+      .column.overlay-column {
+        padding: 0;
+        &.left {
+          .aResultRow {
+            padding: 7px 10px 7px 0;
+            text-align: right;
+            color: $primaryGray;
+            font-size: $deskSzSmaller;
+
+          }
+        }
+        &.right {
+          .aResultRow {
+            padding: 7px 0 7px 10px;
+            color: $primaryGray;
+            font-size: $deskSzSmaller;
+          }
+        }
+        .aResultRow.row-color-0 {
+          background-color: $onboardingCoverageList;
+        }
+      }
+    }
+  }
+}
+
+// Small Breakpoint
+@media (max-width: $screen-xs-min) {
+  .sliding-table {
+    .table-left {
+      .result-section {
+        display: block;
+        .ui.container {
+          margin: 0px !important;
+        }
+      }
+    }
+  }
+}
+
+// Medium Breakpoint
+@media (min-width: $screen-md-min) {
+  .sliding-table {
+    // override sm breakpoint styles
+  }
+}
+
+// Large Breakpoint
+@media (min-width: $screen-lg-min) {
+  .sliding-table {
+    // override md breakpoint styles
+  }
+}

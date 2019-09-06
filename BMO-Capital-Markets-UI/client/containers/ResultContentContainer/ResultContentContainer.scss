@@ -1,0 +1,40 @@
+/*
+ * Component: ResultContentContainer
+ */
+
+@import '../../styles/variables';
+
+// (IMPORTANT: please create the styles such that the larger breakpoints
+// override the smaller ones. "Mobile First")
+
+.result-content-container {
+  .bmo-red-loader {
+    min-height: 200px;
+  }
+}
+
+// Small Breakpoint
+@media (min-width: $screen-sm-min) {
+  .result-content-container {
+    // override xs breakpoint styles
+  }
+}
+
+// Medium Breakpoint
+@media (max-width: $screen-xs-sm) {
+  .result-content-container {
+    // override sm breakpoint styles
+  }
+  .result-content-container.StockScreenerFilterSection {
+    margin-left: 0;
+  }
+}
+
+// Large Breakpoint
+@media (min-width: $screen-lg-min) {
+  .result-content-container {
+    &.BMOModel {
+      margin-top: -55px;
+    }
+  }
+}

@@ -1,0 +1,347 @@
+/*
+ * Component: BMOModel
+ */
+
+@import '../../../styles/variables';
+
+// (IMPORTANT: please create the styles such that the larger breakpoints
+// override the smaller ones. "Mobile First")
+
+.bmo-model {
+  .ui.container {
+    margin-left: 0px !important; // need
+  }
+  .load-more-button {
+    width: 100%;
+    text-align: center;
+    .ui.button.load-more {
+      color: #0079c1;
+      background-color: transparent;
+      border: none;
+      width: auto;
+      margin-bottom: 70px;
+    }
+  }
+  .ui.vertical.slide.out.sidebar {
+    width: 100%;
+  }
+  .date-picker {
+    display: inline-block;
+    .date-picker-title.ui.heading {
+      padding-left: 0 !important;
+      width: auto;
+    }
+    .react-date-picker {
+      padding-left: 10px;
+      .react-date-picker__button__input__month,
+      .react-date-picker__button__input__day{
+        width: 0 !important;
+        -webkit-text-fill-color: $primaryGray;
+        color: $primaryGray;
+        opacity: 1;
+      }
+      .react-date-picker__button__input {
+        input {
+          -webkit-text-fill-color: $primaryGray;
+          color: $primaryGray;
+          opacity: 1;
+          min-width: 23px;
+          &.react-date-picker__button__input__year {
+            width: 40px !important;
+          }
+        }
+      }
+
+      .react-date-picker__button {
+        padding: 8px 8px 8px 3px;
+        float: right;
+        border-radius: 2px;
+        border-color: $secondaryGray;
+        color: $secondaryBlack;
+        width: 150px;
+      }
+    }
+  }
+  .loader-container {
+    padding-top: 50px;
+    .ui.loader {
+      position: relative;
+      height: 750px;
+    }
+  }
+  .ui.left.visible.sidebar {
+    box-shadow: none;
+    width: unset;
+  }
+  .ui.vertical.menu {
+    width: unset;
+  }
+  .ui.sidebar {
+    width: 100%;
+    transform: none;
+    position: relative;
+    border: none;
+    overflow-y: visible !important; // need
+  }
+  .ui.menu > .grid {
+    flex-direction: initial;
+  }
+  .ui.menu .item > .input {
+    width: unset;
+  }
+  .top-section {
+    display: table;
+    width: 100%;
+    margin-bottom: 10px;
+    .strategy-dropdown {
+      display: table-cell;
+      vertical-align: bottom;
+      .ui.dropdown {
+        min-width: 240px;
+        color: $dropDownTextColor;
+        padding: 5px;
+        border: none;
+        border-bottom: solid 1px $secondaryBlue;
+        border-radius: 0;
+        margin-bottom: 11px;
+        max-width: 100%;
+        &::before {
+          top: 43%;
+          transform: translateY(-50%) rotate(135deg);
+          position: absolute;
+          right: 0;
+          left: 95%;
+        }
+        .default.text {
+          color: $primaryBlue;
+        }
+        .text {
+          display: inline-block;
+          transition: none;
+          vertical-align: text-bottom;
+          white-space: normal;
+          line-height: 20px;
+          max-width: 95%;
+          color: $primaryBlue;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+        .menu {
+          width: 100%;
+          border-radius: 0px;
+          min-width: 100%;
+          max-height: 300px;
+          overflow-y: scroll;
+        }
+      }
+    }
+    .table-result-count {
+      display: table-cell;
+      vertical-align: bottom;
+      line-height: 1;
+      width: 20%;
+      .search-result-count {
+        margin-bottom: 11px;
+        color: $primaryGray;
+      }
+    }
+    .strategy-date {
+      float: right;
+      display: table-cell;
+      //display: table-cell;
+      vertical-align: bottom;
+      .from-date, .to-date {
+        text-align: right;
+        display: inline-block;
+        width: 200px;
+        .date-picker {
+          padding-top: 0px;
+          position: relative;
+          display: inline;
+          width: 100%;
+          display: inline-block;
+        }
+      }
+      .to-date {
+        .date-picker {
+          .react-calendar.bmo-calender {
+            left: 0;
+          }
+        }
+      }
+    }
+  }
+}
+
+// @media (max-width: $screen-tab) {
+//   .bmo-model {
+//     margin: 0px;
+//     .top-section {
+//       display: block;
+//       .strategy-dropdown {
+//         width: 33%;
+//         display: inline-block;
+//         padding-bottom: 24px;
+//       }
+//       .table-result-count {
+//         display: none;
+//       }
+//       .strategy-date {
+//         width: 67%;
+//         text-align: right;
+//         display: inline-block;
+//         padding-bottom: 24px;
+//         .from-date, .to-date {
+//           text-align: left;
+//           width: 215px;
+//           .date-picker{
+//             span {
+//               padding-left: 0px !important;
+//               text-align: right;
+//             }
+//           }
+//         }
+//       }
+//     }
+//   }
+// }
+
+// Small Breakpoint
+@media (max-width: $screen-tab) {
+  .bmo-model {
+    .ui.container {
+      margin-left: 0px !important; // need
+      &.hide-layout {
+        display: none;
+      }
+    }
+    .load-more-button {
+      .ui.button.load-more {
+        margin-bottom: 0;
+        margin-top: 20px;
+      }
+    }
+    .show-layout {
+      height: 100%;
+      position: fixed;
+      top: 0px;
+      left: 0px;
+      z-index: 10001;
+      display: block;
+      float: left;
+      .ui.grid.top-columns-grid {
+        width: 100%;
+        padding: 10px;
+      }
+      .ui.sidebar {
+        overflow-y: scroll !important; // need
+      }
+      .ui.left.slide.out.sidebar {
+        float: left ;
+        margin-right: 0px ;
+        transform: translate3d(0%, 0, 0);;
+        box-shadow: 0 0 20px rgba(34, 36, 38, 0.15);
+        width: 77%;
+        border: 1px solid rgba(34, 36, 38, 0.15);
+      }
+      .mobileBackDrop{
+        position: relative;
+        float: left;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.64);
+        width: 23%;
+      }
+    }
+    .top-section {
+      display: block;
+      padding: 0px;
+      .strategy-dropdown {
+        display: block;
+        padding-bottom: 24px;
+        text-align: center;
+        .ui.dropdown {
+          width: 100%;
+        }
+      }
+      .table-result-count {
+        display: none;
+      }
+      .strategy-dropdown {
+        width: 45%;
+        display: inline-block;
+        padding-bottom: 24px;
+      }
+      .strategy-date {
+        float: unset;
+        width: 100%;
+        display: inline-block;
+        .from-date, .to-date {
+          text-align: left;
+          display: inline-block;
+          width: 50%;
+          .ui.heading.title-label.date-picker-title{
+            width: 15%;
+            text-align: left;
+            display: inline-block;
+            padding-left: 0px !important;
+          }
+          .date-picker .react-date-picker {
+            width: 85%;
+            display: inline-block;
+            vertical-align: middle;
+            .bmo-calender .react-calendar__month-view__days__day time {
+              padding-left: 0;
+              width: 22px;
+              height: 23px;
+              padding-top: 3px;
+              font-size: $deskSzSmallest;
+            }
+            .react-calendar__year-view__months__month {
+              font-size: $deskSzVerySmall;
+            }
+            .react-date-picker__button {
+              width: 100%;
+              margin-right: 0;
+            }
+          }
+        }
+        .to-date {
+          padding-left: 10px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: $screen-sm) {
+  .bmo-model {
+    .top-section {
+      padding: 0 15px;
+      .strategy-date {
+        text-align: left;
+        padding-bottom: 5px;
+        .from-date, .to-date {
+          width: 250px;
+          .date-picker .ui.heading.title-label.date-picker-title {
+            text-align: left;
+          }
+        }
+      }
+    }
+  }
+}
+
+// Medium Breakpoint
+@media (min-width: $screen-md-min) {
+  .bmo-model {
+    // override sm breakpoint styles
+  }
+}
+
+// Large Breakpoint
+@media (min-width: $screen-lg-min) {
+  .bmo-model {
+    // override md breakpoint styles
+  }
+}

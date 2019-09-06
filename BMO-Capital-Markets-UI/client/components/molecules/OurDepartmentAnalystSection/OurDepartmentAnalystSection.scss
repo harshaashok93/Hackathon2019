@@ -1,0 +1,179 @@
+/*
+ * Component: OurDepartmentAnalystSection
+ */
+
+@import '../../../styles/variables';
+
+// (IMPORTANT: please create the styles such that the larger breakpoints
+// override the smaller ones. "Mobile First")
+
+.our-department-analyst-section {
+  border-bottom: solid 1px $borderGray;
+  margin-bottom: 60px;
+  margin-left: 35px;
+  margin-right: 35px;
+  padding-bottom: 60px;
+  .about-bmo-info-text.richText {
+    padding: 0 50px;
+    text-align: center;
+    .rich-text {
+      p {
+        font-size: $deskSz41;
+        color: $primaryGray;
+
+        @include appDefaultFontStyleLight();
+      }
+    }
+  }
+  .link-buttons {
+    height: 55px;
+  }
+  .ui.secondary.active.button {
+    background-color: $primaryWhite;
+    color: $primaryBlue;
+  }
+  .random-analyst-profile-pic {
+    position: relative;
+    display: inline-table;
+    // width: 25%;
+    padding-bottom: 60px;
+    .the-image {
+      width: 150px;
+      height: 150px;
+      margin: 15px auto;
+      overflow: hidden;
+      border-radius: 50%;
+      .ui.image.analyst-avatar {
+        width: 100%;
+        height: auto;
+      }
+    }
+  }
+  .button-holder {
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    .button {
+      padding: 10px;
+      font-size: $deskSz7;
+      height: auto;
+    }
+  }
+  .analyst-name {
+    color: $secondaryBlue;
+    font-size: $deskSzOdd2;
+  }
+  .analyst-profile-holder {
+    display: inline-block;
+    width: 25%;
+    text-align: center;
+    padding-top: 60px;
+    padding-bottom: 20px;
+  }
+}
+
+// Small Breakpoint
+@media (max-width: $screen-md-min) {
+  .our-department-analyst-section {
+    margin-bottom: 60px;
+    margin-right: 25px;
+    margin-left: 25px;
+    .analyst-profile-holder {
+      max-height: 600px;
+      overflow: hidden;
+      width: 50%;
+      &:nth-child(4), &:nth-child(5) {
+        padding-top: 0;
+        // background: red;
+      }
+    }
+    .random-analyst-profile-pic {
+      position: relative;
+      display: inline-table;
+      width: 100%;
+    }
+  }
+}
+
+// Medium Breakpoint
+@media (max-width: $screen-sm-min) {
+  .our-department-analyst-section {
+    .analyst-profile-holder {
+      width: 50%;
+      // padding-top: 0;
+    }
+    .about-bmo-info-text.richText {
+      padding: 0 10px;
+    }
+  }
+}
+
+@media (max-width: $screen-xs-sm) {
+  .our-department-analyst-section {
+    .about-bmo-info-text.richText {
+      text-align: center;
+      .rich-text {
+        p {
+          font-size: $deskSz9;
+          color: $primaryGray;
+          padding-bottom: 60px;
+          @include appDefaultFontStyleLight();
+        }
+      }
+    }
+    .analyst-profile-holder {
+      max-height: 450px;
+      overflow: hidden;
+      width: 100%;
+      padding-top: 0;
+    }
+    .random-analyst-profile-pic {
+      position: relative;
+      display: inline-table;
+      // width: 50%;
+      padding-bottom: 60px;
+    }
+    .analyst-avatar {
+      margin: auto;
+      margin-bottom: 15px;
+      height: 94px;
+    }
+  }
+}
+
+// Medium Breakpoint
+@media (max-width: $screen-xs-min) {
+  .our-department-analyst-section {
+    margin-bottom: 35px;
+    margin-right: 15px;
+    margin-left: 15px;
+    .random-analyst-profile-pic {
+      width: 100%;
+    }
+    .analyst-profile-holder {
+      max-height: unset;
+      padding-top: 0;
+    }
+    .about-bmo-info-text.richText {
+      padding: 0;
+      margin-top: 0;
+      .rich-text {
+        p {
+          font-size: $deskSz9;
+        }
+      }
+    }
+    .analyst-avatar {
+      margin: auto;
+      margin-bottom: 15px;
+      height: 150px;
+    }
+  }
+}
+
+// Large Breakpoint
+@media (min-width: $screen-lg-min) {
+  .our-department-analyst-section {
+    // override md breakpoint styles
+  }
+}

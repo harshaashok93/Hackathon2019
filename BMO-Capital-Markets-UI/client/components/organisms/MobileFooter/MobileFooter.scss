@@ -1,0 +1,95 @@
+/*
+ * Component: MobileFooter
+ */
+
+@import '../../../styles/variables';
+
+// (IMPORTANT: please create the styles such that the larger breakpoints
+// override the smaller ones. "Mobile First")
+
+.mobile-footer {
+  padding-bottom: 50px;
+  background-color: $primaryBlue;
+  display: none;
+}
+
+// Small Breakpoint
+@media (max-width: $screen-sm-min) {
+  .mobile-footer {
+    display: block;
+    .accordion {
+      .active{
+        &.title {
+          .image-span {
+            background-image: url(/assets/images/up-arrow-micro.png);
+          }
+        }
+      }
+      &.ui.accordion .title:not(.ui) {
+        padding: 0px;
+      }
+
+      &.accordion .title .dropdown{
+        &.icon::before {
+          content: '';
+        }
+        &.icon::after {
+          content: '';
+        }
+      }
+      .title{
+        .dropdown{
+          color: white;
+        }
+        button{
+          width: 100%;
+          background-color: $primaryBlue;
+          color: $primaryWhite;
+          font-size: 1em;
+          border-radius: 0px;
+          height: 34px;
+          line-height: 22px;
+          margin-left: 0px;
+          .image-span {
+            background-image: url(/assets/images/down-arrow-micro.png);
+            display: inline-block;
+            height: 16px;
+            width: 18px;
+            background-repeat: no-repeat;
+            margin: 0;
+            background-size: cover;
+            vertical-align: middle;
+            margin-left: 10px;
+          }
+        }
+      }
+      &.ui.accordion:not(.styled) .title ~ .content:not(.ui){
+        padding: 32px 0px;
+      }
+      .content {
+        background-color: $lightBlue;
+        text-align: center;
+        .footer-options {
+          .item {
+            height: 30px;
+            a {
+              color: $primaryWhite;
+              font-size: $deskSzSmaller;
+              @include appDefaultFontStyleLight();
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// Medium Breakpoint
+@media (max-width: $screen-md-min) {
+  //
+}
+
+// Large Breakpoint
+@media (min-width: $screen-lg-min) {
+  //
+}

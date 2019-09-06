@@ -1,0 +1,46 @@
+/* @flow weak */
+
+/*
+ * Component: <%= component %>
+ */
+
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+// External Dependencies
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+import React, { Component } from 'react';
+
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+// Internal Dependencies
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+import './<%= component %>.scss';
+
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+// Component Definition
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+class <%= component %> extends Component {
+  props: {
+    // Prop types go here
+  };
+
+  static defaultProps = {
+  };
+
+  state = {
+    // Initialize state here
+  };
+
+  componentDidMount() {
+    // Component ready
+  }
+
+  render() {
+    return (
+      <div className="<%= kebabName %>">
+        <%= component %> not Implemented.
+      </div>
+    );
+  }
+}
+
+export default <%= component %>;

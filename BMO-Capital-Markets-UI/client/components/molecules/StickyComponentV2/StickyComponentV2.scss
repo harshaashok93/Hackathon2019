@@ -1,0 +1,37 @@
+/*
+ * Component: StickyComponentV2
+ */
+
+@import '../../../styles/variables';
+
+// (IMPORTANT: please create the styles such that the larger breakpoints
+// override the smaller ones. "Mobile First")
+
+.sticky-component-v-2 {
+  position: absolute;
+  z-index: 2;
+}
+
+// Small Breakpoint
+@media (max-width: $screen-xs-sm) {
+  .sticky-component-v-2 {
+    &.our-dept {
+      position: unset !important;
+      width: 100% !important;
+    }
+  }
+}
+
+// Medium Breakpoint
+@media (min-width: $screen-md-min) {
+  .sticky-component-v-2 {
+    // override sm breakpoint styles
+  }
+}
+
+// Large Breakpoint
+@media (min-width: $screen-lg-min) {
+  .sticky-component-v-2 {
+    // override md breakpoint styles
+  }
+}

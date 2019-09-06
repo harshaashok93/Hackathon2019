@@ -1,0 +1,61 @@
+/*
+ * Component: VideocastsCard
+ */
+
+@import '../../../styles/variables';
+
+// (IMPORTANT: please create the styles such that the larger breakpoints
+// override the smaller ones. "Mobile First")
+
+.videocasts-card {
+  .videocast-info-card {
+    .videocast-info {
+      .date {
+        vertical-align: top;
+      }
+      .date-name {
+        .ui.container.name-and-pos {
+          display: inline-block;
+          width: 50% !important;
+          color: $primaryBlue;
+          &.no-link {
+            color: $primaryGray;
+          }
+        }
+      }
+    }
+    .publication-title {
+      padding-bottom: 20px;
+    }
+  }
+}
+
+// Small Breakpoint
+@media (max-width: $screen-xs) {
+  .videocasts-card {
+    .videocast-info-card {
+      .videocast-info {
+        .date-name {
+          .ui.container.name-and-pos {
+            margin-right: 0px !important;
+            margin-left: 0px !important;
+          }
+        }
+      }
+    }
+  }
+}
+
+// Medium Breakpoint
+@media (min-width: $screen-md-min) {
+  .videocasts-card {
+    // override sm breakpoint styles
+  }
+}
+
+// Large Breakpoint
+@media (min-width: $screen-lg-min) {
+  .videocasts-card {
+    // override md breakpoint styles
+  }
+}

@@ -1,0 +1,140 @@
+/*
+ * Component: FooterLinksSection
+ */
+
+@import '../../../styles/variables';
+
+// (IMPORTANT: please create the styles such that the larger breakpoints
+// override the smaller ones. "Mobile First")
+
+.footer-link-section {
+  .ui.heading.footer-link-section-title,
+  .ui.heading.footer-link-section-title-mobile {
+    font-size: $deskSz8;
+    @include appDefaultFontStyleMedium();
+    color: $primaryWhite;
+    margin: 0;
+    margin-bottom: 4px; //Previous value: 15px
+  }
+  .footer-link-section-title-mobile {
+    display: none;
+  }
+  .footer-links-set {
+    position: relative;
+    a.footer-link {
+      @include appDefaultFontStyleRegular();
+      position: relative;
+      display: inline-block;
+      padding-top: 7px;
+      font-size: $deskSzSmall;
+    }
+    div.footer-link {
+      @include appDefaultFontStyleRegular();
+      position: relative;
+      display: inline-block;
+      padding-top: 7px;
+      font-size: $deskSzSmall;
+    }
+  }
+  .footer-link {
+    color: $primaryWhite;
+  }
+}
+
+// Small Breakpoint
+@media (max-width: $screen-sm-min - 1) {
+  .footer-link-section {
+    &.ui.grid {
+      .row {
+        padding: 0;
+      }
+    }
+    .mobile.footer-link-column.wide.column {
+      padding: 0;
+    }
+    .ui.heading.footer-link-section-title {
+      display: none;
+    }
+    .footer-link-section-title-mobile {
+      display: block;
+      padding: 13px; //Previous value: 15px
+      border-bottom: solid 1px;
+    }
+    .links-set.false {
+      .footer-links-set {
+        display: none;
+      }
+    }
+    .bmo_chevron.bottom {
+      &:before {
+        top: 4px;
+        margin-right: 5px; 
+      }
+    }
+    .true {
+      .bmo_chevron.bottom {
+        &:before {
+          transform: rotate(-45deg);
+        }
+      }
+    }
+    .false {
+      .image-span {
+        background: url('/assets/images/down-arrow-micro.png');
+        display: inline-block;
+        height: 16px;
+        width: 18px;
+        background-repeat: no-repeat;
+        margin: 0;
+        background-size: cover;
+        vertical-align: middle;
+        margin-left: 10px;
+      }
+    }
+    .ui.heading.links-title {
+      color: $primaryWhite;
+      font-size: $deskSz9;
+      @include appDefaultFontStyleRegular();
+    }
+    .links-set.true {
+      background-color: $primaryWhite;
+      color: $primaryBlack;
+      .footer-links-set {
+        display: block;
+        border-bottom: solid 1px $inputTextGray;
+        a.footer-link,
+        .footer-link {
+          padding: 15px;
+          color: $primaryBlue;
+          font-size: $deskSzSmaller;
+          @include appDefaultFontStyleRegular();
+        }
+      }
+    }
+  }
+}
+
+// Medium Breakpoint
+@media (max-width: $screen-md-min) {
+  .footer-link-section {
+    &.ui.grid {
+      margin-bottom: 0;
+    }
+  }
+}
+
+// Medium Breakpoint
+@media (max-width: $screen-xs-min) {
+  .footer-link-section {
+    .footer-link-section-title-mobile {
+      display: block;
+    }
+  }
+}
+
+// Large Breakpoint
+@media (min-width: $screen-lg-min) {
+  .footer-link-section {
+    // override md breakpoint styles
+  }
+}

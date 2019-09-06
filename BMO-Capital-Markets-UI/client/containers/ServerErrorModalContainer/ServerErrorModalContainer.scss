@@ -1,0 +1,33 @@
+/*
+ * Component: ServerErrorModalContainer
+ */
+
+@import '../../styles/variables';
+
+// (IMPORTANT: please create the styles such that the larger breakpoints
+// override the smaller ones. "Mobile First")
+
+.server-error-modal-container {
+  // ...
+}
+
+// Small Breakpoint
+@media (min-width: $screen-sm-min) {
+  .server-error-modal-container {
+    // override xs breakpoint styles
+  }
+}
+
+// Medium Breakpoint
+@media (min-width: $screen-md-min) {
+  .server-error-modal-container {
+    // override sm breakpoint styles
+  }
+}
+
+// Large Breakpoint
+@media (min-width: $screen-lg-min) {
+  .server-error-modal-container {
+    // override md breakpoint styles
+  }
+}

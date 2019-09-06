@@ -1,0 +1,33 @@
+/*
+ * Component: FooterLogo
+ */
+
+@import '../../../styles/variables';
+
+// (IMPORTANT: please create the styles such that the larger breakpoints
+// override the smaller ones. "Mobile First")
+
+.footer-logo {
+  // ...
+}
+
+// Small Breakpoint
+@media (min-width: $screen-sm-min) {
+  .footer-logo {
+    // override xs breakpoint styles
+  }
+}
+
+// Medium Breakpoint
+@media (min-width: $screen-md-min) {
+  .footer-logo {
+    // override sm breakpoint styles
+  }
+}
+
+// Large Breakpoint
+@media (min-width: $screen-lg-min) {
+  .footer-logo {
+    // override md breakpoint styles
+  }
+}

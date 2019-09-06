@@ -1,0 +1,204 @@
+/*
+ * Component: MegaMenuList
+ */
+
+@import '../../../styles/variables';
+
+// (IMPORTANT: please create the styles such that the larger breakpoints
+// override the smaller ones. "Mobile First")
+
+.mega-menu-list {
+  display: inline-block;
+  width: 100%;
+  margin-bottom: 30px;
+  .links {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    border-bottom: none;
+    cursor: pointer;
+    font-size: $deskSz9;
+    @include appDefaultFontStyleRegular();
+    color: $primaryBlack;
+    li {
+      padding: 0.4em 10px;
+      a {
+        color: $primaryGray;
+      }
+    }
+  }
+  &.padding-need {
+    padding-bottom: 30px;
+  }
+  &.solo-link {
+    margin-bottom: 25px;
+  }
+  .links {
+    a {
+      &:hover {
+        border-bottom: solid 1px;
+      }
+    }
+  }
+  .links-card-heading{
+    margin-top: 25px;
+    position: relative;
+    padding: 10px;
+    margin: 0;
+    color: $primaryBlue;
+    border-bottom: solid 1px $primaryBlue;
+    font-size: $deskSz7;
+    display: block;
+    width: 100%;
+    overflow: hidden;
+    padding-right: 25px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    margin-bottom: 10px;
+    &:hover {
+      background-color: $backgroundGray;
+      border-radius: 5px;
+      border-bottom-color: transparent;
+    }
+    .link-go-button {
+      right: 0px;
+      margin-top: 3px;
+      margin-right: 0 !important;
+      height: 25px;
+      width: auto;
+      position: absolute;
+      top: 5px;
+      display: none;
+    }
+    &::first-child {
+      margin-top: 0px;
+    };
+  }
+  .mega-menu-accordian {
+    display: none;
+  }
+  .mega-menu-no-children-accordian {
+    display: none;
+  }
+}
+
+// Mobile Styles
+@media (max-width: $screen-xs-min) {
+  .row .mega-menu-links-set {
+    div:nth-last-child(2) {
+      div:nth-last-child(1) {
+        .ui.accordion.mega-menu-accordian {
+          .active.title.link-accordian-heading-text {
+            border-bottom: solid 1px #0079c1;
+          }
+          .title.link-accordian-heading-text {
+            border-bottom: none;
+          }
+        }
+      }
+    }
+  }
+  .mega-menu-no-children-accordian {
+    margin-top: 5px;
+    a {
+      margin-bottom: 0px !important;
+    }
+  }
+  .mega-menu-list {
+    margin-bottom: 20px !important;
+    .ui.accordion.mega-menu-accordian {
+      display: block;
+      .title.link-accordian-heading-text {
+        -webkit-tap-highlight-color: transparent;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+        border-bottom: solid 1px $primaryBlue;
+        .icon.circle-link {
+          transform: rotate(90deg);
+          width: 25px;
+          height: 25px;
+          margin-right: 20px;
+          &.clicked {
+            transform: rotate(270deg);
+          }
+        }
+        a {
+          border-bottom: none;
+          margin-left: 30px;
+          margin-bottom: 0;
+          padding: 0;
+          width: auto;
+        }
+      }
+      .content.active {
+        -webkit-tap-highlight-color: transparent;
+        .links {
+          li {
+            border-bottom: solid 0.3px $accordianBorderBottomGrey;
+          }
+        }
+      }
+      .content.mega-menu-accordian-content {
+        &.inactive {
+          display: none
+        }
+      }
+    }
+    .mega-menu-desktop {
+      display: none;
+    }
+    .links-card-heading-text {
+      display: none;
+    }
+    .mega-menu-no-children-accordian {
+      display: block !important;
+    }
+  }
+}
+
+// Small Breakpoint
+@media (max-width: $screen-sm-min) {
+  .mega-menu-list {
+    margin-bottom: 30px;
+    &.padding-need {
+      padding-bottom: 0;
+    }
+    .links {
+      li {
+        padding: 0.4em 30px;
+      }
+    }
+    .links-card-heading {
+      padding: 0 0 10px 30px;
+      .link-go-button {
+        right: 20px;
+      }
+    }
+  }
+}
+
+@media (width: $screen-sm-min) {
+  .mega-menu-list.Corp {
+    margin-bottom: 30px;
+    min-height: 90px;
+  }
+}
+
+
+
+// Medium Breakpoint
+@media (max-width: $screen-md-min) {
+  .mega-menu-list {
+    &.padding-need {
+      padding-bottom: 0;
+    }
+  }
+}
+
+// Large Breakpoint
+@media (min-width: $screen-lg-min) {
+  .mega-menu-list {
+    // override md breakpoint styles
+  }
+}

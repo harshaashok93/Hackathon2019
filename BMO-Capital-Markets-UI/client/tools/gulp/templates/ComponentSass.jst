@@ -1,0 +1,33 @@
+/*
+ * Component: <%= component %>
+ */
+
+@import '<%= path.relative(path.dirname(fullpath), basepath) %>/styles/variables';
+
+// (IMPORTANT: please create the styles such that the larger breakpoints
+// override the smaller ones. "Mobile First")
+
+.<%= kebabName %> {
+  // ...
+}
+
+// Small Breakpoint
+@media (min-width: $screen-sm-min) {
+  .<%= kebabName %> {
+    // override xs breakpoint styles
+  }
+}
+
+// Medium Breakpoint
+@media (min-width: $screen-md-min) {
+  .<%= kebabName %> {
+    // override sm breakpoint styles
+  }
+}
+
+// Large Breakpoint
+@media (min-width: $screen-lg-min) {
+  .<%= kebabName %> {
+    // override md breakpoint styles
+  }
+}

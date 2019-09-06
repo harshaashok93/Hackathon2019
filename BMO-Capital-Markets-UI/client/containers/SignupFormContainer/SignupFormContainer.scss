@@ -1,0 +1,221 @@
+/*
+ * Component: SignupFormContainer
+ */
+
+@import '../../styles/variables';
+
+// (IMPORTANT: please create the styles such that the larger breakpoints
+// override the smaller ones. "Mobile First")
+
+.signup-form-container {
+  .messageContainer {
+    text-align: center;
+    .image {
+      max-width: 80px;
+    }
+  }
+  .ui.heading {
+    @include appDefaultFontStyleLight();
+    color: $primaryGray !important;
+    font-size: 20px !important;
+    &.intro-text {
+      padding-bottom: 0px;
+    }
+    &.header-first-line {
+      margin-bottom: 0px;
+    }
+    &.header-last-line {
+      margin-top: 0px;
+      margin-bottom: 0px;
+      padding-bottom: 0px;
+    }
+  }
+  .region-drop-down {
+    margin: 0 0 25px 0px;
+    .title {
+      color: $primaryGray;
+      @include appDefaultFontStyleRegular;
+    }
+    .ui.dropdown.dropdown-chevron {
+      padding-left: 0px;
+      padding-right: 6px;
+      &::before {
+        color: $primaryBlue;
+      }
+    }
+  }
+  .bmo-contact-drop-down {
+    padding-top: 8px;
+    .title {
+      color: $primaryGray;
+      @include appDefaultFontStyleRegular;
+      display: inline-block;
+    }
+    .ui.search {
+      padding-top: 5px;
+      .ui.input {
+        input {
+          padding-left: 32px;
+          background-color: $primaryWhite;
+          border: solid 1px $inputBorderLightGrey;
+          font-size: $deskSz9;
+          padding: 10px 42px 10px 32px;
+          line-height: 1.5;
+          &::placeholder {
+            color: $primaryGray !important; //need
+            opacity: 0.88;
+          }
+        }
+      }
+      .results.transition {
+        .message.empty {
+          display: none;
+        }
+      }
+    }
+    .ui.search.has-results {
+      > .ui.input input {
+        border-bottom-left-radius: 5px !important;
+        border-bottom-right-radius: 5px !important;
+      }
+    }
+    .ui.search.focus {
+      .ui.input {
+        input {
+          border: solid 1px $bmoContactFocusBorder;
+          &:focus {
+            -webkit-box-shadow: none;
+            box-shadow: none;
+          }
+        }
+      }
+    }
+    .ui.search.active.visible {
+      .ui.input {
+        input {
+          border: solid 1px $bmoContactFocusBorder;
+          border-bottom: 0px;
+          border-bottom-left-radius: 0px !important;
+          border-bottom-right-radius: 0px !important;
+        }
+      }
+      .results.transition {
+        border: solid 1px $bmoContactFocusBorder;
+        border-top: solid 1px $primaryWhite;
+        box-shadow: none;
+        &.visible {
+          max-height: 290px;
+          overflow-y: scroll;
+          overflow-x: hidden;
+          border-top: 0px;
+          .result {
+            padding: 7px 14px;
+            border-bottom: 0px;
+          }
+        }
+      }
+    }
+    .ui.message.error-text {
+      display: inline-block;
+      margin-top: 0;
+    }
+    .ui.input {
+      width: 100%;
+      .icon.search {
+        color: $primaryBlue;
+        opacity: 1;
+        transform: rotate(90deg);
+        left: 0;
+      }
+    }
+    .ui.search > .results {
+      width: 100%;
+      margin-top: 0;
+      border-top-left-radius: 0;
+      border-top-right-radius: 0;
+      .title {
+        font-size: $deskSz9;
+        @include appDefaultFontStyleRegular();
+      }
+      .result:hover {
+        background-color: $brightGray;
+      }
+      .message .header {
+        font-size: $deskSz9;
+        @include appDefaultFontStyleRegular();
+      }
+    }
+    .ui.search.has-results {
+      > .ui.input input {
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+      }
+    }
+  }
+  .back-to-login-cntr {
+    padding-bottom: 19px;
+    text-align: center;
+    p {
+      display: inline;
+      color: $primaryGray;
+    }
+    .ui.button.linkBtn {
+      display: inline;
+      padding-left: 0;
+    }
+  }
+  .ui.container {
+    .ui.button.register-submit {
+      margin-top: 55px;
+      margin-bottom: 16px;
+    }
+    .ui.medium.secondary.disabled.button {
+      font-size: $deskSz9;
+    }
+  }
+}
+
+// Small Breakpoint
+@media (max-width: $screen-xs-sm) {
+  .signup-form-container {
+    .ui.container {
+      .ui.button.secondary {
+        margin: 30px auto;
+      }
+    }
+  }
+}
+
+// Medium Breakpoint
+@media (min-width: $screen-md-min) {
+  .signup-form-container {
+    // override sm breakpoint styles
+  }
+}
+
+// Phone
+@media (max-width: $screen-xs-sm) {
+  .signup-form-container {
+    .ui.container {
+      .ui.button.secondary {
+        margin: 49px auto 16px auto;
+      }
+    }
+    .back-to-login-cntr {
+      text-align: center;
+    }
+    .ui.medium.secondary.button {
+      margin: 30px auto !important;
+    }
+  }
+  .bmo-contact-drop-down .results .result .content {
+    overflow-y: hidden;
+  }
+}
+
+// Large Breakpoint
+@media (min-width: $screen-lg-min) {
+  .signup-form-container {
+    // override md breakpoint styles
+  }
+}

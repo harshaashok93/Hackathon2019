@@ -1,0 +1,185 @@
+/*
+ * Component: AuthModal
+ */
+
+@import '../../../styles/variables';
+
+// (IMPORTANT: please create the styles such that the larger breakpoints
+// override the smaller ones. "Mobile First")
+
+.auth-modal {
+  &.ui.modal {
+    max-width: 550px;
+    @include boxShadow(0, 0, 20px, 0, rgba(109, 109, 109, 0.53));
+    margin-top: 0px !important; // need
+    position: absolute;
+    margin: 0 !important;
+    top: 45px;
+    left: -420px;
+    &:before {
+      width: 0;
+      height: 0;
+      border-left: 16px solid transparent;
+      border-right: 16px solid transparent;
+      border-bottom: 16px solid #fff;
+      content: '';
+      top: -16px;
+      position: absolute;
+      right: 36px;
+      overflow-y: unset;
+    }
+    .modal-close-icon {
+      width: 20px;
+      height: 20px;
+      float: right;
+      padding: 0;
+      margin-bottom: 0;
+    }
+  }
+  .form-container {
+    clear: both;
+    .ui.heading {
+      @include appDefaultFontStyleLight();
+      font-size: $deskSz6;
+      padding-bottom: 10px;
+      text-align: left;
+      color: $primaryBlue;
+      line-height: 1.36;
+    }
+    .login-form-container .ui.heading {
+      color: $primaryGray;
+    }
+    .ui.message.error-text {
+      box-shadow: none;
+      background: none;
+      padding: 0px;
+      color: $primaryRed;
+      margin-top: 8px;
+      float: right;
+      margin-bottom: 0px;
+    }
+    .ui.form {
+      .error {
+        .ui.input {
+          input {
+            color: $inputTextGray;
+            @include boxShadow(0, 0, 1px, 0, $primaryRed);
+            background-color: $borderGray;
+          }
+          &:focus {
+            border: 1px solid $primaryRed;
+            background-color: transparent;
+          }
+        }
+      }
+    }
+    .ui.message {
+      font-size: $deskSzSmaller;
+      @include appDefaultFontStyleLight();
+    }
+
+    .ui.button {
+      display: block;
+    }
+    .ui.button.primary {
+      width: 210px;
+      height: 36px;
+      margin: 25px auto;
+    }
+    .ui.button.secondary {
+      padding: 10px;
+      min-width: 145px;
+      min-height: 45px;
+      border-radius: 50px;
+      margin: 0 auto;
+      margin-top: 40px;
+      margin-bottom: 10px;
+    }
+    .ui.button.secondary.disabled {
+      padding: 10px;
+      border: solid 1px $inputTextGray;
+      border-radius: 50px;
+      background-color: $primaryWhite;
+      color: $inputTextGray;
+      opacity: unset !important;
+    }
+    .ui.button.linkBtn {
+      margin: 0px auto;
+      text-align: left;
+      padding: 10px 0 4px;
+      border-radius: 0;
+      &:hover {
+        @include boxShadow(0, 1px, 0, 0, $primaryBlue);
+      }
+    }
+  }
+}
+
+// Medium Breakpoint
+@media (max-width: $screen-md-min) {
+  .auth-modal {
+    &.ui.modal {
+      width: 500px !important;
+      left: -400px;
+    }
+  }
+}
+
+// Small Breakpoint
+@media (max-width: $screen-sm-min) {
+  .auth-modal {
+    &.ui.modal {
+      width: 500px !important;
+      left: -400px;
+    }
+    .ui.container {
+      margin-left: 0px !important;
+      margin-right: 0px !important;
+    }
+  }
+}
+
+// Phone
+@media (max-width: $screen-xs-sm) {
+  .auth-modal {
+    &.ui.modal {
+      width: 100% !important;
+      position: fixed;
+      left: 0px;
+      max-width: 100%;
+      top: 0;
+      height: 100%;
+      border-radius: 0px;
+      z-index: 100001;
+      &:before {
+        top: -10px;
+        right: 135px;
+      }
+      .content {
+        border-radius: 0px;
+        overflow-y: scroll;
+        height: 100%;
+        position: relative;
+      }
+    }
+    .ui.container {
+      margin: 0 !important;
+    }
+    .form-container {
+      .ui.button.secondary {
+        margin-left: 0;
+      }
+      .ui.button.linkBtn {
+        margin-left: 0;
+        padding-left: 0;
+      }
+    }
+  }
+}
+
+// Large Breakpoint
+@media (min-width: $screen-lg-min) {
+  .auth-modal {
+    // override md breakpoint styles
+  }
+}

@@ -1,0 +1,182 @@
+/*
+ * Component: AnalystsListingResult
+ */
+
+@import '../../../styles/variables';
+
+// (IMPORTANT: please create the styles such that the larger breakpoints
+// override the smaller ones. "Mobile First")
+
+.analysts-listing-result {
+  width: 100%;
+  display: inline-block;
+  position: relative;
+  top: -10px;
+  padding-left: 10px;
+  .result-count {
+    padding-left: 15px;
+    display: block;
+    text-align: left;
+  }
+  .result-card-data {
+    border: solid 1px $borderGray;
+    .sector-result-loader {
+      position: relative;
+      padding-top: 100px;
+      z-index: 9;
+    }
+    .no-results-found {
+      position: relative;
+      padding: 100px;
+      text-align: center;
+    }
+  }
+  .result-card {
+    padding: 5px 31px 15px 15px;
+    .result-card-header {
+      display: inline-block;
+      background-color: $primaryBlue;
+      width: 100%;
+      padding: 10px;
+      border-radius: 5px 5px 0 0;
+      text-align: left;
+      .caret.down.icon {
+        height: unset;
+        width: unset;
+        &.reverse-sort {
+          -ms-transform: rotate(-180deg); /* IE 9 */
+          -webkit-transform: rotate(-180deg); /* Safari */
+          transform: rotate(-180deg);
+        }
+      }
+      .click-area{
+        display: inline-block;
+        cursor: pointer;
+        background: transparent;
+        color: $primaryWhite;
+        padding: 0;
+      }
+      .reverse-sort {
+        .caret.down.icon {
+          -ms-transform: rotate(-180deg); /* IE 9 */
+          -webkit-transform: rotate(-180deg); /* Safari */
+          transform: rotate(-180deg);
+        }
+      }
+      .head-cell {
+        display: inline-block;
+        padding: 0 15px;
+        color: $primaryWhite;
+        font-size: $deskSz9;
+        @include appDefaultFontStyleLight();
+        min-width:31%;
+        text-align: left;
+        &.analyst {
+          width: 37%;
+          position: relative;
+        }
+        &.analyst:after {
+          position: absolute;
+          content: '';
+          left: 13px;
+          bottom: 2px;
+          height: 1px;
+          background-color: #fff;
+          width: 58px;
+        }
+      }
+    }
+  }
+}
+.analysts-result-wrapper.corp-site {
+  .analysts-listing-result {
+    padding-left: 18px;
+  }
+}
+
+// Small Breakpoint
+@media (max-width: $screen-md-min) {
+  .analysts-listing-result {
+    .result-card {
+      padding: 5px 30px 15px 15px;
+      .result-card-header {
+        .head-cell {
+          min-width:50%;
+          &.analyst {
+            width: 50%;
+          }
+          &.analyst:after {
+            position: absolute;
+            content: '';
+            left: 13px;
+            bottom: 2px;
+            height: 1px;
+            background-color: #fff;
+            width: 0px;
+          }
+          &.sector {
+            width: 50%;
+          }
+          &.email-phone {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}
+
+// Medium Breakpoint
+@media (max-width: $screen-sm-min) {
+  .analysts-listing-result {
+    padding-left: 0px;
+    .result-card {
+      padding: 12px;
+    }
+  }
+  .analysts-result-wrapper.corp-site {
+    .analysts-listing-result {
+      padding-left: 0;
+    }
+  }
+}
+
+@media (max-width: $screen-xs-sm) {
+  .analysts-listing-result {
+    padding-left: 0px;
+    .result-card {
+      padding: 12px;
+    }
+  }
+  .analysts-result-wrapper.corp-site {
+    .analysts-listing-result {
+      padding-left: 0;
+    }
+  }
+}
+
+@media (max-width: $screen-xs-min) {
+  .analysts-listing-result {
+    .result-card {
+      padding: 0px;
+      .result-card-header {
+        border-radius: 0px;
+        .head-cell {
+          &.analyst {
+            width: 100%;
+          }
+          &.sector {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}
+
+// Large Breakpoint
+@media (min-width: $screen-lg-min) {
+  .analysts-listing-result {
+    // override md breakpoint styles
+  }
+}

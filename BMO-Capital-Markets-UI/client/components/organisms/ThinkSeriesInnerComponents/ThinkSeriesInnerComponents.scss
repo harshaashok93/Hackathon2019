@@ -1,0 +1,150 @@
+/*
+ * Component: ThinkSeriesInnerComponents
+ */
+
+@import '../../../styles/variables';
+
+// (IMPORTANT: please create the styles such that the larger breakpoints
+// override the smaller ones. "Mobile First")
+
+.think-series-inner-components {
+  padding-bottom: 40px;
+  border-bottom: solid 1px $oddGray;
+  .video-castcard {
+    box-shadow: none;
+  }
+  .section-title.ui.heading {
+    font-size: $deskSzBigest;
+    @include appDefaultFontStyleLight();
+    margin: 55px 0px 30px 0px;
+    text-align: center;
+  }
+  &.ThinkSeriesEvents {
+    .section-title.ui.heading {
+      margin-top: 0px;
+    }
+    .ui.grid {
+      .cards.videocast-column {
+        background-color: $eventCardBackgroundColor;
+        padding-bottom: 116px !important;
+        padding-right: 0px;
+        padding-left: 0px;
+      }
+    }
+  }
+  &.ThinkSeriesFlashes {
+    border-bottom: none;
+  }
+  .ui.grid {
+    margin: auto;
+    .column.cards.videocast-column {
+      width: 30% !important;
+      margin-bottom: 2%;
+      border: solid 1px $startegyVideocastBorderGray;
+      box-shadow: 0 5px 13px 0 rgba(0, 0, 0, 0.13);
+      &:nth-child(3n+1), &:nth-child(3n) {
+        margin: 0px 2.5%;
+        margin-bottom: 2%;
+      }
+    }
+  }
+  .show-more {
+    text-align: center;
+    .ui.button {
+      font-size: $deskSz4;
+      &:before {
+        color: $primaryBlue;
+        top: 2px;
+        left: 1em;
+      }
+    }
+  }
+}
+
+// Small Breakpoint
+@media (max-width: $screen-sm) {
+  .think-series-inner-components {
+    .ui.grid {
+      margin: auto;
+      .cards.column.videocast-column {
+        width: 49% !important;
+        margin: 0px;
+        margin-bottom: 2%;
+        &:nth-child(3n+1), &:nth-child(3n) {
+          margin: 0px;
+          margin-bottom: 2%;
+        }
+        &:nth-child(2n) {
+          margin-left: 2%;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: $screen-xs-sm) {
+  .think-series-inner-components {
+    &.ThinkSeriesEvents {
+      .ui.grid {
+        .video-castcard {
+          .cards.videocast-column {
+            .attend-btn {
+              .ui.secondary.button {
+                display: block !important;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// Medium Breakpoint
+@media (max-width: $screen-xs) {
+  .think-series-inner-components {
+    padding-bottom: 0px;
+    border-bottom: none;
+    .section-title.ui.heading {
+      font-size: $deskSz2;
+      width: 174px;
+      margin: 35px auto;
+    }
+    .show-more {
+      margin: 34px 30px 0;
+      padding-bottom: 45px;
+      border-bottom: solid 1px $oddGray;
+      .ui.button {
+        font-size: $deskSz9;
+      }
+    }
+    .ui.grid {
+      margin: auto;
+      .cards.column.videocast-column {
+        width: 100% !important;
+        margin: 0px;
+        margin-bottom: 0%;
+        &:nth-child(3n+1), &:nth-child(3n) {
+          margin-bottom: 0%;
+        }
+        &:nth-child(2n) {
+          margin-left: 0%;
+        }
+      }
+    }
+    .video-castcard .ui.grid .row {
+      box-shadow: 5px 5px 13px 0 rgba(0, 0, 0, 0.13);
+      padding: 0;
+      .four.wide.computer.videocast-column {
+        box-shadow: none;
+      }
+    }
+  }
+}
+
+// Large Breakpoint
+@media (min-width: $screen-lg-min) {
+  .think-series-inner-components {
+    // override md breakpoint styles
+  }
+}

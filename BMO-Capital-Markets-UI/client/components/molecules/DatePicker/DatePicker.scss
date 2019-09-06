@@ -1,0 +1,446 @@
+/*
+ * Component: DatePicker
+ */
+
+@import '../../../styles/variables';
+
+// (IMPORTANT: please create the styles such that the larger breakpoints
+// override the smaller ones. "Mobile First")
+
+.date-picker {
+  padding-top: 20px;
+  .calender-icon {
+    height: 18px;
+    vertical-align: middle;
+  }
+  .react-date-picker__calendar {
+    &.react-date-picker__calendar--open {
+      width: auto;
+      top: 45px;
+      z-index: 99;
+    }
+    .react-calendar__navigation__arrow[disabled] {
+      visibility: hidden;
+    }
+  }
+  .date-picker-title {
+    &.ui.heading {
+      padding-left: 15px !important; // need
+      width: 16%; // Amrinder Changes previous value - 25%
+      font-size: 16px !important; // need
+      @include appDefaultFontStyleRegular();
+    }
+  }
+  .ui.heading {
+    color: $primaryGray;
+  }
+  .title-label {
+    display: inline-block;
+    margin: 0 !important; // need
+  }
+  .react-date-picker {
+    font-size: $deskSz9;
+    padding-left: 8%;
+    .react-date-picker__button {
+      position: relative;
+      padding: 0 10px !important;
+      .react-date-picker__calendar-button {
+        position: absolute;
+        width: 100%;
+        right: 10px;
+        height: 100%;
+        padding: 0;
+        outline: none;
+        img {
+          float: right;
+        }
+      }
+    }
+    .react-date-picker__button__input__month,
+    .react-date-picker__button__input__day{
+      min-width: 20px;
+      text-align: right;
+      font-size: $deskSz9;
+      -webkit-text-fill-color: $primaryGray;
+      color: $primaryGray;
+      opacity: 1;
+    }
+    .react-date-picker__button__input__year  {
+      width: 60px !important;
+      font-size: $deskSz9;
+      min-width: 40px;
+      -webkit-text-fill-color: $primaryGray;
+    }
+    .react-calendar__year-view__months__month.react-calendar__tile,
+    .react-calendar__decade-view__years__year.react-calendar__tile,
+    .react-calendar__century-view__decades__decade.react-calendar__tile {
+      padding: 1em;
+    }
+    .react-date-picker__button {
+      padding: 8px 8px 8px 3px;
+      float: right;
+      border-radius: 2px;
+      border-color: $secondaryGray;
+      color: $secondaryBlack;
+      height: 40px;
+      width: 173px; // Amrinder Changes preivous  - 150px
+      // margin-right: 15px; // Amrinder changes
+    }
+    .react-date-picker__clear-button {
+      display: none;
+    }
+    .react-date-picker__button__icon {
+      padding: 0;
+    }
+    .react-calendar {
+      @include appDefaultFontStyleRegular();
+      font-size: $deskSz7;
+    }
+    .react-calendar__month-view__weekdays {
+      padding: 5px 15px 0;
+      background-color: $menuBlue;
+      color: $primaryWhite;
+      .react-calendar__month-view__weekdays__weekday {
+        text-align: center;
+        padding-left: .5em;
+        padding-bottom: 5px;
+        letter-spacing: 100px;
+        width: 15px;
+        padding-left: 30px;
+      }
+    }
+    .bmo-calender {
+      background-color: $primaryWhite;
+      width: 500px;
+      left: 20px;
+      position: relative;
+      .react-calendar__month-view {
+        & > * {display: block !important};
+      }
+      .react-calendar__month-view__days {
+        padding: 15px;
+        padding-bottom: 25px;
+      }
+      .react-calendar__month-view__days__day--weekend {
+        color: $primaryBlack;
+      }
+      .react-calendar__month-view__days__day {
+        padding: 0;
+        time {
+          border-radius: 25px;
+          display: block;
+          width: 50px;
+          height: 50px;
+          padding-top: 15px;
+          margin: auto;
+          font-size: $deskSz7;
+        }
+      }
+      .react-calendar__month-view__days__day--neighboringMonth {
+        color: $secondaryGray;
+      }
+      .react-calendar__tile--active {
+        background-color: $primaryWhite;
+        time {
+          background-color: $primaryRed;
+          border-radius: 25px;
+          display: block;
+          width: 50px;
+          height: 50px;
+          padding-top: 15px;
+          padding-left: 0;
+        }
+      }
+      .react-calendar__navigation {
+        margin-bottom: 0;
+        padding: 15px 1em;
+        background-color: $primaryBlue;
+        color: $primaryWhite;
+        height: auto;
+        button {
+          min-width: 80px;
+        }
+        .react-calendar__navigation__label {
+          @include appDefaultFontStyleRegular();
+          font-size: $deskSz7;
+          background-color: transparent;
+          &:hover,
+          &:focus {
+            background-color: transparent;
+          }
+        }
+        .react-calendar__navigation__next2-button, .react-calendar__navigation__prev2-button {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+.date-picker {
+  .react-date-picker {
+    .react-calendar__year-view__months__month.react-calendar__tile {
+      padding: 1em 0.2em 1em 0.2em;
+    }
+    .react-date-picker__calendar {
+      left: -70px;
+    }
+    .react-date-picker__button__input {
+      input {
+        background-color: transparent !important;
+      }
+    }
+    .react-calendar__month-view__weekdays {
+      padding: 16px 17px 0 0; // Amrinder Changes
+      .react-calendar__month-view__weekdays__weekday {
+        padding-left: 20px;
+      }
+    }
+    .bmo-calender {
+      .react-calendar__month-view__days{ // Amrinder Changes Insert
+        padding: 15px 10px;
+      }
+      .react-calendar__year-view__months__month.react-calendar__tile {
+        font-size: 16px;
+        padding: 15px 0;
+      }
+      .react-calendar__navigation {
+        button.react-calendar__navigation__arrow {
+          &.react-calendar__navigation__prev-button {
+            background-image:url('/assets/images/white-chevron/Library_Chevron_left.png') !important;
+            background-repeat: no-repeat;
+            background-size: 12px;
+            background-position-x: 100%;
+            background-position-y: 50%;
+            &:hover, &:active, &:focus {
+              background-color: transparent;
+            }
+          }
+          &.react-calendar__navigation__next-button {
+            background-image:url('/assets/images/white-chevron/Library_Chevron_right.png') !important;
+            background-repeat: no-repeat;
+            background-size: 12px;
+            background-position-y: 50%;
+            &:hover, &:active, &:focus {
+              background-color: transparent;
+            }
+          }
+        }
+      }
+      .react-calendar__tile--active, .react-calendar__month-view__days__day {
+        time {
+          width: 32px;
+          height: 32px;
+          padding-top: 6px;
+          font-size: 16px;
+        }
+      }
+      .react-calendar__navigation {
+        button {
+          &.react-calendar__navigation__label {
+            font-size: 18px;
+          }
+          min-width: 30px;
+        }
+      }
+      width: 250px; // Amrinder Changes
+      left: 30px; // Amrinder Changes
+    }
+  }
+}
+
+// Small Breakpoint
+@media (max-width: $screen-sm-min) {
+  .date-picker {
+    .date-picker-title {
+      &.ui.heading {
+        position: absolute;
+        padding: 10px 15px;
+        margin: 0;
+      }
+    }
+    .react-date-picker {
+      .react-date-picker__button__input {
+        input {
+          color: $primaryGray !important;
+          opacity: 1;
+        }
+      }
+      .react-date-picker__button { // Amrinder Changes
+        padding: 8px 8px 8px 3px;
+        float: right;
+        border-radius: 2px;
+        border-color: $secondaryGray;
+        color: $secondaryBlack;
+        width: 173px; // Amrinder Changes preivous  - 150px
+        margin-right: 15px; // Amrinder changes
+      }
+      .react-date-picker__calendar {
+        max-width: 100%;
+        left: 0 !important;
+      }
+      .bmo-calender {
+        width: 100%;
+        left: 0;
+        position: relative;
+        .react-calendar__year-view__months__month.react-calendar__tile {
+          padding: 1em 0.1em 1em 0.1em;
+          font-size: $deskSzVerySmall;
+        }
+        .react-calendar__month-view__days {
+          padding: 10px;
+        }
+        .react-calendar__month-view__weekdays {
+          padding: 10px 0 10px 20px;
+        }
+        .react-calendar__month-view__weekdays__weekday {
+          padding: 0;
+          font-size: $deskSzSmaller;
+        }
+        .react-calendar__month-view__days__day {
+          height: 35px;
+          time {
+            padding-left: 0;
+            font-size: $deskSzSmaller;
+            padding-top: 0;
+            width: 25px;
+            height: 25px;
+            line-height: 1.7;
+          }
+        }
+        .react-calendar__navigation {
+          margin-bottom: 0;
+          padding: 0;
+          background-color: $primaryBlue;
+          color: $primaryWhite;
+          height: 50px;
+          button.react-calendar__navigation__arrow {
+            min-width: 20px;
+          }
+        }
+        .react-calendar__navigation__label {
+          font-size: $deskSzSmaller;
+        }
+        .react-calendar__decade-view__years__year.react-calendar__tile,
+        .react-calendar__century-view__decades__decade.react-calendar__tile {
+          padding: 1em;
+          font-size: $deskSzSmallest;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: $screen-xs) {
+  .menu.sidebar.side-bar {
+    .date-picker {
+      .react-date-picker {
+        .react-date-picker__button {
+          padding: 8px 8px 8px 3px;
+          float: left;
+          border-radius: 2px;
+          border-color: $secondaryGray;
+          color: $secondaryBlack;
+          width: 90%;
+        }
+
+        .react-date-picker__calendar {
+          left: auto !important;
+          right: 0;
+        }
+      }
+    }
+  }
+}
+
+// Medium Breakpoint
+@media (min-width: $screen-md) { // Amrinder Changes
+  .date-picker {
+    .date-picker {
+      .date-picker-title {
+        &.ui.heading {
+          position: absolute;
+          padding: 10px 15px;
+          margin: 0;
+        }
+      }
+      .react-date-picker {
+        .react-date-picker__calendar {
+          max-width: 100%;
+          left: 0 !important;
+        }
+        width: 100%;
+        display: inline-block;
+        .bmo-calender {
+          width: 100%;
+          left: 0;
+          position: relative;
+          .react-calendar__month-view__days {
+            padding: 10px;
+          }
+          .react-calendar__month-view__weekdays {
+            padding: 10px;
+          }
+          .react-calendar__month-view__weekdays__weekday {
+            padding: 0;
+            font-size: $deskSzSmaller;
+          }
+          .react-calendar__month-view__days__day {
+            time {
+              padding-left: 0;
+              width: 30px;
+              height: 30px;
+              padding-top: 5px;
+              font-size: $deskSzSmaller;
+            }
+          }
+          .react-calendar__navigation {
+            margin-bottom: 0;
+            padding: 5px 1em;
+            background-color: $primaryBlue;
+            color: $primaryWhite;
+            height: auto;
+            button {
+              min-width: 20px;
+            }
+            .react-calendar__navigation__prev-button {
+              border-top: 12px solid transparent;
+              border-bottom: 12px solid transparent;
+              border-right: 17px solid #fff;
+            }
+            .react-calendar__navigation__next-button {
+              border-top: 12px solid transparent;
+              border-bottom: 12px solid transparent;
+              border-left: 17px solid #fff;
+            }
+          }
+          .react-calendar__navigation__label {
+            font-size: $deskSzSmaller;
+          }
+          .react-calendar__year-view__months__month.react-calendar__tile,
+          .react-calendar__decade-view__years__year.react-calendar__tile,
+          .react-calendar__century-view__decades__decade.react-calendar__tile {
+            padding: 1em;
+            font-size: $deskSzSmallest;
+          }
+        }
+      }
+    }
+  }
+}
+
+/* IE10+ specific CSS styles go here */
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  .react-calendar__century-view__decades__decade {
+    max-width: 33.3333% !important;
+  }
+}
+
+/* Edge specific CSS styles go here */
+@supports (-ms-ime-align:auto) {
+  .react-date-picker__button__input {
+    input {
+      padding: 0;
+    }
+  }
+}

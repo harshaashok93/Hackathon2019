@@ -1,0 +1,235 @@
+/*
+ * Component: AnalystsResultSlice
+ */
+
+@import '../../../styles/variables';
+
+// (IMPORTANT: please create the styles such that the larger breakpoints
+// override the smaller ones. "Mobile First")
+
+.analysts-result-slice {
+  text-align: left;
+  border-bottom: solid 1px $borderGray;
+  padding: 10px;
+  .only-tab {
+    display: none;
+  }
+  .analysts-name-and-logo{
+    position: relative;
+    width: 37%;
+    display: inline-block;
+  }
+  .result-slice-cell {
+    // min-width: 30%;
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    padding: 0px;
+    width: 100%;
+    .analyst-profile-pic {
+      text-align: left;
+      .ui.image.analyst-avatar {
+        display: inline-block;
+        margin-right: 20px;
+      }
+      .analyst-name {
+        display: inline-block;
+        color: $primaryGray;
+        width: calc(100% - 100px);
+        vertical-align: middle;
+        .analyst-name-section {
+          display: inline-block;
+          color: $primaryBlue;
+          word-break: break-word;
+          &#intro-our-analyst-name-id.intro-part {
+            position: relative;
+            z-index: 9999999 !important;
+          }
+        }
+        .analyst-division_name {
+          font-size: $deskSzSmaller;
+        }
+      }
+      .analyst-image {
+        display: inline-block;
+        width: 80px;
+        margin-right: 15px;
+        height: 80px;
+        overflow: hidden;
+        border-radius: 50%;
+        vertical-align: middle;
+      }
+    }
+    &.sector {
+      padding-left: 10px;
+      text-align: left;
+      width: 29%;
+      .plusMore {
+        background-color: transparent;
+        color: $primaryBlue;
+        padding-left: 0;
+        font-size: 1em;
+        padding-bottom: 0;
+      }
+      ul.firstList {
+        margin: 0;
+      }
+      ul.secondList {
+        margin-top: 0;
+      }
+      ul {
+        list-style: none;
+        padding-left: 0;
+        li {
+          color: $primaryBlue;
+          font-size: $deskSz9;
+          line-height: 24px;
+          padding-left: 12px;
+          position: relative;
+          a {
+            display: inline-block;
+            width: 94%;
+            vertical-align: top;
+          }
+          .dot {
+            width: 5%;
+            display: inline-block;
+            padding-right: 10px;
+            font-size: 1.4em;
+            vertical-align: middle;
+            color: $dotGray;
+            position: absolute;
+            left: 0;
+          }
+        }
+      }
+    }
+    &.email {
+      text-align: left;
+      width: 30%;
+      margin-left: 1%;
+      color: $primaryBlue;
+      .forgot-mail-icon, .forgot-phone-icon {
+        padding-left: 33px;
+        background-position: left;
+        background-size: 18px auto!important;
+      }
+      .forgot-mail-icon {
+        margin-bottom: 20px;
+        display: block;
+        word-wrap: break-word;
+      }
+    }
+    &.follow-contact, &.blue-bookmark {
+      width: 20px;
+      height: 25px;
+      padding-left: 0;
+      padding-right: 0;
+      &.ui.button.follow-contact {
+        width: 3%;
+        padding: 0px;
+        height: 25px;
+        margin-right: 0px;
+        border-radius: 0px;
+        vertical-align: middle;
+        background-position: right;
+      }
+    }
+  }
+}
+
+//Tablet
+@media (max-width: $screen-tab) {
+  .analysts-result-slice {
+    .analyst-display-title {
+      word-break: break-word;
+      -ms-word-break: break-word;
+    }
+  }
+}
+
+// Small Breakpoint
+@media (max-width: $screen-md-min) {
+  .analysts-result-slice {
+    .analysts-name-and-logo{
+      width: 50%;
+    }
+    .only-tab {
+      display: none;
+    }
+    .result-slice-cell {
+      .analyst-profile-pic {
+        text-align: left;
+        .analyst-image,
+        .ui.image.analyst-avatar {
+          display: none;
+        }
+        .analyst-name {
+          width: 100%;
+        }
+      }
+      &.sector {
+        width: 50%;
+      }
+      &.email {
+        display: none;
+      }
+      &.follow-contact, &.blue-bookmark {
+        display: none;
+      }
+    }
+  }
+}
+
+// Medium Breakpoint
+@media (max-width: $screen-xs-min) {
+  .analysts-result-slice {
+    .analysts-name-and-logo{
+      width: 85%;
+      vertical-align: middle;
+    }
+    .result-slice-cell {
+      padding: 0 10px;
+      width: 100%;
+      .analyst-profile-pic {
+        .analyst-name {
+          width: 100%;
+          max-width: 100%;
+        }
+      }
+      &.sector {
+        display: none;
+      }
+    }
+    .only-tab {
+      display: inline-block;
+      width: 12%;
+      vertical-align: middle;
+      .ui.button.linkBtn {
+        height: 18px;
+        width: 30px;
+        top: 50%;
+        position: relative;
+        margin-right: 0;
+        padding: 0px;
+        vertical-align: middle;
+      }
+    }
+  }
+}
+
+// Medium Breakpoint
+@media (min-width: $screen-md-min) {
+  .analysts-result-slice {
+    // override sm breakpoint styles
+  }
+}
+
+// Large Breakpoint
+@media (min-width: $screen-lg-min) {
+  .analysts-result-slice {
+    // override md breakpoint styles
+  }
+}
+
+

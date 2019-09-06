@@ -1,0 +1,268 @@
+/*
+ * Component: BmoResearch
+ */
+
+@import '../../../styles/variables';
+
+// (IMPORTANT: please create the styles such that the larger breakpoints
+// override the smaller ones. "Mobile First")
+
+.bmo-research {
+  margin: 0 45px;
+  padding: 0px $commonPadding 35px $commonPadding;
+  padding-bottom: 0;
+  max-width: $screen-windows-lg;
+  margin: 40px auto 10px;
+  .button-holder {
+    text-align: center;
+    .button {
+      padding: 10px;
+      margin-bottom: 50px;
+      font-size: $deskSz7;
+      height: auto;
+    }
+  }
+  .richText .rich-text {
+    p {
+      padding: 0 45px;
+      font-size: 25px;
+      @include appDefaultFontStyleLight();
+    }
+    h1 {
+      margin-bottom: 30px;
+    }
+  }
+  .gic-card-logo{
+    width: 25%;
+    display: inline-block;
+    padding: 50px 0;
+    padding-top: 0;
+    //display: inline-grid;
+    display: inline-flex;
+    .to-link {
+      text-align: center;
+      display: block;
+      width: 100%;
+      margin: 0 auto;
+      .page-logo-link, .logo-title {
+        @include transition(0.3s ease-in-out);
+      }
+      &:hover {
+        .logo-title {
+          @include appDefaultFontStyleMedium();
+        }
+        .page-logo-link {
+          @include scale(1.05);
+        }
+      }
+    }
+    .page-logo-link {
+      padding: 40px 35px;
+      text-align: center;
+      border-radius: 50rem;
+      height: 154px;
+      width: 154px;
+      background-color: $primaryBlue;
+      display: inline-block;
+      //margin: auto;
+      .page-logo-img {
+        height: 100%;
+        margin: auto;
+      }
+    }
+    .logo-title {
+      text-align: center;
+      max-width: 100%;
+      margin: auto;
+      padding: 15px 25px;
+      font-size: $deskSzOdd2; // Need it for Home page and department page
+      color: $primaryBlue;
+      @include appDefaultFontStyleRegular();
+      line-height: 25px;
+    }
+  }
+  .gic-cards-wrapper {
+    padding-top: 45px;
+  }
+
+  h1 {
+    @include appDefaultFontStyleLight();
+    font-size: $deskSzBig !important;
+    text-align: center;
+    color: $primaryBlue !important;
+    margin: 0 auto;
+  }
+  h4 {
+    @include appDefaultFontStyleLight();
+    font-size: $deskSz6 !important;
+    width: 100%;
+    margin: 18px auto;
+    padding: 0px !important;
+    line-height: 1.55 !important;
+    text-align: center;
+    color: $hardBlack !important;
+    padding: 0 5%;
+  }
+}
+
+@media (max-width: $screen-tab) {
+  .bmo-research {
+    .gic-card-logo {
+      .logo-title {
+        padding: 15px 6px;
+      }
+    }
+  }
+}
+
+//Medium Breakpoint
+@media (max-width: $screen-md) {
+  .bmo-research {
+    border-top: none;
+    margin: 0 24px;
+    padding-left: 0;
+    padding-right: 0;
+    &.ourdept {
+      .gic-card-logo{
+        width: 50%;
+      }
+    }
+    .gic-card-logo {
+      width: 33.33%;
+      padding: 10px;
+      padding-bottom: 50px;
+      .logo-title {
+        padding: 15px 25px;
+      }
+    }
+    .button-holder {
+      text-align: center;
+      padding-top: 50px;
+    }
+    .richText .rich-text {
+      p {
+        padding: 0;
+        font-size: $deskSz8;
+        @include appDefaultFontStyleLight();
+      }
+      h1 {
+        margin-bottom: 10px;
+      }
+    }
+    .gic-cards-wrapper {
+      margin: 0 -15px;
+      padding-top: 30px;
+      text-align: center;
+    }
+    h4 {
+      margin: 30px auto;
+    }
+  }
+}
+
+@media (max-width: $screen-md-sm) {
+  .bmo-research {
+    .gic-card-logo {
+      .logo-title {
+        padding: 15px 6px;
+      }
+    }
+  }
+}
+
+@media (max-width: $screen-xs-min) {
+  .bmo-research {
+    .gic-card-logo{
+      width: 100%;
+      display: inline-block;
+      padding: 50px;
+      padding-top: 0;
+      .page-logo-link {
+        padding: 40px 35px;
+        text-align: center;
+        border-radius: 50rem;
+        height: 154px;
+        width: 154px;
+        background-color: $primaryBlue;
+        margin: auto;
+        .page-logo-img {
+          height: 100%;
+          margin: auto;
+        }
+      }
+      .logo-title {
+        text-align: center;
+        max-width: 100%;
+        margin: auto;
+        font-size: $deskSzOdd2; // Need it for Home page and department page
+        color: $primaryBlue;
+      }
+    }
+  }
+}
+
+@media (max-width: $screen-xs-sm) {
+  .bmo-research {
+    margin: 0 20px;
+    padding: 0;
+    .richText .rich-text {
+      p {
+        padding: 0px;
+        font-size: $deskSz9;
+      }
+      h1 {
+        font-size: $deskSz2 !important; //important will be removed
+        margin-bottom: 25px;
+      }
+    }
+    .gic-cards-wrapper {
+      padding-top: 50px;
+    }
+    &.ourdept {
+      .gic-card-logo{
+        width: 100%;
+        a {
+          .page-logo-link {
+            height: 150px;
+            width: 150px;
+            padding: 35px 30px;
+          }
+          .ui.heading.logo-title {
+            font-size: $deskSz41;
+            color: $secondaryBlue;
+          }
+        }
+      }
+    }
+    .gic-card-logo{
+      width: 50%;
+      margin-bottom: 25px;
+      padding: 0;
+      display: inline-block;
+      vertical-align: top;
+      a {
+        display: inline-block;
+        .page-logo-link {
+          margin: auto;
+        }
+      }
+      .page-logo-link {
+        height: 98px;
+        width: 98px;
+        padding: 25px 20px;
+      }
+      .logo-title {
+        font-size: $deskSz9;
+        width: 100%;
+        padding: 8px;
+        color: #000000;
+
+        @include appDefaultFontStyleLight();
+      }
+    }
+    h4 {
+      font-size: $deskSzSmaller !important;//important will be removed
+      margin: 20px auto !important;
+    }
+  }
+}

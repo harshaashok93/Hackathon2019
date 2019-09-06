@@ -1,0 +1,42 @@
+/*
+ * Component: AnalystsDetailBuilder
+ */
+
+@import '../../styles/variables';
+
+// (IMPORTANT: please create the styles such that the larger breakpoints
+// override the smaller ones. "Mobile First")
+
+.analysts-detail-builder {
+  .analysts-detail-builder-main-wrapper {
+    min-height: 350px;
+    position: relative;
+    .error-message {
+      text-align: center;
+      font-size: 20px;
+      padding: 40px;
+      color: $primaryRed;
+    }
+  }
+}
+
+// Small Breakpoint
+@media (min-width: $screen-sm-min) {
+  .analysts-detail-builder {
+    // override xs breakpoint styles
+  }
+}
+
+// Medium Breakpoint
+@media (min-width: $screen-md-min) {
+  .analysts-detail-builder {
+    // override sm breakpoint styles
+  }
+}
+
+// Large Breakpoint
+@media (min-width: $screen-lg-min) {
+  .analysts-detail-builder {
+    // override md breakpoint styles
+  }
+}

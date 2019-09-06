@@ -1,0 +1,211 @@
+/*
+ * Component: GicTree
+ */
+
+@import '../../../styles/variables';
+
+// (IMPORTANT: please create the styles such that the larger breakpoints
+// override the smaller ones. "Mobile First")
+.ui.page.active {
+  .ui.modal.gics-tree-modal {
+    height: 100%;
+    width: 100% !important;
+    margin-top: 0em !important;
+    margin-bottom: 0 !important;
+    left: 0 !important;
+    top: 0;
+    border-radius: 0;
+  }
+}
+.gic-tree {
+  width: 100% !important;
+  min-height: 100% !important;
+  top: 0;
+  left: 0;
+  background-color: $primaryWhite;
+  z-index: 10000;
+  padding: 55px 0;
+  -ms-overflow-style: none;
+  .ui.button.back-depth {
+    background-color: transparent;
+    color: $primaryBlue;
+    padding: 0;
+    margin: 0;
+    font-size: 20px;
+    .bmo_chevron.left {
+      margin-right: 10px;
+      &:before {
+        color: $primaryBlue;
+        float: left;
+      }
+    }
+  }
+  .gic-tree-holder {
+    left: -240px;
+    position: relative;
+  }
+  .clickable {
+    cursor: pointer;
+    span:focus {
+      outline: none;
+    }
+  }
+  .head-row {
+    width: 100%;
+    font-size: $deskSzOdd2;
+    @include appDefaultFontStyleLight();
+    padding: 0 40px;
+    .mega-menu-close-icon {
+      float: right;
+      margin: 0px;
+      padding: 0px;
+      height: 22px;
+      width: 20px;
+      vertical-align: middle;
+      background-position: center;
+    }
+  }
+  .gic-tree-column {
+    margin-top: 0;
+    padding-left: 240px;
+    &:focus {
+      outline: none;
+    }
+    .count-and-text {
+      width: calc(100% - 30px);
+      display: inline-block;
+      padding: 3px 0;
+      &:focus {
+        outline: none;
+      }
+      .count {
+        padding-right: 10px;
+        display: table-cell;
+      }
+      .text {
+        display: table-cell;
+        &:focus {
+          outline: none;
+        }
+      }
+    }
+    .col-title {
+      padding-left: 35px;
+      font-size: $deskSzOdd2;
+      @include appDefaultFontStyleLight();
+      color: $primaryGray;
+      &:focus {
+        outline: none;
+      }
+    }
+    ul {
+      list-style-type: none;
+      padding-left: 40px;
+      padding-bottom: 40px;
+      &:focus {
+        outline: none;
+      }
+      li {
+        padding: 15px 0;
+        border-bottom: solid 1px $secondaryGray;
+        width: 240px;
+        color: $primaryBlue;
+        &:focus {
+          outline: none;
+        }
+        @include appDefaultFontStyleLight();
+        &.active {
+          @include appDefaultFontStyleRegular();
+          color: $primaryGray;
+        }
+        position: relative;
+        &.tree-column-holder {
+          padding: 0;
+          border: none;
+        }
+      }
+    }
+  }
+  .ui.button.has-sub-tree,
+  .has-sub-tree {
+    z-index: 99;
+    padding: 0;
+    background-color: $primaryWhite;
+    text-align: left;
+    line-height: 2;
+    margin: 0;
+    cursor: pointer;
+    border-radius: 50rem;
+    border: solid 1px $primaryBlue;
+    height: 25px;
+    width: 25px;
+    position: relative;
+    display: inline-block;
+    float: right;
+    &:before {
+      border-style: solid;
+      border-width: 1px 1px 0 0;
+      content: "";
+      display: inline-block;
+      height: 9px;
+      position: relative;
+      transform: rotate(45deg);
+      vertical-align: top;
+      width: 9px;
+      color: $primaryBlue;
+      left: 6px;
+      top: 7px;
+    }
+    &.active {
+      background-color: $primaryBlue;
+      &:before {
+        color: $primaryWhite;
+      }
+    }
+  }
+  button.ui.button.has-sub-tree:hover {
+    box-shadow: 0 0 1px $primaryBlue;
+  }
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  li {
+   display: -webkit-box;
+  }
+}
+
+// Small Breakpoint
+@media (max-width: $screen-xs-min) {
+  .gic-tree {
+    padding-top: 25px;
+    .gic-tree-column ul li {
+      position: unset;
+    }
+    .gic-tree-column {
+      top: 20px;
+      position: unset;
+    }
+  }
+}
+
+// Medium Breakpoint
+@media (min-width: $screen-md-min) {
+  .gic-tree {
+    // override sm breakpoint styles
+  }
+}
+
+// Large Breakpoint
+@media (min-width: $screen-lg-min) {
+  .gic-tree {
+    // override md breakpoint styles
+  }
+}
+
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  .ui.page.active {
+    .ui.modal.gics-tree-modal {
+      position: static;
+    }
+  }
+}

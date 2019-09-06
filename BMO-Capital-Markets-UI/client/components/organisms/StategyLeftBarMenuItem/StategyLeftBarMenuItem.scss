@@ -1,0 +1,207 @@
+/*
+ * Component: LeftBarMenuItem
+ */
+
+@import '../../../styles/variables';
+
+// (IMPORTANT: please create the styles such that the larger breakpoints
+// override the smaller ones. "Mobile First")
+
+.stategy-left-bar-menu-item {
+  border-left: solid 1px $borderGray;
+  border-right: solid 1px $borderGray;
+  .ui.heading.menu-cell-head {
+    background-color: $primaryBlue;
+    font-size: $deskSz9;
+    @include appDefaultFontStyleLight();
+    width: 100%;
+    position: relative;
+    padding: 10px 15px;
+    display: inline-block;
+    margin: 0;
+    border-bottom: solid 1px $primaryWhite;
+    &.active {
+      background-color: $menuBlue;
+    }
+    &.true {
+      background-color: $menuBlue;
+    }
+    .title-text {
+      @include appDefaultFontStyleRegular();
+      font-size: $deskSz9;
+      color: $primaryWhite;
+      width: 80%;
+      display: inline-block;
+      margin: 0;
+    }
+    .bmo_chevron::before {
+      border-style: solid;
+      border-width: 1px 1px 0 0;
+      content: '';
+      display: inline-block;
+      height: 0.60em;
+      left: 0.15em;
+      position: relative;
+      /* top: 0.15em; */
+      top: 8px;
+      transform: rotate(-45deg);
+      vertical-align: top;
+      width: 0.60em;
+      float: right;
+      color: #ffffff;
+    }
+    .bmo_chevron.bottom:before {
+      transform: rotate(135deg);
+      top: 3px;
+    }
+  }
+  .subMenu {
+    display: none;
+    ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      li:focus, li a:focus {
+        outline: none;
+      }
+    }
+    &.true {
+      display: block;
+    }
+    &.false {
+      display: none;
+    }
+  }
+  .drop-down-icon {
+    position: relative;
+    float: right;
+    content: '';
+    display: block;
+    height: 15px;
+    width: 15px;
+    background-size: cover;
+    background-position: center;
+  }
+}
+.left-bar-menu {
+  .stategy-left-bar-menu-item:first-child {
+    .ui.heading.menu-cell-head{
+      border-radius: 5px 5px 0px 0px;
+    }
+  }
+  .mobile-view + .stategy-left-bar-menu-item {
+    .ui.heading.menu-cell-head{
+      border-radius: 5px 5px 0px 0px;
+    }
+  }
+  .stategy-left-bar-menu-item:last-child{
+    border-radius: 0px 0px 5px 5px;
+    overflow: hidden;
+    a {
+      border-bottom: 0px !important;
+    }
+  }
+}
+
+// Small Breakpoint
+@media (max-width: $screen-sm-min) {
+  .stategy-left-bar-menu-item {
+    //
+  }
+}
+
+// Small Breakpoint
+@media (max-width: $screen-xs-sm) {
+  .left-bar-menu {
+    .left-bar-logo-item + .stategy-left-bar-menu-item {
+      .ui.heading.menu-cell-head{
+        border-radius: 0;
+      }
+    }
+  }
+  .stategy-left-bar-menu-item {
+    display: none;
+  }
+  .left-menu-in-mobile {
+    .left-menu-ul {
+      margin: 0;
+      border: solid 1px $borderGray;
+      .stategy-left-bar-menu-item {
+        .menu-cell-head {
+          background-color: $primaryBlue;
+          border-radius: 0!important;
+          .title-text {
+            color: $primaryWhite;
+          }
+          &.true {
+            background-color: $primaryBlue;
+            color: $primaryBlack;
+            .title-text {
+              font-weight: $Bold !important;
+            }
+          }
+          &.active {
+            background-color: $primaryBlue;
+            color: $primaryBlack;
+            .title-text {
+              font-weight: $Bold !important;
+            }
+          }
+        }
+        .subMenu {
+          display: block;
+          padding-left: 25px;
+          .ui.heading {
+            border-left: 0;
+            background-color: $primaryWhite;
+          }
+        }
+      }
+    }
+  }
+  .left-menu-in-mobile {
+    .stategy-left-bar-menu-item {
+      display: block;
+      .drop-down-icon.bmo_chevron::before {
+        display: none;
+      }
+    }
+    .left-menu-ul {
+      list-style: none;
+      padding-left: 0;
+      .stategy-left-bar-menu-item {
+        margin-left: 0;
+      }
+    }
+  }
+}
+
+// Small Breakpoint
+@media (max-width: $screen-xs - 1) {
+  .stategy-left-bar-menu-item {
+    display: none;
+  }
+  .left-menu-in-mobile {
+    .left-menu-ul {
+      border: none;
+    }
+    .stategy-left-bar-menu-item {
+      display: block;
+    }
+  }
+}
+
+
+// Medium Breakpoint
+@media (min-width: $screen-md-min) {
+  .stategy-left-bar-menu-item {
+    // override sm breakpoint styles
+  }
+}
+
+// Large Breakpoint
+@media (min-width: $screen-lg-min) {
+  .stategy-left-bar-menu-item {
+    // override md breakpoint styles
+  }
+}

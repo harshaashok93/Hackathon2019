@@ -1,0 +1,90 @@
+/*
+ * Component: ProfileLandingBottomComponent
+ */
+
+@import '../../../styles/variables';
+
+// (IMPORTANT: please create the styles such that the larger breakpoints
+// override the smaller ones. "Mobile First")
+
+.profile-bottom-container {
+  padding: 0 30px 0 30px;
+  margin-bottom: 20px;
+  margin-left: 0px;
+  .submitButtonContainer {
+    text-align: center;
+  }
+  .library-page {
+    padding: 0 5px;
+  }
+}
+
+// Medium Breakpoint
+@media (max-width: $screen-md) {
+  .profile-bottom-container {
+    padding: 0px 20px;
+    // margin-left: -15px;
+  }
+}
+
+// Small Breakpoint
+@media (max-width: $screen-sm-min) {
+  .profile-bottom-container {
+    padding: 0 5px;
+    //margin-left: -15px; // need to avoid negative values
+  }
+}
+
+@media (max-width: $screen-xs-sm) {
+  .profile-bottom-container {
+    margin-left: 0px;
+    padding: 0;
+  }
+}
+
+
+// Large Breakpoint
+@media (min-width: $screen-lg-min) {
+  .profile-bottom-container {
+    // override md breakpoint styles
+  }
+}
+
+.profile-bottom-component {
+  .ui.button.secondary {
+    margin-left: 0;
+  }
+}
+
+// Small Breakpoint
+@media (max-width: $screen-xs) {
+  .profile-bottom-component {
+    .ui.button.secondary {
+      margin-left: 0;
+    margin-top: 41px;
+    margin-bottom: 51px;
+    }
+    .grid>.column>.grid>.column {
+      padding-bottom: 0;
+      padding-top: 0;
+    }
+  }
+}
+
+// Medium Breakpoint
+@media (min-width: $screen-xs-sm) {
+  .profile-bottom-component {
+    .ui.button.secondary {
+      margin-left: 0;
+      margin-top: 19px;
+      margin-bottom: 51px;
+    }
+  }
+}
+
+// Large Breakpoint
+@media (min-width: $screen-lg-min) {
+  .profile-bottom-component {
+    // override md breakpoint styles
+  }
+}

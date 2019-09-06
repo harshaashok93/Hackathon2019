@@ -1,0 +1,101 @@
+/*
+ * Component: QuantitativeTechnical
+ */
+
+@import '../../../styles/variables';
+
+// (IMPORTANT: please create the styles such that the larger breakpoints
+// override the smaller ones. "Mobile First")
+
+.quantitative-technical {
+  padding-left: 22px;
+  .head-section {
+    margin-bottom: 50px;
+  }
+  .v-ln {
+    width: 100%;
+    display: inline-block;
+    position: relative;
+    height: 1px;
+    background-color: #e9e9e9;
+    margin-bottom: 40px;
+  }
+  .hl {
+    width: 100%;
+    height: 1px;
+    background-color: $lightGrayBorder;
+    display: inline-block;
+  }
+  .ui.heading.page-title {
+    color: $primaryGray;
+    font-size: $deskSz11;
+    @include appDefaultFontStyleRegular();
+    margin: 0 0 40px 0;
+  }
+  .button-and-price {
+    width: 100%;
+    position: relative;
+    display: inline-block;
+    .ui.primary.button {
+      min-width: 146px;
+      padding: 15px 0;
+      border-radius: 50rem;
+    }
+    .price-text {
+      color: $primaryGray;
+      font-size: $deskSz7;
+      padding-left: 30px;
+    }
+  }
+}
+
+// Small Breakpoint
+@media (max-width: $screen-sm-min) {
+  .quantitative-technical {
+    padding-left: 0;
+  }
+}
+
+@media (max-width: $screen-xs-min) {
+  .quantitative-technical {
+    padding: 0;
+    .v-ln {
+      margin-bottom: 0;
+    }
+    .head-section {
+      margin-bottom: 25px !important;
+      .button-and-price {
+        text-align: center;
+        .price-text {
+          font-size: $deskSz9;
+          padding-left: 0;
+          width: 100%;
+          margin-top: 25px;
+          display: inline-block;
+        }
+      }
+    }
+    .ui.heading.page-title {
+      font-size: $deskSz7;
+      text-align: left;
+      margin: 25px 0;
+      padding: 0 15px;
+    }
+  }
+}
+
+// Medium Breakpoint
+@media (max-width: $screen-md-min) {
+  .quantitative-technical {
+    .head-section {
+      margin-bottom: 40px;
+    }
+  }
+}
+
+// Large Breakpoint
+@media (min-width: $screen-lg-min) {
+  .quantitative-technical {
+    // override md breakpoint styles
+  }
+}

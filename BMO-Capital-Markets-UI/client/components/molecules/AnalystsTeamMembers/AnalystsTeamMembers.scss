@@ -1,0 +1,107 @@
+/*
+ * Component: AnalystsTeamMembers
+ */
+
+@import '../../../styles/variables';
+
+// (IMPORTANT: please create the styles such that the larger breakpoints
+// override the smaller ones. "Mobile First")
+
+.analysts-team-members {
+  padding: 40px;
+  padding-top: 0;
+  .sector-name {
+    font-size: $deskSz7;
+    color: $primaryGray;
+    margin-bottom: 40px;
+  }
+  .team-person {
+    display: inline-block;
+    width: 25%;
+    vertical-align: top;
+    text-align: center;
+    .analyst-avatar {
+      height: 120px;
+      margin: auto;
+      width: 120px;
+    }
+    .person-name {
+      font-size: $deskSz7;
+      color: $primaryBlue;
+      margin-top: 12px;
+    }
+  }
+  .member-wrap {
+    &:after {
+      border-bottom: 0.3px solid $inputTextGray;
+      content: '';
+      display: inline-block;
+      height: 1px;
+      width: 100%;
+      position: relative;
+      margin-top: 30px;
+      margin-bottom: 40px;
+    }
+  }
+  .sector-team:last-child {
+    .member-wrap {
+      &:after {
+        display: none;
+      }
+    }
+  }
+}
+
+// Small Breakpoint
+@media (max-width: $screen-sm-min) {
+  .analysts-team-members {
+    .team-person {
+      width: 30%;
+      margin-bottom: 20px;
+      .analyst-avatar {
+        height: 80px;
+        margin: auto;
+        width: 80px;
+      }
+    }
+  }
+}
+
+// Medium Breakpoint
+@media (max-width: $screen-xs-min) {
+  .analysts-team-members {
+    padding: 16px;
+    .team-person {
+      display: block;
+      width: 100%;
+      text-align: left;
+      margin-bottom: 20px;
+      .analyst-avatar {
+        height: 80px;
+        margin: auto;
+        display: inline-block;
+        width: 80px;
+        margin-right: 12px;
+      }
+      .person-name {
+        color: $primaryBlue;
+        margin-top: 12px;
+        display: inline-block;
+        width: 65%;
+        vertical-align: center;
+      }
+    }
+    .member-wrap {
+      &:after {
+        margin-bottom: 30px;
+      }
+    }
+  }
+}
+
+// Large Breakpoint
+@media (min-width: $screen-lg-min) {
+  .analysts-team-members {
+    // override md breakpoint styles
+  }
+}

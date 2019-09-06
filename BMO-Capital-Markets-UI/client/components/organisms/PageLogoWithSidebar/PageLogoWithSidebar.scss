@@ -1,0 +1,98 @@
+/*
+ * Component: PageLogoWithSidebar
+ */
+
+@import '../../../styles/variables';
+
+// (IMPORTANT: please create the styles such that the larger breakpoints
+// override the smaller ones. "Mobile First")
+
+.ui.container.page-logo-with-sidebar {
+  max-width: $screen-windows-lg !important; // need
+  padding: 30px $commonPadding 50px $commonPadding;
+  display: inline-block;
+  text-align: left;
+  .analyst-name-and-desig {
+    display: none;
+  }
+  .image {
+    display: inline-block;
+    width: 70px;
+    height: auto;
+  }
+  .ui.heading.logo-text {
+    display: inline-block;
+    vertical-align: middle;
+    padding-left: 22px;
+    font-size: $deskSzBigest;
+    @include appDefaultFontStyleLight();
+    color: $pageTitleGrey;
+    margin-top: 0;
+    margin-bottom: 0;
+    
+  }
+}
+
+// Medium Breakpoint
+@media (max-width: $screen-md-min) {
+  .ui.container.page-logo-with-sidebar {
+    padding: 40px 29px 50px 29px;
+    max-width: $screen-windows-lg !important; // need
+    padding: 56px 30px;
+    .analyst-name-and-desig {
+      display: inline-block;
+      vertical-align: middle;
+      .picture-detail {
+        width: auto;
+        display: block;
+        border-left: solid 1px $secondaryGray;
+        margin-left: 22px;
+        padding: 5px;
+        height: 51px;
+        padding-left: 22px;
+      }
+    }
+  }
+}
+
+// Small Breakpoint
+@media (max-width: $screen-sm) {
+  .ui.container.page-logo-with-sidebar {
+    padding-bottom: 45px;
+    padding-top: 0;
+  }
+}
+
+// Small Breakpoint
+@media (max-width: $screen-xs-sm) {
+  .ui.container.page-logo-with-sidebar {
+    padding: 15px 0;
+    height: auto;
+    max-width: $screen-windows-lg !important; // need
+    .image {
+      width: 51px;
+    }
+    .analyst-name-and-desig .picture-detail {
+      display: none;
+    }
+    .ui.heading.logo-text {
+      margin-top: -17px;
+      font-size: $deskSzOdd2;
+      
+      padding-left: 10px;
+      display: inline-block;
+      width: calc(100% - 51px);
+    }
+  }
+}
+
+@media (max-width: $screen-xs) {
+  // ...
+}
+
+// Large Breakpoint
+@media (min-width: $screen-lg-min) {
+  .page-logo-with-sidebar {
+    // override md breakpoint styles
+  }
+}

@@ -1,0 +1,33 @@
+/*
+ * Component: EmailAlertCheckBoxSection
+ */
+
+@import '../../../styles/variables';
+
+// (IMPORTANT: please create the styles such that the larger breakpoints
+// override the smaller ones. "Mobile First")
+
+.email-alert-check-box-section {
+  // ...
+}
+
+// Small Breakpoint
+@media (min-width: $screen-sm-min) {
+  .email-alert-check-box-section {
+    // override xs breakpoint styles
+  }
+}
+
+// Medium Breakpoint
+@media (min-width: $screen-md-min) {
+  .email-alert-check-box-section {
+    // override sm breakpoint styles
+  }
+}
+
+// Large Breakpoint
+@media (min-width: $screen-lg-min) {
+  .email-alert-check-box-section {
+    // override md breakpoint styles
+  }
+}

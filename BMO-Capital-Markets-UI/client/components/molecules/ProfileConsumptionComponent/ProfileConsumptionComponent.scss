@@ -1,0 +1,70 @@
+/*
+ * Component: ProfileConsumptionComponent
+ */
+
+@import '../../../styles/variables';
+
+// (IMPORTANT: please create the styles such that the larger breakpoints
+// override the smaller ones. "Mobile First")
+
+.profile-consumption-component {
+  font-size: $deskSz21;
+  @include appDefaultFontStyleLight();
+  margin-bottom: 120px;
+  .consumption_title.heading {
+    margin-bottom: 0 !important;
+  }
+  hr {
+    border: solid 0.5px $primaryGray;
+    width: 130px;
+    text-align: left;
+    margin-left: 0px;
+    margin-right: 0px;
+    display: inline-block;
+  }
+  .ui.button {
+    &.linkBtn {
+      @include appDefaultFontStyleLight();
+      font-size: 24px;
+      padding: 0;
+      margin-top: 80px;
+      .download-report {
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        margin-left: 10px;
+      }
+    }
+  }
+}
+
+// Small Breakpoint
+// Medium Breakpoint
+@media (max-width: $screen-md-min) {
+  .profile-consumption-component {
+    padding: 0 0 0 20px;
+  }
+}
+
+@media (max-width: $screen-sm-min) {
+  .profile-consumption-component {
+    padding: 0 0 0 0;
+  }
+}
+
+@media (max-width: $screen-xs-sm) {
+  .profile-consumption-component {
+    padding: 0;
+    .ui.button.linkBtn {
+      margin-top: 40px;
+    }
+  }
+}
+
+
+// Large Breakpoint
+@media (min-width: $screen-lg-min) {
+  .profile-consumption-component {
+    // override md breakpoint styles
+  }
+}

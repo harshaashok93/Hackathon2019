@@ -1,0 +1,36 @@
+.ui.checkbox {
+  min-width: 23px !important;
+  min-height: 23px !important;
+  line-height: 23px;
+  input[type="checkbox"], input ~ label::before {
+    width: 23px !important;
+    height: 23px !important;
+  }
+  input:checked ~ .box::before, input:checked ~ label::before {
+    background: $primaryBlue !important;
+    border-color: $primaryBlue !important;
+  }
+  input:checked ~ .box::after, input:checked ~ label::after {
+    content: unset !important;
+    background: $primaryBlue !important;
+    color: $primaryBlue !important;
+  }
+  input[type="checkbox"], input + label::before {
+    width: 23px !important;
+    height: 23px !important;
+  }
+  input:checked + .box::before, input:checked + label::before {
+    background: $primaryBlue !important;
+    border-color: $primaryBlue !important;
+  }
+  input:checked + .box::after, input:checked + label::after {
+    content: unset !important;
+    background: $primaryBlue !important;
+    color: $primaryBlue !important;
+  }
+  input[type=checkbox]::-ms-check {
+    border-color: $primaryBlue !important;
+    color: $primaryBlue !important;
+  }
+}
+

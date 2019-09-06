@@ -1,0 +1,174 @@
+/*
+ * Component: QuantTreeCoulmnCard
+ */
+
+@import '../../../styles/variables';
+
+// (IMPORTANT: please create the styles such that the larger breakpoints
+// override the smaller ones. "Mobile First")
+
+.quant-tree-coulmn-card {
+  width: 100%;
+  min-height: 65px;
+  border-radius: 5px;
+  background-color: $primaryWhite;
+  color: $primaryBlue;
+  box-shadow: $cardBoxShadow;
+  margin-bottom: 15px;
+  padding: 6px 10px;
+  font-size: $deskSzSmaller;
+  word-wrap: break-word;
+  vertical-align: middle;
+  cursor: pointer;
+  .only-desktop {
+    display: inline-block;
+  }
+  .the-link-circle {
+    height: 20px;
+    width: 20px;
+    margin: 20px 0;
+    vertical-align: middle;
+    display: inline-block;
+    cursor: pointer;
+  }
+  .key-text {
+    width: calc(100% - 25px);
+    display: inline-block;
+    vertical-align: middle;
+    text-align: left;
+    line-height: 15px;
+  }
+  .key-text-leaf {
+    .count {
+      font-weight: $Small;
+    }
+    width: calc(100% - 45px);
+    display: inline-block;
+    vertical-align: middle;
+    text-align: left;
+    line-height: 15px;
+  }
+  .circle-and-riangle {
+    display: inline-block;
+    vertical-align: middle;
+    width: 45px;
+    margin: 20px 0;
+    text-align: right;
+    line-height: 15px;
+    .circle {
+      height: 18px;
+      width: 18px;
+      display: inline-block;
+      border-radius: 50rem;
+      background-color: black;
+      display: inline-block;
+      &.circle_0 {
+        background-color: $quantScalecolor_0;
+      }
+      &.circle_1 {
+        background-color: $quantScalecolor_1;
+      }
+      &.circle_2 {
+        background-color: $quantScalecolor_2;
+      }
+      &.circle_3 {
+        background-color: $quantScalecolor_3;
+      }
+      &.circle_4 {
+        background-color: $quantScalecolor_4;
+      }
+      &.circle_5 {
+        background-color: $quantScalecolor_5;
+      }
+      &.circle_6 {
+        background-color: $quantScalecolor_6;
+      }
+      &.circle_7 {
+        background-color: $quantScalecolor_7;
+      }
+      &.circle_8 {
+        background-color: $quantScalecolor_8;
+      }
+      &.circle_9 {
+        background-color: $quantScalecolor_9;
+      }
+      &.circle_10 {
+        background-color: $quantScalecolor_10;
+      }
+    }
+    .triangle {
+      width: 0;
+      height: 0;
+      border-left: 10px solid transparent;
+      border-right: 10px solid transparent;
+      border-bottom: 18px solid black;
+      display: inline-block;
+      &.arrow-up_0 {
+        border-bottom-color: $quantScalecolor_0;
+      }
+      &.arrow-up_1 {
+        border-bottom-color: $quantScalecolor_1;
+      }
+      &.arrow-up_2 {
+        border-bottom-color: $quantScalecolor_2;
+      }
+      &.arrow-up_3 {
+        border-bottom-color: $quantScalecolor_3;
+      }
+      &.arrow-up_4 {
+        border-bottom-color: $quantScalecolor_4;
+      }
+      &.arrow-up_5 {
+        border-bottom-color: $quantScalecolor_5;
+      }
+      &.arrow-up_6 {
+        border-bottom-color: $quantScalecolor_6;
+      }
+      &.arrow-up_7 {
+        border-bottom-color: $quantScalecolor_7;
+      }
+      &.arrow-up_8 {
+        border-bottom-color: $quantScalecolor_8;
+      }
+      &.arrow-up_9 {
+        border-bottom-color: $quantScalecolor_9;
+      }
+      &.arrow-up_10 {
+        border-bottom-color: $quantScalecolor_10;
+      }
+    }
+  }
+  &.selected {
+    background-color: $primaryBlue;
+    color: $primaryWhite;
+  }
+}
+
+// Small Breakpoint
+@media (max-width: $screen-md-min) {
+  .quant-tree-coulmn-card {
+    .only-desktop {
+      display: none;
+    }
+    .not-on-desktop {
+      display: block;
+      margin: auto;
+    }
+    max-width: 260px;
+    margin: 7px auto;
+  }
+}
+
+// Medium Breakpoint
+@media (min-width: $screen-md-min) {
+  .quant-tree-coulmn-card {
+    // override sm breakpoint styles
+  }
+}
+
+// Large Breakpoint
+@media (min-width: $screen-lg-min) {
+  .quant-tree-coulmn-card {
+    // override md breakpoint styles
+  }
+}

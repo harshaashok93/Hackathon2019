@@ -1,0 +1,76 @@
+/*
+ * Component: AnalystSelection
+ */
+
+@import '../../../styles/variables';
+
+// (IMPORTANT: please create the styles such that the larger breakpoints
+// override the smaller ones. "Mobile First")
+
+.analyst-selection {
+  margin-bottom: 52px;
+  .ui.image.analyst-avatar {
+    display: inline-block;
+  }
+  .analyst-name {
+    display: inline-block;
+    vertical-align: middle;
+    width: calc(100% - 90px);
+    color: $primaryGray;
+    .analyst-name-section {
+      display: inline-block;
+      color: $primaryBlue;
+    }
+    .analyst-division_name {
+      font-size: $deskSzSmaller;
+    }
+  }
+  .analyst-image {
+    display: inline-block;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    overflow: hidden;
+    vertical-align: middle;
+    margin-right: 10px;
+  }
+}
+
+// Small Breakpoint
+@media (max-width: $screen-md-min) {
+  .analyst-selection {
+    margin-bottom: 52px;
+    .ui.image.analyst-avatar {
+      width: 100%;
+    }
+  }
+}
+
+// Small Breakpoint
+@media (max-width: $screen-xs-min) {
+  .analyst-selection {
+    .ui.image.analyst-avatar {
+      margin-right: 15px;
+      width: 80px;
+    }
+    .analyst-name {
+      width: 150px;
+    }
+  }
+}
+
+// Medium Breakpoint
+@media (max-width: $screen-sm-min) {
+  .analyst-selection {
+    .analyst-image {
+      margin-right: 10px;
+    }
+  }
+}
+
+// Large Breakpoint
+@media (max-width: $screen-lg-min) {
+  .analyst-selection {
+    // override md breakpoint styles
+  }
+}

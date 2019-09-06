@@ -1,0 +1,284 @@
+/*
+ * Component: RegularFooter
+ */
+
+@import '../../../styles/variables';
+
+// (IMPORTANT: please create the styles such that the larger breakpoints
+// override the smaller ones. "Mobile First")
+.footer-wrapper {
+  width: 100%;
+  height: 212px;
+  background-color: $primaryBlue;
+  z-index: 9999;
+  .ui.modal.popup-conference-success {
+    height: 240px;
+    width: 540px;
+    top:81%;
+    left: 61%;
+    .header {
+      border-bottom: none;
+      .ui.button.bmo-close-btn {
+        padding: 0px;
+        height: 26px;
+        width: 26px;
+        float: right;
+      }
+    }
+    .content {
+      .ui.heading {
+        padding-top: 20px;
+        width: 488px;
+        font-size: $deskSz7;
+        color: $primaryBlue;
+      }
+    }
+    .actions {
+      text-align: center;
+      background-color: $primaryWhite;
+      border-top: none;
+      .ui.button.secondary {
+        text-align: center;
+        width: 146px;
+        height: 45px;
+      }
+    }
+  }
+  #footer-scroll-benchmark {
+    width: 98%;
+    display: inline-block;
+    height: 16px;
+  }
+  .ui.grid.footer {
+    max-width: $screen-windows-lg;
+    width: $containerComputerWidth;
+    margin: auto;
+    display: block;
+    padding: 0px 38px;
+    background-color: $primaryBlue;
+    color: $primaryWhite;
+    .footer-logo-section {
+      &.column {
+        top: 3em;
+      }
+    }
+    .footer-address-logo {
+      &.ui.grid {
+        display: table;
+        .footer-address-section {
+          display: table-cell;
+          width: 50%;
+        }
+      }
+      width: 100%;
+      table-layout: fixed;
+    }
+    .contact-us-logo {
+      width: 50px;
+      display: table-cell;
+      vertical-align: middle;
+      .ui.image {
+        width: 100%;
+      }
+    }
+    .contac-us-detail {
+      width: calc( 100% - 50px);
+      display: table-cell;
+    }
+    .row.footer-grid-row {
+      display: inline-block;
+      .bmo-logo {
+        position: relative;
+        padding: 0;
+        padding-top: 4%;
+        text-align: right;
+        float: right;
+        width: 250px !important;
+        height: 33px !important;
+      }
+    }
+  }
+}
+
+// Small Breakpoint
+@media (max-width: $screen-sm-min - 1) {
+  .footer-wrapper {
+    width: 100%;
+    height: 100%;
+    background-color: $primaryBlue;
+    z-index: 9999;
+    #footer-scroll-benchmark {
+      width: 100%;
+      display: block;
+      max-height: 1px;
+      height: 1px;
+    }
+    .ui.grid.footer {
+      padding: 0;
+      .footer-logo-section.column {
+        top: 0;
+        text-align: center;
+        padding-bottom: 25px;
+        .BMO-footer-logo {
+          margin: auto;
+          width: 50%;
+          margin-top: 25px;
+        }
+      }
+      .contact-us-logo {
+        display: none;
+        &.ui.grid {
+          display: table;
+          .footer-address-section {
+            text-align: center;
+          }
+        }
+      }
+      .row.footer-grid-row .bmo-logo {
+        width: 100% !important;
+        position: relative;
+        padding-top: 22px;
+        padding-bottom: 37px;
+        .logo {
+          float: unset;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: $screen-sm-min) {
+  .footer-wrapper {
+    width: 100%;
+    height: 250px;
+    .ui.grid.footer {
+      .row.footer-grid-row {
+        display: inline-block;
+        .bmo-logo {
+          position: relative;
+          padding: 0;
+          text-align: right;
+          float: right;
+        }
+      }
+    }
+  }
+}
+
+// Medium Breakpoint
+@media (min-width: $screen-md-min) {
+  .footer-wrapper {
+    height: 212px;
+    .ui.grid.footer {
+      .ui.grid.footer-address-logo {
+        padding-top: 30px;
+      }
+      .row.footer-grid-row {
+        display: inline-block;
+        .bmo-logo {
+          position: relative;
+          padding-top: 4%;
+          text-align: right;
+          float: right;
+        }
+      }
+      .footer-logo-section {
+        top: 30px;
+        width: 300px!important;
+      }
+      .BMO-footer-logo {
+        width: 50%;
+        height: auto;
+        margin: auto;
+      }
+    }
+  }
+}
+
+// Large Breakpoint
+@media (min-width: $screen-lg-min) {
+  .footer-wrapper {
+    width: 100%;
+    height: 212px;
+    background-color: $primaryBlue;
+    z-index: 9999;
+    #footer-scroll-benchmark {
+      width: 98%;
+      display: inline-block;
+      height: 16px;
+    }
+    .ui.grid.footer {
+      max-width: $screen-windows-lg;
+      width: $containerComputerWidth;
+      margin: auto;
+      display: block;
+      padding: 0px 38px;
+      background-color: $primaryBlue;
+      color: $primaryWhite;
+      .footer-logo-section {
+        &.column {
+          top: 3em;
+        }
+      }
+      .footer-address-logo {
+        &.ui.grid {
+          display: table;
+          .footer-address-section {
+            display: table-cell;
+            width: 50%;
+          }
+        }
+        width: 100%;
+        table-layout: fixed;
+      }
+      .contact-us-logo {
+        width: 50px;
+        display: table-cell;
+        vertical-align: middle;
+        .ui.image {
+          width: 100%;
+        }
+      }
+      .contac-us-detail {
+        width: calc( 100% - 50px);
+        display: table-cell;
+      }
+      .row.footer-grid-row {
+        display: inline-block;
+        .bmo-logo {
+          position: relative;
+          padding: 0;
+          padding-top: 4%;
+          text-align: right;
+          float: right;
+        }
+      }
+    }
+  }
+
+}
+
+@media (max-width: $screen-xs-sm) {
+  .footer-wrapper {
+    .ui.modal.popup-conference-success {
+      width: 100%;
+      top:50%;
+      left: 0;
+      margin: 0;
+      .header {
+        padding-right: 10px !important;
+        .ui.button.bmo-close-btn {
+          padding: 0px;
+          height: 18px;
+          width: 18px;
+          float: right;
+        }
+      }
+      .content {
+        .ui.heading {
+          width: 100%;
+        }
+      }
+    }
+  }
+}

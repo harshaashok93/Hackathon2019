@@ -1,0 +1,114 @@
+/*
+ * Component: HighChartScroller
+ */
+
+@import '../../../styles/variables';
+
+// (IMPORTANT: please create the styles such that the larger breakpoints
+// override the smaller ones. "Mobile First")
+
+.high-chart-scroller {
+  .bmo_chevron.left {
+    color: $primaryBlue;
+    &:before {
+      left: -25px;
+      margin-top: 4px;
+      border-top: solid 2px;
+      border-right: solid 2px;
+    }
+  }
+  .scroller-content {
+    span {
+      padding: 0 5px;
+    }
+  }
+  .bmo_chevron.right {
+    color: $primaryBlue;
+    &:before {
+      left: 20px;
+      border-top: solid 2px;
+      border-right: solid 2px;
+      margin-top: 4px;
+      color: $primaryBlue;
+    }
+  }
+  .cover-div-holder {
+    margin: 0;
+    position: relative;
+    width: 100%;
+    .highcharts-scroll-handler {
+      width: 25px;
+      height: 25px;
+      border-radius: 50rem;
+      background-color: $primaryBlue;
+      border: solid 2px $primaryWhite;
+      margin-top: 2px;
+      left: -50%;
+      position: relative;
+    }
+    .slide-amount-highlighter-wrapper {
+      height: 30px;
+      border-radius: 0px 0px 5px 5px;
+      position: absolute;
+      overflow: hidden;
+      width: 100%;
+      .slide-amount-highlighter {
+        background-color: $primaryBlue;
+        position: relative;
+        height: 30px;
+      }
+    }
+    .cover-div {
+      height:400px;
+      pointer-events: none;
+      width: 0;
+      background-color: rgba(0, 0, 0, .1);
+      top: 0px;
+    }
+  }
+}
+
+// Small Breakpoint
+@media (max-width: $screen-xs-min) {
+  .high-chart-scroller {
+    .bmo_chevron.right {
+      color: $primaryBlue;
+      &:before {
+        left: 10px;
+        border-top: solid 1px;
+        border-right: solid 1px;
+        top: 0;
+        color: $primaryBlue;
+      }
+    }
+    // .cover-div-holder {
+    //   .highcharts-scroll-handler.mobileleft {
+    //     left: 20% !important;
+    //   }
+    // }
+    .bmo_chevron.left {
+      color: $primaryBlue;
+      &:before {
+        left: -5px;
+        border-top: solid 1px;
+        border-right: solid 1px;
+        top: 0;
+        color: $primaryWhite;
+      }
+    }
+  }
+}
+
+// Medium Breakpoint
+@media (min-width: $screen-md-min) {
+  .high-chart-scroller {
+    // override sm breakpoint styles
+  }
+}
+
+// Large Breakpoint
+@media (min-width: $screen-lg-min) {
+  .high-chart-scroller {
+    // override md breakpoint styles
+  }
+}

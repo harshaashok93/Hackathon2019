@@ -1,0 +1,270 @@
+/*
+ * Component: CoverageListingResult
+ */
+
+@import '../../../styles/variables';
+
+// (IMPORTANT: please create the styles such that the larger breakpoints
+// override the smaller ones. "Mobile First")
+
+.coverage-listing-result {
+  width: calc(100% - 304px) !important;
+  margin-left: 10px;
+  display: inline-block;
+  position: relative;
+  top: -26px;
+  float: right;
+  .result-card-data {
+    border: solid 1px $borderGray;
+    .dimmer-wrapper-coverage {
+      height: 100%;
+      width: 100%;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 9999;
+      padding: 50px 0px;
+      background-color: rgba(1,1, 1, 0.7);
+      .clickable-background {
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: rgba(1, 1, 1, 0);
+      }
+    }
+    .sector-result-loader {
+      position: relative;
+      padding-top: 100px;
+      z-index: 9;
+    }
+    .no-results-found {
+      position: relative;
+      padding: 100px;
+      text-align: center;
+    }
+  }
+  .show-more-btn-holder {
+    width: 100%;
+    text-align: center;
+    margin: 25px 0;
+    .ui.button.show-more-btn {
+      background-color: transparent;
+      color: $primaryBlue;
+      .bmo_chevron.bottom.drop-down-indicator {
+        &:before {
+          color: $primaryBlue;
+          top: 0;
+          left: 7px;
+          border-width: 2px 2px 0 0;
+        }
+      }
+    }
+  }
+  .asterisk-message {
+    text-align: left;
+    margin-top: 2px;
+  }
+  .result-count {
+    position: relative;
+    text-align: left;
+    top: 15px;
+    min-height: 25px;
+  }
+  .result-count-sector-name {
+    padding-left: 15px;
+    width: calc(100% - 40px);
+    margin-right: 40px;
+  }
+  .sector-code-name {
+    width: 324px;
+    text-align: right;
+    position: relative;
+    display: inline-block;
+    .dropdown-chevron.bmo_chevron {
+      padding: 10px;
+      min-height: 35px;
+      border-bottom: solid 1px $primaryBlue !important;
+    }
+    .text {
+      color: $primaryBlue !important;
+    }
+  }
+  .result-card {
+    padding: 20px 40px 15px 15px;
+    .result-card-header {
+      display: inline-block;
+      background-color: $primaryBlue;
+      width: 100%;
+      padding: 10px 20px;
+      border-radius: 5px 5px 0 0;
+      .caret.down.icon {
+        height: unset;
+        width: unset;
+        &.reverse-sort {
+          -ms-transform: rotate(-180deg); /* IE 9 */
+          -webkit-transform: rotate(-180deg); /* Safari */
+          transform: rotate(-180deg);
+        }
+      }
+      .click-area{
+        display: inline-block;
+        cursor: pointer;
+        background: transparent;
+        color: $primaryWhite;
+        padding: 0;
+      }
+      .reverse-sort {
+        .caret.down.icon {
+          -ms-transform: rotate(-180deg); /* IE 9 */
+          -webkit-transform: rotate(-180deg); /* Safari */
+          transform: rotate(-180deg);
+        }
+      }
+      .head-cell {
+        display: inline-block;
+        color: $primaryWhite;
+        font-size: $deskSz9;
+        @include appDefaultFontStyleLight();
+        text-align: left;
+        &.sector {
+          width: 35%;
+        }
+        &.rating {
+          width: 16%;
+        }
+        &.analyst {
+          width: 19%;
+          text-align: center;
+        }
+        &.company {
+          position: relative;
+          width: 30%;
+          text-align: left;
+          padding: 0 0px;
+        }
+        &.company:after {
+          position: absolute;
+          content: '';
+          bottom: 0;
+          left: 0;
+          height: 1px;
+          width: 70px;
+          background-color: #fff;
+        }
+      }
+    }
+  }
+}
+
+// Small Breakpoint
+@media (max-width: $screen-md-min) {
+  .coverage-listing-result {
+    top: -10px;
+    .result-card {
+      padding: 5px 30px 15px 15px;
+      .result-card-header {
+        .head-cell {
+          &.company {
+            width: 50%;
+            padding: 0 17px;
+            &::after {
+              left: 17px;
+              width: 62px;
+            }
+          }
+          &.rating {
+            width: 50%;
+          }
+          &.analyst {
+            display: none;
+          }
+          &.sector {
+            display: none;
+          }
+        }
+      }
+    }
+    .result-count {
+      top: 0px;
+    }
+  }
+}
+
+@media (max-width: $screen-sm-min) {
+  .coverage-listing-result {
+    top: -27px;
+    position: relative;
+    width: calc(100% - 320px) !important;
+    .result-count-sector-name {
+      padding: 8px 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-right: 0;
+      width: 100% !important;
+    }
+    .sector-code-name {
+      width: 280px;
+    }
+    .result-card {
+      padding: 5px 12px 15px 15px;
+    }
+  }
+}
+
+@media (max-width: $screen-xs-sm) {
+  .coverage-listing-result {
+    width: 100% !important;
+    // right: 0 !important;
+  }
+}
+// Medium Breakpoint
+@media (max-width: $screen-xs-min) {
+  .coverage-listing-result {
+    &.right-layout {
+      top: 0px;
+    }
+    .result-count-sector-name {
+      .result-count {
+        width: 100%;
+        top: 0px;
+      }
+    }
+    width: 100% !important;
+    .result-card {
+      min-height: 400px;
+      padding: 0px 0px;
+      .no-results-found {
+        padding: 30px;
+      }
+      .result-card-header {
+        border-radius: 0;
+        text-align: left;
+        .head-cell {
+          &.rating {
+            display: none;
+          }
+          &.company {
+            padding: 5px;
+          }
+        }
+      }
+    }
+  }
+}
+
+// Medium Breakpoint
+@media (min-width: $screen-md-min) {
+  .coverage-listing-result {
+    // override sm breakpoint styles
+  }
+}
+
+// Large Breakpoint
+@media (min-width: $screen-lg-min) {
+  .coverage-listing-result {
+    // override md breakpoint styles
+  }
+}

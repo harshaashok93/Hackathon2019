@@ -1,0 +1,204 @@
+/*
+ * Component: StickyComponent
+ */
+
+@import '../../../styles/variables';
+
+// (IMPORTANT: please create the styles such that the larger breakpoints
+// override the smaller ones. "Mobile First")
+
+.sticky-component {
+  display: inline;
+  &.fixed {
+    .right-layout {
+      // margin-right: 20px;
+    }
+  }
+}
+
+// Small Breakpoint
+@media (max-width: $screen-sm-min) {
+  .sticky-component {
+    &.fixed {
+      .left-drawer-layout {
+        // ...
+      }
+    }
+  }
+}
+@media (max-width: $screen-sm-min) {
+  .sticky-component {
+    &.fixed {
+      .right-layout {
+        margin-right: 11px;
+      }
+    }
+  }
+}
+@media (min-width: $screen-sm-min) {
+  .videocast-details-listing {
+    .sticky-component {
+      &.fixed {
+        .research-layout-filters {
+          position: relative;
+          top: 0;
+        }
+        &.footer-fixed {
+          .research-layout-filters {
+            position: relative;
+            top: 0;
+          }
+        }
+      }
+    }
+  }
+  .sticky-component {
+    &.fixed {
+      .left-drawer-layout {
+        z-index: 100;
+      }
+      &.footer-fixed {
+        .left-drawer-layout {
+          top: auto;
+          bottom: 300px;
+          z-index: 1;
+        }
+        .research-layout-filters {
+          position: fixed;
+          top: auto;
+          bottom: -35px;
+        }
+      }
+    }
+    &.fixed {
+      .library-filter {
+        @include boxShadow(0px, 2px, 60px, 0, rgba(129, 129, 129, 0.4));
+      }
+      .filter-component {
+        box-shadow: none;
+      }
+      .additional-filter {
+        .accordion {
+          .content {
+            box-shadow: none !important;
+          }
+        }
+      }
+      .research-layout-filters {
+        position: fixed;
+        top: 100px;
+      }
+      .left-drawer-layout {
+        position: fixed;
+        max-height: 80vh;
+        overflow-y: hidden;
+        overflow-x: hidden;
+        top: 115px;
+        padding-left: 0px;
+        z-index: 9;
+        width: 250px;
+        margin-top: 0px;
+      }
+      .right-layout {
+        float: right;
+        min-height: 400px;
+      }
+    }
+  }
+}
+
+// Large Breakpoint
+@media (min-width: $screen-lg-min) {
+  .sticky-component {
+    // override md breakpoint styles
+  }
+}
+
+// (767 -1023)
+@media (min-width: $screen-xs-sm) and (max-width: $screen-md-min) {
+.sticky-component {
+    &.fixed {
+      .right-layout {
+        margin-right: 30px;
+      }
+      &.footer-fixed {
+        .left-drawer-layout {
+          bottom: 360px;
+        }
+      }
+    }
+  }
+}
+
+// (<= 1023)
+@media (max-width: $screen-md) {
+  .sticky-component {
+    &.fixed {
+      .right-layout {
+        margin-right: 27px;
+      }
+      .right-layout.bookmark-library-wrap {
+        margin: auto;
+      }
+    }
+  }
+}
+
+// (<= 767)
+@media (max-width: $screen-xs-sm) {
+  .sticky-component {
+    &.fixed {
+      .left-drawer-layout {
+        box-shadow: none;
+        left: 20px;
+        position: static;
+      }
+    }
+  }
+}
+
+// (1025 - 1281)
+@media (min-width: $screen-tab + 1) and (max-width: $screen-windows-max) {
+  .sticky-component {
+    &.fixed {
+      &.footer-fixed {
+        .research-layout-filters {
+          bottom: 250px;
+        }
+      }
+    }
+  }
+}
+
+// (768 - 1024)
+@media (min-width: $screen-sm) and (max-width: $screen-tab) {
+  .sticky-component {
+    &.fixed {
+      &.footer-fixed {
+        .research-layout-filters {
+          bottom: 260px;
+
+          @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+            top: -350px;
+          }
+        }
+      }
+    }
+  }
+}
+
+// >=1440px
+@media (min-width: $screen-windows-lg) {
+  .sticky-component {
+    &.fixed {
+      &.footer-fixed {
+        .research-layout-filters {
+          bottom: 66px;
+          @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+            top: -160px;
+          }
+        }
+      }
+    }
+  }
+}

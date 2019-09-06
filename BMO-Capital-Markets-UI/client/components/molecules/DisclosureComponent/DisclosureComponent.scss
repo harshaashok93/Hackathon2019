@@ -1,0 +1,335 @@
+/*
+ * Component: DisclosureComponent
+ */
+
+@import '../../../styles/variables';
+
+// (IMPORTANT: please create the styles such that the larger breakpoints
+// override the smaller ones. "Mobile First")
+
+.disclosure-component {
+  padding: 0px 40px 20px;
+  position: relative;
+  top: -38px; //maintaining 60px gap between header and disclosure component
+  .disclosure-iframe-wrapper {
+    overflow: hidden;
+    -webkit-overflow-scrolling: touch;
+  }
+  .richtext-container {
+    width: 85%;
+  }
+  .disclosure-header-container {
+    width: 496px;
+    height: 60px;
+    font-size: 50px;
+
+    line-height: 60px;
+    color: $pageTitleGrey;
+    @include appDefaultFontStyleLight();
+  }
+  .disclosure-action-container {
+    width: 60%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    .dropdown-chevron.ui.dropdown {
+      border-bottom: 1px solid $primaryBlue;
+      width: 265px;
+    }
+    .dropdown-chevron.ui.dropdown.selection {
+      padding-right: 20px;
+      min-height: 0;
+      line-height: unset;
+      div {
+        color: $primaryBlue;
+        width: 100%;
+      }
+      &.bmo_chevron.bottom {
+        position: relative;
+        &:before {
+          position: absolute;
+          transform: translate(-50%) rotate(135deg);
+          top: 34%;
+          left: 95%;
+        }
+      }
+    }
+    .ui.dropdown.drop-down {
+      border: none;
+      border-bottom: solid 1px $primaryBlue;
+      border-radius: 0;
+      .transition {
+        border-radius: 0;
+        border-color: $primaryBlue;
+        .selected {
+          border-radius: 0;
+        }
+      }
+    }
+    .ui.secondary.button {
+      margin-left: 110px;
+    }
+    .disclosure-submit-button {
+      height: 45px;
+      width: 166px;
+    }
+  }
+  .disclosure-seperator {
+    margin-top: 50px;
+    margin-bottom: 40px;
+    height: 1px;
+    width: 85%;
+    background-color: $oddGray;
+    margin-left: 0;
+  }
+  .loader-container {
+    .ui.active.loader {
+      position: relative;
+      margin-top: 100px;
+      clear: both;
+    }
+  }
+  .error {
+    color: $primaryRed;
+    text-align: center;
+  }
+}
+.disclosure-component p:last-child {
+    margin-bottom: 12px;
+}
+
+.disclosure-component p {
+    margin-top: 12px !important;
+    margin-bottom: 12px !important;
+}
+
+.disclosure-component .boldText,
+.disclosure-component .boldTxt td {
+    font-weight: bold;
+}
+
+// Medium Breakpoint
+@media (max-width: $screen-md-min) {
+  .disclosure-component {
+    padding: 20px 40px 60px 20px;
+    .disclosure-action-container {
+      width: 80%;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      margin-top: 58px;
+      .dropdown-chevron.ui.dropdown {
+        border-bottom: 1px solid $primaryBlue;
+        width: 265px;
+      }
+      .dropdown-chevron.ui.dropdown.selection {
+        padding: 5px 10px;
+        div {
+          margin-top: 5px;
+          color: $primaryBlue;
+        }
+      }
+      .ui.dropdown.drop-down {
+        border: none;
+        border-bottom: solid 1px $primaryBlue;
+        border-radius: 0;
+        .transition {
+          border-radius: 0;
+          border-color: $primaryBlue;
+          .selected {
+            border-radius: 0;
+          }
+        }
+      }
+      .ui.secondary.button {
+        margin-left: 110px;
+      }
+      .disclosure-submit-button {
+        height: 45px;
+        width: 166px;
+      }
+    }
+    .disclosure-seperator {
+      margin-top: 50px;
+      margin-bottom: 40px;
+      height: 1px;
+      width: 100%;
+      background-color: $oddGray;
+      margin-left: 0px;
+    }
+  }
+}
+
+@media (max-width: $screen-sm-min - 1) {
+  .disclosure-component {
+    padding: 20px 10px;
+    .richtext-container {
+      width: 100%;
+      display: inline-block;
+      position: relative;
+      .richText {
+        width: 100%;
+        display: inline-block;
+        position: relative;
+        .stdMediumText {
+          display: inline-block;
+          width: 100%;
+          table-layout: fixed;
+          tbody {
+            width: 100%;
+            position: relative;
+            table-layout: fixed;
+            display: inline-block;
+            padding: 0 10px;
+            * {
+              display: inline-block;
+              width: 100%;
+              position: relative;
+              overflow: hidden;
+              text-align: justify;
+            }
+          }
+        }
+      }
+    }
+    .disclosure-header-container {
+      width: 496px;
+      height: 60px;
+      font-size: 50px;
+
+      line-height: 60px;
+      color: $pageTitleGrey;
+      @include appDefaultFontStyleLight();
+    }
+    .disclosure-action-container {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      margin-top: 45px;
+      .dropdown-chevron.ui.dropdown {
+        border-bottom: 1px solid $primaryBlue;
+        width: 265px;
+      }
+      .dropdown-chevron.ui.dropdown.selection {
+        padding: 5px 10px;
+        div {
+          margin-top: 5px;
+          color: $primaryBlue;
+        }
+      }
+      .ui.dropdown.drop-down {
+        border: none;
+        border-bottom: solid 1px $primaryBlue;
+        border-radius: 0;
+        .transition {
+          border-radius: 0;
+          border-color: $primaryBlue;
+          .selected {
+            border-radius: 0;
+          }
+        }
+      }
+      .ui.secondary.button {
+        margin-left: 110px;
+      }
+      .disclosure-submit-button {
+        height: 45px;
+        width: 166px;
+      }
+    }
+    .disclosure-seperator {
+      margin-top: 50px;
+      margin-bottom: 40px;
+      height: 1px;
+      width: 100%;
+      background-color: $oddGray;
+    }
+  }
+}
+
+@media (max-width: $screen-xs-min) {
+  .disclosure-component {
+    .mar-table-wrapper {
+      overflow-x: scroll !important;
+      -webkit-overflow-scrolling: touch;
+      width: 100%;
+    }
+
+    .disclosure-iframe-wrapper {
+      iframe {
+        width: 1000px !important;
+      }
+    }
+  }
+}
+
+// Small Breakpoint
+@media (max-width: $screen-xs-sm) {
+  .disclosure-component {
+    padding: 20px 5px;
+    .disclosure-header-container {
+      width: 100%;
+      height: 60px;
+      font-size: 25px;
+
+      line-height: 25px;
+      color: $pageTitleGrey;
+      @include appDefaultFontStyleLight();
+    }
+    .disclosure-action-container {
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      margin-top: 25px;
+      .dropdown-chevron.ui.dropdown {
+        border-bottom: 1px solid $primaryBlue;
+        width: 100%;
+      }
+      .dropdown-chevron.ui.dropdown.selection {
+        padding: 5px 10px;
+        div {
+          margin-top: 5px;
+          color: $primaryBlue;
+        }
+      }
+      .ui.dropdown.drop-down {
+        border: none;
+        border-bottom: solid 1px $primaryBlue;
+        border-radius: 0;
+        .transition {
+          border-radius: 0;
+          border-color: $primaryBlue;
+          .selected {
+            border-radius: 0;
+          }
+        }
+      }
+      .ui.secondary.button {
+        margin-top: 40px;
+        margin-left: 0;
+      }
+      .disclosure-submit-button {
+        height: 45px;
+        width: 166px;
+      }
+    }
+    .disclosure-seperator {
+      margin-top: 50px;
+      margin-bottom: 40px;
+      height: 1px;
+      width: 100%;
+      background-color: $oddGray;
+      margin-left: 0px;
+    }
+  }
+}
+
+// Large Breakpoint
+@media (min-width: $screen-lg-min) {
+  .disclosure-component {
+    // override md breakpoint styles
+  }
+}

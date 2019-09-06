@@ -1,0 +1,257 @@
+/*
+ * Component: YouAreAttendingCard
+ */
+
+@import '../../../styles/variables';
+
+// (IMPORTANT: please create the styles such that the larger breakpoints
+// override the smaller ones. "Mobile First")
+
+.you-are-attending-card {
+  border-bottom: solid 1px $borderGray; 
+  overflow: hidden;
+  &.pad-bot {
+    margin-bottom: 24px;
+    border-radius: 5px;
+    box-shadow: $cardBoxShadow;
+    border-bottom: 0;
+  }
+  .blue-title-bar {
+    background-color: $primaryBlue;
+    color: $primaryWhite;
+    font-size: $deskSz9;
+    padding: 10px 25px;
+  }
+  .button-and-bookmark {
+    padding-right: 60px;
+  }
+  .event-image {
+    width: auto;
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    box-shadow: $cardBoxShadow;
+    background-color: #fff;
+    img {
+      width: 292px;
+      height: 136px;
+      vertical-align: middle;
+    }
+  }
+  .card-content {
+    font-size: $deskSz9;
+    @include appDefaultFontStyleLight();
+    background-color: $borderGray;
+    border-bottom: solid 1px $borderBottomGrey;
+    .sideLeft,
+    .sideRight {
+      width: 150px;
+      position: relative;
+      display: inline-block;
+    }
+    .sideLeft{
+      width: calc(100% - 150px);
+      text-align: left;
+      padding-left: 12px;
+    }
+    .sideRight {
+      text-align: right;
+    }
+  }
+  .event-category-and-date {
+    display: inline-block;
+    width: 53%;
+    padding-bottom: 7px;
+    .dot {
+      margin: 0 5px;
+    }
+  }
+  .event-info {
+    width: 400px;
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    height: auto;
+    padding: 15px 40px;
+    .event-title {
+      color: $primaryGray;
+      font-size: $deskSz9;
+      @include appDefaultFontStyleRegular();
+    }
+    .event-type-and-place {
+      font-size: $deskSz9;
+      @include appDefaultFontStyleLight();
+      color: $primaryGray;
+      .dot {
+        margin: 0 5px;
+      }
+    }
+    .event-details {
+      @include appDefaultFontStyleLight();
+      font-size: $deskSzSmall;
+      margin-top: 24px;
+      line-height: 18px;
+    }
+  }
+  .event-category,
+  .event-date {
+    @include appDefaultFontStyleLight();
+    font-size: $deskSz9;
+    vertical-align: middle;
+    position: relative;
+    text-align: left;
+    display: inline-block;
+  }
+  .event-action-button {
+    display: inline-block;
+    margin-top: 5px;
+    .ui.button.secondary {
+      width: 145px;
+      background-color: transparent;
+      font-size: 15px;
+    }
+  }
+  .event-book-mark-flag {
+    height: 22px;
+    display: inline-block;
+    width: 16px;
+    vertical-align: middle;
+    cursor: pointer;
+  }
+}
+
+// Small Breakpoint
+@media (max-width: $screen-md-min) {
+  .you-are-attending-card {
+    .event-image {
+      display: inline-block;
+      img {
+        width: 193px;
+      }
+    }
+    .button-and-bookmark {
+      padding-right: 0px;
+    }
+    .event-category-and-date {
+      display: inline-block;
+      width: 100%;
+      margin-bottom: 15px;
+      font-size: $deskSzSmaller;
+    }
+    .event-info {
+      width: calc(100% - 200px);
+    }
+    .card-content {
+      .sideLeft,
+      .sideRight {
+        padding-right: 20px;
+      }
+    }
+    .blue-bookmark.event-book-mark-flag {
+      margin-right: 5px;
+      height: 20px;
+      width: 15px;
+    }
+    .event-action-button {
+      margin-top: 11px;
+      .ui.secondary.button {
+        width: 126px;
+        margin: 0;
+        height: 41px;
+        font-size: $deskSzSmall;
+        padding: 7px;
+      }
+    }
+  }
+}
+
+@media (max-width: $screen-sm) {
+  .you-are-attending-card {
+    .event-category-and-date {
+      display: inline-block;
+      width: 228%; 
+      margin-bottom: 15px;
+      font-size: $deskSzSmaller;
+    }
+    .event-info {
+      width: calc(100% - 200px);
+      .event-title {
+        color: $primaryGray;
+        font-size: $deskSz9;
+        @include appDefaultFontStyleRegular();
+        width: 363%;
+      }
+      .event-type-and-place {
+        font-size: $deskSz9;
+        @include appDefaultFontStyleLight();
+        color: $primaryGray;
+        width: max-content;
+        .dot {
+          margin: 0 5px;
+        }
+      }
+    }
+  }
+}
+
+// Medium Breakpoint
+@media (max-width: $screen-xs-min) {
+  .you-are-attending-card {
+    .event-image {
+      display: none;
+    }
+    .event-info {
+      width: 100%;
+      padding: 10px 0;
+      .event-title {
+        font-size: $deskSzSmaller; 
+      }
+    }
+    .button-and-bookmark {
+      padding-right: 0;
+    }
+    .event-category-and-date {
+      display: inline-block;
+      width: 100%;
+      margin-bottom: 15px;
+      font-size: $deskSzSmaller;
+    }
+    .card-content {
+      .sideLeft {
+        width: 85%;
+        padding-right: 0;
+        padding-left: 15px;
+      }
+      .sideRight {
+        width: 15%;
+        font-size: $deskSzSmaller;
+        padding-left: 15px;
+      }
+      .event-date {
+        text-align: center;
+      }
+    }
+    .blue-bookmark.event-book-mark-flag {
+      margin-right: 5px;
+      height: 20px;
+      width: 15px;
+    }
+    .event-action-button {
+      margin-top: 20px;
+      .ui.secondary.button {
+        width: 126px;
+        margin: 0;
+        height: 41px;
+        font-size: $deskSzSmall;
+        padding: 7px;
+      }
+    }
+  }
+}
+
+// Large Breakpoint
+@media (min-width: $screen-lg-min) {
+  .you-are-attending-card {
+    // override md breakpoint styles
+  }
+}

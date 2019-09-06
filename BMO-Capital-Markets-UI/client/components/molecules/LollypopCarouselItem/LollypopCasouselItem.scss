@@ -1,0 +1,428 @@
+/*
+ * Component: LollypopCasouselItem
+ */
+
+@import '../../../styles/variables';
+
+// (IMPORTANT: please create the styles such that the larger breakpoints
+// override the smaller ones. "Mobile First")
+
+.lollypop-casousel-item {
+  width: 100%;
+  .lollypop-circle-outer {
+    height: 452px;
+    width: 450px;
+    position: absolute;
+    top: -40px;
+    left: 20px;
+    border: solid 2px $primaryWhite;
+    border-radius: 50rem;
+  }
+  .lollypop-circle {
+    overflow: hidden;
+    z-index: 1;
+    height: 430px;
+    width: 430px;
+    background-color: $primaryRed;
+    border-radius: 225px;
+    top: -30px;
+    position: relative;
+    display: inline-block;
+    padding: 65px;
+    padding-top: 105px;
+    left: 30px;
+    position: relative;
+    .richText {
+      h1 {
+        color: $primaryWhite;
+        @include appDefaultFontStyleMedium();
+        font-size: $deskSz1;
+        line-height: 1.12;
+
+        b {
+          @include appDefaultFontStyleMedium();
+        }
+      }
+      h2 {
+        font-size: $deskSz3;
+        color: $primaryWhite;
+        @include appDefaultFontStyleMedium();
+        line-height: 1.12;
+      }
+      h3 {
+        font-size: $deskSz41;
+        line-height: 1;
+        color: $primaryWhite;
+        @include appDefaultFontStyleMedium();
+      }
+      h4 {
+        font-size: $deskSz7;
+        color: $primaryWhite;
+        margin-top: 10px;
+        @include appDefaultFontStyleMedium();
+      }
+      h5 {
+        color: $primaryWhite;
+      }
+      p {
+        font-size: $deskSz7;
+        line-height: 1.25;
+        color: $primaryWhite;
+        @include appDefaultFontStyleLight();
+      }
+    }
+    .richText {
+      .rich-text > :first-child {
+        margin-top: 0px !important;
+      }
+    }
+    .video-cast {
+      font-size: $deskSz6;
+      margin-top: 24px;
+      display: inline-block;
+      padding-bottom: 4px;
+      .ui.button.play-icon {
+        border-radius: 2em;
+        border: solid 1px #ffffff;
+        height: 41px;
+        width: 126px;
+        padding: 0px;
+        font-size: $deskSz9;
+        i.icon {
+          margin: auto;
+          font-size: $deskSz21;
+        }
+      }
+    }
+    .learn-more {
+      @include appDefaultFontStyleRegular();
+      color: $primaryWhite;
+      font-size: $deskSz6;
+      margin-top: 24px;
+      display: inline-block;
+      padding-bottom: 4px;
+      &:hover {
+        border-bottom: 1px solid;
+      }
+      .ui.button.play-icon {
+        border-radius: 2em;
+        border: solid 1px #ffffff;
+        height: 41px;
+        width: 126px;
+        padding: 0px;
+        font-size: $deskSz9;
+        i.icon {
+          margin: auto;
+          font-size: $deskSz21;
+        }
+        &:hover {
+          border-bottom: 0px;
+        }
+      }
+      .search-go-icon {
+        display: inline-block;
+        height: 25px;
+        width: 25px;
+        background-position: center;
+        background-size: cover;
+        vertical-align: middle;
+        margin-left: 10px;
+      }
+    }
+  }
+  .banner {
+    background-size: 100% 100%!important; //need
+    height: 100%;
+  }
+}
+.our-department-carousel {
+    height: 100%;
+    .slick-slider, .slick-list, .slick-track {
+      height: 100%;
+    }
+  }
+
+// Medium Breakpoint
+@media (max-width: $screen-md-min) {
+  .lollypop-casousel-item {
+    height: 289px;
+    .banner {
+      height: 100%;
+      overflow: hidden;
+    }
+    .lollypop-circle {
+      height: 359px;
+      width: 374px;
+      border-radius: 225px;
+      top: -14px;
+      padding: 65px;
+      // padding-top: 90px;/
+      left: 16px;
+      .richText {
+        h1 {
+          color: $primaryWhite;
+          @include appDefaultFontStyleMedium();
+          font-size: $deskSz2;
+
+          b {
+            @include appDefaultFontStyleMedium();
+          }
+        }
+        p {
+          font-size: $deskSz7;
+          color: $primaryWhite;
+          @include appDefaultFontStyleLight();
+        }
+      }
+      .learn-more {
+        &:hover {
+          border-bottom: none;
+        }
+      }
+    }
+    .lollypop-circle-outer {
+      height: 375px;
+      width: 391px;
+      top: -22px;
+      left: 8px;
+    }
+  }
+}
+
+// Medium Breakpoint
+@media (max-width: $screen-xs-sm) {
+  .lollypop-casousel-item {
+    .lollypop-circle {
+      .video-cast {
+        font-size: $deskSz9;
+        margin-top: 10px;
+        .ui.button.play-icon {
+          min-width: 150px !important;
+        }
+      }
+    }
+  }
+  .our-department-carousel {
+    .lollypop-casousel-item {
+      &.sub-page {
+        display: unset !important;
+        .lollypop-circle-outer {
+          top: -14px;
+          left: -27px;
+        }
+        .lollypop-circle {
+          top: -8px;
+          left: -22px;
+          padding: 40px;
+          .richText {
+            .rich-text {
+              h1 {
+                margin-bottom: 7px;
+              }
+            }
+          }
+          .learn-more {
+            font-size: $deskSzSmallest !important;
+          }
+        }
+      }
+    }
+  }
+}
+@media (max-width: $screen-sm-min) {
+   .lollypop-casousel-item {
+    height: 289px;
+    .banner {
+      height: 100%;
+      overflow: hidden;
+    }
+    .lollypop-circle {
+      height: 359px;
+      width: 374px;
+      border-radius: 225px;
+      top: -14px;
+      padding: 65px;
+      // padding-top: 90px;
+      left: 16px;
+      .richText {
+        h1 {
+          color: $primaryWhite;
+          @include appDefaultFontStyleMedium();
+          font-size: $deskSz21;
+          margin-bottom: 10px;
+          width: 256px;
+          b {
+            @include appDefaultFontStyleMedium();
+          }
+        }
+        p {
+          font-size: $deskSz9;
+          color: $primaryWhite;
+          @include appDefaultFontStyleLight();
+        }
+        h1, h2, h3, h4, h5 {
+          margin-top: 5px !important;
+          margin-bottom: 8px !important;
+        }
+      }
+      .learn-more {
+        @include appDefaultFontStyleRegular();
+        color: $primaryWhite;
+        font-size: $deskSz9 !important;
+        margin-top: 12px;
+        display: block;
+        .search-go-icon {
+          display: inline-block;
+          height: 25px;
+          width: 25px;
+          background-position: center;
+          background-size: cover;
+          vertical-align: middle;
+          margin-left: 10px;
+        }
+      }
+    }
+    .lollypop-circle-outer {
+      height: 375px;
+      width: 391px;
+      top: -22px;
+      left: 8px;
+    }
+  }
+  .our-department-carousel {
+    .lollypop-casousel-item {
+      &.sub-page {
+        display: unset !important;
+      }
+    }
+  }
+}
+// Small Breakpoint
+@media (max-width: $screen-xs-sm) {
+  .lollypop-casousel-item {
+    height: 199px;
+    .lollypop-circle {
+      left: -19px !important;
+      padding: 32px;
+      height: 217px;
+      width: 217px;
+      top: -5px !important;
+      padding-top: 31px !important;
+      .richText {
+        margin-top: 0px;
+        h1 {
+          width: auto;
+          margin-bottom: 5px;
+        }
+        p {
+          font-size: $deskSzSmaller !important;
+          width: 163px;
+          margin-bottom: 5px;
+          line-height: 1;
+        }
+      }
+      .learn-more {
+        @include appDefaultFontStyleRegular();
+        color: $primaryWhite;
+        font-size: $deskSzSmallest !important;
+        margin-top: 8px;
+        display: block;
+        text-align: left;
+        .ui.button.play-icon {
+          border-radius: 2em;
+          border: solid 1px $primaryWhite;
+          height: 30px;
+          width: 83px;
+          padding: 0px;
+          margin-left: calc(50% - 41px);
+          i.icon {
+            margin: 0px;
+            width: 20px;
+            margin-top: 3px;
+            font-size: 1.3em;
+          }
+        }
+        .search-go-icon {
+          display: inline-block;
+          height: 20px;
+          width: 20px;
+          background-position: center;
+          background-size: cover;
+          vertical-align: middle;
+          margin-left: 5px;
+        }
+      }
+    }
+    .lollypop-circle-outer {
+      height: 227px;
+      width: 227px;
+      top: -10px !important;
+      left: -24px !important;
+    }
+    .banner {
+      height: 100%;
+      overflow: hidden;
+    }
+  }
+  .lollypop-carousel {
+    .carousel-component {
+      .ui.segment.carousel-segment-homepage {
+        .ui.container.sub-page-carousel, .ui.container.our-department-carousel {
+          .lollypop-casousel-item.sub-page {
+            .banner {
+              width: 100% !important;
+              .lollypop-circle {
+                width: 100% !important;
+                border-radius: 0 !important;
+                left: 0px !important;
+                padding-left: 15px !important;
+                padding-top: 20px !important;
+                .centerAlignVertical {
+                  position: absolute;
+                  top: 50%;
+                  left: 50%;
+                  transform: translate(-50%, -50%);
+                  width: 92%;
+                  .richText {
+                    .rich-text {
+                      p {
+                        width: 100% !important;
+                      }
+                    }
+                  }
+                }
+              }
+              .lollypop-circle-outer {
+                width: 100%;
+                border-radius: 0;
+                left: 0 !important;
+              }
+            }
+          }
+        }
+        .ui.container.sub-page-carousel {
+          .slick-initialized.slick-slider {
+            .slick-list {
+              .slick-slide.slick-active.slick-center {
+                .lollypop-casousel-item.sub-page {
+                  .banner {
+                    .lollypop-circle {
+                      background-color: $primaryBlue !important;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// Large Breakpoint
+@media (min-width: $screen-lg-min) {
+  .lollypop-casousel-item {
+    // override md breakpoint styles
+  }
+}

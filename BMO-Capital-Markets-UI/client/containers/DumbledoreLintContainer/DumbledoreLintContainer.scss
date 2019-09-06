@@ -1,0 +1,88 @@
+/*
+ * Component: DumbledoreLintContainer
+ */
+
+@import '../../styles/variables';
+
+// (IMPORTANT: please create the styles such that the larger breakpoints
+// override the smaller ones. "Mobile First")
+
+.dumbledore-lint-container {
+  font-family: monospace;
+}
+
+.dumbledore-lint-container--header {
+  background-color: #131ea2;
+  width: 100%;
+  padding: 2vh 25% 0;
+  position: absolute;
+  top: 0;
+  text-align: center;
+  margin: auto;
+
+  svg {
+    height: 15vh;
+  }
+}
+
+.dumbledore-lint-container--error-container {
+  padding-top: 22vh;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+}
+
+.dumbledore-lint-container--title {
+  margin: 3vh 0 0;
+  padding: 1vh 10%;
+  font-size: 18px;
+  width: 100%;
+  background-color: #ccc;
+}
+
+.dumbledore-lint-container--files {
+  width: 60%;
+  margin: 2vh 0 0;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+}
+
+.dumbledore-lint-container--file-path {
+  text-decoration: underline;
+}
+
+.dumbledore-lint-container--errors {
+  margin: 1vh 0 0;
+}
+
+.dumbledore-lint-container--source {
+  background-color: #ccc;
+}
+
+// Small Breakpoint
+@media (min-width: $screen-sm-min) {
+  .dumbledore-lint-container {
+    // override xs breakpoint styles
+  }
+}
+
+// Medium Breakpoint
+@media (min-width: $screen-md-min) {
+  .dumbledore-lint-container {
+    // override sm breakpoint styles
+  }
+}
+
+// Large Breakpoint
+@media (min-width: $screen-lg-min) {
+  .dumbledore-lint-container {
+    // override md breakpoint styles
+  }
+}

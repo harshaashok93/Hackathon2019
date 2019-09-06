@@ -1,0 +1,70 @@
+/*
+ * Component: FeaturedResearchMobilePopup
+ */
+
+@import '../../../styles/variables';
+
+// (IMPORTANT: please create the styles such that the larger breakpoints
+// override the smaller ones. "Mobile First")
+
+.featured-research-mobile-popup {
+  display: none;
+  .close-image {
+    float: right;
+    background-position-x: 20px;
+  }
+  .featured-research-overlay-top {
+    .close-search-overlay {
+      background-position-x: 20px;
+    }
+  }
+  .featured-research-overlay-top-section {
+    clear: both;
+    width: 100%;
+    padding-bottom: 10px;
+    border-bottom: solid 1px #ccc;
+    margin-bottom: 20px;
+    .analyst-profile-image {
+      display: inline-block;
+      margin-bottom: 10px;
+    }
+    .analyst-and-ticker {
+      display: inline-block;
+      margin-left: 10px;
+    }
+  }
+  .detail-info {
+    .subject-heading {
+      width: 85%;
+      float: left;
+    }
+    .analyst-contact-div {
+      width: 13%;
+      float: right;
+      .bookmark-link {
+        background-position-x: 25px;
+      }
+    }
+  }
+}
+
+// Small Breakpoint
+@media (max-width: $screen-sm-min) {
+  .featured-research-mobile-popup {
+    display: block;
+  }
+}
+
+// Medium Breakpoint
+@media (min-width: $screen-md-min) {
+  .featured-research-mobile-popup {
+    // override sm breakpoint styles
+  }
+}
+
+// Large Breakpoint
+@media (min-width: $screen-lg-min) {
+  .featured-research-mobile-popup {
+    // override md breakpoint styles
+  }
+}

@@ -1,0 +1,252 @@
+/*
+ * Component: SearchInput
+ */
+
+@import '../../../styles/variables';
+
+// (IMPORTANT: please create the styles such that the larger breakpoints
+// override the smaller ones. "Mobile First")
+
+.search-input-text-box {
+  max-height: 102px;
+  overflow: hidden;
+  &.focus {
+    .ui.button.enter-btn {
+      display: block;
+    }
+  }
+  .ui.button.enter-btn {
+    padding: 0;
+    background: none;
+    border: 0;
+    outline: 0;
+    margin-left: -52px;
+    z-index: 100;
+    display: none;
+    .ui.image {
+      max-width: 52px;
+    }
+  }
+  .ui.button.cloes-auto-suggest {
+    display: none;
+  }
+  &.ui.focus {
+    .ui.button.cloes-auto-suggest {
+      background-color: $primaryWhite;
+      right: 40px;
+      position: absolute;
+      top: 25%;
+      display: block;
+      width: 26px;
+      height: 26px;
+      padding: 0;
+      cursor: pointer !important; //need
+    }
+    .ui.input.search-input-text {
+      width: calc(100% - 100px);
+    }
+  }
+  .ui.icon.input {
+    .ui.button.search-icon {
+      right: unset;
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-color: transparent;
+      height: 30px;
+      width: 29px;
+      margin-top: 11px;
+      margin-left: 26px;
+      opacity: 1;
+      position: absolute;
+      z-index: 1;
+      padding-right: 5px;
+      &::before {
+        content: '';
+      }
+    }
+    .prompt {
+      padding: 14px;
+      padding-left: 70px;
+      background-color: $backgroundGray;
+      border: none;
+      width: 100%;
+      color: $primaryGray;
+    }
+    .search-input-text {
+      width: 100%;
+    }
+  }
+  &.ui.search {
+    position: absolute;
+    padding: 25px 0;
+    background-color: $primaryWhite;
+    width: 350px;
+    left: 95px;
+    .ui.icon.input {
+      width: 100%;
+      input {
+        @include appDefaultFontStyleRegular();
+        font-size: $deskSz7;
+        &::placeholder {
+          color: $inputTextGray !important; //need
+        }
+        &:-ms-input-placeholder {
+          color: $inputTextGray !important; //need
+        }
+        &::-ms-input-placeholder {
+          color: $inputTextGray !important; //need
+        }
+      }
+    }
+  }
+  &.ui.focus.search {
+    width: calc(100% - 95px);
+    z-index: 100;
+    +.dimmer {
+      position: absolute;
+      top: 85px;
+      background-color: #000;
+      width: 120%;
+      height: 500px;
+      left: -10%;
+      z-index: 9;
+      opacity: 0.8;
+    }
+    .results.transition {
+      width: calc(100% + 200px);
+      position: relative;
+      border: 0;
+      box-shadow: none;
+      left: -110px;
+      background-color: unset;
+      .result {
+        padding: 0;
+        background-color: transparent !important;
+      }
+    }
+  }
+}
+
+// Medium Breakpoint
+@media (max-width: $screen-lg-min) {
+  .search-input-text-box {
+    &.ui.search {
+      width: 280px;
+    }
+  }
+}
+
+// Medium Breakpoint
+@media (max-width: $screen-tab) {
+  .ui.search.search-input-text-box {
+    width: 277px;
+  }
+}
+
+// Medium Breakpoint
+@media (max-width: $screen-md-min) {
+  .search-input-text-box {
+    &.ui.search {
+      width: calc(100% - 126px);
+    }
+    &.ui.focus {
+      width: calc(100% - 70px);
+      .ui.button.cloes-auto-suggest {
+        background-color: $primaryWhite;
+        right: 28px;
+        position: absolute;
+        top: 25%;
+        display: block;
+        width: 26px;
+        height: 26px;
+        padding: 0;
+        cursor: pointer !important; //need
+      }
+      .ui.input.search-input-text {
+        width: calc(100% - 71px);
+      }
+    }
+  }
+}
+
+// Small Breakpoint
+@media (max-width: $screen-sm-min - 1) {
+  .search-input-text-box {
+    &.ui.focus .ui.button.cloes-auto-suggest {
+      top: 26%;
+      right: 0px;
+    }
+    .ui.icon.input {
+      .search-input-text {
+        width: 100%;
+      }
+    }
+    &.ui.focus {
+      .ui.icon.input {
+        .search-input-text {
+          width: calc(100% - 50px);
+        }
+      }
+    }
+    &.ui.search {
+      width: 100%;
+      left: 0;
+      top: 43px;
+      padding: 18px 0;
+      .ui.icon.input {
+        width: 92%;
+        margin-left: 4%;
+        margin-right: 4%;
+        .ui.button.search-icon {
+          margin: 7px 10px !important;
+          height: 25px;
+          margin-left: 15px;
+        }
+        .prompt {
+          padding-left: 55px;
+        }
+        input {
+          font-size: $deskSz9;
+          padding-top: 12px;
+          padding-bottom: 12px;
+        }
+      }
+      &.ui.focus.search .results.transition {
+        width: calc(100% + 40px);
+        left: -20px;
+      }
+    }
+    &.ui.focus.search {
+      width: 100%;
+      .ui.button.search-icon {
+        margin: 14px !important;
+      }
+    }
+  }
+}
+
+// Large Breakpoint
+@media (max-width: $screen-xs-min) {
+  .search-input-text-box {
+    &.ui.search {
+      padding: 15px 0;
+    }
+    .ui.icon.input {
+      .search-input-text {
+        width: 100%;
+      }
+    }
+    .ui.button.enter-btn {
+      max-height: 48px;
+      margin-left: -42px;
+      .ui.image {
+        max-width: 42px;
+      }
+    }
+  }
+}
+@media (min-width: $screen-lg-min) {
+  .search-input-text-box {
+    // override md breakpoint styles
+  }
+}

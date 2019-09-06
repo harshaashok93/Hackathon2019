@@ -1,0 +1,35 @@
+/*
+ * Component: TopHeaderMenuLeftLinkMobile
+ */
+
+@import '../../../styles/variables';
+
+// (IMPORTANT: please create the styles such that the larger breakpoints
+// override the smaller ones. "Mobile First")
+
+.top-header-menu-left-link-mobile {
+  display: none;
+}
+
+// Small Breakpoint
+@media (max-width: $screen-sm-min) {
+  .top-header-menu-left-link-mobile {
+    display: block;
+    width: 100%;
+    .header-menu-cell {
+      background-color: $primaryBlue;
+      padding: 7px 18px;
+      width: 100%;
+      color: $primaryWhite;
+      display: inline-block;;
+    }
+  }
+}
+
+
+// Large Breakpoint
+@media (min-width: $screen-lg-min) {
+  .top-header-menu-left-link-mobile {
+    // override md breakpoint styles
+  }
+}

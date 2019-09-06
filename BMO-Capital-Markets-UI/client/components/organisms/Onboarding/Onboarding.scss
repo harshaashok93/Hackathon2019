@@ -1,0 +1,619 @@
+/*
+ * Component: Onboarding
+ */
+
+@import '../../../styles/variables';
+
+// (IMPORTANT: please create the styles such that the larger breakpoints
+// override the smaller ones. "Mobile First")
+
+.onboarding.ui.modal {
+  width: 100%;
+  border-radius: 0px;
+  max-width: 1400px;
+  position: relative;
+  margin: 0 auto;
+  left: 0;
+  .ui.container {
+    margin: 0 !important;
+  }
+  .header {
+    text-align: left;
+    margin-top: 30px;
+    border-bottom: 0;
+    padding: 30px 5%;
+    padding-right: 0px;
+    border-bottom: 1px solid $onBoardBorderColorGrey;
+    margin: 0 40px;
+    .close-image {
+      .ui.button {
+        margin: 0px;
+        padding: 0px;
+        height: 22px;
+        width: 20px;
+        vertical-align: middle;
+        background-position: center;
+        float: right;
+      }
+    }
+    h2 {
+      height: 36px;
+      width: 606px;
+      font-size: 30px;
+
+      @include appDefaultFontStyleLight();
+      margin: 0px;
+    }
+    h3 {
+      padding-top: 7px;
+      line-height: 1em;
+      font-size: 20px;
+
+      color: $primaryGray;
+      @include appDefaultFontStyleLight();
+      margin: 0px;
+    }
+  }
+  .content {
+    padding: 0 !important;
+    .ui.container.component-holder {
+      padding: 0px 5.5%;
+      height: 100%;
+      min-height: 300px;
+      -ms-overflow-style: none;
+      .ui.loader {
+        color: $primaryBlue;
+        &::after {
+          border-color: $primaryBlue transparent transparent;
+        }
+      }
+    }
+  }
+  .actions {
+    text-align: left;
+    border: 0;
+    background: transparent;
+    margin: 0 40px;
+    padding-left: 0;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    border-top: 1px solid $onBoardBorderColorGrey;
+    margin-top: 20px;
+    .button-wrap {
+      padding: 0 5%;
+    }
+    .button {
+      height: 45px;
+      width: 146px;
+      margin-right: 20px;
+      &.disabled{
+        border: solid 1px $inputTextGray;
+        border-radius: 20.6px;
+        background-color: $primaryWhite;
+        color: $inputTextGray;
+        opacity: unset !important;
+        margin-right: 20px; //Previous value: 60px
+      }
+    }
+  }
+
+  #componentHolder {
+    .grid {
+      margin: 0;
+      padding: 0;
+    }
+    .sectors {
+      margin-bottom: 30px;
+    }
+  }
+
+  .sectionHeadingContainer {
+    &.ui.container {
+      color: $primaryGray;
+      font-size: $deskSz7;
+      padding: 20px 5%;
+      @include appDefaultFontStyleLight();
+    }
+    span {
+      border: solid 0.5px $primaryGray;
+      color: $primaryGray;
+      width: 30px;
+      height: 30px;
+      border-radius: 30px;
+      display: inline-block;
+      text-align: center;
+      margin-right: 10px;
+      line-height: 30px;
+    }
+  }
+
+  .sectors, .subsectors {
+    width: 100%;
+    .background-circle-div {
+      text-align: center;
+      cursor: pointer;
+      margin: auto;
+    }
+    .label {
+      background: transparent;
+      color: $primaryBlue;
+      line-height: 18px;
+      font-size: $deskSzSmaller;
+      @include appDefaultFontStyleRegular();
+      padding: 0;
+      margin: 0;
+      display: block;
+      padding-top: 10px;
+    }
+    .image {
+      display: inline;
+      max-width: 110px;
+      height: auto;
+      margin: auto;
+    }
+    .background-circle {
+      text-align: center;
+      margin: auto;
+    }
+    .button {
+      background: transparent;
+      width: 22%;
+      vertical-align: top;
+      &:active,&:focus {
+        background: transparent;
+        outline: none;
+      }
+    }
+  }
+
+  .subsectors {
+    padding-left: 15px;
+    .label {
+      &.itemLabel {
+        display: inline-block;
+        width: 80%;
+        padding: 0px;
+        line-height: 16px;
+        font-size: $deskSzSmaller;
+        color: $secondaryBlack;
+        float: left;
+        text-align: left;
+      }
+    }
+    .imageLabelSectionHolder {
+      text-align: center;
+    }
+    .subSectorItem {
+      width: 100%;
+      padding: 0;
+      margin-bottom: 15px !important;
+      .checkbox {
+        width: 20px;
+        margin-right: 10px;
+        height: 20px;
+        float: left;
+        label::before {
+          width: 20px;
+          height: 20px;
+        }
+      }
+    }
+  }
+
+  .analysts {
+    .ipadView, .mobileView {
+      display: none;
+    }
+    .ui.grid.column {
+      .coverage-list-div {
+        height: auto;
+        width: 100%;
+        margin-bottom: 10px;
+        background-color: $onboardingCoverageList;
+        border-radius: 5px;
+        padding: 20px;
+        .coverlagelist-heading {
+          padding-top: 10px;
+          padding-left: 37px;
+          padding-bottom: 30px;
+          @include appDefaultFontStyleMedium();
+          color: $primaryGray;
+        }
+        .ui.column.grid {
+          @include appDefaultFontStyleRegular();
+          color: $primaryGray;
+          .column {
+            padding-top: 5px !important;
+            .ui.list {
+              .item {
+                padding-left: 18px;
+                position: relative;
+                padding-bottom: 10px;
+                &:last-child {
+                  padding-bottom: 0;
+                }
+                .small.circle {
+                  background-color: $primaryGray;
+                  height: 6px;
+                  width: 6px;
+                  border-radius: 3px;
+                  display: inline-block;
+                  margin-right: 13px;
+                  position: absolute;
+                  left: 0;
+                  top: 8px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    .ui.grid .column.analystGrid {
+      text-align: center;
+      &.activeAnalyst {
+        &::after {
+          content: '';
+          height: 28px;
+          width: 28px;
+          background: $onboardingCoverageList;
+          display: block;
+          margin: 0;
+          top: -14px;
+          position: relative;
+          transform: rotate(45deg);
+          left: calc(32px + 58.333% / 2);
+        }
+      }
+      .column.grid {
+        height: 100%;
+      }
+      .checkbox-col.column {
+        padding-top: 14%;
+        margin-right: 20px;
+        height: 100%;
+        margin-top: 20px;
+      }
+      .analyst-col.column {
+        padding-left: 0;
+        padding-bottom: 0;
+      }
+      .analyst-details {
+        text-align: center;
+        height: auto;
+        cursor: pointer;
+        &:focus {
+          outline: none;
+        }
+        img {
+          width: 110px;
+          height: 110px;
+          margin: auto;
+          margin-bottom: 6px;
+        }
+        .name, .subsector {
+          text-align: center;
+          color: $primaryGray;
+        }
+        .name {
+          color: $primaryBlue;
+          font-size: $deskSz9;
+          @include appDefaultFontStyleRegular();
+        }
+      }
+      .linkBtn {
+        padding: 0px;
+      }
+      .ui.activeAnalyst.button:hover {
+        background-color: transparent;
+      }
+      .bmo_chevron.bottom.activeAnalyst:before {
+        color: $primaryGray;
+        top: 0px;
+      }
+      .bmo_chevron.bottom:before {
+        color: $primaryBlue;
+        top: 0px;
+      }
+      padding: 10px 0 0;
+    }
+  }
+
+  &.postOnBoarding {
+    min-height: 400px;
+    padding-bottom: 40px;
+    text-align: center;
+    width: 50%;
+    border-radius: 5px;
+    .postboard-header.header {
+      padding: 25px 0px 0px 0px;
+      height: 50px;
+      vertical-align: middle;
+      border-bottom: none;
+    }
+    .actions {
+      text-align: center;
+      padding: 0px;
+      border-top: none;
+    }
+    .content {
+      padding-top: 10px !important;
+      .postOnBoard-container {
+        .ui.loader {
+          color: $primaryBlue;
+          &::after {
+            border-color: $primaryBlue transparent transparent;
+          }
+        }
+      }
+    }
+    h2.ui.heading {
+      font-size: $deskSz21;
+      @include appDefaultFontStyleLight();
+    }
+    .ui.image.onboard-welcome, .ui.image.onboard-trial, .ui.image.onboard-failed {
+      margin: auto;
+      width: 86px;
+      height: auto;
+      padding-top: 30px;
+      padding-bottom: 20px;
+    }
+    div.description {
+      font-size: $deskSz7;
+      color: $primaryGray;
+      @include appDefaultFontStyleLight();
+      width: 471px;
+      margin: auto;
+    }
+    .trial-description {
+      font-size: $deskSz7;
+      color: $primaryGray;
+      @include appDefaultFontStyleLight();
+      width: 504px; //Previous value: 580px
+      margin: auto;
+    }
+    .welcomeScreenContent {
+      padding-bottom: 0;
+    }
+  }
+}
+
+@media (max-width: $screen-md) {
+  .onboarding.ui.modal {
+    .content {
+      .ui.container.component-holder {
+        padding: 0px 60px;
+      }
+    }
+
+    .analysts {
+      .ipadView {
+        display: block;
+      }
+      .desktopView, .mobileView {
+        display: none;
+      }
+    }
+    .sectors {
+      .button {
+        width: 22%;
+      }
+    }
+    &.postOnBoarding {
+      position: relative;
+      margin-right: auto !important;
+      margin-left: auto !important;
+      width: 74%;
+      left: 0;
+    }
+  }
+}
+
+@media (max-width: $screen-xs-sm) {
+
+  .modals.dimmer {
+    .onboarding.ui.modal {
+      height: 100%;
+      &.scrolling {
+        margin-top: 0px !important;
+        margin-bottom: 0px !important;
+        position: relative !important;
+        top: 0;
+        left: 0;
+        min-height: 100%;
+        height: auto;
+      }
+      &:before {
+        right: 22%;
+      }
+      &.ui.modal > .header:not(.ui) {
+        font-size: $deskSz9;
+      }
+      .header {
+        max-height: 144px;
+        min-height: 115px;
+        border-bottom: none;
+        padding-bottom: 0px !important;
+        padding-right: 16px !important;
+        margin: 0px;
+        h2 {
+          font-size: $deskSz41;
+          margin: 15px;
+          padding-left: 16px;
+          margin-left: 0;
+          height:auto;
+          width: 100%;
+        }
+        h3 {
+          font-size: 1rem;
+          padding-bottom: 15px;
+          margin: 0px 15px;
+          border-bottom: solid 1px $onBoardBorderColorGrey;
+        }
+      }
+      .content {
+        .ui.container.component-holder {
+          padding: 0px;
+          margin: 0 !important;
+        }
+        .ui.container.sectionHeadingContainer {
+          padding: 15px;
+          padding-bottom: 0px;
+          font-size: 1rem;
+          margin: 0 !important;
+          span {
+            margin-right: 15px;
+          }
+        }
+      }
+      .sectors {
+        .button {
+          width: 48%;
+          padding: 0px 10px;
+          margin-bottom: 35px;
+          .background-circle-div {
+            width: 98px;
+          }
+          .background-circle {
+            width: 98px;
+          }
+        }
+      }
+      .analysts {
+        .ui.grid .column.analystGrid {
+          width: 100%;
+          &.activeAnalyst {
+            &::after {
+              display: none;
+            }
+            .analyst-col.column {
+              .ui.button.linkBtn {
+                &:after {
+                  content: '';
+                  height: 28px;
+                  width: 28px;
+                  background: $onboardingCoverageList;
+                  display: block;
+                  margin: 0;
+                  top: 25px;
+                  position: relative;
+                  transform: rotate(45deg);
+                  left: 1px;
+                }
+              }
+            }
+          }
+          .checkbox-col.column {
+            padding-top: 55px;
+            margin-right: 0px;
+            margin-top: 0px;
+          }
+          .analyst-col.column {
+            padding-left: 16px;
+          }
+          .bmo_chevron.bottom:before {
+            color: $primaryBlue;
+            top: 0px;
+            left: 0px;
+          }
+          .bmo_chevron.bottom.activeAnalyst:before {
+            color: $primaryGray;
+            top: 0px;
+            left: -8px;
+          }
+        }
+        .mobileView {
+          display: block;
+          .coverage-list-div {
+            padding: 16px;
+            .coverlagelist-heading {
+              padding-top: 0px;
+              padding-left: 0px;
+              padding-bottom: 21px;
+            }
+            .ui.column {
+              .column {
+                padding: 0px;
+              }
+            }
+          }
+        }
+        .desktopView, .ipadView {
+          display: none;
+        }
+      }
+      .actions {
+        height: 120px;
+        padding-top: 5px;
+        text-align: center;
+        margin: 0 15px;
+        padding: 10px 0px !important;
+        .button-wrap {
+          .button {
+            display: block;
+            margin: auto;
+            margin-top: 5px;
+          }
+        }
+      }
+      &.postOnBoarding {
+        width: 100%;
+        margin: 0!important;
+        .header {
+          border-bottom: none;
+          padding: 15px 0px 0px 0px !important;
+          margin: 0px;
+          height: 45px;
+          max-height: unset;
+          min-height: unset;
+        }
+        .content {
+          height: auto !important;
+          padding-top: 0px !important;
+          h2.ui.heading {
+            font-size: $deskSz7;
+            margin-left: 17px;
+            margin-right: 17px;
+            &.trial-heading {
+              width: 172px;
+              margin: auto;
+              margin-bottom: 15px;
+            }
+          }
+
+          .trial-description {
+            font-size: $deskSz9;
+            width: 276px;
+            margin: auto;
+          }
+          .ui.image.onboard-welcome, .ui.image.onboard-trial, .ui.image.onboard-failed {
+            padding-bottom: 0px;
+          }
+          .description {
+            font-size: $deskSz9;
+            width: 276px;
+            margin: auto;
+          }
+        }
+        .actions {
+          height: auto;
+        }
+      }
+    }
+  }
+}
+
+
+// Phone
+@media (max-width: $screen-xs-sm) {
+  .modals.dimmer {
+    .onboarding.ui.modal {
+      .content {
+        >.container {
+          height: 100%;
+        }
+      }
+    }
+  }
+}
+

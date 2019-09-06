@@ -1,0 +1,132 @@
+/*
+ * Component: RebrandingComponent
+ */
+
+@import '../../../styles/variables';
+
+// (IMPORTANT: please create the styles such that the larger breakpoints
+// override the smaller ones. "Mobile First")
+
+.library-introduction {
+  margin: 0 !important;
+  margin-bottom: 68px !important;
+  background-color: $qModelBgColor;
+  .library-introducing-category-info {
+    font-size: $deskSz3;
+    @include appDefaultFontStyleMedium();
+    line-height: 1.29;
+    .read-more {
+      font-size: 16px;
+      color: $plyr-color-main;
+      font-weight: normal;
+      display: block;
+      padding-top: 10px;
+    }
+  }
+  .introducing-category {
+    padding-top: 10px;
+  }
+  .ui.button.close-library-introduction {
+    position: absolute;
+    margin-top: 20px;
+    right: 56px;
+    width: 20px;
+    height: 20px;
+    padding: 0;
+    display: block;
+    cursor: pointer;
+    z-index: 1;
+  }
+  .category-container {
+    padding: 25px !important;
+    span {
+      padding-right: 5px;
+    }
+    .category-description {
+      .richText {
+        .rich-text {
+          p {
+            padding-top: 15px;
+            font-size: $deskSzSmaller;
+            width: 95%;
+            line-height: 1.43;
+          }
+        }
+      }
+    }
+    .category-title {
+      font-size: $deskSz41;
+      .brand-triangle-icon {
+        width: 35px;
+        height: 35px;
+        display: inline-block;
+        vertical-align: text-top;
+        margin-right: 10px;
+      }
+    }
+  }
+}
+
+//tablet BreakPoint
+@media (max-width: $screen-md - 1) {
+  .library-introduction {
+    margin-right: 16px !important;
+    margin-bottom: 60px !important;
+    margin-left: 20px !important;
+    .ui.button.close-library-introduction {
+      right: 36px;
+    }
+    .library-introducing-category-info {
+      padding-bottom: 25px;
+    }
+    .category-container {
+      padding: 15px !important;
+      .category-title {
+        font-size: $deskSz9;
+        .brand-triangle-icon {
+          width: 24px;
+          height: 24px;
+        }
+      }
+    }
+  }
+}
+
+//mobile Breakpoint
+@media (max-width: $screen-xs-sm) {
+  .library-introduction {
+    margin-bottom: 60px !important;
+    .ui.button.close-library-introduction {
+      right: 25px;
+      margin-top: 10px;
+    }
+    .library-introducing-category-info {
+      font-size: $deskSz4;
+      padding-bottom: 15px;
+    }
+    .category-container {
+      padding: 10px !important;
+      .category-description {
+        .richText {
+          .rich-text {
+            p {
+              padding-top: 10px;
+              width: 100%;
+            }
+          }
+        }
+      }
+      .category-title {
+        font-size: $deskSzSmaller;
+        .brand-triangle-icon {
+          width: 24px;
+          height: 24px;
+        }
+      }
+    }
+    .column {
+      padding-top: 15px;
+    }
+  }
+}
+

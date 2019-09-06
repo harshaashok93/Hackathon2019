@@ -1,0 +1,78 @@
+/*
+ * Component: Logo
+ */
+
+@import '../../../styles/variables';
+
+// (IMPORTANT: please create the styles such that the larger breakpoints
+// override the smaller ones. "Mobile First")
+
+.four-zero-four {
+  width: 100%;
+  text-align: center;
+  padding: 30px;
+  padding-bottom: 140px;
+  .ui.heading.title {
+    color: $errorPageRed;
+    font-size: $deskSz6;
+  }
+  .rich-text {
+    h1 {
+      font-size: $deskSzVeryBig;
+      color: $primaryBlue;
+      @include appDefaultFontStyleLight();
+    }
+    p {
+      font-size: $deskSzBig;
+      color: $primaryBlue;
+      @include appDefaultFontStyleLight();
+    }
+  }
+  .ui.divider {
+    width: 300px;
+    margin: 22px auto;
+  }
+  .four-zero-four-image {
+    width: 184px;
+    height: auto;
+    margin: 50px auto;
+  }
+  .ui.button.secondary {
+    margin: 0;
+  }
+}
+
+// Large Breakpoint
+@media (max-width: $screen-lg-min) {
+  
+}
+
+// Medium Breakpoint
+@media (max-width: $screen-md-min) {
+  
+}
+
+// Small Breakpoint
+@media (max-width: $screen-sm-min) {
+  
+}
+
+@media (max-width: $screen-xs-sm) {
+  .four-zero-four {
+    padding-bottom: 50px;
+    .rich-text {
+      h1 {
+        font-size: $deskSz11;
+      }
+      p {
+        font-size: $deskSz5;
+        line-height: 1.2;
+      }
+    }
+    .ui.divider {
+      width: 90%;
+      margin: 22px auto;
+    }
+  }
+}
+

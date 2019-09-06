@@ -1,0 +1,430 @@
+/*
+ * Component: UpComingCalenderEvent
+ */
+
+@import '../../../styles/variables';
+
+// (IMPORTANT: please create the styles such that the larger breakpoints
+// override the smaller ones. "Mobile First")
+
+.up-coming-calender-event {
+  border-radius: 5px;
+  overflow: hidden;
+  .no-results-found {
+    text-align: center;
+  }
+  .react-date-picker {
+    .react-date-picker__button {
+      .react-date-picker__button__input {
+        .react-date-picker__button__input__day,
+        .react-date-picker__button__input__month {
+          width: 20px !important;
+        }
+      }
+    }
+  }
+  .blue-title-bar {
+    background-color: $primaryBlue;
+    color: $primaryWhite;
+    font-size: $deskSz9;
+    padding: 10px 25px;
+    .sideLeft,
+    .sideRight {
+      width: 50%;
+      position: relative;
+      display: inline-block;
+      .sorting-tab {
+        cursor: pointer;
+        &.title{
+          margin-left: 140px;
+          margin-bottom: 0;
+          padding: 0 15px;
+        }
+        display: inline-block;
+        width: 25%;
+      }
+    }
+  }
+  .text {
+    color: $primaryBlue !important;
+  }
+  .filters {
+    margin-bottom: 60px;
+    .search-in-calender {
+      display: inline-block;
+    }
+    .bmo_chevron::before {
+      color: $primaryBlue;
+      margin-right: 5px;
+    }
+    .drop-downs {
+      margin-top: 15px;
+      display: inline-block;
+    }
+    .search-in-calender-box {
+      display: inline-block;
+      position: relative;
+      margin-right: 60px;
+      margin-top: 15px;
+      width: 265px;
+      input {
+        padding: 10px 20px;
+      }
+      .bmo-search-icon {
+        height: 25px;
+        width: 25px;
+        position: absolute;
+        top: 10px;
+        z-index: 11;
+        left: 16px;
+      }
+      .ui.dropdown {
+        .menu.transition {
+          .item {
+            margin-bottom: 0px;
+          }
+        }
+      }
+      .ui.search.selection.as-search.dropdown {
+        border: none;
+        border-bottom: solid 1px $primaryBlue;
+        border-radius: 0;
+        min-height: 10px;
+        padding: 10px 2px;
+      }
+    }
+    .ui.selection.all-event-in-calender.dropdown {
+      border: none;
+      border-bottom: solid 1px $primaryBlue;
+      border-radius: 0;
+      min-height: 10px;
+      padding: 10px 2px;
+      margin-top: 15px;
+      width: 265px;
+    }
+    .ui.active.visible.search.selection.as-search.dropdown,
+    .ui.active.visible.selection.all-event-in-calender.dropdown {
+      box-shadow: none;
+      border: none;
+    }
+    .ui.search.selection.as-search.dropdown {
+      padding: 10px 0px;
+      font-size: $deskSz9;
+      .search {
+        padding: 10px 0px;
+        font-size: $deskSz9;
+      }
+      .dropdown.icon {
+        display: none;
+      }
+    }
+    .date-picker {
+      position: relative;
+      &.from-date {
+        margin-left: 0;
+        margin-right: 35px;
+        .date-picker-title {
+          padding-left: 0 !important;
+        }
+      }
+      &.to-date {
+        margin-right: 60px;
+      }
+      display: inline-block;
+      .ui.heading.title-label.date-picker-title {
+        width: auto;
+      }
+      .react-date-picker {
+        padding-left: 10px;
+      }
+      .calender-input-btns {
+        width: 150px;
+      }
+    }
+  }
+  .event-cards {
+    min-height: 300px;
+    position: relative;
+    .show-more-btn-holder {
+      text-align: center;
+      margin-top: 45px;
+      .show-more-btn {
+        background-color: transparent;
+        color: $primaryBlue;
+        font-size: $deskSz7;
+        &:before {
+          color: $primaryBlue;
+          left: 10px;
+          top: 0;
+          height: 14px;
+          border-right: solid 2px;
+          border-top: solid 2px;
+          width: 14px;
+        }
+      }
+    }
+    .event-card {
+      .left {
+        width: 100%;
+        text-align: left;
+        padding-left: 12px;
+        .event-card-image {
+          width: 22%;
+          position: relative;
+          display: inline-block;
+          vertical-align: middle;
+          box-shadow: 0 1px 17px 0 rgba(0,0,0,.1);
+          background-color: #fff;
+          img {
+            width: 100%;
+            height: 136px;
+            vertical-align: middle;
+          }
+        }
+        .event-details {
+          width: 60%;
+          position: relative;
+          display: inline-block;
+          vertical-align: middle;
+          height: auto;
+          padding: 10px 3% 20px;
+          h5.ui.heading {
+            line-height: 1;
+          }
+          .ui.button.attend-button {
+            margin-top: 21px;
+          }
+        }
+      }
+    }
+  }
+}
+
+// Small Breakpoint
+@media (max-width: $screen-tab) {
+  .up-coming-calender-event {
+    .blue-title-bar {
+      .sideLeft,
+      .sideRight {
+        .sorting-tab {
+          min-width: 25%;
+          width: auto;
+          &.title{
+            margin-left: 0;
+          }
+        }
+      }
+    }
+    .filters {
+      text-align: left;
+      margin-bottom: 40px;
+      .date-picker {
+        padding-top: 20px;
+        margin: 0;
+      }
+      .date-picker {
+        .date-picker-title.ui.heading {
+          position: relative;
+          padding: 0px !important;
+          padding-right: 15px !important;
+        }
+        .react-date-picker {
+          width: auto;
+          padding-left: 0;
+          vertical-align: middle;
+        }
+      }
+      .drop-downs {
+        text-align: left;
+      }
+    }
+  }
+}
+
+@media (max-width: $screen-sm-min) {
+  .up-coming-calender-event {
+    .blue-title-bar {
+      .sideLeft,
+      .sideRight {
+        .sorting-tab {
+          min-width: 25%;
+          width: auto;
+          &.title{
+            margin-left: 0;
+          }
+        }
+      }
+    }
+    .filters {
+      text-align: left;
+      .date-picker {
+        padding-top: 20px;
+        margin: 0;
+      }
+      .date-picker {
+        .date-picker-title.ui.heading {
+          position: relative;
+          padding: 0px !important;
+          padding-right: 15px !important;
+        }
+        .react-date-picker {
+          width: auto;
+          padding-left: 0;
+          vertical-align: middle;
+        }
+      }
+      .drop-downs {
+        text-align: left;
+      }
+    }
+    .event-cards {
+      .event-card {
+        .left {
+          .event-card-image {
+            width: 27%;
+          }
+          .event-details {
+            width: 73%;
+            .blue-bookmark-button {
+              display: block;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: $screen-xs-sm) {
+  .up-coming-calender-event {
+    .event-cards {
+      .show-more-btn-holder {
+        text-align: center;
+        margin: 25px 0;
+        .show-more-btn {
+          background-color: transparent;
+          color: $primaryBlue;
+          font-size: $deskSz7;
+          &:before {
+            color: $primaryBlue;
+            left: 10px;
+            top: 0;
+            height: 14px;
+            border-right: solid 2px;
+            border-top: solid 2px;
+            width: 14px;
+          }
+        }
+      }
+      .event-card {
+        .left {
+          width: 80%;
+          .event-card-image {
+            display: none;
+          }
+          .event-details {
+            width: auto;
+            padding: 15px 0px;
+            .type-location, .ui.heading {
+              font-size: $deskSzSmaller;
+            }
+            .ui.button.attend-button {
+              font-size: $deskSzSmall;
+            }
+            .blue-bookmark-button {
+              display: none;
+            }
+          }
+        }
+        .right {
+          display: inline-block;
+          width: 20%;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: $screen-xs-min) {
+  .up-coming-calender-event {
+    .blue-title-bar {
+      .sideLeft,
+      .sideRight {
+        width: 25%;
+        .sorting-tab {
+          min-width: 25%;
+          width: auto;
+          padding: 0;
+          &.title{
+            margin-left: 0;
+            padding: 0;
+          }
+        }
+      }
+      .sideRight {
+        width: 75%;
+        .sorting-tab {
+          width: auto;
+          padding: 0 0 0 15px;
+        }
+      }
+    }
+    .filters {
+      text-align: left;
+      .date-picker {
+        width: 330px;
+        width: auto;
+        &.from-date {
+          margin-left: 0px;
+        }
+      }
+      .bmo_chevron::before {
+        color: $primaryBlue;
+        margin-right: 10px;
+      }
+      .ui.selection.all-event-in-calender.dropdown,
+      .search-in-calender-box {
+        text-align: left;
+        padding: 10px 0;
+        width: calc(100% - 32px);
+        color: $primaryBlue;
+        position: relative;
+        margin: 0 15px;
+        min-height: 30px;
+        .as-search {
+          width: 100%;
+          margin: 0 !important;
+          .text {
+            color: $primaryBlue !important;
+          }
+        }
+      }
+      .date-picker {
+        width: 100%;
+        .date-picker-title.ui.heading {
+          position: relative;
+          padding: 10px 15px !important;
+          min-width: 65px;
+        }
+        .react-date-picker {
+          width: auto;
+          padding-left: 0;
+          vertical-align: middle;
+          position: absolute;
+          width: 230px;
+        }
+      }
+      .ui.active.visible.search.selection.as-search.dropdown {
+        box-shadow: none;
+        border: none;
+      }
+    }
+  }
+}
+
+// Large Breakpoint
+@media (min-width: $screen-lg-min) {
+  .up-coming-calender-event {
+    // override md breakpoint styles
+  }
+}

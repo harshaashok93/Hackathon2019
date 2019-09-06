@@ -1,0 +1,73 @@
+/*
+ * Component: LeftBarSubMenuItem
+ */
+
+@import '../../../../styles/variables';
+
+// (IMPORTANT: please create the styles such that the larger breakpoints
+// override the smaller ones. "Mobile First")
+
+.left-bar-sub-menu-item {
+  width: 100%;
+  text-align: left;
+  border-radius: 0;
+  margin-right: 0px;
+  border-bottom: solid 1px rgba(199, 199, 199, 0.5);
+  font-size: $deskSz9;
+  .ui.heading {
+    font-size: $deskSz9;
+  }
+  li {
+    padding: 0px;
+  }
+  .active-menu-cell {
+    color: $primaryGray;
+    @include appDefaultFontStyleBold();
+  }
+  .normal-menu-cell {
+    color: $primaryGray;
+    @include appDefaultFontStyleLight();
+  }
+  .ui.heading {
+    color: $primaryGray;
+    @include appDefaultFontStyleLight();
+    padding: 10px 15px;
+    display: inline-block;
+    width: 100%;
+    .active-menu-cell {
+      font-weight: $Bolder;
+    }
+    &.active {
+      background: none;
+      border-left: solid 1px $accordionGray;
+      span {
+        display: block;
+        float: right;
+        &::before {
+          top: 7px;
+        }
+      }
+    }
+  }
+}
+
+// Small Breakpoint
+@media (min-width: $screen-sm-min) {
+  .left-bar-sub-menu-item {
+    // ...
+  }
+}
+
+// Medium Breakpoint
+@media (min-width: $screen-md-min) {
+  .left-bar-sub-menu-item {
+    // override sm breakpoint styles
+  }
+}
+
+// Large Breakpoint
+@media (min-width: $screen-lg-min) {
+  .left-bar-sub-menu-item {
+    // override md breakpoint styles
+  }
+}

@@ -1,0 +1,57 @@
+/*
+ * Component: ProfileIconSubLinks
+ */
+
+@import '../../../styles/variables';
+
+// (IMPORTANT: please create the styles such that the larger breakpoints
+// override the smaller ones. "Mobile First")
+
+.profile-icon-sub-links {
+  text-align: left;
+  padding: 6px 25px 0;
+  a {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: inline-block;
+    color: $primaryWhite;
+    &:hover {
+      @include boxShadow(0, 1px, 0, 0, $primaryWhite);
+      color: $primaryWhite;
+    }
+  }
+  .notification-circle {
+    height: 20px;
+    width: 20px;
+    margin-left: 7px;
+    top: -2px;
+    border-radius: 50rem;
+    position: relative;
+    background-color: $primaryRed;
+    padding: 3px 7px;
+    font-size: $deskSzSmaller;
+    color: $primaryWhite;
+  }
+}
+
+// Small Breakpoint
+@media (min-width: $screen-sm-min) {
+  .profile-icon-sub-links {
+    // override xs breakpoint styles
+  }
+}
+
+// Medium Breakpoint
+@media (min-width: $screen-md-min) {
+  .profile-icon-sub-links {
+    // override sm breakpoint styles
+  }
+}
+
+// Large Breakpoint
+@media (min-width: $screen-lg-min) {
+  .profile-icon-sub-links {
+    // override md breakpoint styles
+  }
+}

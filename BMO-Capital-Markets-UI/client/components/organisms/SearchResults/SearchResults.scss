@@ -1,0 +1,519 @@
+/*
+ * Component: SearchResults
+ */
+
+@import '../../../styles/variables';
+
+// (IMPORTANT: please create the styles such that the larger breakpoints
+// override the smaller ones. "Mobile First")
+
+.search-results::-webkit-scrollbar {
+  display: none;
+}
+.search-results {
+  width: 100%;
+  max-width: $screen-windows-lg;
+  cursor: default;
+  position: fixed;
+  top: 150px;
+  border-top: solid 2px $borderGray;
+  z-index: 100;
+  display: none;
+  left: 0px;
+  right: 0px;
+  margin: 0 auto;
+  &.focus {
+    display: block;
+    height: calc(100vh - 150px);
+    overflow: auto;
+  }
+  .headingRegular {
+    @include appDefaultFontStyleMedium();
+  }
+  .emptyRecentSearch {
+    color: $primaryGray;
+  }
+  .only-on-tab,
+  .only-on-mobile {
+    display: none !important;
+  }
+  .show-on-desktop {
+    display: inline-block !important;
+  }
+  .heading.search-result-section-title {
+    border-bottom: solid 1px $borderBottomGrey;
+    font-size: $deskSz7;
+    text-align: left;
+    padding: 10px;
+    color: $primaryGray;
+    margin-bottom: 10px;
+    @include appDefaultFontStyleMedium();
+    padding-left: 0;
+  }
+  .mobile-accord {
+    .left-side {
+      width: 120px;
+      display: inline-block;
+    }
+    .right-side {
+      width: calc(100% - 120px);
+      display: inline-block;
+    }
+  }
+  .dimmer {
+    height: 100%;
+    width: 100%;
+    top: 0;
+    background-color: $primaryWhite;
+    opacity: 0;
+    position: absolute;
+    z-index: -1;
+  }
+  .search-result-bottom-section,
+  .search-result-top-section {
+    width: 100%;
+    background-color: $primaryWhite;
+  }
+  .search-result-top-section {
+    padding: 40px;
+    padding-top: 0;
+    padding-bottom: 0;
+    .ui.list {
+      padding: 0 0;
+    }
+  }
+  .company-ticker-and-analyst, .research, .other-and-analyst {
+    display: inline-block;
+    vertical-align: top;
+    text-align: left;
+    padding: 10px 0px;
+    .only-mobile {
+      display: none;
+    }
+    .show-all-text {
+      @include appDefaultFontStyleMedium();
+      margin-left: 0 !important;
+      &.analysts {
+        margin-left: 4.25px;
+      }
+    }
+    .analyst-name {
+      display: inline-block;
+      width: 100%;
+      padding-bottom: 15px !important;
+      .analyst-avatar {
+        display: inline-block;
+        vertical-align: middle;
+        .ui.image.analyst-image {
+          height: 55px;
+          width: 55px;
+          margin: auto;
+        }
+      }
+      .analyst-name-role-position {
+        word-wrap: break-word;
+        max-width: 70%;
+        display: inline-block;
+        vertical-align: middle;
+        padding-left: 15px;
+        top: 0;
+        .desig {
+          color: $primaryGray;
+          font-size: $deskSzSmaller;
+        }
+      }
+    }
+    .a-row {
+      text-align: left;
+      padding: 2px 0 10px !important;
+      font-size: $deskSz9;
+      @include appDefaultFontStyleRegular();
+
+      color: $primaryBlue;
+      .comp-name, .analyst-name {
+        @include appDefaultFontStyleRegular();
+        font-size: $deskSz9;
+
+      }
+      .comp-name {
+        @include appDefaultFontStyleRegular();
+      }
+      .comp-ticker {
+        @include appDefaultFontStyleRegular();
+        font-size: $deskSz9;
+
+      }
+      .research-comp-ticker {
+        @include appDefaultFontStyleRegular();
+        width: 100%;
+        display: inline-block;
+        vertical-align: top;
+        color: $primaryGray;
+        font-size: $deskSzSmaller;
+        padding-bottom: 0px;
+      }
+      .research-comp-details {
+        @include appDefaultFontStyleRegular();
+
+        width: 100%;
+        display: inline-block;
+        line-height: 1.4em;
+        .richText {
+          color: $primaryBlue;
+        }
+      }
+      .research-comp-comment-type {
+        @include appDefaultFontStyleRegular();
+
+      }
+    }
+    .list {
+      margin-top: 0;
+    }
+  }
+  .other-and-analyst {
+    padding: 10px 0px 25px;
+    .other {
+      margin-top: 25px;
+    }
+  }
+  .company-ticker-and-analyst, .other-and-analyst {
+    width: 25%;
+  }
+  .company-ticker-and-analyst {
+    .item.a-row {
+      padding-bottom: 14px;
+      padding-top: 9;
+    }
+  }
+  .research {
+    padding: 10px 8%;
+    width: 45%;
+  }
+  .recent-search,
+  .often-search {
+    width: 32%;
+    background-color: $brightGray;
+    .type {
+      width: 100%;
+      display: inline-block;
+
+      @include appDefaultFontStyleRegular();
+    }
+  }
+  .recent-search.recent-search-hide {
+    display: none;
+  }
+  .recent-search,
+  .often-search {
+    display: table-cell;
+    vertical-align: top;
+    padding: 20px 40px;
+    text-align: left;
+    color: $primaryWhite;
+    .heading {
+      margin-bottom: 15px;
+      font-size: $deskSz7;
+      font-size: $deskSz7;
+      color: $primaryGray;
+    }
+    .a-row {
+      width: 100%;
+      position: relative;
+      display: block;
+    }
+  }
+  .often-search {
+    padding-left: 0;
+  }
+  .news-section {
+    display: table-cell;
+    background-color: $primaryBlue;
+    padding: 20px 30px;
+    width: 30%;
+    .ui.heading {
+      color: $primaryWhite;
+      .a-row {
+        color: $primaryWhite;
+      }
+    }
+    .type {
+      width: 100%;
+      color: $primaryWhite;
+      @include appDefaultFontStyleRegular();
+      margin-bottom: 15px;
+    }
+    .news-section-address {
+      color: $primaryWhite;
+      font-size: $deskSz9;
+      display: inline-block;
+    }
+    .news-section-text {
+      color: $primaryWhite;
+      font-size: $deskSz9;
+      max-width: 330px;
+      margin-bottom: 0px;
+      display: inline;
+    }
+    .address-section-button {
+      background-color: transparent;
+      color: $primaryWhite;
+      padding: 0;
+
+      &.ui.button:hover {
+        background-color: $primaryBlue;
+        color: $primaryWhite;
+      }
+    }
+  }
+  .research {
+    .a-row {
+      padding-bottom: 15px !important; // reducing the spacing between the research line items
+    }
+  }
+  .search-result-bottom-section {
+    box-shadow: 0 8px 7px 0 rgba(129, 129, 129, 0.5);
+    display: table;
+    position: relative;
+    .v-hr {
+      height: 80%;
+      position: absolute;
+      top: 10%;
+      width: 1px;
+      background-color: $secondaryGray;
+    }
+    .ui.list {
+      .a-row {
+        @include appDefaultFontStyleRegular();
+        padding-bottom: 10px;
+        color: $primaryBlue;
+      }
+    }
+    .v-hr::after{
+      position: absolute;
+    }
+  }
+  .analyst, .company-ticker, .industry {
+    margin-bottom: 20px;
+    .ui.list {
+      padding: 0;
+    }
+  }
+  .industry {
+    margin-top: 35px;
+  }
+  img.ui.image.see-all-chevron {
+    display: inline-block;
+    height: 12px;
+    padding-left: 10px;
+    margin-top: -3px;
+  }
+}
+
+// Medium Breakpoint
+@media (max-width: $screen-md-min) {
+  .search-results {
+    margin-left: 0;
+    margin: auto;
+    top: 100px;
+    &:before {
+      border: none;
+    }
+    .search-result-bottom-section {
+      padding-bottom: 0;
+    }
+    &.compress {
+      width: 100%;
+    }
+    .research {
+      padding: 10px 15px;
+    }
+  }
+}
+
+@media (max-width: $screen-sm) {
+  .search-results {
+    top: 150px;
+    .other-and-analyst .analyst-name .analyst-avatar {
+      display: none;
+    }
+    .industry {
+      margin-top: 20px;
+    }
+    .other-and-analyst {
+      padding: 0;
+    }
+    .company-ticker-and-analyst {
+      .item.a-row {
+        display: none;
+      }
+      .item.a-row:nth-child(1) {
+        display: block;
+      }
+      .item.a-row:nth-child(2) {
+        display: block;
+      }
+    }
+    .other-and-analyst .analyst-name .analyst-name-role-position {
+      padding-left: 0;
+    }
+    .recent-search, .news-section, .often-search {
+      .heading {
+        font-size: $deskSz9;
+      }
+    }
+    .heading.search-result-section-title {
+      padding: 0 10px 5px 0;
+      font-size: $deskSz9;
+    }
+    .company-ticker-and-analyst {
+      width: 50%;
+      display: inline-block;
+      padding-right: 35px;
+      padding-left: 0 !important;
+      .other-and-analyst {
+        width: 100%;
+        display: inline-block;
+      }
+    }
+    .research {
+      width: 50%;
+      padding-left: 30px;
+      padding-right: 0px;
+      display: inline-block;
+    }
+    .only-on-tab {
+      display: inline-block !important;
+      width: 100%;
+    }
+    .not-on-tab {
+      display: none !important;
+    }
+  }
+}
+
+// Small Breakpoint
+@media (max-width: $screen-xs-sm) {
+  .search-results {
+    top: 145px;
+    .company-ticker-and-analyst, .research, .other-and-analyst, .often-search, .news-section {
+      display: inline-block;
+      width: 100%;
+    }
+    .not-on-tab {
+      display: unset;
+    }
+    .not-on-mobile {
+      display: none;
+    }
+    .research {
+      width: 50%;
+      display: inline-block;
+    }
+    .company-ticker-and-analyst {
+      padding: 0;
+      width: 100%;
+      .not-on-mobile {
+        display: none;
+      }
+      .only-mobile {
+        display: inline-block;
+      }
+    }
+    .research {
+      padding: 0;
+      width: 100%;
+    }
+    .search-result-top-section {
+      padding: 5px 35px 0;
+    }
+    .search-result-bottom-section {
+      padding: 20px;
+      padding-bottom: 60px;
+      display: inline-block;
+      .emptyRecentSearch {
+        font-size: $deskSzSmaller;
+      }
+    }
+    .recent-search {
+      padding: 15px;
+      display: inline-block;
+      width: 100%;
+      .item.a-row  {
+        font-size: $deskSz9;
+        @include appDefaultFontStyleRegular();
+        padding-bottom: 25px;
+      }
+    }
+    .often-search {
+      width: 100%;
+      padding: 15px;
+      .item.a-row {
+        @include appDefaultFontStyleRegular();
+        padding-bottom: 25px;
+      }
+    }
+    .often-search.often-search-width-alter {
+      width: 100%;
+    }
+  }
+}
+
+@media (max-width: $screen-xs-min) {
+  .search-results {
+    top: 170px;
+    .search-result-bottom-section {
+      padding: 0;
+      @include appDefaultFontStyleRegular();
+      .recent-search,
+      .often-search,
+      .news-section {
+        padding: 20px  20px 15px 20px;
+      }
+      .news-section {
+        padding-top: 0;
+        padding-bottom: 20px;
+        font-size: $deskSzSmaller;
+      }
+      .recent-search {
+        border-bottom: solid 1px rgba(153, 153, 153, 0.7);
+      }
+      .ui.heading {
+        font-size: $deskSzSmaller;
+      }
+      .item.a-row {
+        font-size: $deskSzSmaller;
+        @include appDefaultFontStyleRegular();
+      }
+    }
+    .ui.heading.featured-research-heading {
+      display: none;
+    }
+    .news-section {
+      padding: 0 15px;
+      padding-bottom: 15px;
+    }
+    .search-result-top-section {
+      padding: 5px 10px;
+    }
+    .only-on-tab {
+      display: none !important;
+    }
+    .only-on-mobile {
+      display: inline-block !important;
+      width: 100%;
+    }
+    &.focus {
+      height: calc(100vh + 160px);
+      overflow: scroll;
+      padding-bottom: 320px
+    }
+  }
+}
+
+// Large Breakpoint
+@media (min-width: $screen-lg-min) {
+  .search-results {
+    // override md breakpoint styles
+  }
+}

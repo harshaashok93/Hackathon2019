@@ -1,0 +1,327 @@
+/*
+ * Component: AnalystsDetailBio
+ */
+
+@import '../../../styles/variables';
+
+// (IMPORTANT: please create the styles such that the larger breakpoints
+// override the smaller ones. "Mobile First")
+
+.analysts-detail-bio {
+  padding: 40px;
+  padding-top: 50px;
+  color: $primaryGray;
+  .ui.button.analyst-pdf {
+    display: block;
+    padding: 10px 0px;
+    span.download-report {
+      width: 21px;
+      height: 21px;
+      padding: 0;
+      display: inline-block;
+      vertical-align: bottom;
+      margin-right: 15px;
+    }
+  }
+  .only-mobile-bio {
+    display: none;
+  }
+  .ui.button.download-report {
+    width: 21px;
+    height: 21px;
+    padding: 0;
+  }
+  .analyst-heading {
+    font-size: $deskSzBigest;
+    @include appDefaultFontStyleLight();
+    color: $pageTitleGrey;
+
+    text-align: left;
+  }
+  .back-link-holder {
+    padding-bottom: 38px;
+    padding-top: 30px;
+    .bmo_chevron.left {
+      &:before {
+        float: left;
+        color: $primaryBlue;
+        height: 10px;
+        width: 10px;
+        top: 6px;
+      }
+    }
+    .back-link {
+      font-size: $deskSz7;
+      color: $primaryBlue;
+      padding-left: 12px;
+    }
+  }
+  .analyst-profile-pic {
+    text-align: left;
+    margin-top: 20px;
+    width: 36%;
+    display: inline-block;
+    vertical-align: top;
+    margin-bottom: 40px;
+    .analyst-image {
+      display: inline-block;
+      margin-right: 20px;
+      height: 143px;
+      width: 143px;
+      overflow: hidden;
+      vertical-align: middle;
+      border-radius: 100%;
+      .ui.image.analyst-avatar {
+        display: inline-block;
+      }
+    }
+    .analyst-name {
+      display: inline-block;
+      vertical-align: middle;
+      width: 300px;
+      color: $primaryGray;
+      .analyst-role-section, .analyst-company {
+        display: inline-block;
+        color: $primaryGray;
+        >.displayTitle {
+          margin-bottom: 6px;
+        }
+        .legal-entity {
+          font-size: $deskSzSmaller;
+        }
+      }
+      .email {
+        text-align: left;
+        color: $primaryBlue;
+        .forgot-mail-icon, .forgot-phone-icon {
+          padding-left: 33px;
+          margin-bottom: 5px;
+          background-position: left;
+          background-size: 18px auto!important;
+          display: block;
+          word-wrap: break-word;
+        }
+        .ui.button {
+          height: 21px;
+          width: 21px;
+          vertical-align: top;
+          padding: 0px;
+          display: block;
+          &.follow-contact {
+            width: auto;
+            span {
+              vertical-align: sub;
+              padding-left: 33px;
+              color: $primaryBlue;
+              font-size: 16px;
+            }
+          }
+        }
+        &:before {
+          border-bottom: 0.3px solid #ccc;
+          content: '';
+          display: block;
+          height: 1px;
+          width: 230px;
+          position: relative;
+          margin-top: 25px;
+          margin-bottom: 9px;
+        }
+      }
+    }
+  }
+  .bio {
+    display: inline-block;
+    width: 63%;
+    vertical-align: top;
+  }
+  .button.ui.see-analyst-research-btn {
+    padding: 10px 15px;
+  }
+  &:after {
+    border-bottom: 0.3px solid #ccc;
+    content: '';
+    display: block;
+    height: 1px;
+    width: 100;
+    position: relative;
+    margin-top: 50px;
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width: $screen-tab) {
+  .analysts-detail-bio {
+    .back-link-holder {
+      padding-bottom: 50px;
+      .back-link.active {
+        font-size: $deskSz7;
+        padding-left: 5px;
+      }
+    }
+    .analyst-profile-pic {
+      display: block;
+      width: 100%;
+      margin-bottom: 60px;
+      .analyst-name {
+        .email {
+          .ui.button {
+            &.follow-contact {
+              width: auto;
+            }
+          }
+        }
+      }
+    }
+    .bio {
+      display: block;
+      width: 100%;
+    }
+    .ui.button.analyst-pdf {
+      margin: auto;
+    }
+  }
+}
+
+@media (max-width: $screen-tab) and (orientation: landscape) {
+  .analysts-detail-bio {
+    .ui.button.analyst-pdf {
+      margin: 0;
+    }
+  }
+}
+
+// Small Breakpoint
+@media (max-width: $screen-sm-min) {
+  .analysts-detail-bio {
+    .back-link-holder {
+      padding-bottom: 50px;
+      .back-link.active {
+        font-size: $deskSz7;
+        padding-left: 5px;
+      }
+    }
+    .analyst-profile-pic {
+      display: block;
+      width: 100%;
+      margin-bottom: 60px;
+      .analyst-name {
+        width: 70%;
+        .email {
+          &:before {
+            border-bottom: 0.3px solid #ccc;
+            content: '';
+            display: block;
+            height: 1px;
+            width: 100%;
+            position: relative;
+            margin-top: 20px;
+            margin-bottom: 20px;
+          }
+        }
+      }
+    }
+    .bio {
+      display: block;
+      width: 100%;
+      text-align: center;
+      .richText {
+        text-align: left !important;
+      }
+    }
+  }
+}
+
+// Small Breakpoint
+@media (max-width: $screen-xs-min) {
+  .analysts-detail-bio {
+    .ui.button.analyst-pdf {
+      span.download-report {
+        margin-left: 0;
+      }
+      margin: auto;
+    }
+    padding: 16px;
+    .analyst-heading {
+      font-size: $deskSz41;
+      line-height: 1.1;
+    }
+    .only-mobile-bio {
+      display: block;
+      text-align: center;
+      .truncated {
+        text-align: left;
+        .richText {
+          display: inline;
+          * {
+            display: inline;
+          }
+        }
+        .ui.button.hero-banner-show-button {
+          display: inline;
+          color: $primaryBlue;
+          background-color: transparent;
+          padding: 0;
+        }
+      }
+    }
+    .only-desktop-bio {
+      display: none;
+    }
+    .analyst-profile-pic {
+      margin-bottom: 40px;
+      .analyst-name {
+        .email {
+          .ui.button {
+            &.follow-contact {
+              width: auto;
+            }
+          }
+        }
+      }
+      .analyst-image {
+        display: block;
+        height: 120px;
+        width: 120px;
+        .ui.image.analyst-avatar {
+          margin-right: 20px;
+          margin-bottom: 20px;
+        }
+      }
+      .analyst-name {
+        width: 100%;
+        margin-top: 20px;
+        .analyst-role-section, .analyst-company {
+          display: block;
+        }
+      }
+    }
+    .bio {
+      margin-bottom: 40px;
+    }
+    .back-link-holder {
+      padding-top: 10px;
+      padding-bottom: 25px;
+      .bmo_chevron.left:before {
+        top: 5px;
+      }
+      .back-link {
+        padding-left: 6px;
+      }
+    }
+  }
+}
+
+// Medium Breakpoint
+@media (max-width: $screen-md-min) {
+  .analysts-detail-bio {
+    // override sm breakpoint styles
+  }
+}
+
+// Large Breakpoint
+@media (max-width: $screen-lg-min) {
+  .analysts-detail-bio {
+    // override md breakpoint styles
+  }
+}

@@ -1,0 +1,438 @@
+/*
+ * Component: LibrarySearchResultOverlay
+ */
+
+@import '../../../styles/variables';
+
+// (IMPORTANT: please create the styles such that the larger breakpoints
+// override the smaller ones. "Mobile First")
+
+.library-search-overlay {
+  &.ui.modal {
+    width: 88%;
+    border-radius: 0;
+    .content {
+      padding: 1.9rem;
+    }
+  }
+  .ui.heading {
+    @include appDefaultFontStyleRegular();
+  }
+
+  .sector {
+    .sector-name:first-child {
+      margin-top: 20px;
+    }
+  }
+
+  .close-search-overlay {
+    &.ui.button {
+      width: 20px;
+      height: auto;
+      float: right;
+      cursor: pointer;
+      padding: 10px;
+      display: inline-block;
+    }
+  }
+  .library-overlay-top {
+    width: 100%;
+    &.ui.container {
+      margin-left: 0px !important;
+    }
+    .cannabis-preview-modal {
+      width: auto;
+      box-shadow: none !important;
+    }
+    .library-overlay-top-section {
+      display: inline-block;
+      width: 94%;
+      .analyst-info-wrap {
+        display: inline-block;
+        width: 100%;
+        .left-section {
+          display: inline-block;
+          vertical-align: middle;
+        }
+      }
+      .right-section {
+        display: inline-block;
+        width: 40%;
+        vertical-align: top;
+        .team-member-heading {
+          color: $primaryGray;
+          margin-bottom: 8px;
+          .ui.heading {
+            font-size: 1rem;
+          }
+        }
+      }
+      .other-team-member-mob {
+        display: none;
+      }
+      .ui.heading {
+        &.analyst-name {
+          padding-right: 5px;
+        }
+        &.analyst-name,
+        &.analyst-position {
+          text-align: left;
+          display: inline-block;
+          color: $primaryBlue;
+          margin: 0;
+          font-size: 1em;
+        }
+      }
+      .analyst-profile-image {
+        vertical-align: middle;
+        display: inline-block;
+        width: 80px;
+        height: 80px;
+        z-index: 9;
+      }
+      .analyst-and-ticker {
+        display: inline-block;
+        vertical-align: middle;
+        padding-left: 20px;
+      }
+      .analyst-contact-div {
+        padding-left: 20px;
+        margin-top: 10px;
+        .ui.button {
+          height: 21px;
+          width: 21px;
+          vertical-align: top;
+          padding: 0px;
+          margin: auto 13px;
+          &.forgot-mail-icon {
+            margin-left: 0px;
+            vertical-align: middle;
+            height: 17px;
+            margin-top: 4px;
+          }
+          &.follow-contact {
+            width: auto;
+            margin-bottom: -1px;
+            vertical-align: bottom;
+            span {
+              vertical-align: sub;
+              padding-left: 22px;
+              font-size: 1rem;
+              color: $primaryBlue;
+            }
+          }
+        }
+      }
+      .author-image {
+        display: table-cell;
+        vertical-align: middle;
+        width: 10%;
+        padding: 5px;
+      }
+    }
+  }
+  .library-overlay-bottom {
+    width: 100%;
+    &.ui.container {
+      margin-left: 0px !important;
+    }
+    .library-overlay-bottom-section {
+      padding: 20px 0;
+      .date-ticker{
+        @include appDefaultFontStyleLight();
+        .ticker {
+          padding-left: 32px;
+        }
+      }
+      .title-and-bookmark{
+        width: 100%;
+        display: inline-block;
+        padding-bottom: 25px;
+        padding-top: 5px;
+        position: relative;
+        .title {
+          width: 80%;
+          display: inline-block;
+          .ui.heading {
+            color: $primaryBlue;
+          }
+        }
+        .user-preferences {
+          width: 20%;
+          display: inline-block;
+          vertical-align: middle;
+          text-align: right;
+          position: absolute;
+          top: 0;
+          .Podcast{
+            height: 30px;
+            width: 25px;
+            background-position: center;
+            margin-left: auto;
+            vertical-align: middle;
+            border-radius: 0px;
+            display: inline-block;
+            margin-right: 15px;
+          }
+          .Videocast{
+            background-size: initial;
+            height: 17px;
+            width: 25px;
+            vertical-align: middle;
+            border-radius: 0px;
+            display: inline-block;
+            margin-right: 15px;
+          }
+          a {
+            display: inline-block;
+            width: 72%;
+            .pdf-image {
+              background-size: 20px !important;
+              background-position-x: 0;
+              height: 23px;
+              width: 20px;
+              cursor: pointer;
+              margin-left: auto;
+              margin-right: 8px;
+            }
+            .pdf-size {
+              font-size: $deskSzSmaller;
+              color: $inputTextGray;
+              padding-top: 3px;
+            }
+          }
+          .bookmark-button {
+            width: 28%;
+            display: inline-block;
+            text-align: right;
+            vertical-align: top;
+            .bookmark-link.ui.button {
+              background-size: 15px !important;
+              background-position-x: 0px;
+              background-position-y: 1px;
+              padding: 0px;
+              height: 23px;
+              width: 16px;
+              cursor: pointer;
+            }
+          }
+        }
+      }
+      .triangle-image {
+        display: inline-block;
+        vertical-align: top;
+        text-align: center;
+        padding-bottom: 16px;
+        .ui.image.brand-triangle-licon {
+          width: 24px;
+          height: 24px;
+          display: inline-block;
+        }
+        .brand-text {
+          font-size: $deskSzSmaller;
+          padding-left: 10px;
+        }
+      }
+      .comment-section {
+        width: 100% !important;
+        line-height: 1.43;
+        overflow: hidden;
+        font-size: $deskSzSmaller;
+        text-align: left;
+        .comment {
+          padding-bottom: 25px;
+          .comment-heading {
+            color: $primaryGray;
+          }
+          .comment-description {
+            @include appDefaultFontStyleLight();
+          }
+        }
+      }
+    }
+    .read-more-button.ui.button.secondary {
+      margin-left: 0px;
+      a {
+        color: $primaryBlue !important;
+      }
+    }
+    .sector.result-slice-cell {
+      text-align: left;
+      width: 100%;
+      ul {
+        list-style: none;
+        padding-left: 0;
+        li {
+          color: $primaryBlue;
+          font-size: $deskSz9;
+          line-height: 24px;
+          position: relative;
+          padding-left: 12px;
+          &::before {
+            content: "•";
+            color: $dotGray;
+            padding-top: 2px;
+            display: inline-block;
+            vertical-align: middle;
+            padding-right: 10px;
+            width: 5%;
+            font-size: $deskSz6;
+            vertical-align: middle;
+            position: absolute;
+            left: 0;
+          }
+        }
+      }
+    }
+  }
+}
+.library-search-result-overlay {
+}
+@media (max-width: $screen-xs-sm) {
+  .modals.dimmer {
+    .library-overlay-top {
+      .cannabis-preview-modal {
+        padding: 0px;
+        padding-top: 25px;
+      }
+    }
+    .library-search-overlay {
+      &.ui.modal {
+        width: 100%;
+        height: 100%;
+        .content {
+          height: auto;
+        }
+      }
+      .analyst-and-ticker {
+        .ui.container {
+          margin-left: 0px !important;
+        }
+      }
+      .read-more-button {
+        left: 50%;
+        transform: translateX(-50%);
+        position: relative;
+      }
+      .library-overlay-top-section {
+        .analyst-info-wrap {
+          padding-bottom: 23px;
+          border-bottom: solid 1px $inputTextGray;
+          display: inline-block;
+          width: 100%;
+        }
+        .left-section {
+          width: calc(100% - 80px);
+        }
+        .right-section {
+          display: none;
+        }
+        .other-team-member-mob {
+          display: block;
+          .ui.button {
+            padding: 15px 0 10px;
+            width: 190px;
+            text-align: left;
+            &::before {
+              color: $primaryBlue;
+              top: 5px;
+            }
+            &.bmo_chevron.bottom {
+              &::before {
+                top: 0;
+              }
+            }
+          }
+          .ui.heading.team-member-heading {
+            font-size: 1rem;
+            color: $primaryGray;
+          }
+        }
+        .author-image {
+          width: 30%;
+        }
+        .analyst-contact-div {
+          a {
+            padding-right: 10px;
+          }
+          .ui.button {
+            margin: auto 7px;
+          }
+        }
+        .top-right-analyst-details {
+          width: 80%;
+          .details-follow-div{
+            .author-details {
+              .analyst-name-div {
+                display: block;
+                .ui.heading {
+                  padding-right: 5%;
+                  font-size: $deskSz9;
+                }
+              }
+            }
+            .follow-contact-div {
+              float: right;
+            }
+          }
+        }
+        .ui.image.library-overlay-author-image{
+          width: 70px;
+          height: auto;
+        }
+      }
+      .close-search-overlay {
+        position: relative;
+      }
+      &.ui.scrolling.modal{
+        margin-top: 0em !important;
+        margin-bottom: 0 !important;
+      }
+      .library-overlay-top {
+        padding: 0;
+        .library-overlay-top-section .analyst-contact-div .ui.button {
+          margin-right: 0;
+          border-radius: 0px;
+        }
+      }
+      .library-overlay-bottom {
+        padding: 0 0 33px 0;
+        width: 100%;
+        .library-overlay-bottom-section {
+          .title {
+            font-size: $deskSz9;
+          }
+          .user-preferences {
+            vertical-align: top;
+          }
+          .bookmark-link.ui.button {
+            padding: 10px;
+          }
+        }
+        .comment-section {
+          width: 85%;
+          .comment {
+            display: none;
+            &:first-child {
+              display: block;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// Medium Breakpoint
+@media (min-width: $screen-md-min) {
+  .library-search-result-overlay {
+    // override sm breakpoint styles
+  }
+}
+
+// Large Breakpoint
+@media (min-width: $screen-lg-min) {
+  .library-search-result-overlay {
+    // override md breakpoint styles
+  }
+}

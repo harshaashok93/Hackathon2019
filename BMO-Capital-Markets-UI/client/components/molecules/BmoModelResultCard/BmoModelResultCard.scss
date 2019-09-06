@@ -1,0 +1,367 @@
+/*
+ * Component: PublicationCardSmall
+ */
+
+@import '../../../styles/variables';
+
+// (IMPORTANT: please create the styles such that the larger breakpoints
+// override the smaller ones. "Mobile First")
+
+
+.bmo-model-result-card {
+  display: table;
+  width: 100%;
+  border-bottom: solid 1px $borderGray;
+  padding: 10px 0px;
+  position: relative;
+  &.ui.list > .item {
+    padding-bottom: 20px;
+  }
+  .right {
+    display: none;
+  }
+  .left {
+    width: 100%;
+    display: table-row;
+  }
+  .ui.list > .item > .image.analyst-profile-image{
+    vertical-align: middle;
+
+  }
+  .result-column {
+    font-size: $deskSz9;
+    @include appDefaultFontStyleRegular();
+    text-align: left;
+    padding: 0 15px;
+    display: inline-block;
+    vertical-align: middle;
+    .ui.container {
+      position: relative;
+      padding-top: 1px;
+    }
+    &.date {
+      width: 15%;
+      color: $primaryGray;
+    }
+    .mobile-view-author-name {
+      display: none;
+    }
+    &.subject {
+      width: 44%;
+      .subject-heading {
+        color: $primaryBlue;
+        font-size: 1em;
+        line-height: 1.25;
+      }
+    }
+    &.author {
+      text-align: left;
+      width: 16%;
+      color: $primaryGray;
+      a.ui.container:first-child {
+        display: inline-block;
+        position: relative;
+        width: auto !important;
+        // padding-right: 20px !important;
+        div.author-name {
+          // display: inline;
+        }
+      }
+      .bmomodel-analyst-pop-up {
+        position: relative;
+        display: inline-block;
+      }
+    }
+    &.brand-triangle-tablet {
+      display: none;
+    }
+    &.ticker{
+      text-align: left;
+      width: 15%;
+      color: $primaryGray;
+    }
+    .author-name {
+      text-align: left;
+      margin-top: 0;
+      color: $primaryBlue;
+      line-height: 2;
+    }
+    .author-profile-pic {
+      margin: auto;
+    }
+    &.user-pref {
+      text-align: center;
+      padding-right: 23px;
+      width: 10%;
+      a {
+        display: inline-block;
+        text-align: center;
+        vertical-align: top;
+        .pdf-size {
+          font-size: $deskSzSmaller;
+          color: $inputTextGray;
+          padding-top: 3px;
+        }
+      }
+      .user-pref-icon {
+        margin: 0;
+        padding: 0px;
+        height: 29px;
+        width: 20px;
+        vertical-align: middle;
+        background-position: center;
+        float: right;
+        &.download-report.selected {
+          cursor: default;
+          background-position: center;
+        }
+        &.pdf-image {
+          background-size: 23px !important;
+          background-position-x: -1px;
+          height: 25px;
+          width: 21px;
+          cursor: pointer;
+          margin-left: auto;
+          vertical-align: middle;
+        }
+        &.eye-icon {
+          margin: 0px;
+          background-size: 29px !important;
+          padding: 0px;
+          height: 17px;
+          width: 29px;
+          vertical-align: middle;
+        }
+        &.bookmark-icon {
+          // previous value - background-size: 23px !important; background-position-x: -3px !important;background-position-y: -4px;
+          padding: 0px;
+          margin: 0px;
+          margin-left: 23%;
+          background-size: 15px !important;
+          background-position-x: 0px;
+          background-position-y: 1px;
+          padding: 0px;
+          height: 23px;
+          width: 16px;
+          vertical-align: middle;
+        }
+        &.cannabis-model.ui.button {
+          position: relative;
+        }
+      }
+      &.small-screen {
+        display: none;
+      }
+      .triangle-image {
+        display: inline-block;
+        vertical-align: top;
+        text-align: center;
+        float: left;
+        .ui.image.brand-triangle-licon {
+          width: 24px;
+          height: 24px;
+          display: inline-block;
+        }
+        .brand-text {
+          font-size: $deskSzSmaller;
+        }
+      }
+    }
+    .subject-details {
+      font-size: $deskSzSmaller;
+      color: $primaryGray;
+      &.ui.heading {
+
+      }
+    }
+  }
+}
+
+// Medium Breakpoint
+// @media (max-width: $screen-md-min) {
+
+//   .bmo-model-result-card {
+//     .left {
+//       width: 80%;
+//       position: relative;
+//       display: inline-block;
+//     }
+//     .right {
+//       width: 20%;
+//       position: relative;
+//       text-align: right;
+//       padding-right: 15px;
+//       display: inline-block;
+//       .linkBtn {
+//         padding: 0px;
+//         &.eye-inactive {
+//           height: 14px;
+//           width: 21px;
+//           top: 50%;
+//           position: relative;
+//           transform: translateY(-50%);
+//         }
+//         &.grey-dots {
+//           width: 30px;
+//           position: relative;
+//           top: 50%;
+//           transform: translateY(-50%);
+//         }
+//       }
+//       .plus-icon {
+//         width: 30px;
+//         height: auto;
+//       }
+//     }
+//     .result-column {
+//       padding: 0 15px;
+
+//       &.date {
+//         width: 26%;
+//        padding-top: 12px;
+//         display: inline-block;
+//       }
+//       &.subject {
+//         width: 100%;
+//         padding-top: 15px;
+//         padding-bottom: 39px;
+//         display: inline-block;
+//       }
+//     }
+//     .result-column.subject {
+//       .ui.heading.subject-details {
+//         display: none;
+//       }
+//     }
+//   }
+// }
+
+@media (max-width: $screen-tab) {
+  .bmo-model-result-card {
+    .result-column {
+      min-height: unset;
+      &.user-pref {
+        padding-right: 10px;
+        &.small-screen {
+          display: none !important;
+          vertical-align: middle;
+          .user-pref-icon {
+            float: unset;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: $screen-md-min) {
+  .bmo-model-result-card {
+    .left {
+      width: 100%;
+      line-height: 2;
+    }
+    .result-column {
+      .author-profile-pic {
+        display: none;
+      }
+      &.ticker {
+        width: 24%;
+      }
+      &.date {
+        width: 24%;
+      }
+      &.author {
+        width: 40%;
+        text-align: left;
+      }
+      &.brand-triangle-tablet {
+        display: inline-block;
+        width: 10%;
+        padding: 0;
+        .brand-triangle-icon {
+          width: 25px;
+          margin: auto;
+        }
+      }
+      &.user-pref {
+        padding: 0;
+        text-align: center;
+        width: 14%;
+        .ui.button.user-pref-icon.download-report {
+          width: 21px;
+          height: 21px;
+          padding: 0;
+        }
+        &.only-desktop {
+          display: none !important;
+        }
+        &.small-screen {
+          display: inline-block !important;
+          vertical-align: middle;
+          .user-pref-icon {
+            float: unset;
+          }
+        }
+      }
+      &.ticker,&.author{
+        line-height: 1.2;
+        .author-name {
+          margin-top: 0;
+          text-align: left;
+        }
+      }
+      &.date {
+        padding-top: 0;
+      }
+      &.subject {
+        width: 86%;
+        padding-bottom: 0;
+      }
+    }
+    .result-column.user-pref {
+      display: inline-block;
+    }
+  }
+}
+
+@media (max-width: $screen-xs) {
+  .bmo-model-result-card {
+    .result-column {
+      &.subject {
+        width: 83%;
+      }
+      &.ticker {
+        width: 28%;
+      }
+      &.date {
+        width: 30%;
+      }
+      &.author {
+        width: 42%;
+      }
+      &.brand-triangle-tablet {
+        display: none;
+      }
+    }
+    .right {
+      .linkBtn {
+        &.eye-inactive {
+          height: 17.7px !important;
+          width: 29.4px !important;
+        }
+      }
+    }
+  }
+}
+
+// Large Breakpoint
+@media (max-width: $screen-md-max) {
+  .bmo-model-result-card {
+    // override md breakpoint styles
+    .result-column{
+      &.user-pref{
+        padding-right: 0;
+      }
+    }
+  }
+}

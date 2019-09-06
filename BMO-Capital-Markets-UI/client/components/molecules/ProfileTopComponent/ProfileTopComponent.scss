@@ -1,0 +1,190 @@
+/*
+ * Component: ProfileTopComponent
+ */
+
+@import '../../../styles/variables';
+
+// (IMPORTANT: please create the styles such that the larger breakpoints
+// override the smaller ones. "Mobile First")
+
+.profile-landing-page {
+  .profile-landing-body {
+    .ui.secondary.button {
+      border: none;
+      padding: 10px;
+    }
+    .profile-bookmark-component {
+      .bookmark-library-wrapper-class {
+        padding: 0;
+      }
+    }
+    padding: 10px 10px;
+    height: 100%;
+    color: $primaryGray;
+    .profile-bookmark-component {
+      .title {
+        margin-bottom: 45px;
+      }
+    }
+    .sub-title {
+      font-size: $deskSz7;
+      margin-bottom: 40px;
+      margin-top: 64px;
+    }
+    .header {
+      margin-bottom: 10px;
+      color: $primaryBlue;
+      margin-top: 25px;
+    }
+    .text {
+      text-align: left;
+      word-wrap: break-word;
+    }
+    .item {
+      margin-bottom: 20px;
+      &.company-name {
+        display: none;
+      }
+    }
+    .heading, .ui.heading {
+      color: $primaryGray;
+      margin-bottom: 10px; //Previous value: 40px
+    }
+    .ui.checkbox {
+      margin-bottom: 42.7px;
+      height: auto !important;
+      label {
+        color: $primaryGray !important;
+      }
+    }
+    .ui.grid.commonGrid {
+      .following-content-text.column {
+        .text {
+          padding-top: 12px;
+        }
+      }
+    }
+    .heading.header-title {
+      color: $inputTextGray;
+    }
+  }
+}
+
+.profile-top-component {
+  .ui.grid {
+    padding: 0 0 0 30px;
+  }
+  h1.ui.heading {
+    font-size: 30px;
+
+    line-height: normal;
+    @include appDefaultFontStyleLight();
+    color: $primaryBlue !important;
+    margin-top: 41px !important;
+  }
+  h3.ui.heading {
+    color: $primaryGray;
+    margin-top: 4px;
+  }
+  .menuItem {
+    float: left;
+    width: 20%;
+    margin: 10px 0;
+    text-align: center;
+    &.active {
+      .menuText {
+        color: $primaryGray;
+      }
+    }
+  }
+  .imageWrapper {
+    width: 70px;
+    height: 70px;
+    border-radius: 70px;
+    margin: 0 auto;
+    text-align: center;
+    >.bg-icon-props {
+      height: 100%;
+    }
+  }
+  .menuText {
+    text-align: center;
+    margin-top: 5px;
+    color: $primaryBlue;
+  }
+  .horizontalSep {
+    //margin: 40px 0;
+    border: solid 0.5px $inputTextGray;
+    width: 100%;
+    margin-top: 16px;
+  }
+}
+
+@media (max-width: $screen-md-min) {
+  .profile-top-component {
+    .ui.grid {
+      padding: 0 0 0 20px;
+    }
+    @media only screen and (max-width: 991px) and (min-width: $screen-sm) {
+      .ui.grid {
+        .column {
+          .menuItem.user-profile {
+            text-align: left;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: $screen-sm) {
+  .profile-landing-page {
+    .profile-landing-body {
+      padding: 25px;
+      .profile-bookmark-component {
+        .bookmark-library-wrapper-class {
+          left: -20px;
+          width: calc(100% + 40px);
+        }
+      }
+    }
+    .horizontalSep {
+      margin-bottom: 0;
+      width: calc(100% - 25px);
+    }
+    .profile-top-component {
+      .ui.grid {
+        padding: 0 0 0 5px;
+      }
+    }
+  }
+}
+
+// Small Breakpoint
+@media (max-width: $screen-xs-sm) {
+  .profile-landing-page {
+    .profile-landing-body {
+      padding: 20px;
+    }
+    .profile-top-component {
+      .ui.grid {
+        .nine.column {
+          padding: 0px;
+        }
+        .ui.heading.name {
+          margin-top: 0px !important;
+        }
+      }
+      .menuItem {
+        float: left;
+        width: 50%;
+      }
+    }
+  }
+}
+
+@media (min-width: $screen-lg-min) {
+  .profile-top-component {
+    // override md breakpoint styles
+  }
+}

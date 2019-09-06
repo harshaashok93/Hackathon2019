@@ -1,0 +1,72 @@
+/*
+ * Component: RebrandingFilter
+ */
+
+@import '../../../styles/variables';
+
+// (IMPORTANT: please create the styles such that the larger breakpoints
+// override the smaller ones. "Mobile First")
+
+.rebranding-filter {
+  .ui.image.brand-triangle-icon {
+    display: inline-block;
+    width: 20px;
+    position: absolute;
+    z-index: 1;
+    left: 33px;
+  }
+  .ui.checkbox.rebranding-checkbox label{
+    padding-left: 60px;
+  }
+  .rebranding {
+    .rebranding-popup {
+      display: inline-block;
+      position: absolute;
+      .ui.image.rebranding-tooltip {
+        width: 20px !important;
+        height: 20px !important;
+        display: inline;
+        margin-left: 10px;
+      }
+    }
+    p {
+      width: 370px;
+      background-color: white;
+      color: black;
+      min-height: 100px;
+      padding: 25px;
+      box-shadow: 3px 3px 8px -2px #b2b2b2;
+      background-color: white;
+      border-radius: 5px;
+
+      @media (max-width: $screen-sm-min) {
+        width: 195px;
+      }
+    }
+  }
+}
+
+// Small Breakpoint
+@media (max-width: $screen-xs-min) {
+  .rebranding-filter {
+    .rebranding {
+      .rebranding-popup {
+        display: none;
+      }
+    }
+  }
+}
+
+// Medium Breakpoint
+@media (min-width: $screen-md-min) {
+  .rebranding-filter {
+    // override sm breakpoint styles
+  }
+}
+
+// Large Breakpoint
+@media (min-width: $screen-lg-min) {
+  .rebranding-filter {
+    // override md breakpoint styles
+  }
+}
