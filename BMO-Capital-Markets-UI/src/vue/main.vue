@@ -26,7 +26,8 @@ export default {
         tab1: [],
         tab2: [],
         analystdata: [],
-        dropdownData: {}
+        dropdownData: {},
+        showDismissibleAlert: false
     }
   },
   mounted: function() {
