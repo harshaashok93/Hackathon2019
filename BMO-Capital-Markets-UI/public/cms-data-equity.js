@@ -23715,36 +23715,6 @@ window.unchainedSite = {
                 "LollypopCarousel": {
                     "carouselType": "main-page-carousel",
                     "children": [
-                        {
-                            "LollypopCarouselItem": {
-                                "backgroundImageAltText": "Homepage Carousel Background",
-                                "to": {
-                                    "link_type": "internal",
-                                    "url": "/library/",
-                                    "link_target": "sameTab"
-                                },
-                                "richText": "<div class=\"rich-text\"><h1>Will Truck Innovation Erode Rails' Competitive Advantage?</h1><p>Fadi Chamoun, CFA | February 2019</p></div>",
-                                "learMoreText": "Learn More",
-                                "backgroundImage": "https://bmo-capital-markets-dev-ui-equity.galepartners.com//media/original_images/homepage-banner-city_resize.png",
-                                "lollopopColor": "#ed1c24",
-                                "isPlayIcon": false
-                            }
-                        },
-                        {
-                            "LollypopCarouselItem": {
-                                "backgroundImageAltText": "Homepage Carousel Background",
-                                "to": {
-                                    "link_type": "internal",
-                                    "url": "/library/",
-                                    "link_target": "sameTab"
-                                },
-                                "richText": "<div class=\"rich-text\"><h1 style='font-family: \"Roboto Slab\", Georgia, serif;'>Check out our new <b>Enhanced Search</b></h1><p>Get to what you need faster and easier than ever before.</p></div>",
-                                "learMoreText": "Learn More",
-                                "backgroundImage": "https://bmo-capital-markets-dev-ui-equity.galepartners.com//media/original_images/Homepage_Carousel_Background.png",
-                                "lollopopColor": "#ed1c24",
-                                "isPlayIcon": false
-                            }
-                        }
                     ]
                 }
             },

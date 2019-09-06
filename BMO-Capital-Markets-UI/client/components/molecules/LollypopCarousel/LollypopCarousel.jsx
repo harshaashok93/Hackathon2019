@@ -53,32 +53,32 @@ class LollypopCarousel extends Component {
   render() {
     const { children } = this.props;
     const settings = {
-      dots: children.length > 1,
+      dots: children && children.length > 1,
       speed: 1000,
-      arrows: children.length > 1,
+      arrows: children && children.length > 1,
       slidesToShow: 1,
       slidesToScroll: 1,
       draggable: false,
       accessibility: true,
       centerMode: true,
       centerPadding: '0px 0px',
-      infinite: children.length > 1,
+      infinite: children && children.length > 1,
       responsive: [{
         breakpoint: 768,
         settings: {
-          arrows: children.length > 1,
-          dots: children.length > 1,
+          arrows: children && children.length > 1,
+          dots: children && children.length > 1,
           swipeToSlide: true,
           centerMode: true,
           centerPadding: '0px 0px',
           slidesToShow: 1,
-          infinite: children.length > 1,
+          infinite: children && children.length > 1,
           slidesToScroll: 1
         }
       },
       { breakpoint: 320,
         settings: {
-          infinite: children.length > 1,
+          infinite: children && children.length > 1,
           slidesToShow: 1,
           slidesToScroll: 1
         }
@@ -87,11 +87,11 @@ class LollypopCarousel extends Component {
     return (
       <div className={`lollypop-carousel ${this.getCarouselStyle()}`} >
         <div id="vue" />
-        <div className={'carousel-component'} style={{display: 'none'}}>
+        <div className={'carousel-component'}>
           <Segment className={'carousel-segment-homepage'}>
             <Container className={`${this.props.carouselType}`}>
               <Slick {...settings}>
-                { children.map((item) => {
+                { children && children.map((item) => {
                   return <div key={Math.random()}>{mapPropsToChild(item, { carouselType: this.props.carouselType })}</div>;
                 })}
               </Slick>
