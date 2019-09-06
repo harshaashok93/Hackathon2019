@@ -10,7 +10,6 @@ registerApplication(
     )
 );
 
-
 registerApplication(
     'vue',
     () => import('./src/vue/vue.app.js'),
