@@ -24,6 +24,5 @@ export const unmount = [
 
 function domElementGetter() {
   // This is where single-spa will mount our application
-  console.log('I got execute')
   return document.getElementById("root");
 }

@@ -6,7 +6,7 @@ const vueLifecycles = singleSpaVue({
   Vue,
   appOptions: {
     el: '#vue',
-    render: r => r(Hello)
+    render: r => r(Hello),
   }
 });
 
