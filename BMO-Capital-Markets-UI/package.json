@@ -138,6 +138,7 @@
     "single-spa-vue": "^1.5.4",
     "vue": "^2.6.10",
     "vue-loader": "^15.7.1",
+    "vue-star-rating": "^1.6.1",
     "vue-template-compiler": "^2.6.10",
     "whatwg-fetch": "^2.0.3"
   },

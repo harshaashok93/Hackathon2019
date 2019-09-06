@@ -10,7 +10,9 @@
           <div class="display-name">{{ item.display_name }}</div>
         </div>
         <div class="right face">
-          <p>{{ item.rating_value }}</p>
+          <p>{{ item.display_title || 'BMO Capital Markets Corp.'}}</p>
+          <p>{{ item.role || 'Analyst'}}</p>
+          <StarRating :star-size='20' :rating="item.rating_value" :read-only="true"></StarRating>
         </div>
       </div>
     </div>
@@ -19,6 +21,7 @@
 <script>
 import Vue from 'vue';
 import axios from 'axios';
+import StarRating from 'vue-star-rating'
 
 export default {
   name: 'AnalystLayout',
@@ -27,6 +30,9 @@ export default {
       type: Array,
       default: () => [],
     }
+  },
+  components: {
+    StarRating
   }
 }
 </script>
@@ -94,6 +100,16 @@ export default {
     background-color: #0079c1;
     color: #393e46;
     font-size: 0.8rem;
+  }
+  .vue-star-rating-rating-text {
+    display: none;
+  }
+  p {
+    font-size: 16px;
+    color: #ffffff;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 5px;
   }
 </style>
 
