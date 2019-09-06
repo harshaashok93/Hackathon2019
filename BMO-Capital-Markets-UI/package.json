@@ -67,9 +67,9 @@
     "equity": {
       "title": "BMO Capital Markets",
       "gtmID": "GTM-M993LG6",
-      "cmsFilePath": "cms-data-equity",
+      "cmsFilePath": "cms-data-equity.js",
       "local": {
-        "devPublicPath": ""
+        "devPublicPath": "http://localhost:3000"
       },
       "dev": {
         "devPublicPath": ""
