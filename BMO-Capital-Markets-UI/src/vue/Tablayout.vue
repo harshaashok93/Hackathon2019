@@ -1,5 +1,9 @@
 <template>
   <div class="tab-layout">
+    <div class="tab-div">
+        <div class="top-rate"><button @click="selectTab('rate')">Top Rated</button></div>
+        <div class="trending"><button @click="selectTab('trend')">Trending</button></div>
+    </div>
     <div class="tab1">
         <ul>
             <li v-for="item in tab1">
@@ -35,6 +39,20 @@ export default {
   .tab-layout {
     display: inline-block;
     width: 100%;
+  }
+  .tab-div {
+    display: inline-block;
+    width: 100%;
+  }
+  .top-rate {
+    width: 49%;
+    display: inline-block;
+    text-align: center;
+  }
+  .trending {
+    width: 49%;
+    display: inline-block;
+    text-align: center;
   }
 </style>
 
