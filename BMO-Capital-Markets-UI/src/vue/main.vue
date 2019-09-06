@@ -1,8 +1,9 @@
 <template>
-  <div>
+  <div class="main-page">
       <leftLayout
         :tab1="tab1"
         :tab2="tab2"
+        :dropdownData="dropdownData"
       />
       <analystLayout
         :analystdata="analystdata"
@@ -25,6 +26,7 @@ export default {
         tab1: [],
         tab2: [],
         analystdata: [],
+        dropdownData: {}
     }
   },
   mounted: function() {
@@ -37,8 +39,16 @@ export default {
         app.tab1 = response.data.publications.topRated;
         app.tab2 = response.data.publications.trending;
         app.analystdata = response.data.analysts;
+        app.dropdownData = response.data.dropdownData;
       });
     }
   }
 }
 </script>
+<style>
+    .main-page {
+        padding: 0px 10px;
+        display: inline-block;
+        width: 100%;
+    }
+</style>

@@ -1,11 +1,12 @@
 <template>
-  <div>
+  <div class="left-layout-div">
       <tablayout
         :tab1="tab1"
         :tab2="tab2"
       />
       <searchLayout
         :search="search"
+        :dropdownData="dropdownData"
       />
   </div>
 </template>
@@ -31,6 +32,10 @@ export default {
     tab2: {
       type: Array,
       default: () => [],
+    },
+    dropdownData: {
+      type: Object,
+      default: () => {},
     }
   },
   methods: {
@@ -47,3 +52,10 @@ export default {
   },
 }
 </script>
+<style>
+  .left-layout-div {
+      display: inline-block;
+      width: 75%;
+      vertical-align: top;
+  }
+</style>

@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="analyst-layout">
     <ul>
         <li v-for="item in analystdata">
           {{ item.display_name }}
@@ -21,4 +21,12 @@ export default {
   }
 }
 </script>
+<style>
+  .analyst-layout {
+    display: inline-block;
+    width: 20%;
+    vertical-align: top;
+  }
+</style>
+
 

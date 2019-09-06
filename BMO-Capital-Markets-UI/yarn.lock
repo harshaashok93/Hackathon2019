@@ -1382,6 +1382,11 @@ boom@2.x.x:
   dependencies:
     hoek "2.x.x"
 
+bootstrap@3:
+  version "3.4.1"
+  resolved "https://registry.yarnpkg.com/bootstrap/-/bootstrap-3.4.1.tgz#c3a347d419e289ad11f4033e3c4132b87c081d72"
+  integrity sha512-yN5oZVmRCwe5aKwzRj6736nSmKDX7pLYwsXiCj/EYmo16hODaBiT4En5btW/jhBF/seV+XMx3aYwukYC3A49DA==
+
 brace-expansion@^1.0.0, brace-expansion@^1.1.7:
   version "1.1.8"
   resolved "https://registry.yarnpkg.com/brace-expansion/-/brace-expansion-1.1.8.tgz#c07b211c7c952ec1f8efd51a77ef0d1d3990a292"
