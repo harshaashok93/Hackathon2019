@@ -16,8 +16,8 @@ const config = {
   },
   // local overides, if any
   local: {
-    apiUrl: 'https://bmo-capital-markets-dev-ui-equity.galepartners.com/api/v1',
-    // apiUrl: 'http://192.168.3.147:8000/api/v1',
+    // apiUrl: 'https://bmo-capital-markets-dev-ui-equity.galepartners.com/api/v1',
+    apiUrl: 'http://192.168.3.147:8000/api/v1',
     elasticSearchUrl: 'https://bmo-capital-markets-osqa-ui-equity.galepartners.com/search',
     subDomain: window.location.hostname,
     ssoUrl: 'https://bmo-capital-markets-dev-ui-equity.galepartners.com/sso'

@@ -7,7 +7,9 @@
           <img :src="item.avatar_url" class="analyst-avatar-image" :alt="item.display_name" />
         </div>
         <div class="right face">
-          <p>{{ item.rating_value }}</p>
+          <p>{{ item.display_title || 'BMO Capital Markets Corp.'}}</p>
+          <p>{{ item.role || 'Analyst'}}</p>
+          <StarRating :star-size='20' :rating="item.rating_value" :read-only="true"></StarRating>
         </div>
       </div>
       <a :href="'/our-department/analysts/'+ item.client_code + '/'">{{ item.display_name }}</a>
@@ -17,6 +19,7 @@
 <script>
 import Vue from 'vue';
 import axios from 'axios';
+import StarRating from 'vue-star-rating'
 
 export default {
   name: 'AnalystLayout',
@@ -25,6 +28,9 @@ export default {
       type: Array,
       default: () => [],
     }
+  },
+  components: {
+    StarRating
   }
 }
 </script>
