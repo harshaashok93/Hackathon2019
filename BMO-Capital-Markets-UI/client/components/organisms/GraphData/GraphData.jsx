@@ -71,7 +71,6 @@ class GraphData extends Component {
             />
             <DonutChart
               data={data.linked}
-              onClick={this.getUserData()}
               colors={colorDatalinked}
               height={400}
               width={400}
