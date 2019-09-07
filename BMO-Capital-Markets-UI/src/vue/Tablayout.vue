@@ -78,10 +78,12 @@
   .tab button {
     color: black;
     text-decoration: none !important;
+    outline: none;
   }
   .tab.enabled button {
     color: white;
     text-decoration: none !important;
+    outline: none;
   }
   .tab.enabled {
     background: #0079c1;

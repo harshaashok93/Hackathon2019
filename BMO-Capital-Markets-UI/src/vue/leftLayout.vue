@@ -8,11 +8,13 @@
         :search="search"
         :dropdownData="dropdownData"
       />
+      <CompanyGraphCarousel />
   </div>
 </template>
 <script>
 import Tablayout from './Tablayout';
 import SearchLayout from './SearchLayout';
+import CompanyGraphCarousel from './CompanyGraphCarousel';
 import axios from 'axios';
 export default {
   name: 'LeftLayout',
@@ -49,6 +51,7 @@ export default {
   components: {
     Tablayout,
     SearchLayout,
+    CompanyGraphCarousel
   },
 }
 </script>
