@@ -4,6 +4,7 @@ export const initialState = {
   resultList: [],
   isLoading: false,
   bmoModelTotal: 0,
+  graphdata: []
 };
 
 export const isMobileLayout = (state = initialState) => state.mobileLayout;
@@ -11,3 +12,4 @@ export const getdropdownList = (state = initialState) => state.dropDownList;
 export const getResultList = (state = initialState) => state.resultList;
 export const isLoading = (state = initialState) => state.isLoading;
 export const getBMOMOdelTotal = (state = initialState) => state.bmoModelTotal;
+export const getgraphdata = (state = initialState) => state.graphdata;

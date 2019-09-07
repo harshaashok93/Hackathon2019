@@ -4,7 +4,8 @@ import {
   SET_BMO_MODEL_DROPDWON_LIST,
   SET_BMO_MODELS_RESULT_LIST,
   SET_BMO_MODELS_LOADING,
-  SET_MOBILE_LAYOUT_FOR_BMO_MODELS
+  SET_MOBILE_LAYOUT_FOR_BMO_MODELS,
+  SET_HACK_GRAPH_DATA
 } from './actions';
 
 export default (state = initialState, action) => {
@@ -33,6 +34,11 @@ export default (state = initialState, action) => {
       return {
         ...state,
         isLoading: action.data,
+      };
+    case SET_HACK_GRAPH_DATA:
+      return {
+        ...state,
+        graphdata: action.data,
       };
     default:
       return state;
