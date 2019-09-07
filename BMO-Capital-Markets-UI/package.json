@@ -126,6 +126,7 @@
     "react-cookie-banner": "^4.0.0",
     "react-date-picker": "^6.6.2",
     "react-dom": "^15.5.4",
+    "react-donut-chart": "^1.1.8",
     "react-helmet": "^5.2.0",
     "react-highcharts": "^16.0.2",
     "react-image-gallery": "^0.8.7",

@@ -15,5 +15,5 @@ export function downloadExcel(data = {}) {
 }
 
 export function getGraph() {
-    return get(`${apiUrl}/hackathon/companyGraph/?${moment.now()}`);
+    return get(`${apiUrl}/hackathon/admin/?${moment.now()}`);
 }
