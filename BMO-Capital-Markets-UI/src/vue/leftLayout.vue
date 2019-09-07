@@ -55,7 +55,7 @@ export default {
 <style>
   .left-layout-div {
       display: inline-block;
-      width: 75%;
-      vertical-align: top;
+      width: 80%;
+      float: left;
   }
 </style>
