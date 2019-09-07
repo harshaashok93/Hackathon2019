@@ -6,6 +6,10 @@ import { ResearchLayoutFilters } from 'containers';
 import { getTriangleImage } from 'utils';
 import { tierImageMap } from 'constants/assets';
 import SearchFormatter from './SearchFormatter';
+import StarRatings from 'react-star-ratings';
+import {
+  sendRatingStar,
+} from 'api/research';
 
 class MainContent extends Component {
   props: {
@@ -24,10 +28,16 @@ class MainContent extends Component {
 
   state = {
     fontSize: 'aa',
+    rating: 0
   }
 
   updateFont = (fontSize) => {
     this.setState({ fontSize });
+  }
+
+  changeRating = (newRating) => {
+    this.setState({ rating: newRating });
+    sendRatingStar(newRating, this.props.productId);
   }
 
   render() {
@@ -62,7 +72,15 @@ class MainContent extends Component {
             :
             null
           }
-          { data.title && data.title !== '' && <Heading as={'h1'} id="intro-publication-title" content={SearchFormatter(data.title)} /> }
+          { data.title && data.title !== '' && <div><Heading as={'h1'} id="intro-publication-title" content={SearchFormatter(data.title)} /><StarRatings
+          rating={this.state.rating}
+          starRatedColor='#1aab0d'
+          starHoverColor='#b1b1b1'
+          changeRating={this.changeRating}
+          numberOfStars={5}
+          name='rating'
+          starDimension={'25px'}
+        /></div> }
           { bottomLineExists ? <RichText richText={`<span class="bottomline-header">${SearchFormatter('Bottom Line: ', { richText: false })}</span><span class="bottomline-content">${SearchFormatter(data.bottomLine, { richText: false })}</span>`} /> : null }
           { keyPointsExists ? <Heading as={'h3'} className="keyPoints-header" content={SearchFormatter('Key Points')} /> : null }
           { keyPointsExists && <RichText className={'keypoints-content'} richText={SearchFormatter(data.keyPoints, { richText: false })} /> }
